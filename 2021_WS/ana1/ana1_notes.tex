@@ -16,7 +16,7 @@
 \maketitle
 
 \begin{footnotesize}
-    Aktualisiert bis Vorlesung~17 am 13.~Dezember 2021.
+    Aktualisiert bis Vorlesung~18 am 15.~Dezember 2021.
 
     Ich weiß, dass das ein wenig spät kommt, aber ich hoffe, dass ihr einen Nutzen hieraus ziehen könnt. Ursprünglich wollte ich das nur für mich machen, aber da unser Dozent kein Skript hat, gebe ich meines heraus. Grundsätzlich ist der Inhalt der Vorlesung wiederzufinden, aber oft umformuliert und teilweise auch von mir etwas kommentiert. In den Fußnoten stehen meist Randinformationen, die über den Tellerrand hinausführen. Der Anhang sollte auch interessant werden.
 
@@ -32,7 +32,7 @@
     \item[Konvergenz von Folgen~I] Begriffe: Folge, Konvergenz, Grenzwert/Limes, Beschränktheit. Grenzwertsätze. Ordnungserhaltung konvergenter Folgen.\hspace*{\fill}[1]
     \item[Vollständigkeitsaxiom] Cauchy-Folgen. Vollständigkeitsaxiom. Intervallschachtelung: Intervallschachtelungsprinzip, Existenz der Wurzeln. Supremumseigenschaft. Äquivalenz aller vier Ansätze. Ausblick zu~$\R$, Peano-Axiome von~$\N$. Abzählbarkeit.\hspace*{\fill}[2,5]
     \item[Konvergenz von Folgen~II] Monotone Folgen. Uneigentliche Konvergenz, erweiterte Zahlengerade. Limes Superior/Inferior. Teilfolgen, Häufungspunkte, Satz von Bolzano-Weierstraß.\hspace*{\fill}[1,5]
-    \item[Konvergenz von Reihen] (Unendliche) Reihen: harmonische/geometrische Reihe. Konvergenzkriterien: Cauchy-Kriterium, notwendige Bedingung einer Nullfolge, monoton und beschränkt, Leibniz-Kriterium, Majorantenkriterium, Quotientenkriterium, Wurzelkriterium. Riemmansche Zeta-Funktion.\hspace*{\fill}[1]
+    \item[Konvergenz von Reihen] Reihen: harmonische/geometrische Reihe. Konvergenzkriterien: Cauchy-Kriterium, notwendige Bedingung einer Nullfolge, monoton und beschränkt, Leibniz-Kriterium, Majorantenkriterium, Quotientenkriterium, Wurzelkriterium. Riemmansche Zeta-Funktion.\hspace*{\fill}[1]
     \item[Absolut konvergente Reihen, summierbare Familien] Absolut konvergente Reihen. Umordnung: Umordnungssatz. Summierbare Familien: großer Umordnungssatz, Doppelreihensatz. Produkt von Reihen: Faltung, Cauchy-Produkt. Binomische Reihe.\hspace*{\fill}[2]
     \item[Exponentialreihe] Exponentialreihe: absolut konvergent, eulersche Zahl. Restgliedabschätzung. Funktionalgleichung. Abschätzungen von~$\exp$. Grenzwertdarstellung.\hspace*{\fill}[1]
     \item[Komplexe Zahlen] Körper der komplexen Zahlen: Rechenregeln, komplexe Zahlenebene, Ähnlichkeit zu~$\R^2$. Komplexe Konjugation, Betrag: Rechenregeln, Ungleichungen. Folgen in~$\C$: Cauchy-Folgen, Grenzwertsätze, auch bzgl.\ Konjugation und Betrag. Reihen in~$\C$: Konvergenzkriterien. Exponentialreihe. Trigonometrische und hyperbolische Funktionen: Reihendarstellung, Identitäten (eulersche Formel, trigonometrischer Pythagoras), Additionstheoreme, Doppelwinkelfunktionen. Trigonometrische und hyperbolische Funktionen in~$\R$, Abschätzungen. Kreiszahl~$\pi$: Verhältnis zu $\exp$/$\sin$/$\cos$, Periodizität, Phasenverschiebung, Nullstellen von $\sin$/$\cos$ in~$\C$. Polardarstellung: Multiplikation. Einheitswurzeln.\hspace*{\fill}[3]
@@ -510,7 +510,7 @@ Bevor wir zum binomischen Lehrsatz kommen, müssen wir noch einige Begriffe aus 
     Das \emph{Produktzeichen} wird analog zum Summenzeichen definiert. Für ganze Zahlen $m$,~$n$ und $a_k \in \R$ bedeutet
     \begin{gather*}
         \prod_{k=m}^n a_k = a_m \cdot a_{m+1} \cdots a_{n-1} \cdot a_n, \quad\text{falls } m \leq n, \\
-        \prod_{k=m}^m a_k = a_m \qquad\text{und}\qquad \prod_{k=m}^{m-1} a_k = 0 \quad\text{(leeres Produkt)}.
+        \prod_{k=m}^m a_k = a_m \qquad\text{und}\qquad \prod_{k=m}^{m-1} a_k = 1 \quad\text{(leeres Produkt)}.
     \end{gather*}
     Das leere Produkt wird konventionell auf Eins definiert.
 \end{notation}
@@ -1113,7 +1113,7 @@ Offenbar gilt~$\abs{x} = \max(x, -x)$, d.\,h., dass der Betrag immer größer al
     \end{enumerate}
 \end{theorem}
 
-Jeder Körper mit einer Abbildung $\abs{\cdot}\colon K \to \R_+$ und den drei obigen Aussagen heißt \emph{bewerteter Körper}.
+Jeder Körper mit einer Abbildung $\abs{\cdot}\colon K \to \R^+$ und den drei obigen Aussagen heißt \emph{bewerteter Körper}.
 
 \begin{proof}\leavevmode
     \begin{enumerate}
@@ -1918,7 +1918,7 @@ Unser Ziel ist es, sagen zu können, dass \emph{jede} (auch unbeschränkte) mono
             \draw[->] (-3,0) -- (3,0) node[below] {$\exR$};
             \pic at (0,1) {ytick=1};
             \pic at (0,-1) {ytick=$-1$};
-            \draw[domain=-6:6, smooth, samples=100] plot ({0.5*\x},{\x / (1 + abs(\x))}) node[right] {$\sigma(x) = \dfrac{x}{1 + \abs{x}}$};
+            \draw[domain=-6:6, smooth] plot ({0.5*\x},{\x / (1 + abs(\x))}) node[right] {$\sigma(x) = \dfrac{x}{1 + \abs{x}}$};
         \end{tikzpicture}
     \end{center}
 \end{remark}
@@ -2041,8 +2041,8 @@ oder mit anderen Worten
     \end{enumerate}
 \end{example}
 
-\begin{remark}
-    Jede Teilfolge einer \emph{konvergenten Folge} konvergiert und besitzt denselben Grenzwert (das folgt sofort aus der Konvergenzdefinition). D.\,h.\ jede konvergente Folge besitzt genau einen Häufungspunkt, nämlich den Grenzwert selbst.
+\begin{remark}\label{rem:subsequence:convergence}
+    Jede Teilfolge einer \emph{konvergenten Folge} konvergiert und besitzt denselben Grenzwert (das folgt sofort aus der Konvergenzdefinition). D.\,h.\ jede konvergente Folge besitzt genau einen Häufungspunkt, nämlich den Grenzwert selbst.\footnote{Die Umkehrung gilt auch: Konvergiert jede Teilfolge, so konvergiert auch die Folge selbst, denn die Folge selbst ist ja auch eine Teilfolge von sich selbst.}
 \end{remark}
 
 \begin{lemma}
@@ -2905,9 +2905,9 @@ Die Restgliedabschätzung ist --~öfter als man denkt~-- nützlich, und lässt s
         \draw[->] (-6,0) -- (6,0);
         \draw[->] (0,0) -- (0,6);
 
-        \draw[domain=-6:1.7, smooth, samples=100, thick] plot (\x,{exp(\x)}) node[above right] {$\exp(x)$};
-        \draw[domain=-1:4.5, smooth, samples=100, dashed] plot (\x,{\x+1}) node[above right] {$x+1$};
-        \draw[domain=-6:0.82, smooth, samples=100, dashed] plot (\x,{1/(1-\x)}) node[above] {$\frac{1}{1-x}$};
+        \draw[domain=-6:1.7, smooth, thick] plot (\x,{exp(\x)}) node[above right] {$\exp(x)$};
+        \draw[domain=-1:4.5, smooth, dashed] plot (\x,{\x+1}) node[above right] {$x+1$};
+        \draw[domain=-6:0.82, smooth, dashed] plot (\x,{1/(1-\x)}) node[above] {$\frac{1}{1-x}$};
     \end{tikzpicture}
 \end{center}
 
@@ -3098,7 +3098,7 @@ In der komplexen Zahlenebene entspricht die Konjugation der Spiegelung an der $x
         \item $\conj{\conj{z}} = z$.
         \item $\conj{z+w} = \conj{z}+\conj{w}$.
         \item $\real(z) = \frac{1}{2}(z+\conj{z})$ und $\imag(z) = \frac{1}{2}(z-\conj{z})$.
-        \item $z\conj{z} = x^2+y^2$, also ist $z\conj{z}$~reell und~$\geq 0$. Ferner ist $z\conj{z} = 0$ genau dann, wenn $z = 0$.
+        \item $z\conj{z} = x^2+y^2$, also ist $z\conj{z}$~reell und~$\geq 0$. Ferner ist $z\conj{z} = 0$ genau dann, wenn $z = 0$.\footnote{Eine weitere (wie ich finde) nützliche Regel: Für~$a \in \R$ und~$z \in \C$ gilt $\conj{az} = a\conj{z}$.}
     \end{enumerate}
 \end{lemma}
 
@@ -3474,7 +3474,7 @@ Die Umkehrung gilt hingegen (wie in den reellen Zahlen) \underline{nicht}.
 
 \lecturesep{06.~Dezember 2021}
 
-\begin{theorem}[Additionstheoreme\footnote{Ich habe mir die Freiheit genommen, hier auch Subtrationstheoreme hinzuzufügen, die sich aus den Additionstheorem unter Beachtung der Parität, d.\,h.\ ob die Funktionen (un"~)gerade sind.}]\leavevmode
+\begin{theorem}[Additionstheoreme\footnote{Ich habe mir die Freiheit genommen, hier auch Subtrationstheoreme hinzuzufügen, die sich aus den Additionstheorem unter Beachtung der Parität, d.\,h.\ ob die Funktionen (un"~)gerade sind, ergeben.}]\leavevmode
     \begin{enumerate}
         \item Für alle $z,w \in \C$ gelten
               \begin{align*}
@@ -3970,7 +3970,7 @@ Hierfür gibt es zwei (tatsächlich äquivalente) Definitionen.
         \end{equation*}
         gilt. Oder in Zeichen:
         \begin{equation*}
-            \forall \eps > 0\colon \exists \delta > 0\colon \forall x \in D\colon \abs{x-x_0} \leq \delta \implies \abs{f(x)-f(x_0)} \leq \eps.
+            \forall \eps > 0\colon \exists \delta > 0\colon \forall x \in D\colon\quad \abs{x-x_0} \leq \delta \implies \abs{f(x)-f(x_0)} \leq \eps.
         \end{equation*}
         \item Eine Funktion $f\colon D \to \R$ heißt \emph{stetig}, falls sie in jedem Punkt~$x_0 \in D$ stetig ist.
     \end{enumerate}
@@ -3981,7 +3981,7 @@ Hierfür gibt es zwei (tatsächlich äquivalente) Definitionen.
         \draw[->] (0,0) -- (4,0);
         \draw[->] (0,0) -- (0,4);
 
-        \draw[domain=0:4, smooth, samples=100] plot (\x,{0.02*(\x-5)^3-0.05*(\x-2)^2+3});
+        \draw[domain=0:4, smooth] plot (\x,{0.02*(\x-5)^3-0.05*(\x-2)^2+3});
         \draw (0,2.5) node[left] {$f(x_0)$} -| (2.077,0) node[below] {$x_0$};
         \draw (0,2.8) -- (3.079,2.8);
         \draw[dashed] (3.079,2.8) -- (3.079,0);
@@ -3994,11 +3994,7 @@ Hierfür gibt es zwei (tatsächlich äquivalente) Definitionen.
 \end{figure}
 
 \begin{definition}[Folgenkriterium für Stetigkeit]\label{def:continuity:sequence}
-    Eine Funktion $f\colon D \to \R$ heißt \emph{stetig in~$x_0 \in D$}, falls für jede Folge $(x_n)_{n\in\N}$ in~$D$ und $x_n \to x_0$ gilt:
-    \begin{equation*}
-        f(x_n) \to f(x_0).
-    \end{equation*}
-    Oder anders formuliert: Für jede Folge $x_n \to x_0$ gilt
+    Eine Funktion $f\colon D \to \R$ heißt \emph{stetig in~$x_0 \in D$}, falls für jede Folge $(x_n)_{n\in\N}$ in~$D$ und $x_n \to x_0$ gilt $f(x_n) \to f(x_0)$. Oder anders formuliert: Für jede Folge $x_n \to x_0$ gilt
     \begin{equation*}
         \lim_{n\to\infty} f(x_n) = f\paren*{\lim_{n\to\infty} x_n}.
     \end{equation*}
@@ -4006,7 +4002,7 @@ Hierfür gibt es zwei (tatsächlich äquivalente) Definitionen.
 
 Die Idee der Stetigkeit ist, dass wir über eine Funktion~$f$ an einer Stelle~$x_0$ sagen können, dass sie an dem Punkt "`zusammenhängend"' ist und keine "`Sprünge"' macht. D.\,h., dass eine noch so kleine Änderung~$\eps$ um~$f(x_0)$ nur auf eine kleien Änderung~$\delta$ um~$x_0$ zurückzuführen ist bzw.\ eine $\delta$"~Änderung um~$x_0$ nur eine $\eps$"~Änderung um~$f(x_0)$ bewirkt (und keine großen wie Sprünge).
 
-Eine ähnliche Idee beschreibt das Folgenkriterium. Laufen wir von~$-\infty$ und~$+\infty$ Richtung~$x_0$ und schauen uns dabei die Funktionswerte an, so können zwei Szenarien vorkommen: Treffen sich beide Grenzwerte der Funktionswerte, so gibt es keinen Sprung; treffen sie sich nicht, so gibt es einen Sprung. Viele Prozesse in der Natur sind stetig.\footnote{Letztendlich beschreibt die Stetigkeit einen Begriff der Nähe: Sind im Definitionsbereich Werte "`nah"' beinander, so sind sie auch nach Anwendung von~$f$ "`nah"' beinander. Dieser erweiterte Begriff spielt auch in der Topologie eine wichtige Rolle.}
+Eine ähnliche Idee beschreibt das Folgenkriterium. Laufen wir von~$-\infty$ (von links) und~$+\infty$ (von rechts) Richtung~$x_0$ und schauen uns dabei die Funktionswerte an, so können zwei Szenarien vorkommen: Treffen sich beide Grenzwerte der Funktionswerte, so gibt es keinen Sprung; treffen sie sich nicht, so gibt es einen Sprung. Viele Prozesse in der Natur sind stetig.\footnote{Letztendlich beschreibt die Stetigkeit einen Begriff der Nähe: Sind im Definitionsbereich Werte "`nah"' beinander, so sind sie auch nach Anwendung von~$f$ "`nah"' beinander. Dieser erweiterte Begriff spielt auch in der Topologie eine wichtige Rolle.}
 
 \begin{theorem}[Äquivalenz der Stetigkeitsdefinitionen]
     \cref{def:continuity:epsdelta,def:continuity:sequence} sind äquivalent.
@@ -4037,7 +4033,7 @@ Eine ähnliche Idee beschreibt das Folgenkriterium. Laufen wir von~$-\infty$ und
 \end{proof}
 
 \begin{proposition}[Stetigkeit der Wurzelfunktion]
-    Für alle~$k \in \N$ ist $x \mapsto x^{1/k}$ stetig auf~$\R_+$.
+    Für alle~$k \in \N$ ist $x \mapsto x^{1/k}$ stetig auf~$\R^+$.
 \end{proposition}
 
 \begin{proof}
@@ -4134,6 +4130,195 @@ Eine ähnliche Idee beschreibt das Folgenkriterium. Laufen wir von~$-\infty$ und
 \end{proof}
 
 Der Zwischenwertsatz ist sehr mächtig, da wir mit ihm Aussagen über die Bildmenge einer stetigen Funktion machen können und daraus auch einige Eigenschaften ermitteln können.
+
+\begin{corollary}
+    Jedes Polynom ungeraden Grades, also
+    \begin{equation*}
+        f\colon \R \to \R \quad\text{mit}\quad f(x) = a_{2n+1}x^{2n+1} + a_{2n}x^{2n} + \dots + a_0 \quad\text{mit } a_{2n+1} \neq 0,
+    \end{equation*}
+    hat mindestens eine \emph{reelle} Nullstelle
+\end{corollary}
+
+\begin{proof}
+    O.\,B.\,d.\,A.\ sei $a_{2n+1} > 0$. Dann konvergieren die Funktionswerte uneigentlich: $\lim_{n\to\infty} f(x) = \infty$ und $\lim_{n\to-\infty} f(x) = -\infty$. Folglich gibt es reelle Zahlen $a,b \in \R$ mit $a < b$ und $f(a) < 0 < f(b)$. Damit existiert eine Nullstelle in~$[a,b]$.
+\end{proof}
+
+\begin{corollary}\label{cor:continuity:interval}
+    Sei $I \in \R$ ein beliebiges Intervall (offen, abgeschlossen, halboffen, beschränkt, unbeschränkt). Ist eine Funktion $f\colon I \to \R$ stetig auf~$I$, so ist auch $f(I)$~ein Intervall.
+\end{corollary}
+
+\begin{proof}
+    Für~$I = \varnothing$ ist offensichtlich $f(I) = \varnothing \subset \R$ auch ein "`Intervall"'. Deshalb nehmen wir o.\,B.\,d.\,A.\ $I \neq \varnothing$ an. Für~$I = [x,x]$ ist auch offensichtlich $f(I) = [f(x),f(x)]$ ein Intervall. Deshalb nehmen wir auch $\diam(I) > 0$ an.
+
+    Seien $A = \inf f(I) \in [-\infty,\infty)$ und $B = \sup f(I) \in (-\infty,\infty]$ (in~$\exR$). Für jedes~$\gamma \in (A,B)$ gibt es $a,b \in I$ mit $f(a) < \gamma < f(b)$. Weil $f$ insbesondere auf~$(a,b)$ stetig ist, gibt es nach Zwischenwertsatz ein~$c \in I$ mit~$f(c) = \gamma$. Daraus folgt $\gamma \in f(I)$ für alle~$\gamma \in (A,B)$, oder $(A,B) \subset f(I) \subset ([A,B] \cap \R)$ (geschnitten mit~$\R$, da wir nicht erlauben wollen, dass $\pm\infty \in f(I)$). Somit haben wir~$f(I)$ geschachtelt, und $f(I)$ kann nur eines von $(A,B)$, $[A,B]$, $(A,B]$ oder~$[A,B)$ (geschnitten mit~$\R$) sein.
+\end{proof}
+
+Der Grund, wieso wir nochmals $a$~und~$b$ einführen mussten ist, dass $A$~und~$B$ nicht notwendigerweise Funktionswerte sein müssen.
+
+\begin{definition}[kompaktes Intervall]
+    Ein Intervall~$I \subset \R$ heißt \emph{kompakt}, falls es abgeschlossen und beschränkt ist.
+\end{definition}
+
+\begin{theorem}[Extremwertsatz]
+    Das Bild eines kompakten Intervalls unter einer stetigen Abbildung ist ein kompaktes Intervall. Insbesondere nimmt jede stetge Funktion auf einem kompakten Intervall ihre Extrema an, d.\,h.\ für ein stetiges $f\colon I \to \R$ mit~$I \subset \R$ kompakt gibt es $p,q \in I$ mit
+    \begin{equation*}
+        f(p) = \sup f(I) \qquad\text{und}\qquad f(q) = \inf f(I).
+    \end{equation*}
+    Oder mit anderen Worten: Es existieren $p,q \in I$, sodass $f(y) \leq f(x) \leq f(p)$ für alle~$x \in I$ gilt und damit $f(I) = [f(q),f(p)]$.
+\end{theorem}
+
+\begin{remark}
+    Der Satz stimmt für offene/halboffene Intervalle nicht. Bspw.\ ist $f\colon x \mapsto 1/x$ auf~$I = (0, 1]$ definiert, wobei $I$~beschränkt ist. Aber $f(I) = [1,\infty)$ ist ein \emph{unbeschränktes} Intervall, d.\,h.\ es gibt \underline{kein}~$p \in I$ mit $f(p) = \infty \notin \R$.
+\end{remark}
+
+\begin{proof}[Beweis des Extremwertsatzes]
+    Sei $I$~ein kompaktes Intervall und $f\colon I \to \R$ eine stetige Funktion. Seien $A = \inf f(I)$ und $B = \sup f(I)$ (wobei $A,B \in \exR$). Dann existieren Folgen $(a_n)_n$~und~$(b_n)_n$ in~$I$ mit $f(a_n) \to A$ und $f(b_n) \to B$.\footnote{Leider hat auch hier der Dozent eine Aussage verwendet, die wir noch nicht bewiesen haben: Ist~$M \subset \R$, so gibt es eine Folge~$(a_n)_{n\in\N}$ mit~$a_n \in M$ für alle~$n$ und $a_n \to \sup M$. \emph{Beweis}: Für jedes~$n \in \N$ muss es ein~$a_n \in M$ mit $\sup M - 1/n \leq a_n$ geben; andernfalls wäre $\sup M - 1/n$ eine kleinere obere Schranke als~$\sup M$. Nun gilt auch $a_n \leq \sup M$, also $a_n \to \sup M$ nach dem Sandwichlemma.}
+    
+    Dabei sind die Folgen $(a_n)_n$~und~$(b_n)_n$ beschränkt, da $I$~beschränkt ist. Folglich können wir den Satz von Bolzano-Weierstraß anwenden, sodass $(a_n)_n$~und~$(b_n)_n$ einen Häufungspunkt $q$~bzw.~$p$ besitzen, d.\,h.\ es gibt Teilfolgen $(a_{n_k})_k$~und~$(b_{n_k})_k$ mit $a_{n_k} \to q$ bzw.\ $b_{n_k} \to p$.
+
+    Wegen der Abgeschlossenheit von~$I$ ist $p,q \in I$ und $f$~ist in $p$~und~$q$ definiert. Weil in einer konvergenten Folge jede Teilfolge gegen denselben Grenzwert konvergiert, folgt aus der Stetigkeit von~$f$
+    \begin{gather*}
+        A = \lim_{n\to\infty} f(a_n) = \lim_{n\to\infty} f(a_{n_k}) = f\paren*{\lim_{n\to\infty} a_{n_k}} = f(q)
+        \shortintertext{und analog}
+        B = \lim_{n\to\infty} f(b_{n_k}) = f(p).
+    \end{gather*}
+    Wegen dem Zwischenwertsatz gilt $[f(p),f(q)] \subset f(I) \subset [A,B]$ und damit $f(I) = [f(q),f(p)]$.
+\end{proof}
+
+\begin{definition}[gleichmäßige Stetigkeit]
+    Eine Funktion $f\colon D \to \R$ heißt \emph{gleichmäßig stetig}, falls für jedes~$\eps > 0$ ein~$\delta > 0$ existiert, sodass
+    \begin{equation*}
+        \abs{f(x)-f(x_0)} \leq \eps \qquad\text{für alle } x,x_0 \in D \text{ mit } \abs{x-x_0} \leq \delta
+    \end{equation*}
+    gilt. Oder in Zeichen:
+    \begin{equation*}
+        \forall \eps > 0\colon \exists \delta > 0\colon \forall x,x_0 \in D\colon\quad \abs{x-x_0} \leq \delta \implies \abs{f(x)-f(x_0)} \leq \eps.
+    \end{equation*}
+\end{definition}
+
+\begin{remark}\label{rem:uniformcontinuity}
+    Wenn wir uns die Definition der Stetigkeit
+    \begin{equation*}
+        \forall x_0 \in D\colon \forall \eps > 0\colon \exists \delta > 0\colon \forall x \in D\colon\quad \abs{x-x_0} \leq \delta \implies \abs{f(x)-f(x_0)} \leq \eps
+    \end{equation*}
+    anschauen, so ist das $\forall x_0 \in D$ nach Innen gerutscht. Das bedeutet, dass $\delta$ bei der gleichmäßigen Stetigkeit nur noch von~$\eps$ abhängen darf, wohingegen $\delta$ bei der (punktweisen) Stetigkeit von~$\eps$ und~$x_0$ abhängen durfte.
+
+    Damit ist die gleichmäßge Stetigkeit eine stärkere Bedingung, und sie impliziert auch die einfache Stetigkeit.\footnote{Wir können den Unterschied auch im Sinne von Approximation verstehen: Bei der Stetigkeit können wir für jede Stelle~$x_0$ und jeden Maximalfehler~$\eps$ in den Funktionswerten eine $\delta$"~Umgebung finden, sodass der Fehler in dieser Umgebung kleiner~$\eps$ ist, d.\,h.\ die~$f(x)$ mit~$x \in [x_0-\delta,x_0+\delta]$ approximieren $f(x_0)$ gut. Dabei kann aber die $\delta$"~Umgebung von~$x_0$ abhängen.
+    
+    Bei der gleichmäßigen Stetigkeit haben wir hingegen eine gleichmäßige Approximation: Für jeden Maximalfehler~$\eps$ gibt es ein~$\delta$, sodass wir uns sicher sein können, dass die $\delta$"~Umgebung um \emph{jede Stelle~$x_0$} ausreichend gute Approximation ist.
+    
+    Eine weitere Eigenschaft: Jede Cauchy-Folge bleibt unter einer gleichmäßig stetigen Funktion wieder eine Cauchy-Folge, was wir bei punktweiser Stetigkeit nicht behaupten können.}
+\end{remark}
+
+\begin{theorem}
+    Sei $I$~ein kompaktes Intervall. Dann ist die Funktion $f\colon I \to \R$ genau dann stetig, wenn sie gleichmäßig stetig ist.\footnote{Der Satz ist auch als \emph{Satz von \textsc{Heine}} bekannt.}
+\end{theorem}
+
+\begin{proof}
+    Die Rückrichtung ist trivial (s.~\cref{rem:uniformcontinuity}).
+
+    Die Hinrichtung zeigen wir indirekt: Angenommen $f$~ist nicht gleichmäßig stetig, d.\,h.\ es gibt ein~$\eps > 0$, sodass für jedes~$\delta = 1/n > 0$ Stellen $x_n,y_n \in I$ mit $\abs{x_n-y_n} \leq \delta = 1/n$ und $\abs{f(x_n)-f(y_n)} > \eps$ gibt.
+
+    $(x_n)_n$~und~$(y_n)_n$ sind Folgen in~$I$ und damit beschränkt. Mit dem Satz von Bolzano-Weierstraß gibt es eine Teilfolge~$(x_{n_k})_k$ mit $x_{n_k} \to p \in I$ (ein Häufungspunkt). Aus der Bedingung $\abs{x_n-y_n} \leq 1/n$ folgt $y_{n_k}-x_{n_k} \to 0$, also $y_{n_k} \to p$. Aufgrund Stetigkeit von~$f$ erhalten wir
+    \begin{equation*}
+        f(y_{n_k}) - f(x_{n_k}) \to f(p) - f(p) = 0,
+    \end{equation*}
+    ein Widerspruch zur Annahme $\abs{f(y_{n_k})-f(x_{n_k})} > \eps$ für alle~$k \in \N$.
+\end{proof}
+
+\begin{example}\leavevmode
+    \begin{enumerate}
+        \item Die Funktion $x \mapsto \sin(1/x)$ auf $(0, 1] \subset \R$ ist \emph{nicht} gleichmäßig stetig.
+        \begin{center}
+            \begin{tikzpicture}
+                \draw[->] (0,0) -- (2.5,0);
+                \draw[->] (0,-1.5) -- (0,1.5);
+                \pic at (0,1) {ytick=1};
+                \pic at (0,0) {ytick=0};
+                \pic at (0,-1) {ytick=$-1$};
+                \draw[domain=0.01:1, smooth, samples=2000] plot (2*\x,{sin((1/\x)r)});
+            \end{tikzpicture}
+        \end{center}
+        \item Die Funktion $x \mapsto 1/x$ auf~$I = (0, 1]$ ist zwar stetig, aber nicht gleichmäßig stetig, denn für~$\eps = 1$ gibt es für jedes~$\delta > 0$ Stellen $x = \min\mset{\frac{1}{2},\delta} \in I$ und~$x' = 2x \in I$ mit $\abs{x-x'} = x \leq \delta$, aber $\abs{f(x)-f(x')} = 1/(2x) \geq 1 = \eps$.
+        \item Die \emph{Verteilungsfunktion auf der \textsc{Cantor}-Menge} bzw.\ \emph{\textsc{Cantor}-Verteilung} (auch engl.\ \emph{devil's staircase}) auf~$[0, 1]$ ist gleichmäßig stetig.
+        
+        Die Funktionen wird über die rekursiv definierten Cantor-Mengen konstruiert. Das Intervall~$[0, 1]$ wird gedrittelt, wobei für das mittlere Drittel~$(\frac{1}{3},\frac{2}{3})$ die Funktion den Wert~$\frac{1}{2}$ annimmt. Dann bleiben noch das linke Drittel~$L = [0,\frac{1}{3}]$ und das rechte Drittel~$R = [\frac{2}{3},1]$ übrig. Auf diesen beiden Machen wir dieselbe Konstruktion, wobei das mittlere Drittel von~$L$ den Wert~$\frac{1}{4}$, das mittlere Drittel von~$R$ den Wert~$\frac{3}{4}$ annimmt. Das können wir so fortführen.
+        \begin{center}
+            \begin{tikzpicture}[scale=3]
+                \draw[->] (0,0) -- (1.2,0);
+                \draw[->] (0,0) -- (0,1.2);
+                \pic at (0,0.25) {ytick=$\frac{1}{4}$};
+                \pic at (0,0.5) {ytick=$\frac{1}{2}$};
+                \pic at (0,0.75) {ytick=$\frac{3}{4}$};
+                \pic at (0,1) {ytick=1};
+                \pic at (1/3,0) {xtick=$\frac{1}{3}$};
+                \pic at (2/3,0) {xtick=$\frac{2}{3}$};
+                \pic at (1,0) {xtick=1};
+                \tikzmath{
+                    function cantor(\i, \xstart, \xend, \ymin, \ymax) {
+                        \xleft = \xstart + (\xend-\xstart)/3;
+                        \xright = \xend - (\xend-\xstart)/3;
+                        \ymid = \ymin + (\ymax-\ymin)/2;
+                        {\draw (\xleft,\ymid) -- (\xright,\ymid);};
+                        if (\i > 0) then {
+                            cantor(\i-1,\xstart,\xleft,\ymin,\ymid);
+                            cantor(\i-1,\xright,\xend,\ymid,\ymax);
+                        };
+                    };
+                    cantor(7,0,1,0,1);
+                }
+            \end{tikzpicture}
+        \end{center}
+        Nach dem $k$"~ten Schritt ist kein "`Sprung"' größer als~$2^{-k}$.
+    \end{enumerate}
+\end{example}
+
+\begin{theorem}
+    Sei~$D \subset \R$ ein Intervall und $f\colon D \to \R$ stetig und strikt monoton. Dann bildet~$f$ das Intervall~$D$ bijektiv auf das Intervall~$D' = f(D)$ ab und die Umkehrfunktion $f^{-1}\colon D' \to \R$ ist stetig und strikt monoton.
+\end{theorem}
+
+\begin{proof}
+    Wegen \cref{cor:continuity:interval} ist $D'$~ein Intervall. Weil $f$~strikt monoton, ist es auch injektiv. Zusammen ist also $f\colon D \to D'$ bijektiv. Folglich existiert $f^{-1}\colon D' \to D$ und ist strikt monton, denn für z.\,B.\ monoton wachsende Funktion gilt $x < y \iff f(x) < f(y) \iff f^{-1}(f(x)) < f^{-1}(f(y))$ und analog für monoton fallende.
+
+    Nun müssen wir nur noch die Stetigkeit zeigen, die wir indirekt mittels dem Folgenkriterium zeigen wollen. Angenommen es gäbe eine Stelle~$y \in D'$, in der $f^{-1}$~nicht stetig wäre, d.\,h.\ es gibt eine Folge~$(y_n)_n$ in~$D'$ mit $y_n \to y$, wofür $x_n \coloneqq f^{-1}(y_n) \not\to f^{-1}(y) \eqqcolon x$ gilt. Weil $(y_n)_n$~konvergiert, ist die Folge beschränkt (\cref{thm:bound}). Damit gibt es ein kompaktes Intervall~$f(D_0)$ mit~$D_0 \subset I$, das alle~$y_n$ enthält. Aufgrund der Monotonie muss auch $D_0$~selbst kompakt sein, d.\,h.\ $(x_n)_n$~ist beschränkt. Nach Bolzano-Weierstraß gibt es eine konvergente Teilfolge $x_{n_k} \to \bar{x} \in D_0$ mit~$\bar{x} \neq x$, denn $(x_n)_n$~konvergiert nicht, sodass es mindestens zwei verschiedene Häufungspunkte geben muss. Daraus folgt aufgrund der Stetigkeit von~$f$ nun
+    \begin{equation*}
+        f(\bar{x}) = \lim_{n\to\infty} f(x_{n_k}) = \lim_{n\to\infty} y_{n_k} = y = f(x),
+    \end{equation*}
+    und aufgrund Bijektivität $\bar{x} = x$, ein Widerspruch.
+\end{proof}
+
+\begin{example}
+    Für~$k \in \N$ ist die Potenzfunktion $f\colon \R^+ \to \R^+$, $x \mapsto x^k$ strikt monoton wachsend und stetig. Sie bildet $\R^+$ also bijektiv auf~$\R^+$ ab. Die Umkehrfunktion ist die $k$"~te Wurzel $x \mapsto x^{1/k} = \sqrt[k]{x}$.
+
+    Für ungerade~$k$ ist $x \mapsto x^k$ auf ganz~$\R$ strikt monoton. Somit können wir $x \mapsto x^{1/k}$ auf ganz~$\R$ definieren.
+    \begin{center}
+        \begin{tikzpicture}[baseline=(current bounding box.base)]
+            \draw[->] (-0.5,0) -- (2,0) node[below] {$x$};
+            \draw[->] (0,-0.5) -- (0,2.5) node[left] {$y$};
+            \draw[domain=0:1.5, smooth] plot (\x,\x^2) node[right] {$x^2$};
+        \end{tikzpicture}
+        \hspace*{0.4cm}
+        \begin{tikzpicture}[baseline=(current bounding box.base)]
+            \draw[->] (-0.5,0) -- (2.5,0) node[below] {$x$};
+            \draw[->] (0,-0.5) -- (0,2) node[left] {$y$};
+            \draw[domain=0:1.5, smooth] plot (\x^2,\x) node[above] {$x^{1/2}$};
+        \end{tikzpicture}
+        \hspace*{0.4cm}
+        \begin{tikzpicture}[baseline=(current bounding box.base)]
+            \draw[->] (-1.7,0) -- (1.7,0) node[below] {$x$};
+            \draw[->] (0,-2.5) -- (0,2.5) node[left] {$y$};
+            \draw[domain=-1.3:1.3, smooth] plot (\x,\x^3) node[right] {$x^3$};
+        \end{tikzpicture}
+        \hspace*{0.4cm}
+        \begin{tikzpicture}[baseline=(current bounding box.base)]
+            \draw[->] (-2.5,0) -- (2.5,0) node[below] {$x$};
+            \draw[->] (0,-1.7) -- (0,1.7) node[left] {$y$};
+            \draw[domain=-1.3:1.3, smooth] plot (\x^3,\x) node[above] {$x^{1/3}$};
+        \end{tikzpicture}
+    \end{center}
+\end{example}
+
+\lecturesep{15.~Dezember 2021}
 
 \newpage\appendix
 
