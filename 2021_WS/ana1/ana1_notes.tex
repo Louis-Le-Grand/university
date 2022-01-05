@@ -3151,7 +3151,7 @@ In der komplexen Zahlenebene entspricht die Konjugation der Spiegelung an der $x
         \item $\abs{\real(z)} \leq \abs{z}$ und $\abs{\imag(z)} \leq \abs{z}$.
         \item $\abs{z+w} \leq \abs{z}+\abs{w}$ \emph{(Dreiecksungleichung)}.
         \item $\abs{zw} = \abs{z}\cdot\abs{w}$.
-        \item $1/z = \conj{z}/\abs{z}$ für~$z \neq 0$.
+        \item $1/z = \conj{z}/\abs{z}^2$ für~$z \neq 0$.
     \end{enumerate}
 \end{lemma}
 
@@ -3258,7 +3258,7 @@ D.\,h.\ wir können sehr leicht mit komplexen Zahlenfolgen umgehen, wenn wir die
 
               Für die Hinrichtung seien $a_n \to a$ und $b_n \to b$. Für jedes~$\eps > 0$ gibt es also ein~$N_a \in \N$, sodass $\abs{a_n-a} \leq \eps$ für alle~$n \geq N_a$ gilt, und ein~$N_b \in \N$, sodas $\abs{b_n-b} \leq \eps$ für alle~$n \geq N_b$ gilt. Setzen wir nun $N \coloneqq \max\mset{N_a,N_b}$, dann gilt mit der Betragsdefinition für alle~$n \geq N$
               \begin{equation*}
-                  \abs{c_n-c}^2 = \abs{a_n-a}^2 + \abs{b_n-b}^2 \leq 2\eps \implies \abs{c_n-c} \leq \sqrt{2\eps}.
+                  \abs{c_n-c}^2 = \abs{a_n-a}^2 + \abs{b_n-b}^2 \leq 2\eps^2 \implies \abs{c_n-c} \leq \eps\sqrt{2}.
               \end{equation*}
               Damit konvergiert~$(c_n)_n$ gegen~$c \in \C$.
         \item Der Beweis erfolgt identisch, indem wir $c$~durch~$c_m$ an jeder Stelle des Beweises ersetzen.\qedhere
@@ -3380,7 +3380,7 @@ Die Umkehrung gilt hingegen (wie in den reellen Zahlen) \underline{nicht}.
     \begin{enumerate}
         \item \emph{Restgliedabschätzung}: Für alle~$N \in \N$ und für~$z \in \C$ mit~$\abs{z} \leq 1+\frac{1}{2}\abs{N}$ gilt
               \begin{equation*}
-                  \abs*{\exp(z) - \sum_{n=0}^\infty \frac{z^n}{n!}} \leq 2\frac{\abs{z}^{N+1}}{(N+1)!}.
+                  \abs*{\exp(z) - \sum_{n=0}^N \frac{z^n}{n!}} \leq 2\frac{\abs{z}^{N+1}}{(N+1)!}.
               \end{equation*}\label{prop:exp:1}
         \item \emph{Funktionalgleichung}: Für alle $z, w \in \C$ gilt
               \begin{equation*}

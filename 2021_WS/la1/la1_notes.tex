@@ -56,7 +56,9 @@ Wir wollen uns mit einer sehr naiven, aber für unsere Zwecke ausreichenden, Men
     \end{itemize}
 \end{notation}
 
-Die Reihenfolge und Vielfachheit der Elemente in der Aufzählung von Mengen ist egal. Deshalb ist $\mset{1, 2, 3} = \mset{2, 1, 3} = \mset{1, 1, 3, 2, 3}$.
+\begin{remark}
+    Die Reihenfolge und Vielfachheit der Elemente in der Aufzählung von Mengen ist egal. Deshalb ist $\mset{1, 2, 3} = \mset{2, 1, 3} = \mset{1, 1, 3, 2, 3}$.
+\end{remark}
 
 \begin{definition}[Teilmenge]
     Seien $A$~und~$B$ Mengen. Dann ist
@@ -124,14 +126,18 @@ Weiterhin definieren wir
     das \emph{$n$"~fache \textsc{kartesische} Produkt} von~$A$.
 \end{definition}
 
-Zwei Tupel sind gleich, wenn sie gleich viele \emph{Einträge} bzw.\ \emph{Komponenten} haben und wenn an jeder Stelle die Komponenten gleich sind.
+\begin{remark}
+    Zwei Tupel sind gleich, wenn sie gleich viele \emph{Einträge} bzw.\ \emph{Komponenten} haben und wenn an jeder Stelle die Komponenten gleich sind.
+\end{remark}
 
-Die $n$"~Tupel $(a_1, a_2, \dots, a_n)$ schreiben wir oft auch senkrecht auf:
-\begin{equation*}
-    \begin{pmatrix}
-        a_1 \\ a_2 \\ \vdots \\ a_n
-    \end{pmatrix}
-\end{equation*}
+\begin{notation}
+    Die $n$"~Tupel $(a_1, a_2, \dots, a_n)$ schreiben wir oft auch senkrecht auf:
+    \begin{equation*}
+        \begin{pmatrix}
+            a_1 \\ a_2 \\ \vdots \\ a_n
+        \end{pmatrix}
+    \end{equation*}
+\end{notation}
 
 \begin{example}
     Sind $A$,~$B$ und~$C$ Mengen, dann sind die Elemente in~$A \times B \times C$ 3"~Tupel der Form $(a, b, c)$, während die Elemente in~$(A \times B) \times C$ 2"~Tupel der Form $((a, b), c)$.
@@ -208,31 +214,38 @@ Das Beweisprinzip ist, das Gegenteil der Behauptung anzunehmen und das auf einen
 
 \subsubsection{Gleichheit von Mengen}
 
-Zwei Mengen sind \emph{gleich}, wenn sie dieselben Elemente besitzen.
+\begin{remark}
+    Zwei Mengen sind \emph{gleich}, wenn sie dieselben Elemente besitzen.
+\end{remark}
 
-Seien $A$~und~$B$ zwei Mengen. Um zu beweisen, dass~$A=B$ ist, muss man 1.~$A \subseteq B$ und 2.~$B \subseteq A$ zeigen. Der Beweis ist im Regelfall also zweiteilig!
+Seien $A$~und~$B$ zwei Mengen. Um zu beweisen, dass~$A=B$ ist, muss man zum Einen~$A \subseteq B$ und zum Anderen~$B \subseteq A$ zeigen. Der Beweis ist im Regelfall also zweiteilig!
 
 \subsection{Abbildungen}
 
 Die Idee hinter Abbildungen ist es, Mengen in Beziehung zu setzen.\footnote{Eigentlich sind es die \emph{Relationen} die das erfüllen, wovon Abbildungen eine spezielle Form sind.}
 
 \begin{definition}[Abbildung]
-    Seien $X$~und~$Y$ Mengen. Eine \emph{Abbildung}~$f$ von~$X$ nach~$Y$ ist eine Vorschrift, durch die jedem~$x \in X$ genau ein~$f(x) \in Y$ zugeordnet wird.\footnote{Die Menge~$X$ bezeichnen wir als \emph{Urbild} und $Y$~als \emph{Zielmenge}. Die Elemente aus~$X$ heißen \emph{Urbilder} oder \emph{Argumente}, die Elemente aus~$Y$ heißen \emph{Zielelemente}. Die tatsächlich angenommen Werte nennen wir \emph{Bilder} oder schlicht \emph{Werte}, und deren Menge auch \emph{Bild}.}
+    Seien $X$~und~$Y$ Mengen. Eine \emph{Abbildung}~$f$ von~$X$ nach~$Y$ ist eine Vorschrift, durch die jedem~$x \in X$ genau ein~$f(x) \in Y$ zugeordnet wird.\footnote{Die Menge~$X$ bezeichnen wir als \emph{Definitionsmenge} und $Y$~als \emph{Zielmenge}. Die Elemente aus~$X$ heißen \emph{Urbilder} oder \emph{Argumente}, die Elemente aus~$Y$ heißen \emph{Zielelemente}. Die tatsächlich angenommen Werte nennen wir \emph{Bilder} oder schlicht \emph{Werte}, und deren Menge auch \emph{Bild} oder \emph{Bildmenge}.}
 \end{definition}
 
-Jedes~$x$ wird genau einem~$f(x)$ zugeordnet. Trotzdem ist es möglich, dass verschiedene~$x$ demselben~$f(x)$ zugeordnet werden.
+\begin{remark}
+    Jedes~$x$ wird genau einem~$f(x)$ zugeordnet. Trotzdem ist es möglich, dass verschiedene~$x$ demselben~$f(x)$ zugeordnet werden.
+\end{remark}
 
-Zwei Abbildungen sind gleich, wenn sie dieselben Definitions"~ und Zielmengen haben sowie elementweise bzw.\ punktweise gleich sind (d.\,h.\ deren Vorschrift dasselbe macht).
+\begin{remark}
+    Zwei Abbildungen sind gleich, wenn sie dieselben Definitions"~ und Zielmengen haben sowie elementweise bzw.\ punktweise gleich sind (d.\,h.\ deren Vorschrift dasselbe macht).
+\end{remark}
 
 \begin{notation}
     Wir schreiben $f\colon X \to Y$, $x \mapsto f(x)$. Dabei verwenden wir~$\to$ zwischen Mengen und~$\mapsto$ zwischen Elementen.
 \end{notation}
 
-\begin{definition}
+\begin{definition}[Menge aller Abbildungen]
     Seien $X$~und~$Y$ Mengen. Dann ist $\map(X, Y)$~die \emph{Menge aller Abbildungen} von~$X$ nach~$Y$.
 \end{definition}
 
-\begin{example} Die Abbildung $f\colon \Z \to \N$, $x \mapsto x^2$ bildet jedes~$x \in \Z$ auf~$x^2 \in \N$ ab.
+\begin{example}
+    Die Abbildung $f\colon \Z \to \N$, $x \mapsto x^2$ bildet jedes~$x \in \Z$ auf~$x^2 \in \N$ ab.
 \end{example}
 
 \begin{definition}[Identität]
@@ -271,7 +284,7 @@ Es gilt also
     Es gilt dann $f^{-1} \circ f = \id_X$ und $f \circ f^{-1} = \id_Y$.
 \end{definition}
 
-Umkehrabbildungen kann es nur für Bijektionen geben. Da auch~$f^{-1}$ eine Abbildung sein soll und Abbildungen jedem~$y \in Y$ \emph{genau ein}~$x \in X$ zuordnet, müssen wir die Injektivität von~$f$ voraussetzen. Dann sind nämlich $f^{-1}(f(x_1))$ und~$f^{-1}(f(x_2))$ für~$x_1, x_2 \in X$ und~$x_1 \neq x_2$ auch unterschiedlich. Da~$f^{-1}$ von~$Y$ nach~$X$ abbilden soll, muss $f^{-1}(y)$ für alle~$Y$ definiert werden, weshalb wir notwendigerweise die Surjektivität voraussetzen müssen. Dann gibt es für jedes~$y \in Y$ ein~$x \in X$ mit~$y = f(x)$, sodass $f^{-1}(y) = x$ wohldefiniert\footnote{Der Begriff \emph{wohldefiniert} meint, dass ein Begriff eindeutig und widerspruchsfrei definiert ist, also weder unmöglich noch mehrdeutig ist.} ist.
+Umkehrabbildungen kann es nur für Bijektionen geben. Da auch~$f^{-1}$ eine Abbildung sein soll und Abbildungen jedem~$y \in Y$ \emph{genau ein}~$x \in X$ zuordnet, müssen wir die Injektivität von~$f$ voraussetzen. Dann sind nämlich $f^{-1}(f(x_1))$ und~$f^{-1}(f(x_2))$ für~$x_1, x_2 \in X$ mit~$x_1 \neq x_2$ auch unterschiedlich. Da~$f^{-1}$ von~$Y$ nach~$X$ abbilden soll, muss $f^{-1}(y)$ für alle~$Y$ definiert werden, weshalb wir die Surjektivität voraussetzen müssen. Dann gibt es für jedes~$y \in Y$ ein~$x \in X$ mit~$y = f(x)$, sodass $f^{-1}(y) = x$ wohldefiniert\footnote{Der Begriff \emph{wohldefiniert} meint, dass ein Begriff eindeutig und widerspruchsfrei definiert ist, also weder unmöglich noch mehrdeutig ist.} ist.
 
 Auch die Komposition der Abbildung und dessen Umkehrung ergibt Sinn: $f^{-1} \circ f$~bildet von~$X$ nach~$Y$ und wieder nach~$X$ ab, und $f \circ f^{-1}$ bildet von~$Y$ nach~$X$ und wieder nach~$Y$ ab.
 
@@ -284,7 +297,7 @@ Auch die Komposition der Abbildung und dessen Umkehrung ergibt Sinn: $f^{-1} \ci
         \item $f\colon \Z \to \Z$ mit $2n \mapsto n$ und $2n+1 \mapsto n$ (für~$n \in \Z$) ist surjektiv, aber nicht injektiv.
         \item Seien $X$~und~$Y$ zwei endliche Mengen mit gleich vielen Elementen. Dann ist die Abbildung $f\colon X \to Y$ genau dann injektiv, wenn $f$~surjektiv ist.
         \item Die Abbildung $f\colon \mset{\text{Menschen in Bonn}} \to \N$ definiert durch $x \mapsto \text{Alter}(x)$ ist weder surjektiv (Menschen werden nicht beliebig alt) noch injektiv (zwei Menschen können dasselbe Alter haben).
-        \item Für ein fixiertes $(a, b, c, d) \in \Q^4$ definieren wir $f\colon \Q^2 \to \Q^2$, $(x, y) \mapsto (ax+by, cx+dy)$. Die Abbildung $f$~ist genau dann bijektiv, wenn $ad-bc \neq 0$ gilt. Außerdem ist $f$ genau dann injektiv, wenn $f$~surjektiv ist. (Der Beweis dafür erfolgt später.)
+        \item Für ein fixiertes $(a, b, c, d) \in \Q^4$ definieren wir $f\colon \Q^2 \to \Q^2$, $(x, y) \mapsto (ax+by, cx+dy)$. Die Abbildung $f$~ist genau dann bijektiv, wenn $ad-bc \neq 0$ gilt. Außerdem ist $f$ genau dann injektiv, wenn $f$~surjektiv ist. (Der Beweis dafür erfolgt später.)\footnote{Das ist das Matrix-Vektor-Produkt, wobei $a,b,c,d$ die Einträge einer Matrix~$A \in \Q^{2, 2}$ ist und $x,y$ die Einträge eines Vektors~$v$. Dann ist $A$~genau dann ein Isomorphismus, wenn $A$~invertierbar ist, also $ad-bc \neq 0$. Genauso ist eine quadratische Matrix genau dann ein Monomorphismus, wenn sie ein Epimorphismus ist.}
     \end{enumerate}
 \end{example}
 
@@ -303,9 +316,9 @@ Auch die Komposition der Abbildung und dessen Umkehrung ergibt Sinn: $f^{-1} \ci
 \begin{example}\label{ex:map:setisoproduct}
     Für $I = \mset{1, \dots, n}$ ist die Abbildung $M^I \to M^n$, $f \mapsto (f(1), \dots, f(n))$ bijektiv, wobei $M^n$~bekanntlich das $n$"~fache kartesische Produkt bezeichnet.
 
-    \emph{Achtung}: Die hier beschriebene Abbildung bildet \emph{Abbildungen}~$f$ auf \emph{$n$"~Tupel derer Werte} ab.
+    Offensichtlich haben alle~$f \in M^I$ dieselben Definitions"~ und Zielmengen. Dann sind zwei Abbildungen genau dann gleich, wenn sie für jedes Argument denselben Wert liefern, d.\,h.\ wenn die Tupel ihrer Werte gleich sind. Andersherum definiert jedes Tupel eine Abbildung, denn es gibt alle möglichen Zuordnungen $I \to M$ an.\footnote{In fortgeschrittener Sprache: Die Abbildung ist ein \emph{Mengenisomorphismus}, also ein bijektiver Homomorphismus, der die Mengenstruktur (auch wenn sehr banal) erhält.}
 
-    Offensichtlich haben alle~$f \in M^I$ dieselben Definitions"~ und Zielmengen. Dann sind zwei Abbildungen genau dann gleich, wenn sie für jedes Argument denselben Wert liefern, d.\,h.\ wenn die Tupel ihrer Werte gleich sind.
+    \emph{Achtung}: Die hier beschriebene Abbildung bildet \emph{Abbildungen}~$f$ auf \emph{$n$"~Tupel derer Werte} ab.
 \end{example}
 
 \begin{definition}[Bild, Urbild einer Menge]
@@ -319,7 +332,7 @@ Auch die Komposition der Abbildung und dessen Umkehrung ergibt Sinn: $f^{-1} \ci
 \emph{Warnung}: Die Schreibweise~$f^{-1}(B)$ impliziert nicht, dass eine Umkehrabbildung existiert.
 
 \begin{remark}
-    Wir beachten, dass das nicht jedes~$y \in B$ ein Urbild~$\in f^{-1}(B)$ haben muss, ähnlich wie eine Abbildung nicht surjektiv sein muss. Genauso kann es mehrere Urbilder~$x_1, x_2 \in f^{-1}(B)$ zu einem Bild~$y$ mit $f(x_1) = f(x_2) = y$ geben.
+    Wir beachten, dass das nicht jedes~$y \in B$ ein Urbild~$\in f^{-1}(B)$ haben muss, ähnlich wie eine Abbildung nicht surjektiv sein muss. Genauso kann es mehrere Urbilder~$x_1, x_2 \in f^{-1}(B)$ mit~$x_1 \neq x_2$ zu einem Bild~$y$ mit $f(x_1) = f(x_2) = y$ geben, ähnlich wie eine Abbildung nicht injektiv sein muss.
 \end{remark}
 
 \begin{definition}[Graph]
@@ -329,12 +342,16 @@ Auch die Komposition der Abbildung und dessen Umkehrung ergibt Sinn: $f^{-1} \ci
     \end{equation*}
 \end{definition}
 
-Damit können wir den Begriff der Abbildung mengentheoretisch definieren. Seien $X$~und~$Y$ Mengen, und sei $\Gamma \subseteq X \times Y$ (eine Relation) eine Menge von Paaren mit den folgenden Eigenschaften:
-\begin{enumerate}
-    \item Für jedes~$x \in X$ gibt es ein~$y \in Y$ mit $(x, y) \in \Gamma$ (jedem Urbild wird ein Bild zugeordnet).
-    \item Falls $(x, y_1), (x, y_2) \in \Gamma$, so ist~$y_1 = y_2$ (das Bild eines Urbilds ist eindeutig).
-\end{enumerate}
-Damit definieren wir eine \emph{Abbildung} $f_\Gamma\colon X \to Y$ durch~$f_\Gamma(x) \coloneqq y$ für jedes $(x, y) \in \Gamma$. Offensichtlich gilt für den Graphen~$\Gamma(f_\Gamma) = \Gamma$.
+Der Graph ist also eine "`Zeichnung"' der Funktion, also die Menge aller Punkte der "`Ebene"', die zur Funktion "`gehören"'.
+
+\begin{remark}
+    Damit können wir den Begriff der Abbildung mengentheoretisch definieren. Seien $X$~und~$Y$ Mengen, und sei $\Gamma \subseteq X \times Y$ (eine Relation) eine Menge von Paaren mit den folgenden Eigenschaften:
+    \begin{enumerate}
+        \item Für jedes~$x \in X$ gibt es ein~$y \in Y$ mit $(x, y) \in \Gamma$ (jedem Urbild wird ein Bild zugeordnet).
+        \item Falls $(x, y_1), (x, y_2) \in \Gamma$, so ist~$y_1 = y_2$ (das Bild eines Urbilds ist eindeutig).
+    \end{enumerate}
+    Damit definieren wir eine \emph{Abbildung} $f_\Gamma\colon X \to Y$ durch~$f_\Gamma(x) \coloneqq y$ für jedes $(x, y) \in \Gamma$. Offensichtlich gilt für den Graphen~$\Gamma(f_\Gamma) = \Gamma$.
+\end{remark}
 
 \subsection{Übungsaufgaben}
 
@@ -441,7 +458,7 @@ Seien $X$~und~$Y$ Mengen. Beweisen Sie die Äquivalenz folgender Aussagen:
 
 \section{Körper}
 
-Auch \emph{Rechenbereich} genannt. Körper verallgemeinern und abstrahieren die uns gewohnten rationalen Zahlen und deren Rechenoperationen. Dennoch sollten wir uns ab sofort von den uns bekannten Beispielen lösen, da die in der (linearen) Algebra betrachteten Objekte sehr abstrakt werden und nicht unbedingt analog zu unserem Vorwissen funktionieren.
+Auch \emph{Rechenbereich} genannt. Körper verallgemeinern und abstrahieren die uns gewohnten rationalen oder reellen Zahlen und deren Rechenoperationen. Dennoch sollten wir uns ab sofort von den uns bekannten Beispielen lösen, da die in der (linearen) Algebra betrachteten Objekte sehr abstrakt werden und nicht unbedingt analog zu unserem Vorwissen funktionieren.
 
 \subsection{Körperaxiome}
 
@@ -452,27 +469,35 @@ Auch \emph{Rechenbereich} genannt. Körper verallgemeinern und abstrahieren die 
     \end{equation*}
     \emph{Addition} bzw.\ \emph{Multiplikation} genannt, sodass folgende Regeln (Axiome) gelten:
     \begin{enumerate}[leftmargin=*, widest=(M0)]
-        \item[(A1)] $a+(b+c) = (a+b)+c$ für alle $a, b, c \in K$ (\emph{Assoziativität der Addition});\label{ax:field:aa}
-        \item[(A2)] $a+b = b+a$ für alle $a, b \in K$ (\emph{Kommutativität der Addition});\label{ax:field:ac}
-        \item[(A3)] Es existiert ein Element $0 = 0_K \in K$ mit $a+0 = a$ für alle~$a \in K$ (Existenz eines \emph{Nullelements});\label{ax:field:an}
-        \item[(A4)] Zu jedem~$a \in K$ gibt es ein~$-a \in K$ mit $a+(-a) = 0$ (Existenz eines \emph{additiven Inversen});\label{ax:field:ai}
-        \item[(M1)] $a\cdot(b\cdot c) = (a\cdot b)\cdot c$ für alle $a, b, c \in K$ (\emph{Assoziativität der Multiplikation});\label{ax:field:ma}
-        \item[(M2)] $a\cdot b = b\cdot a$ für alle $a, b \in K$ (\emph{Kommutativität der Multiplikation});\label{ax:field:mc}
-        \item[(M3)] Es existiert ein Element $1 = 1_K \in K$ mit~$1 \neq 0$ und $1\cdot a = a$ für alle~$a \in K$ (Existenz eines \emph{Einselements});\label{ax:field:mn}
-        \item[(M4)] Zu jedem~$a \in K$ mit~$a \neq 0$ gibt es ein~$a^{-1} \in K$ mit~$a\cdot a^{-1} = 1$ (Existenz des \emph{multiplikativen Inversen});\label{ax:field:mi}
-        \item[(D)] $(a+b)\cdot c = (a\cdot c)+(b\cdot c)$ für alle $a, b, c \in K$ (\emph{Distributivität}).\label{ax:field:d}
+        \refitem[(A1)] $a+(b+c) = (a+b)+c$ für alle $a, b, c \in K$ (\emph{Assoziativität der Addition});\label{ax:field:aa}
+        \refitem[(A2)] $a+b = b+a$ für alle $a, b \in K$ (\emph{Kommutativität der Addition});\label{ax:field:ac}
+        \refitem[(A3)] Es existiert ein Element $0 = 0_K \in K$ mit $a+0 = a$ für alle~$a \in K$ (Existenz eines \emph{Nullelements});\label{ax:field:an}
+        \refitem[(A4)] Zu jedem~$a \in K$ gibt es ein~$-a \in K$ mit $a+(-a) = 0$ (Existenz eines \emph{additiven Inversen});\label{ax:field:ai}
+        \refitem[(M1)] $a\cdot(b\cdot c) = (a\cdot b)\cdot c$ für alle $a, b, c \in K$ (\emph{Assoziativität der Multiplikation});\label{ax:field:ma}
+        \refitem[(M2)] $a\cdot b = b\cdot a$ für alle $a, b \in K$ (\emph{Kommutativität der Multiplikation});\label{ax:field:mc}
+        \refitem[(M3)] Es existiert ein Element $1 = 1_K \in K$ mit~$1 \neq 0$ und $1\cdot a = a$ für alle~$a \in K$ (Existenz eines \emph{Einselements});\label{ax:field:mn}
+        \refitem[(M4)] Zu jedem~$a \in K$ mit~$a \neq 0$ gibt es ein~$a^{-1} \in K$ mit~$a\cdot a^{-1} = 1$ (Existenz des \emph{multiplikativen Inversen});\label{ax:field:mi}
+        \refitem[(D)] $(a+b)\cdot c = (a\cdot c)+(b\cdot c)$ für alle $a, b, c \in K$ (\emph{Distributivität}).\label{ax:field:d}
     \end{enumerate}
 \end{definition}
 
-Dabei steht der Ausdruck~$a+b$ eigentlich für~$+\bigl((a, b)\bigr)$ und~$a\cdot b$ für~$\cdot\bigl((a, b)\bigr)$. Streng genommen müssten wir z.\,B.\ die Assoziativität der Addition~\ref{ax:field:aa} als
-\begin{equation*}
-    a+(b+c) = (a+c)+b \quad\longrightarrow\quad  +\Bigl(\!\bigl(a, +\bigl((b, c)\bigr)\bigr)\!\Bigr) = +\Bigl(\!\bigl(+\bigl((a, b)\bigr), c\bigr)\!\Bigr)
-\end{equation*}
-und die Kommutativität der Addition~\ref{ax:field:ac} als
-\begin{equation*}
-    a+b = b+a \quad\longrightarrow\quad +\bigl((a, b)\bigr) = +\bigl((b, a)\bigr)
-\end{equation*}
-schreiben.
+Oftmals lassen wir den Index~$K$ wie in $0_K$~und~$1_K$ weg, wenn der Kontext klar ist. Manchmal schreiben wir ihn aber hinzu, um zu verdeutlichen, dass sie zum Körper~$K$ gehören.
+
+\begin{remark}
+    Wir setzen $1 \neq 0$ voraus, d.\,h.\ ein Körper hat mindestens zwei Elemente.\footnote{Traditionell wird in der Algebra $1 \neq 0$ definiert. Es gibt aber "`esoterische"' Konzepte eines einelementigen Körpers~$\F_1$, d.\,h.\ $1 = 0$, was aber einige Körpereigenschaften verliert.}
+\end{remark}
+
+\begin{remark}
+    Dabei steht der Ausdruck~$a+b$ eigentlich für~$+\bigl((a, b)\bigr)$ und~$a\cdot b$ für~$\cdot\bigl((a, b)\bigr)$. Streng genommen müssten wir z.\,B.\ die Assoziativität der Addition~\ref{ax:field:aa} als
+    \begin{equation*}
+        a+(b+c) = (a+c)+b \quad\longrightarrow\quad  +\Bigl(\!\bigl(a, +\bigl((b, c)\bigr)\bigr)\!\Bigr) = +\Bigl(\!\bigl(+\bigl((a, b)\bigr), c\bigr)\!\Bigr)
+    \end{equation*}
+    und die Kommutativität der Addition~\ref{ax:field:ac} als
+    \begin{equation*}
+        a+b = b+a \quad\longrightarrow\quad +\bigl((a, b)\bigr) = +\bigl((b, a)\bigr)
+    \end{equation*}
+    schreiben.
+\end{remark}
 
 \begin{notation}\label{not:field:convention}
     Neben diesen Axiomen führen wir noch einige Konventionen ein.
@@ -509,23 +534,23 @@ Ab sofort meinen wir mit~$K$ immer einen Körper mit den Operationen $+$~und~$\c
 \end{example}
 
 \begin{example}
-    Sei $K \coloneqq \mset{a, b}$ mit~$a \neq b$. Wir definieren die Abbildungen $+\colon K \times K \to K$ und $\cdot\colon K \times K \to K$ durch
+    Sei $K \coloneqq \mset{a, b}$ mit~$a \neq b$. Wir definieren die Abbildungen $+\colon K \times K \to K$ und $\cdot\colon K \times K \to K$ durch\footnote{Die Abbildungen ähneln der Addition und Multiplikation modulo~2.}
     \begin{align*}
         a + a &= a, & a + b &= b, & b + a &= b, & b + b &= a, \\
         a \cdot a &= a, & a \cdot b &= a, & b \cdot a &= a, & b \cdot b &= b.
     \end{align*}
-    $K$~erfüllt alle Axiome eines Körpers, wobei das Nullelement~$0_K = a$ und das Einselement~$1_K = b$ ist, also $K = \F_2 \coloneqq \mset{0, 1}$. Der Körper ist der kleinstmögliche Körper (jeder Körper muss mindestens 0~und~1 enthalten). Tatsächlich ist der Körper sogar eindeutig, was wir aber nicht beweisen werden.\footnote{Die Abbildungen ähneln der Addition und Multiplikation modulo~2.}
+    $K$~erfüllt alle Axiome eines Körpers, wobei das Nullelement~$0_K = a$ und das Einselement~$1_K = b$ ist, also $K = \F_2 \coloneqq \mset{0, 1}$. Der Körper ist der kleinstmögliche Körper (jeder Körper muss mindestens 0~und~1 enthalten). Tatsächlich ist der Körper sogar eindeutig, was wir aber nicht beweisen werden.
 \end{example}
 
 \begin{example}
-    Sei~$K \coloneqq \Q(\sqrt{2}) \coloneqq \mset{a+b\sqrt{2} \mid a, b \in \Q} \subset \R$. Wir definieren die Abbildungen $+\colon K \times K \to K$ und $\cdot\colon K \times K \to K$ als Einschränkung von $+\colon \R \times \R \to \R$ und $\cdot\colon \R \times \R \to \R$ (d.\,h.\ die Abbildungen sind dieselben aus~$\R$ bis auf den kleineren Definitionsbereich). Insbesondere heißt das
+    Sei~$K \coloneqq \Q(\sqrt{2}) \coloneqq \mset{a+b\sqrt{2} \mid a, b \in \Q} \subset \R$.\footnote{Das ist eine sog.\ Körperadjunktion bzw.\ Körpererweiterung} Wir definieren die Abbildungen $+\colon K \times K \to K$ und $\cdot\colon K \times K \to K$ als Einschränkung von $+\colon \R \times \R \to \R$ und $\cdot\colon \R \times \R \to \R$ (d.\,h.\ die Abbildungen sind dieselben aus~$\R$ bis auf den kleineren Definitionsbereich). Insbesondere heißt das
     \begin{gather*}
         (a+b\sqrt{2}) + (c+d\sqrt{2}) \coloneqq (a+c) + (b+d)\sqrt{2}
         \shortintertext{und}
         (a+b\sqrt{2}) \cdot (c+d\sqrt{2}) \coloneqq (ac+2bd) + (ad+bc)\sqrt{2}.
     \end{gather*}
 
-    Die meisten Körperaxiome sind offensichtlich erfüllt. Für~\ref{ax:field:mi} stellt sich jedoch die Frage, ob $(a+b\sqrt{2})^{-1} \in K$ für alle~$a+b\sqrt{2} \neq 0$ existiert. Antwort: Ja, denn
+    Die meisten Körperaxiome sind offensichtlich erfüllt. Für~\ref{ax:field:mi} stellt sich jedoch die Frage, ob $(a+b\sqrt{2})^{-1} \in K$ für alle~$a+b\sqrt{2} \neq 0$ existiert. \emph{Antwort}: Ja, denn
     \begin{gather*}
         (a+b\sqrt{2}){-1} \coloneqq \frac{a}{a^2-2b^2} + \frac{-b}{a^2-2b^2} \sqrt{2}
         \shortintertext{mit}
@@ -537,7 +562,7 @@ Ab sofort meinen wir mit~$K$ immer einen Körper mit den Operationen $+$~und~$\c
 
 \subsection{Rechenregeln in Körpern}
 
-\begin{lemma}
+\begin{lemma}[Linksdistributivität]
     Es gilt $a(b+c) = ac+ac$ für alle $a, b, c \in K$.
 \end{lemma}
 
@@ -545,7 +570,7 @@ Ab sofort meinen wir mit~$K$ immer einen Körper mit den Operationen $+$~und~$\c
     Es gilt $a(b+c) \overset{\text{\ref{ax:field:mc}}}{=} (b+c)a \overset{\text{\ref{ax:field:d}}}{=} ba+ca \overset{\text{\ref{ax:field:mc}}}{=} ab+ac$.
 \end{proof}
 
-\begin{lemma}
+\begin{lemma}[Eindeutigkeit der Null]
     Es gibt nur ein Nullelement in einem Körper.
 \end{lemma}
 
@@ -561,7 +586,7 @@ Ab sofort meinen wir mit~$K$ immer einen Körper mit den Operationen $+$~und~$\c
     Sei~$a \in K$. Dann gelten
     \begin{gather}
         0a \overset{\text{\ref{ax:field:an}}}{=} (0+0)a \overset{\text{\ref{ax:field:d}}}{=} 0a + 0a, \label{eqn:fieldprop:timeszero}\\
-        0 \overset{\text{\ref{ax:field:ai}}}{=} 0a + (-(0a)) \overset{\text{\eqref{eqn:fieldprop:timeszero}}}{=} (0a + 0a) + (-(0a)) \overset{\text{\ref{ax:field:aa}}}{=} 0a + (0a + (-(0a))) \overset{\text{\ref{ax:field:ai}}}{=} 0a + 0 \overset{\text{\ref{ax:field:an}}}{=} 0a.\qedhere\notag
+        0 \overset{\text{\ref{ax:field:ai}}}{=} 0a + (-(0a)) \overset{\text{\eqref{eqn:fieldprop:timeszero}}}{=} (0a + 0a) + (-(0a)) \overset{\text{\ref{ax:field:aa}}}{=} 0a + (0a + (-(0a))) \overset{\text{\ref{ax:field:ai}}}{=} 0a + 0 \overset{\text{\ref{ax:field:an}}}{=} 0a. \tag*{\qedhere}
     \end{gather}
 \end{proof}
 
@@ -591,7 +616,7 @@ In den Übungsaufgaben werden wir noch eine Vielzahl weiterer Regeln beweisen.
 \end{lemma}
 
 \begin{proof}
-    Angenommen $p$ ware keine Primzahl, sodass es $p_1, p_2 \in \N$ mit $p_1, p_2 \geq 2$ und $p = p_1p_2$ gibt. Aus der Minimalität der Charakteristik folgt $p_1 \cdot 1_K \neq 0$ und $p_2 \cdot 1_K \neq 0$. Damit gilt
+    Angenommen $p$~wäre keine Primzahl, sodass es $p_1, p_2 \in \N$ mit $p_1, p_2 \geq 2$ und $p = p_1p_2$ gibt. Aus der Minimalität der Charakteristik folgt $p_1 \cdot 1_K \neq 0$ und $p_2 \cdot 1_K \neq 0$. Damit gilt
     \begin{equation*}
         (p_1 \cdot 1_K) (p_2 \cdot 1_K) = (p_1p_2) \cdot 1_K = p \cdot 1_K = 0_K.
     \end{equation*}
@@ -615,14 +640,13 @@ In den Übungsaufgaben werden wir noch eine Vielzahl weiterer Regeln beweisen.
     \end{equation*}
     \emph{Addition} bzw.\ \emph{Multiplikation} genannt, sodass folgende Regeln (Axiome) gelten:
     \begin{enumerate}[leftmargin=*, widest=(A1)]
-        %\typelabel{(A1)}{ax:ring:aa}
-        \item[(A1)] $a+(b+c) = (a+b)+c$ für alle $a, b, c \in R$ (\emph{Assoziativität der Addition});\label{ax:ring:aa}
-        \item[(A2)] $a+b = b+a$ für alle $a, b \in R$ (\emph{Kommutativität der Addition});\label{ax:ring:ac}
-        \item[(A3)] Es existiert ein Element $0 = 0_R \in R$ mit $a+0 = a$ für alle~$a \in R$ (Existenz eines \emph{Nullelements});\label{ax:ring:an}
-        \item[(A4)] Zu jedem~$a \in R$ gibt es ein~$-a \in R$ mit $a+(-a) = 0$ (Existenz eines \emph{additiven Inversen});\label{ax:ring:ai}
-        \item[(R1)] $a\cdot(b\cdot c) = (a\cdot b)\cdot c$ für alle $a, b, c \in R$ (\emph{Assoziativität der Multiplikation});\label{ax:ring:ma}
-        \item[(R2)] Es existiert ein Element $1 = 1_R \in R$ mit~$1 \neq 0$ und $1\cdot a = a$ für alle~$a \in R$ (Existenz eines \emph{Einselements});\label{ax:ring:mn}
-        \item[(D)] $(a+b)\cdot c = (a\cdot c)+(b\cdot c)$ und $a\cdot(b+c) = (a\cdot b)+(a\cdot c)$ für alle $a, b, c \in K$ (\emph{Distributivität}).\label{ax:ring:d}
+        \refitem[(A1)] $a+(b+c) = (a+b)+c$ für alle $a, b, c \in R$ (\emph{Assoziativität der Addition});\label{ax:ring:aa}
+        \refitem[(A2)] $a+b = b+a$ für alle $a, b \in R$ (\emph{Kommutativität der Addition});\label{ax:ring:ac}
+        \refitem[(A3)] Es existiert ein Element $0 = 0_R \in R$ mit $a+0 = a$ für alle~$a \in R$ (Existenz eines \emph{Nullelements});\label{ax:ring:an}
+        \refitem[(A4)] Zu jedem~$a \in R$ gibt es ein~$-a \in R$ mit $a+(-a) = 0$ (Existenz eines \emph{additiven Inversen});\label{ax:ring:ai}
+        \refitem[(R1)] $a\cdot(b\cdot c) = (a\cdot b)\cdot c$ für alle $a, b, c \in R$ (\emph{Assoziativität der Multiplikation});\label{ax:ring:ma}
+        \refitem[(R2)] Es existiert ein Element $1 = 1_R \in R$ mit~$1 \neq 0$ und $1\cdot a = a$ für alle~$a \in R$ (Existenz eines \emph{Einselements});\label{ax:ring:mn}
+        \refitem[(D)] $(a+b)\cdot c = (a\cdot c)+(b\cdot c)$ und $a\cdot(b+c) = (a\cdot b)+(a\cdot c)$ für alle $a, b, c \in K$ (\emph{Distributivität}).\label{ax:ring:d}
     \end{enumerate}
 \end{definition}
 
@@ -638,7 +662,7 @@ In den Übungsaufgaben werden wir noch eine Vielzahl weiterer Regeln beweisen.
 \end{remark}
 
 \begin{notation}[Nullring]
-    Wir nennen $R = \mset{0_R}$ den trivialen \emph{Nullring}.
+    Wir nennen $R = \mset{0_R}$ den trivialen\footnote{Als \emph{triviale} Objekte werden oft offensichtliche oder sehr einfache Objekte sowie uninteressante Randfälle bezeichnet.} \emph{Nullring}.
 \end{notation}
 
 Wir übernehmen für Ringe alle Schreibkonventionen in \cref{not:field:convention}, die wir für Körper festlegten (bis auf Brüche).
@@ -651,8 +675,8 @@ Wir übernehmen für Ringe alle Schreibkonventionen in \cref{not:field:conventio
     Zu jedem~$a \in \N$ gibt es ein eindeutig bestimmtes~$q \in \N$ mit $qm \leq a < (q+1)m$. Mit $r \coloneqq a-qm$ folgt die Behauptung.
 \end{proof}
 
-\begin{definition}
-    Sei~$m \in \N$ mit~$m \geq 2$. Dann sei $\Z_m \coloneqq \mset{0, 1, \dots, m-1}$. Für $a, b \in \Z_m$ definieren wir noch Abbildungen $+$~und~$\cdot$ durch $a+b \coloneqq r_m(a\mathrel{+_\Z}b)$ und $a\cdot b \coloneqq r_m(a\mathrel{\cdot_\Z}b)$. (Die Operationen in den~$r_m(\dots)$ kommen aus~$\Z$.)
+\begin{definition}[$\Z$~modulo~$m$]
+    Sei~$m \in \N$ mit~$m \geq 2$. Dann sei $\Z_m \coloneqq \mset{0, 1, \dots, m-1}$. Für $a, b \in \Z_m$ definieren wir noch Abbildungen $+$~und~$\cdot$ durch $a+b \coloneqq r_m(a\mathrel{+_{\,\Z}}b)$ und $a\cdot b \coloneqq r_m(a\mathrel{\cdot_{\,\Z}}b)$. (Die Operationen in den~$r_m(\dots)$ kommen aus~$\Z$.)
 \end{definition}
 
 Manchmal ist es hilfreich, auch die Operatoren aus verschiedenen Mengen durch Subskripte zu unterscheiden, also $+_K$, $\cdot_R$, etc.
@@ -672,7 +696,7 @@ Manchmal ist es hilfreich, auch die Operatoren aus verschiedenen Mengen durch Su
 \begin{proof}
     Angenommen $\Z_m$~ist ein Körper. Dann folgt $\mchar(\Z_m) = m$ aus der Definition der Addition über die Addition in~$\Z$ (in~$\Z$ ist $m1 = 1+1+\dots+1 = m$). Nach \cref{lem:primechar} ist $m$~eine Primzahl.
 
-    Für die Umkehrung sei nun $m$~eine Primzahl. Zuerst zeigen wir, dass $\Z_m$ nullteilerfrei ist. Seien $a, b \in \Z_m$ mit $a\cdot b = 0 = r_m(a+b)$. Folglich wird $ab$ von~$m$ geteilt (Rest~0). Da $m$~eine Primzahl ist, folgt (aus dem \emph{Lemma von Euklid}): $m$~teilt~$a$ oder $m$~teilt~$b$. Weil nun $0 \leq a, b < m$ ist, muss $a = 0$ oder $b = 0$ sein. Folglich haben wir gezeigt, dass $\Z_m$~nullteilerfrei ist.
+    Für die Umkehrung sei nun $m$~eine Primzahl. Zuerst zeigen wir, dass $\Z_m$ nullteilerfrei ist. Seien $a, b \in \Z_m$ mit $a\cdot b = 0 = r_m(a+b)$. Folglich wird $ab$ von~$m$ geteilt (Rest~0). Da $m$~eine Primzahl ist, folgt (aus dem \emph{Lemma von \textsc{Euklid}}): $m$~teilt~$a$ oder $m$~teilt~$b$. Weil nun $0 \leq a, b < m$ ist, muss $a = 0$ oder $b = 0$ sein. Folglich haben wir gezeigt, dass $\Z_m$~nullteilerfrei ist.
 
     Nun zeigen wir, dass jedes~$a \in \Z_m$ mit~$a \neq 0$ ein multiplikatives Inverses besitzt. Für solche~$a$ definieren wir die Abbildung $\rho_a\colon \Z_m \to \Z_m$, $x \mapsto xa$. Dann $\rho_a$~ist injektiv: Aus $xa = \rho_a(x) = \rho_a(y) = ya \iff (x-y)a = 0$ folgt aufgrund Nullteilerfreiheit $x-y = 0 \iff x = y$. Da $\Z_m$~endlich ist, ist $\rho_a$~auch surjektiv.
 
@@ -680,6 +704,10 @@ Manchmal ist es hilfreich, auch die Operatoren aus verschiedenen Mengen durch Su
 \end{proof}
 
 Vom kommutativen Ring zum Körper fehlt nur noch die Existenz des multiplikativen Inversen. Hierfür haben wir alle möglichen Kandidaten für das Inverse betrachtet, also $0a, 1a, \dots, (m-1)a$. Wir beobachten, dass diese Menge genau~$\Z_m$ entspricht, es also eine einfache Bijektion~$\rho_a$ geben muss, die wir auch beweisen haben. Der Trick hier war zu zeigen, dass $\Z_m$~nullteilerfrei ist (ein gutes Zeichen, da Nullteilerfreiheit eine Körpereigenschaft ist).
+
+\begin{notation}[endlicher Körper]
+    Für Primzahlen~$p$ schreiben wir auch $\F_p \coloneqq \Z_p$.
+\end{notation}
 
 \section{Vektorräume}
 
@@ -690,16 +718,18 @@ Vom kommutativen Ring zum Körper fehlt nur noch die Existenz des multiplikative
     \end{equation*}
     \emph{Addition} bzw.\ \emph{Skalarmultiplikation} genannt, sodass folgende Regeln (Axiome) gelten:
     \begin{enumerate}[leftmargin=*, widest=(SM0)]
-        \item[(A1)] $v_1+(v_2+v_3) = (v_1+v_2)+v_3$ für alle $v_1, v_2, v_3 \in V$ (\emph{Assoziativität der Addition});\label{ax:vecspace:aa}
-        \item[(A2)] $v_1+v_2 = v_2+v_1$ für alle $v_1, v_2 \in V$ (\emph{Kommutativität der Addition});\label{ax:vecspace:ac}
-        \item[(A3)] Es existiert ein Element $0 = 0_V \in V$ mit $v + 0_V = v$ für alle~$v \in V$ (Existenz eines \emph{Nullelements});\label{ax:vecspace:an}
-        \item[(A4)] Zu jedem~$v \in V$ gibt es ein~$-v \in V$ mit $v+(-v) = 0$ (Existenz eines \emph{additiven Inversen});\label{ax:vecspace:ai}
-        \item[(SM1)] $(ab)\cdot v = a\cdot(b\cdot v)$ für alle $a, b \in K$ und~$v \in V$;\label{ax:vecspace:smcomp}
-        \item[(SM2)] $1_K \cdot v = v$ für alle~$v \in V$;\label{ax:vecspace:smn}
-        \item[(SM3)] $a\cdot(v_1+v_2) = a\cdot v_1 + a\cdot v_2$ für alle~$a \in K$ und $v_1, v_2 \in V$;\label{ax:vecspace:smdv}
-        \item[(SM4)] $(a+b)\cdot v = (a\cdot v)+(b\cdot v)$ für alle~$a, b \in K$ und~$v \in V$.\label{ax:vecspace:smdf}
+        \refitem[(A1)] $v_1+(v_2+v_3) = (v_1+v_2)+v_3$ für alle $v_1, v_2, v_3 \in V$ (\emph{Assoziativität der Addition});\label{ax:vecspace:aa}
+        \refitem[(A2)] $v_1+v_2 = v_2+v_1$ für alle $v_1, v_2 \in V$ (\emph{Kommutativität der Addition});\label{ax:vecspace:ac}
+        \refitem[(A3)] Es existiert ein Element $0 = 0_V \in V$ mit $v + 0_V = v$ für alle~$v \in V$ (Existenz eines \emph{Nullelements});\label{ax:vecspace:an}
+        \refitem[(A4)] Zu jedem~$v \in V$ gibt es ein~$-v \in V$ mit $v+(-v) = 0$ (Existenz eines \emph{additiven Inversen});\label{ax:vecspace:ai}
+        \refitem[(SM1)] $(ab)\cdot v = a\cdot(b\cdot v)$ für alle $a, b \in K$ und~$v \in V$;\label{ax:vecspace:smcomp}
+        \refitem[(SM2)] $1_K \cdot v = v$ für alle~$v \in V$;\label{ax:vecspace:smn}
+        \refitem[(SM3)] $a\cdot(v_1+v_2) = a\cdot v_1 + a\cdot v_2$ für alle~$a \in K$ und $v_1, v_2 \in V$;\label{ax:vecspace:smdv}
+        \refitem[(SM4)] $(a+b)\cdot v = (a\cdot v)+(b\cdot v)$ für alle~$a, b \in K$ und~$v \in V$.\label{ax:vecspace:smdf}
     \end{enumerate}
 \end{definition}
+
+Wir schreiben oft auch einfach~$V$ für den $K$"~Vektorraum $(V,+,\cdot)$.
 
 \begin{notation}
     Um die Notation zu vereinfachen, legen wir $v_1-v_2 \coloneqq v_1+(-v_2)$, $av \coloneqq a \cdot v$ für alle $v_1, v_2, v \in V$ und $a \in K$ sowie \emph{Punkt"~ vor Strichrechnung} fest.
@@ -711,8 +741,8 @@ Vom kommutativen Ring zum Körper fehlt nur noch die Existenz des multiplikative
 
 \begin{remark}\leavevmode
     \begin{enumerate}
-        \item Es ist sehr wichtig, zu wissen, welchen Grundkörper~$K$ der Vektorraum hat. Dieselbe Menge~$V$, aber über zwei verschiedene Körper $K_1$~und~$K_2$, sind zwei verschiedene Vektorräume, nämlich ein $K_1$"~ und ein $K_2$"~Vektorraum.
-        \item Die Skalarmultiplikation multipliziert ein Skalar mit einem Vektor (wie der Name schon sagt). Wir beachten auch die Reihenfolge der Skalarmultiplikation, d.\,h.\ Skalare werden von \emph{links} multipliziert.
+        \item Es ist sehr wichtig, zu wissen, welchen Grundkörper~$K$ der Vektorraum hat. Dieselbe Menge~$V$, aber über zwei verschiedene Körper $K_1$~und~$K_2$, sind zwei verschiedene Vektorräume, nämlich ein $K_1$"~ und ein $K_2$"~Vektorraum. Im Allgemeinen ist ein Vektorraum über einen anderen Körper kein Vektorraum mehr, da er z.\,B.\ nicht mehr abgeschlossen ist.
+        \item Die Skalarmultiplikation multipliziert ein Skalar mit einem Vektor (wie der Name schon sagt, also \underline{kein} Skalarprodukt). Wir beachten auch die Reihenfolge der Skalarmultiplikation, d.\,h.\ Skalare werden von \emph{links} multipliziert.
     \end{enumerate}
 \end{remark}
 
@@ -721,7 +751,7 @@ Wie bei Körpern gibt es eine Vielzahl an Rechenregeln für Vektorräume, die wi
 \subsection{Beispiele von Vektorräumen}
 
 \begin{notation}[Nullvektorraum]
-    Sei $V \coloneqq \mset{0}$ über~$K$ der \emph{Nullvektorraum} (oft auch einfach nur $V = 0$). Addition und Skalarmultiplikation können nur auf genau eine Weise definiert werden:
+    Sei $V \coloneqq \mset{0}$ über~$K$ der (triviale) \emph{Nullvektorraum} (oft auch einfach nur $V = 0$). Addition und Skalarmultiplikation können nur auf genau eine Weise definiert werden:
     \begin{gather*}
         +\colon V\times V \to V,\qquad 0+0 \mapsto 0 \\
         \cdot\colon V\times V \to V,\qquad 0\cdot0 \mapsto 0 \\
@@ -745,20 +775,20 @@ Wie bei Körpern gibt es eine Vielzahl an Rechenregeln für Vektorräume, die wi
     \end{gather*}
     
     Dann ist $(V,+,\cdot)$ ein $K$"~Vektorraum, der sog.\ \emph{Standardvektorraum}. Wir legen $K^0 \coloneqq 0$ aus~$K$ fest.
-\end{definition}
 
-Dabei stammt die komponentenweise Addition und Multiplikation aus~$K$.
+    Dabei stammt die komponentenweise Addition und Multiplikation aus~$K$.
+\end{definition}
 
 In~$V = \R^2$ mit~$K = \R$ können wir Addition und Skalarmultiplikation visualisieren, indem wir Vektoren als Pfeile darstellen. Addition heißt dann Aneinanderreihen von Pfeilen; Skalarmultiplikation heißt dann Strecken\slash Stauchen oder Änderung der Richtung von Pfeilen. Das sollte aus der Schule bekannt sein.
 \begin{center}
     \begin{tikzpicture}
-        \draw[->] (-2.5,0) -- (5,0) node[at end, below] {$\R$};
-        \draw[->] (0,-1.5) -- (0,2.5) node[at end, left] {$\R$};
-        \draw[->] (0,0) -- (-2,1) node[at end, left] {$v$};
-        \draw[->] (0,0) -- (2,-1) node[at end, below left] {$-v$};
-        \draw[->] (0,0) -- (3,1) node[at end, below] {$w$};
-        \draw[->] (0,0) -- (4.5,1.5) node[at end, below] {$\frac{3}{2}w$};
-        \draw[->] (0,0) -- (1,2) node[at end, above] {$v+w$};
+        \draw[->] (-2.5,0) -- (5,0) node[below] {$\R$};
+        \draw[->] (0,-1.5) -- (0,2.5) node[left] {$\R$};
+        \draw[->] (0,0) -- (-2,1) node[left] {$v$};
+        \draw[->] (0,0) -- (2,-1) node[below left] {$-v$};
+        \draw[->] (0,0) -- (3,1) node[below right] {$w$};
+        \draw[->] (0,0) -- (4.5,1.5) node[below right] {$\frac{3}{2}w$};
+        \draw[->] (0,0) -- (1,2) node[above] {$v+w$};
         \draw[dashed] (-2,1) -- (1,2) -- (3,1);
     \end{tikzpicture}
 \end{center}
@@ -777,11 +807,11 @@ Ein sehr wichtiges Beispiel von Vektorräumen:
     Dann ist $(V,+,\cdot)$ ein $K$"~Vektorraum, der sog.\ \emph{(lineare) Funktionenraum}. Wir definieren $K^\varnothing = 0$ als Nullabbildung.
 \end{definition}
 
-Dabei ist in der punktweisen Definition auf der linken Seite die Addition und Skalarmultiplikation in~$V$ sowie auf der rechten Seite die Addition und Multiplikation in~$K$.\footnote{An dieser Stelle fragt man sich vielleicht, warum der Standardvektorraum~$K^n$ und der Funktionenraum~$K^I$ identisch notiert werden. Das liegt daran, dass sie tatsächlich "`identisch"' (d.\,h.\ \emph{isomorph}) sind, weil es eine Bijektion wie in \cref{ex:map:setisoproduct} gibt.}\textsuperscript{,}\footnote{Für~$I = \N$ lässt sich auch der "`unendlichdimensionale"' Vektorraum
+Dabei ist in den Definitionsgleichungen auf der linken Seite Addition und Skalarmultiplikation in~$V$, sowie auf der rechten Seite Addition und Multiplikation in~$K$.\footnote{An dieser Stelle fragt man sich vielleicht, warum der Standardvektorraum~$K^n$ und der Funktionenraum~$K^I$ identisch notiert werden. Das liegt daran, dass sie tatsächlich "`identisch"' (d.\,h.\ \emph{isomorph}) sind, weil es eine Bijektion wie in \cref{ex:map:setisoproduct} gibt.}\textsuperscript{,}\footnote{Für~$I = \N$ lässt sich auch der "`unendlichdimensionale"' \emph{Folgenraum}
 \begin{equation*}
     K^\N \coloneqq \mset{(a_1,a_2,a_3,\dots) \mid a_i \in K \text{ für alle } i \in \N}
 \end{equation*}
-definieren.}
+(wie in der Analysis) definieren.}
 
 Ein noch wichtigeres Beispiel ist
 
@@ -793,16 +823,16 @@ Ein noch wichtigeres Beispiel ist
     ein $K$"~Vektorraum, wobei wir Addition und Skalarmultiplikation von~$K^I$ benutzen. Wir definieren $K^{(\varnothing)} = 0$ als Nullabbildung.
 \end{definition}
 
-Jede Abbildung in~$K^{(I)}$ bildet also fast immer auf~0 ab.s
+Jede Abbildung $f \in K^{(I)}$ bildet also fast alle~$x \in I$ (bis auf endlich viele) auf~0 ab.
 
 \begin{definition}[Teilkörper]
     Sei $(L,+,\cdot)$ ein Körper und sei $K$~eine Teilmenge von~$L$, sodass die Eigenschaften
     \begin{enumerate}
-        \item $0, 1 \in K$;
-        \item $a+b \in K$ für alle $a,b \in K$;\label{def:subfield:add}
-        \item $a\cdot b \in K$ für alle $a,b \in K$;\label{def:subfield:mul}
-        \item $-a \in K$ für alle~$a \in K$ und
-        \item $a^{-1} \in K$ für alle~$a \in K^\times$
+        \item $0, 1 \in K$ (neutrale Elemente);
+        \item $a+b \in K$ für alle $a,b \in K$ (Abgeschlossenheit unter Addition);\label{def:subfield:add}
+        \item $a\cdot b \in K$ für alle $a,b \in K$ (Abgeschlossenheit unter Multiplikation);\label{def:subfield:mul}
+        \item $-a \in K$ für alle~$a \in K$ (additive Inverse) und
+        \item $a^{-1} \in K$ für alle~$a \in K^\times$ (multiplikative Inverse)
     \end{enumerate}
     erfüllt sind. Durch Einschränkung erhalten wir die Abbildungen
     \begin{equation*}
