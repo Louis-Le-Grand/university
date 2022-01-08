@@ -270,7 +270,7 @@ Für unsere Zwecke reicht die naive Mengenlehre, begründet durch \textsc{Georg 
 
 \begin{example}\leavevmode
     \begin{itemize}
-        \item Menge der natürlichen Zahlen $\N = \mset{1, 2, 3, \dots}$ (für diese Vorlesung beginnend bei~1), $\N_0 = \mset{0, 1, 2, 3, \dots}$
+        \item Menge der natürlichen Zahlen $\N = \mset{1, 2, 3, \dots}$ (für diese Vorlesung beginnend bei~$1$), $\N_0 = \mset{0, 1, 2, 3, \dots}$
         \item $M = \mset{x \in \R : A(x)}$ für die Menge aller reellen Zahlen, für die $A(x)$ gilt
         \item $M = \mset{a, b, c, d}$ als einfache Auflistung
     \end{itemize}
@@ -437,7 +437,7 @@ Wir setzen die Menge der natürlichen Zahlen $\N = \mset{1, 2, 3, \dots}$ vor. D
     \item Induktionsschritt (Schritt von~$n$ auf~$n + 1$): falls $A(n)$, dann auch~$A(n + 1)$ für alle~$n \in \N$ gilt.
 \end{enumerate}
 
-\lecturesep{11.~Oktober~2021}
+\lecturesep{11.~Oktober 2021}
 
 Als Beispiel betrachten wir den
 
@@ -623,7 +623,7 @@ Die Binomialkoeffizienten können wir übersichtlich im \emph{\textsc{pascalsche
                     }
             }
     \end{tikzpicture}
-    \caption{\textsc{Pascalsches} Dreieck bis Stufe~5.}\label{fig:pascalstriangle}
+    \caption{\textsc{Pascalsches} Dreieck bis Stufe~$5$.}\label{fig:pascalstriangle}
 \end{figure}
 
 Eine Eigenschaft des \textsc{pascalschen} Dreiecks ist, dass ein Eintrag (bis auf den Einsen) genau die Summe der zwei darüberstehenden Einträge ist. Bspw.\ gilt~$10 = 4 + 6$. Diese Eigenschaft folgt direkt aus \cref{lem:pascalsrule}.
@@ -670,7 +670,7 @@ Die Koeffizienten für ein~$n$ entsprechen den Einträgen des \textsc{pascalsche
     \end{enumerate}
 \end{corollary}
 
-\lecturesep{13.~Oktober~2021}
+\lecturesep{13.~Oktober 2021}
 
 \subsubsection{Kombinatorik}
 
@@ -724,7 +724,7 @@ Die oben definierten Begriffe der Fakultät und des Binomialkoeffizienten haben 
 
               Für \cref{thm:combination:an1ex} gilt: Das sind beliebige $k$"~elementige Teilmengen von $\mset{a_1, \dots, a_n}$. Gemäß~$A(n)$ gibt es davon~$\binom{n}{k}$.
 
-              Insgesamt gibt es also $\binom{n}{k - 1} + \binom{n}{k} = \binom{n + 1}{k}$. (Für~$k > n$ oder~$k < 0$ wird der Binomialkoeffizient im zu zeigenden Satz~0, was trivial ist.) Damit ist $A(n + 1)$ bewiesen.\qedhere
+              Insgesamt gibt es also $\binom{n}{k - 1} + \binom{n}{k} = \binom{n + 1}{k}$. (Für~$k > n$ oder~$k < 0$ wird der Binomialkoeffizient im zu zeigenden Satz~$0$, was trivial ist.) Damit ist $A(n + 1)$ bewiesen.\qedhere
     \end{enumerate}
 \end{proof}
 
@@ -814,7 +814,7 @@ Weiterhin gelten folgende Regeln, um das Schreiben zu vereinfachen: Punkt"~ vor 
 
 Die \cref{ax:aa,ax:ac,ax:an,ax:ai} besagen, dass $(\R,+)$ eine \emph{Gruppe}\footnote{Die Gruppenaxiome sind: Abgeschlossenheit, Assoziativität, Existenz des neutralen Elements, Existenz eines inversen Elements zu jedem Element. Das neutrale Element sowie ein Element und sein Inverses sind kommutativ. In~$\R$ gilt zusätzlich Kommutativität für alle Elemente, sodass $\R$ eine \emph{abelsche Gruppe} ist.} ist. Hieraus folgen insbesondere
 \begin{enumerate}[label=\textnormal{(\alph*)}, leftmargin=*, widest=(m), series=conclusions]
-    \item Die~0 ist eindeutig.
+    \item Die~$0$ ist eindeutig.
           \begin{proof}
               Wäre $0^*$~ein weiteres neutrales Element, dann $0^* \overset{\text{\ref{ax:an}}}{=} 0^* + 0 \overset{\text{\ref{ax:ac}}}{=} 0 + 0^* \overset{\text{\ref{ax:an}}}{=} 0$.
           \end{proof}
@@ -837,9 +837,9 @@ Die \cref{ax:aa,ax:ac,ax:an,ax:ai} besagen, dass $(\R,+)$ eine \emph{Gruppe}\foo
     \item $\forall x, y \in \R\colon -(x + y) = (-x) + (-y)$.
 \end{enumerate}
 
-Die \cref{ax:ma,ax:mc,ax:mn,ax:mi} besagen, dass $(\R \setminus \mset{0}, \cdot)$ eine \emph{Gruppe} ist.\footnote{Damit~$\R$ wirklich eine Gruppe ist, müssten wir noch die Abgeschlossenheit zeigen, d.\,h., dass das multiplikative Inverse eines jeden Elements nicht~0 ist, was nicht zu $\R \setminus \mset{0}$ gehört. Das ist aber trivial mit einem Widerspruchsbeweis und \cref{ax:mulzero}.} Daher gelten insbesondere
+Die \cref{ax:ma,ax:mc,ax:mn,ax:mi} besagen, dass $(\R \setminus \mset{0}, \cdot)$ eine \emph{Gruppe} ist.\footnote{Damit~$\R$ wirklich eine Gruppe ist, müssten wir noch die Abgeschlossenheit zeigen, d.\,h., dass das multiplikative Inverse eines jeden Elements nicht~$0$ ist, was nicht zu $\R \setminus \mset{0}$ gehört. Das ist aber trivial mit einem Widerspruchsbeweis und \cref{ax:mulzero}.} Daher gelten insbesondere
 \begin{enumerate}[(a'), leftmargin=*, widest=(m)]
-    \item Die~1 ist eindeutig.
+    \item Die~$1$ ist eindeutig.
     \item Das Inverse~$x^{-1}$ ist eindeutig.
     \item $1^{-1} = 1$.
     \item $\paren{x^{-1}}^{-1} = x$.
@@ -975,7 +975,7 @@ Aus dem allgemeinen Kommutativgesetz folgt
 
 Damit folgt
 \begin{enumerate}[resume*=conclusions]
-    \item $\forall m, n \in \Z$, $\forall x, y \in \R$ ($x, y$ jeweils nicht~0, falls der zugehörige Exponenz negativ ist) gilt $x^m x^n = x^{m+n}$, $\cramped{\paren*{x^m}^n} = x^{mn}$ und $x^n y^n = (xy)^n$.
+    \item $\forall m, n \in \Z$, $\forall x, y \in \R$ ($x, y$ jeweils nicht~$0$, falls der zugehörige Exponenz negativ ist) gilt $x^m x^n = x^{m+n}$, $\cramped{\paren*{x^m}^n} = x^{mn}$ und $x^n y^n = (xy)^n$.
 \end{enumerate}
 
 \subsection{Anordnungsaxiome}
@@ -1216,7 +1216,7 @@ Diese Definition zu verstehen ist sehr wichtig. Wir sagen, dass wir für \emph{b
 \end{figure}
 
 \begin{definition}[Nullfolge]
-    Eine Folge heißt \emph{Nullfolge}, falls sie gegen~0 konvergiert.
+    Eine Folge heißt \emph{Nullfolge}, falls sie gegen~$0$ konvergiert.
 \end{definition}
 
 \begin{theorem}
@@ -1247,7 +1247,7 @@ Alternativ hätten wir auch $\eps = \abs{a-b}/4$ wählen können, was dann zum W
         \item $\paren*{2^n}_n$ und die Fibonacci-Folge sind divergent, da beide unbeschränkt sind.
         \item Wir betrachten die Folge~$\paren*{x^n}_{n\in\N}$ mit~$x \in \R$. Dann gibt es vier Fälle:
               \begin{enumerate}
-                  \item $x = 1$ liefert eine konstante Folge, die gegen~1 konvergiert.
+                  \item $x = 1$ liefert eine konstante Folge, die gegen~$1$ konvergiert.
                   \item $x = -1$ liefert die alternierende Folge, die divergiert.
                   \item $\abs{x} > 1$ liefert eine unbeschränkte Folge, die divergiert.
                   \item $\abs{x} < 1$ ist eine Nullfolge.
@@ -1676,7 +1676,7 @@ Ferner kann man zeigen (das werden wir nicht tun):
           Dieser Ansatz ist sehr fragwürdig, da wir~$\R$ \emph{ausgehend von~$\N$} definiert und konstruiert haben.
     \item Ohne einen Rückgriff auf~$\R$ wird~$\N$ durch die \emph{\textsc{Peano}-Axiome} von \textsc{Giuseppe Peano} (1858--1939) definiert:
 
-          $\N$~ist eine Menge mit einem ausgezeichnetem Element~$1 \in \N$ (oder~0, oder~2, etc.) und
+          $\N$~ist eine Menge mit einem ausgezeichnetem Element~$1 \in \N$ (oder~$0$, oder~$2$, etc.) und
           \begin{itemize}
               \item $\forall n \in \N\colon \exists v(n) \in \N \setminus \mset{1}$ (die Idee eines "`Nachfolgers"');
               \item $\forall m, n \in \N\colon m = n \iff v(n) = v(m)$ (zwei Zahlen sind genau dann gleich, wenn sie denselben Nachfolger haben~-- die Nachfolgerfunktion ist also injektiv);
@@ -1806,7 +1806,7 @@ Die Idee der Gleichmächtigkeit ist, dass eine Reihenfolge gefunden werden kann,
         \end{tikzpicture}
     \end{center}
 
-    Die teilerfremden~$(m, n)$ werden behalten, während die nicht teilerfremden~$(m, n)$ rausgestrichen werden. Wir durchlaufen alle Gitterpunkte in "`konzentrischen Kreisen"' um~0 und betrachten dabei nur die teilerfremden Paare~$(m, n)$. Damit können wir alle~$q$ durchnummerieren.\footnote{Das ist eine alternative Version des \emph{ersten \textsc{cantorschen} Diagonalargument}. Für die originale Idee nehmen wir nur den ersten Quadraten der Abbildung, also~$\Q^+$. Nun zeichnen wir Diagonalen mit Anstieg~$-1$ und verbinden sie so parallel zu den Achsen, dass eine "`Schlangenlinie"' über die Diagonalen entsteht. Streichen wir noch die nicht teilerfremden Paare~$(m, n)$, haben wir eine Reihenfolge und $\Q^+$~und~$\N$ sind gleichmächtig. Fügen wir vor der Schlangenlinie die Null, und hinter jedem~$(m, n)$ noch~$(-m, n)$ hinzu, sind auch $\Q$~und~$\N$ gleichmächtig. Mehr dazu s.~\url{https://de.wikipedia.org/wiki/Cantors_erstes_Diagonalargument}.}
+    Die teilerfremden~$(m, n)$ werden behalten, während die nicht teilerfremden~$(m, n)$ rausgestrichen werden. Wir durchlaufen alle Gitterpunkte in "`konzentrischen Kreisen"' um~$0$ und betrachten dabei nur die teilerfremden Paare~$(m, n)$. Damit können wir alle~$q$ durchnummerieren.\footnote{Das ist eine alternative Version des \emph{ersten \textsc{cantorschen} Diagonalargument}. Für die originale Idee nehmen wir nur den ersten Quadraten der Abbildung, also~$\Q^+$. Nun zeichnen wir Diagonalen mit Anstieg~$-1$ und verbinden sie so parallel zu den Achsen, dass eine "`Schlangenlinie"' über die Diagonalen entsteht. Streichen wir noch die nicht teilerfremden Paare~$(m, n)$, haben wir eine Reihenfolge und $\Q^+$~und~$\N$ sind gleichmächtig. Fügen wir vor der Schlangenlinie die Null, und hinter jedem~$(m, n)$ noch~$(-m, n)$ hinzu, sind auch $\Q$~und~$\N$ gleichmächtig. Mehr dazu s.~\url{https://de.wikipedia.org/wiki/Cantors_erstes_Diagonalargument}.}
 \end{proof}
 
 \begin{remark}\leavevmode
@@ -2191,7 +2191,7 @@ Der folgende Satz ist nützlich, da bei alternierenden Reihen~$\sum_k (-1)^k a_k
     \begin{equation*}
         s_k - s_{k-2} = (-1)^k a_k + (-1)^{k-1} a_{k-1} = (-1)^k (a_k-a_{k-1})
     \end{equation*}
-    für alle~$k$ fest. Da $(a_n)_n$ schwach fällt, gilt $a_k - a_{k-1} \leq 0$ und damit $s_1 \leq s_3 \leq s_5 \leq \cdots$ für ungerade~$k$ sowie $\cdots \leq s_6 \leq s_4 \leq s_2$ für gerade~$k$. Ferner ist $s_{2k} - s_{2k-1} = (-1)^{2k} a_{2k}$ nichtnegativ und es konvergiert gegen~0 wegen~$a_{2k} \to 0$. Also bilden die Intervalle~$[s_{2k-1}, s_{2k}]$ eine Intervallschachtelung. Nach dem Intervallschachtelungsprinzip gibt es ein~$s \in \R$ in allen Intervallen mit $s = \lim_{k\to\infty} s_{2k} = \lim_{k\to\infty} s_{2k-1}$ und demnach $s = \lim_{k\to\infty} s_k$.
+    für alle~$k$ fest. Da $(a_n)_n$ schwach fällt, gilt $a_k - a_{k-1} \leq 0$ und damit $s_1 \leq s_3 \leq s_5 \leq \cdots$ für ungerade~$k$ sowie $\cdots \leq s_6 \leq s_4 \leq s_2$ für gerade~$k$. Ferner ist $s_{2k} - s_{2k-1} = (-1)^{2k} a_{2k}$ nichtnegativ und es konvergiert gegen~$0$ wegen~$a_{2k} \to 0$. Also bilden die Intervalle~$[s_{2k-1}, s_{2k}]$ eine Intervallschachtelung. Nach dem Intervallschachtelungsprinzip gibt es ein~$s \in \R$ in allen Intervallen mit $s = \lim_{k\to\infty} s_{2k} = \lim_{k\to\infty} s_{2k-1}$ und demnach $s = \lim_{k\to\infty} s_k$.
 \end{proof}
 
 \begin{example}
@@ -2251,7 +2251,7 @@ Eine Modifikation des vorherigen Satzes:
 
 \begin{remark}\leavevmode
     \begin{enumerate}
-        \item Zum Nachweis der Konvergenz der Reihe~$\sum a_n$ reicht nicht, dass $\abs{a_{n+1}/a_n} < 1$ für alle~$n$ ist. Der Bruch muss \emph{uniform kleiner}~1 sein. \emph{Beispiel}: Die harmonische Reihe divergiert, aber $\abs{a_{n+1}/a_n} = n/(n+1) < 1$.
+        \item Zum Nachweis der Konvergenz der Reihe~$\sum a_n$ reicht nicht, dass $\abs{a_{n+1}/a_n} < 1$ für alle~$n$ ist. Der Bruch muss \emph{uniform kleiner}~$1$ sein. \emph{Beispiel}: Die harmonische Reihe divergiert, aber $\abs{a_{n+1}/a_n} = n/(n+1) < 1$.
         \item Die Bedingung $\limsup_{n\to\infty} \abs{a_{n+1}/a_n} < 1$ ist nicht notwendig für die Konvergenz. \emph{Beispiel}: $\sum 1/n^2$~konvergiert, aber
               \begin{equation*}
                   \limsup_{n\to\infty} \abs{\frac{a_{n+1}}{a_n}} = \limsup_{n\to\infty} \paren*{\frac{n}{n+1}}^2 = 1.
@@ -2352,11 +2352,11 @@ Obwohl wir irrationale Exponenzen noch nicht definiert haben, behaupten wir aber
               \begin{equation*}
                   \abs*{\frac{a_{n+1}}{a_n}} = \paren*{\frac{n+1}{n}}^c \cdot \frac{1}{\abs{b}} \xrightarrow{n\to\infty} \frac{1}{\abs{b}}.
               \end{equation*}
-              Aus dem Quotientenkriterium folgt, dass die Reihe konvergiert, wenn~$\abs{b} > 1$, und divergiert, wenn~$\abs{b} \leq 1$. (Genauer: Da $((n+1)/n)^c$ gegen~1 konvergiert, kommt der Term beliebig nah an~1 ran, also $((n+1)/n)^c < 1+\eps$ für alle~$n \geq N$. Damit können wir~$\eps$ klein genug wählen, sodass $1+\eps \leq \abs{b}$ für~$\abs{b} > 1$ ist. Daraus folgt
+              Aus dem Quotientenkriterium folgt, dass die Reihe konvergiert, wenn~$\abs{b} > 1$, und divergiert, wenn~$\abs{b} \leq 1$. (Genauer: Da $((n+1)/n)^c$ gegen~$1$ konvergiert, kommt der Term beliebig nah an~$1$ ran, also $((n+1)/n)^c < 1+\eps$ für alle~$n \geq N$. Damit können wir~$\eps$ klein genug wählen, sodass $1+\eps \leq \abs{b}$ für~$\abs{b} > 1$ ist. Daraus folgt
               \begin{equation*}
                   \paren*{\frac{n+1}{n}}^c \cdot \frac{1}{\abs{b}} < \frac{1+\eps}{\abs{b}} \leq 1,
               \end{equation*}
-              weshalb die Reihe nach dem Quotientenkriterium konvergiert. Für~$\abs{b} \leq 1$ ist das Verhältnis aufeinanderfolgender Glieder größergleich~1, also divergiert die Reihe.)
+              weshalb die Reihe nach dem Quotientenkriterium konvergiert. Für~$\abs{b} \leq 1$ ist das Verhältnis aufeinanderfolgender Glieder größergleich~$1$, also divergiert die Reihe.)
         \item Für~$b = -1$ ist $(n^c/b^n)_n = (-1)^n n^c$ eine alternierende Folge. Dabei ist die Folge genau dann eine Nullfolge, wenn~$c < 0$. Ist also~$c < 0$, dann konvergiert die Reihe nach dem Leibniz-Kriterium. Ist~$c \geq 0$, dann divergiert sie (\cref{thm:series:zerosequence}).
         \item Für~$b = 1$ und~$c < -1$ ist das die riemmansche Zeta-Funktion für~$s = -c$ (\cref{thm:series:riemannzeta}).\qedhere
     \end{enumerate}
@@ -2471,7 +2471,7 @@ Die Indizes der Indexmenge können alles mögliche sein, solange es abzählbar v
 
 \begin{remark}\leavevmode
     \begin{enumerate}
-        \item Ist $g\colon \N\to I$ eine andere Abzählung von~$I$, so existiert eine Bijektion~$\varphi\colon \N\to\N$ mit~$g = f\circ\varphi$, die die Argumente von~$f$ zu~$g$ umordnet. Mit~$c_n \coloneqq a_{f(n)}$ und $b_n \coloneqq a_{g(n)} = c_{\varphi(n)}$ gilt daher
+        \item Ist $g\colon \N\to I$ eine andere Abzählung von~$I$, so existiert eine Bijektion~$\varphi\colon \N\to\N$ mit~$g = f\circ\varphi$, die die Argumente von~$f$ zu~$g$ passend umordnet. Mit~$c_n \coloneqq a_{f(n)}$ und $b_n \coloneqq a_{g(n)} = c_{\varphi(n)}$ gilt daher
               \begin{equation*}
                   \sum_{n=1}^\infty a_{g(n)} = \sum_{n=1}^\infty b_n = \sum_{n=1}^\infty c_{\varphi(n)} \overset{\eqref{thm:series:rearrangement}}{=} \sum_{n=1}^\infty c_n = \sum_{n=1}^\infty a_{f(n)}.
               \end{equation*}
@@ -2481,7 +2481,7 @@ Die Indizes der Indexmenge können alles mögliche sein, solange es abzählbar v
 \end{remark}
 
 \begin{proof}[Beweis zu \cref{rem:family:summation}]
-    Ist $(a_i)$~summierbar, so ist $K = \sum_{n=1}^\infty < \infty$. Für jede endliche Teilmenge~$J \subset I$ können wir ein~$N \in \N$ finden, sodass $\mset{f(1),\dots,f(N)}$ mindestens alle Elemente aus~$J$ enthält. Sodann haben wir
+    Ist $(a_i)$~summierbar, so ist $K = \sum_{n=1}^\infty \abs{a_{f(n)}} < \infty$. Für jede endliche Teilmenge~$J \subset I$ können wir ein~$N \in \N$ finden, sodass $\mset{f(1),\dots,f(N)}$ mindestens alle Elemente aus~$J$ enthält. Sodann haben wir
     \begin{equation*}
         \sum_{i\in J} \abs{a_i} \leq \sum_{n=1}^N \abs{a_{f(n)}} \leq K.
     \end{equation*}
@@ -2945,7 +2945,7 @@ Der obige Satz impliziert auch, dass $\lim_{n\to\infty} (1+x/n)^n$ existiert.
 \begin{proof}
     Zuerst betrachten wir den Fall~$x \geq 0$. Nach dem binomischen Lehrsatz gilt für alle~$n \in \N$ mit $x \geq 0$
     \begin{equation*}
-        \paren*{1+\frac{x}{n}}^n = \sum_{k=0}^n \binom{n}{k} \frac{x^k}{n^k} = 1 + \sum_{k=1}^n \frac{x^k}{k!} \cdot \underbrace{\frac{n(n-1)\cdots(n-k+1)}{n\cdot n\cdots n}}_{k\text{ Faktoren}, \leq 1} \leq 1 + \sum_{k=1}^\infty \frac{x^k}{k!} = \exp(x).
+        \paren*{1+\frac{x}{n}}^n = \sum_{k=0}^n \binom{n}{k} \frac{x^k}{n^k} = 1 + \sum_{k=1}^n \frac{x^k}{k!} \cdot \underbrace{\frac{n(n-1)\cdots(n-k+1)}{n\cdot n\cdots n}}_{k\text{ Faktoren},\, \leq 1} \leq 1 + \sum_{k=1}^\infty \frac{x^k}{k!} = \exp(x).
     \end{equation*}
     Umgekehrt gilt mit dem binomischen Lehrsatz für alle~$n \geq m$ mit~$x \geq 0$
     \begin{equation*}
@@ -3054,7 +3054,7 @@ Wir beobachten: Für~$(x, 0)$ und~$(u, 0)$ mit $x,u \in \R$ gilt
 \begin{equation*}
     (x, 0) + (u, 0) = (x+u, 0) \qquad\text{sowie}\qquad (x, 0) \cdot (u, 0) = (xu, 0).
 \end{equation*}
-Deshalb bildet $\mset{(x,y) \in \C : y = 0}$ einen \emph{Teilkörper} von~$\C$, der \emph{isomoprh} zu~$\R$ ist. Daher identifizieren wir $\R$ mit $\mset{(x, 0) : x \in \R} \subset \C$ und schreiben $x = (x, 0) \in \C$ für alle~$x \in \R$. Damit ist~$\R \subset \C$.
+Deshalb bildet $\mset{(x,y) \in \C : y = 0}$ einen \emph{Teilkörper} von~$\C$, der \emph{isomorph} zu~$\R$ ist. Daher identifizieren wir $\R$ mit $\mset{(x, 0) : x \in \R} \subset \C$ und schreiben $x = (x, 0) \in \C$ für alle~$x \in \R$. Damit ist~$\R \subset \C$.
 
 Ferner setzen wir $i \coloneqq (0, 1)$, woraus $i^2 = (0, 1)\cdot(0, 1) = (-1, 0) = -1 \in \R$ sowie
 \begin{equation*}
@@ -3287,9 +3287,10 @@ D.\,h.\ wir können sehr leicht mit komplexen Zahlenfolgen umgehen, wenn wir die
 \end{corollary}
 
 \begin{proof}
-    Die Summe und das Produkt der komplexen Folgen lässt sich umschreiben zu
+    Die Summe und das Produkt der komplexen Folgen lassen sich umschreiben zu
     \begin{align*}
-        c_n+d_n & = (\real(c_n)+\real(d_n)) + i(\imag(c_n)+\imag(d_n))                                          &  & \text{und} \\
+        c_n+d_n & = (\real(c_n)+\real(d_n)) + i(\imag(c_n)+\imag(d_n))
+        \shortintertext{und}
         c_nd_n  & = (\real(c_n)\real(d_n)-\imag(c_n)\imag(d_n)) + i(\real(c_n)\imag(d_n)+\imag(c_n)\real(d_n)).
     \end{align*}
     Damit konnten wir die Konvergenz der neuen Folgen auf die Konvergenz reeller Folgen zurückführen.
@@ -3319,7 +3320,7 @@ D.\,h.\ wir können sehr leicht mit komplexen Zahlenfolgen umgehen, wenn wir die
 Die Umkehrung gilt hingegen (wie in den reellen Zahlen) \underline{nicht}.
 
 \begin{proof}
-    Es gilt $\abs{c_n} = \sqrt{\real(c_n)+\imag(c_n)}$ und $\abs{c} = \sqrt{\real(c)+\imag(c)}$. Damit ist $\abs{c_n}$~eine reelle Folge und wir können die Grenzwertsätze in~$\R$ anwenden.
+    Es gilt $\abs{c_n} = \sqrt{\real(c_n)^2+\imag(c_n)^2}$ und $\abs{c} = \sqrt{\real(c)^2+\imag(c)^2}$. Damit ist $\abs{c_n}$~eine reelle Folge und wir können die Grenzwertsätze in~$\R$ anwenden.
 \end{proof}
 
 \subsection{Reihen in~\texorpdfstring{$\C$}{C}}
@@ -3421,10 +3422,10 @@ Die Umkehrung gilt hingegen (wie in den reellen Zahlen) \underline{nicht}.
     \begin{equation*}
         \tanh(z) = \frac{\sinh(z)}{\cosh(z)}, \qquad \coth(z) = \frac{\cosh(z)}{\sinh(z)}, \qquad \tan(z) = \frac{\sin(z)}{\cos(z)}, \qquad \cot(z) = \frac{\cos(z)}{\sin(z)}
     \end{equation*}
-    (in der Reihenfolge \emph{Tangens hyperbolicus}, \emph{Cotangens hyperbolicus}, \emph{Tangens}, \emph{Cotangens}).\footnote{$\cosh$, $\sinh$, $\cos$ und~$\sin$ lassen sich wie folgt geometrisch visualisieren: Zeichnen wir den Einheitskreis mit $x^2+y^2 = 1$, so liegt jeder Punkt $(\cos\theta,\sin\theta)$ auf dem Kreis, wobei der Radius mit der $x$"~Achse den Winkel~$\theta$ einschließt. Zeichnen wir die Einheitshyperbel mit $x^2-y^2 = 1$, so liegt jeder Punkt $(\cosh A,\sinh A)$ auf der Hyperbel, wobei die Strecke vom Ursprung zu dem Punkt mit der $x$"~Achse die Fläche $\frac{1}{2}A$ einschließt.}
+    (in der Reihenfolge \emph{Tangens hyperbolicus}, \emph{Cotangens hyperbolicus}, \emph{Tangens}, \emph{Cotangens}).\footnote{$\cosh$, $\sinh$, $\cos$ und~$\sin$ lassen sich wie folgt geometrisch visualisieren: Zeichnen wir den Einheitskreis mit $x^2+y^2 = 1$, so liegt jeder Punkt $(\cos\theta,\sin\theta)$ auf dem Kreis, wobei der Radius mit der $x$"~Achse den Winkel~$\theta$ einschließt. Zeichnen wir die Einheitshyperbel mit $x^2-y^2 = 1$, so liegt jeder Punkt $(\cosh A,\sinh A)$ auf der Hyperbel, wobei die Strecke vom Ursprung zu dem Punkt mit der $x$"~Achse und der Hyperbel die Fläche $\frac{1}{2}A$ einschließt.}
 \end{definition}
 
-Auch $\tanh$ eignet sich wie $x \mapsto x/(1+\abs{x})$ als Abbildung, die $\exR$~isomoprh auf~$[-1,1]$ abbildet.
+Auch $\tanh$ eignet sich wie $x \mapsto x/(1+\abs{x})$ als Abbildung, die $\exR$~isomorph auf~$[-1,1]$ abbildet.
 
 \subsubsection{Eigenschaften und Identitäten}
 
@@ -3436,7 +3437,8 @@ Auch $\tanh$ eignet sich wie $x \mapsto x/(1+\abs{x})$ als Abbildung, die $\exR$
               \end{equation*}
         \item Es gelten
               \begin{align*}
-                  \cos(z) & = \sum_{n=0}^\infty (-1)^n \frac{z^{2n}}{(2n)!} = 1 - \frac{z^2}{2} + \frac{z^4}{24} - \frac{z^6}{6!} + \frac{z^8}{8!} - \cdots \qquad\text{und} \\
+                  \cos(z) & = \sum_{n=0}^\infty (-1)^n \frac{z^{2n}}{(2n)!} = 1 - \frac{z^2}{2} + \frac{z^4}{24} - \frac{z^6}{6!} + \frac{z^8}{8!} - \cdots
+                  \shortintertext{und}
                   \sin(z) & = \sum_{n=0}^\infty (-1)^n \frac{z^{2n+1}}{(2n+1)!} = z - \frac{z^3}{6} + \frac{z^5}{5!} - \frac{z^7}{7!} + \cdots
               \end{align*}
     \end{itemize}
@@ -3446,13 +3448,16 @@ Auch $\tanh$ eignet sich wie $x \mapsto x/(1+\abs{x})$ als Abbildung, die $\exR$
     \begin{enumerate}
         \item Aus den Definitionen folgen
               \begin{gather*}
-                  \cosh(z) = \frac{1}{2} \paren*{\sum_{n=0}^\infty \frac{z^n}{n!} + \sum_{n=0}^\infty \frac{(-z)^n}{n!}} = \sum_{\substack{n=0\\n\text{ gerade}}}^\infty \frac{z^n}{n!} = \sum_{n=0}^\infty \frac{z^{2n}}{(2n)!}, \\
+                  \cosh(z) = \frac{1}{2} \paren*{\sum_{n=0}^\infty \frac{z^n}{n!} + \sum_{n=0}^\infty \frac{(-z)^n}{n!}} = \sum_{\substack{n=0\\n\text{ gerade}}}^\infty \frac{z^n}{n!} = \sum_{n=0}^\infty \frac{z^{2n}}{(2n)!}
+                  \shortintertext{und}
                   \sinh(z) = \frac{1}{2} \paren*{\sum_{n=0}^\infty \frac{z^n}{n!} - \sum_{n=0}^\infty \frac{(-z)^n}{n!}} = \sum_{\substack{n=0\\n\text{ ungerade}}}^\infty \frac{z^n}{n!} = \sum_{n=0}^\infty \frac{z^{2n+1}}{(2n+1)!}.
               \end{gather*}
         \item Aus dem eben Gezeigtem folgen
-              \begin{equation*}
-                  \cos(z) = \sum_{n=0}^\infty \frac{(iz)^{2n}}{(2n)!} = \sum_{n=0}^\infty (-1)^n \frac{z^{2n}}{(2n)!}, \qquad \sin(z) = \sum_{n=0}^\infty \frac{i^{2n+1}}{i} \frac{z^{2n+1}}{(2n+1)!} = \sum_{n=0}^\infty (-1)^n \frac{z^{2n+1}}{(2n+1)!}. \qedhere
-              \end{equation*}
+              \begin{gather*}
+                  \cos(z) = \sum_{n=0}^\infty \frac{(iz)^{2n}}{(2n)!} = \sum_{n=0}^\infty (-1)^n \frac{z^{2n}}{(2n)!}
+                  \shortintertext{und}
+                  \sin(z) = \sum_{n=0}^\infty \frac{i^{2n+1}}{i} \frac{z^{2n+1}}{(2n+1)!} = \sum_{n=0}^\infty (-1)^n \frac{z^{2n+1}}{(2n+1)!}. \qedhere
+              \end{gather*}
     \end{enumerate}
 \end{proof}
 
@@ -3463,10 +3468,9 @@ Auch $\tanh$ eignet sich wie $x \mapsto x/(1+\abs{x})$ als Abbildung, die $\exR$
                   \cos(-z) & = \cos(z),  & \cosh(-z) & = \cosh(z),  \\
                   \sin(-z) & = -\sin(z), & \sinh(-z) & = -\sinh(z).
               \end{align*}
-              $\cos(-z) = \cos(z)$ und $\cosh(-z) = \cosh(z)$. , d.\,h.\ es gilt $\sin(-z) = -\sin(z)$ und $\sinh(-z) = -\sinh(z)$.
         \item Für alle~$z \in \C$ gelten
               \begin{equation*}
-                  \exp(z) = \cosh(z)+\sinh(z) \qquad\text{und}\qquad \exp(z) = \cos(z)+i\sin(z).
+                  \exp(z) = \cosh(z)+\sinh(z) \qquad\text{und}\qquad \exp(iz) = \cos(z)+i\sin(z).
               \end{equation*}
               Die letzte Gleichung heißt auch \emph{\textsc{eulersche} Formel}.
         \item Für alle~$z \in \C$ gelten
@@ -3528,7 +3532,7 @@ Auch $\tanh$ eignet sich wie $x \mapsto x/(1+\abs{x})$ als Abbildung, die $\exR$
     \end{enumerate}
 \end{proof}
 
-\begin{corollary}[Doopelwinkelfunktionen]\leavevmode
+\begin{corollary}[Doppelwinkelfunktionen]\leavevmode
     \begin{enumerate}
         \item Für alle~$z \in \C$ gelten
               \begin{align*}
@@ -3618,7 +3622,7 @@ Auch $\tanh$ eignet sich wie $x \mapsto x/(1+\abs{x})$ als Abbildung, die $\exR$
     Es gelten
     \begin{enumerate}
         \item $\cos(\frac{1}{2}\pi) = 0$ und $\sin(\frac{1}{2}\pi) = 1$; sowie
-        \item $\exp(\frac{1}{2}\pi i) = i$, $\exp(\pi i) = 1$, $\exp(\frac{3}{2}\pi i) = -i$ und $\exp(2\pi i) = 1$.
+        \item $\exp(\frac{1}{2}\pi i) = i$, $\exp(\pi i) = -1$, $\exp(\frac{3}{2}\pi i) = -i$ und $\exp(2\pi i) = 1$.
     \end{enumerate}
 \end{proposition}
 
@@ -3669,7 +3673,7 @@ Auch $\tanh$ eignet sich wie $x \mapsto x/(1+\abs{x})$ als Abbildung, die $\exR$
     \begin{enumerate}
         \item Einsetzen in die Definition der Funktionen und Anwenden der Funktionalgleichung lieferen die Identitäten.
         \item Das folgt aus zweifachem Anwenden von \cref{cor:trig:phase:1}, d.\,h.\ $\cos(z+\pi) = \cos((z+\frac{1}{2}\pi) + \frac{1}{2}\pi)$ etc.
-        \item Das folgt aus zweifachem Anwenden von \cref{cor:trig:phase:2}, d.\,h.\ $\cos(z+2\pi) = \cos((z+\pi) +\pi)$ etc.
+        \item Das folgt aus zweifachem Anwenden von \cref{cor:trig:phase:2}, d.\,h.\ $\cos(z+2\pi) = \cos((z+\pi) +\pi)$ etc.\qedhere
     \end{enumerate}
 \end{proof}
 
@@ -3710,7 +3714,8 @@ Auch $\tanh$ eignet sich wie $x \mapsto x/(1+\abs{x})$ als Abbildung, die $\exR$
     \end{equation*}
     Dabei ist $x = 0$ die einzige Stelle mit $\exp(x) = 1$, denn $x \mapsto \exp(x)$ ist streng monoton. Betrachten wir ferner Imaginär"~ und Realteil, erhalten wir
     \begin{gather*}
-        0 = \imag(1) = \imag(\cos y + i\sin y) = \sin y, \\
+        0 = \imag(1) = \imag(\cos y + i\sin y) = \sin y,
+        \shortintertext{und}
         1 = \real(1) = \real(\cos y + i\sin y) = \cos y.
     \end{gather*}
     Die Nullstellen von~$\sin$ sind $y = k\pi$ mit~$k \in \Z$. Aus $\cos y = 1$ und der Periodizität von~$\cos$ folgt, dass $k$~gerade sein muss.
@@ -3935,7 +3940,7 @@ Später werden wir auch komplexwertige Funktionen betrachten.
     \end{enumerate}
 \end{example}
 
-\emph{Achtung}: $f$~ist eine \emph{Funktion} $x \mapsto f(x)$ (z.\,B.\ $f = \sin$), während $f(x)$~eine \emph{Zahl} ist (z.\,B.~0 für~$x = \pi$).
+\emph{Achtung}: $f$~ist eine \emph{Funktion} $x \mapsto f(x)$ (z.\,B.\ $f = \sin$), während $f(x)$~eine \emph{Zahl} ist (z.\,B.~$0$ für~$x = \pi$).
 
 \begin{definition}[algebraische Operationen]
     Gegeben seien zwei Funktionen $f,g\colon D \to \R$ und~$\lambda \in \R$. Dann definieren wir \emph{punktweise}\footnote{\emph{Punktweise} bedeutet, dass wir sie für jede Stelle~$x \in D$ einzeln definieren.}
@@ -4403,7 +4408,7 @@ Jedoch ist nicht alles nach~$\C$ übertragbar, da die Ordnung fehlt. Bspw.\ gibt
     \begin{equation*}
         \cos(x+\delta) - \cos x = \cos x(\cos\delta-1) - \sin x\sin \delta.
     \end{equation*}
-    Nun können wir $0 \leq \abs{\sin\delta} \leq \delta$ und $0 \leq 1-\cos\delta \leq \delta^2/2$ abschätzen, d.\,h.\ nach dem Sandwichlemma werden die abgeschätzten Terme~0 für $\delta \to 0$. Damit können wir für jedes gebene~$\eps > 0$ hinreichend kleine~$\delta > 0$ finden, sodass $\abs{\cos(x+\delta)-\cos x} \leq \eps$ ist.
+    Nun können wir $0 \leq \abs{\sin\delta} \leq \delta$ und $0 \leq 1-\cos\delta \leq \delta^2/2$ abschätzen, d.\,h.\ nach dem Sandwichlemma werden die abgeschätzten Terme~$0$ für $\delta \to 0$. Damit können wir für jedes gebene~$\eps > 0$ hinreichend kleine~$\delta > 0$ finden, sodass $\abs{\cos(x+\delta)-\cos x} \leq \eps$ ist.
 
     Analog können wir für $\delta \to 0$
     \begin{equation*}
@@ -4782,7 +4787,7 @@ Nun haben wir Potenzen für alle reellen Exponenzen definiert.
     \begin{equation*}
         f'(x_0) \coloneqq \diff{f(x)}{x}[x=x_0] \coloneqq \lim_{\substack{h\to0\\ h\neq0\\ x_0+h\in D}} \frac{f(x_0+h)-f(x_0)}{h} \coloneqq \lim_{\substack{x\to x_0\\ x\neq x_0\\ x\in D}} \frac{f(x)-f(x_0)}{x-x_0}.
     \end{equation*}
-    Da uns klar ist, dass die Folgenglieder aus~$D$ kommen und der Nenner nicht~0 werden kann, können wir einige Bedingungen unter~$\lim$ weglassen:
+    Da uns klar ist, dass die Folgenglieder aus~$D$ kommen und der Nenner nicht~$0$ werden kann, können wir einige Bedingungen unter~$\lim$ weglassen:
     \begin{equation*}
         \lim_{h\to0} \frac{f(x_0+h)-f(x_0)}{h} = \lim_{x\to x_0} \frac{f(x)-f(x_0)}{x-x_0}.
     \end{equation*}
@@ -4964,7 +4969,7 @@ Die folgende Zusammenstellung ist (wie es sich für einen aktiv genutzten Werkze
                     \end{itemize}
               \item Man kann und sollte manchmal auch raten.
                     \begin{itemize}
-                        \item Z.\,B.\ indem man sich den Grad des zu faktorisierenden Terms anschaut, und dann überlegt, welchen Grad die Faktoren haben müssen. Bspw.\ $x^3 - y^3 = (x - y) (x^2 + xy + y^2)$; links steht Grad~3, rechts zwei Faktoren mit Grad~1 und Grad~2.
+                        \item Z.\,B.\ indem man sich den Grad des zu faktorisierenden Terms anschaut, und dann überlegt, welchen Grad die Faktoren haben müssen. Bspw.\ $x^3 - y^3 = (x - y) (x^2 + xy + y^2)$; links steht Grad~$3$, rechts zwei Faktoren mit Grad~$1$ und Grad~$2$.
                         \item Ein nützlicher Trick ist das Raten von Nullstellen~$x_0$ von Polynomen in~$x$, sodass dieser als Faktor $x - x_0$ ausgeklammert werden kann. Bspw.\ hat $p = x^3 - 3x - 2$ die Nullstelle $x_0 = -1$, sodass $p$~einen Faktor $x-x_0 = x+1$ hat, d.\,h.\ $p = (x+1) (x^2 - x + -2)$. Der zweite Faktor hat wiederum einen Faktor $x_0 = 2$ und daher $p = (x+1) (x-2) (x+1)$. Wir hätten also auch noch einmal $x_0 = 1$ als Nullstelle raten können.
                         \item Natürlich sollte man beim Raten auch sein Gehirn ein wenig einschalten um zu schauen, welche Terme in den Faktoren da sein müssen, um den ursprünglichen Term zu erhalten.
                     \end{itemize}

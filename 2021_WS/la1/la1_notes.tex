@@ -7,6 +7,8 @@
     term={WS~2021/2022}
 ]{tienuni}
 
+\overfullrule3cm
+
 \begin{document}
 \maketitle
 \tableofcontents
@@ -654,11 +656,12 @@ In den Übungsaufgaben werden wir noch eine Vielzahl weiterer Regeln beweisen.
     Ein Ring~$R$ heißt \emph{kommutativ}, falls zusätzlich $a\cdot b = b\cdot a$ für alle $a, b \in \R$ gilt.
 \end{definition}
 
-\begin{remark}\leavevmode
-    \begin{enumerate}
-        \item Im Vergleich zu einem Körper sind die Axiome der Addition identisch. Bei der Multiplikation fehlt lediglich die Kommutativität~\ref{ax:field:mc} und die Existenz des Inversen~\ref{ax:field:mi}. Aufgrund der fehlenden Kommutativität werden in der Distributivität beide Multiplikationsreihenfolgen angeben, die wir auch beide nachweisen müssen.
-        \item In einem Ring wird nicht verlangt, dass $1_R \neq 0_R$. Ist aber $1_R = 0_R$, so folgt daraus $a = 1_R a = 0_R a = 0_R$ für alle~$a \in R$, also $R = \mset{0_R}$.
-    \end{enumerate}
+\begin{remark}
+    Im Vergleich zu einem Körper sind die Axiome der Addition identisch. Bei der Multiplikation fehlt lediglich die Kommutativität~\ref{ax:field:mc} und die Existenz des Inversen~\ref{ax:field:mi}. Aufgrund der fehlenden Kommutativität werden in der Distributivität beide Multiplikationsreihenfolgen angeben, die wir auch beide nachweisen müssen.
+\end{remark}
+
+\begin{remark}
+    In einem Ring wird nicht verlangt, dass $1_R \neq 0_R$. Ist aber $1_R = 0_R$, so folgt daraus $a = 1_R a = 0_R a = 0_R$ für alle~$a \in R$, also $R = \mset{0_R}$.
 \end{remark}
 
 \begin{notation}[Nullring]
@@ -711,6 +714,10 @@ Vom kommutativen Ring zum Körper fehlt nur noch die Existenz des multiplikative
 
 \section{Vektorräume}
 
+\emph{Vektorräume} sind wichtige Objekte, die in vielen Bereichen der Mathematik vorkommen. Das Ziel der linearen Algebra ist es, eine "`Theorie der Vektorräume"' zu entwickeln und dabei die Eigenschaften von Vektorräumen zu erforschen.
+
+\subsection{Vektorraumaxiome}
+
 \begin{definition}[Vektorraum]
     Sei $K$~ein Körper.  Ein \emph{Vektorraum über~$K$} oder \emph{$K$"~Vektorraum} ist eine Menge~$V$ zusammen mit zwei Abbildungen
     \begin{equation*}
@@ -739,11 +746,12 @@ Wir schreiben oft auch einfach~$V$ für den $K$"~Vektorraum $(V,+,\cdot)$.
     Die Elemente von~$V$ nennen wir \emph{Vektoren}, die Elemente von~$K$ nennen wir \emph{Skalare}. Das Nullelement~$0_V$ heißt \emph{Nullvektor} oder auch \emph{die Null von~$V$}.
 \end{notation}
 
-\begin{remark}\leavevmode
-    \begin{enumerate}
-        \item Es ist sehr wichtig, zu wissen, welchen Grundkörper~$K$ der Vektorraum hat. Dieselbe Menge~$V$, aber über zwei verschiedene Körper $K_1$~und~$K_2$, sind zwei verschiedene Vektorräume, nämlich ein $K_1$"~ und ein $K_2$"~Vektorraum. Im Allgemeinen ist ein Vektorraum über einen anderen Körper kein Vektorraum mehr, da er z.\,B.\ nicht mehr abgeschlossen ist.
-        \item Die Skalarmultiplikation multipliziert ein Skalar mit einem Vektor (wie der Name schon sagt, also \underline{kein} Skalarprodukt). Wir beachten auch die Reihenfolge der Skalarmultiplikation, d.\,h.\ Skalare werden von \emph{links} multipliziert.
-    \end{enumerate}
+\begin{remark}
+    Es ist sehr wichtig, zu wissen, welchen Grundkörper~$K$ der Vektorraum hat. Dieselbe Menge~$V$, aber über zwei verschiedene Körper $K_1$~und~$K_2$, sind zwei verschiedene Vektorräume, nämlich ein $K_1$"~ und ein $K_2$"~Vektorraum. Im Allgemeinen ist ein Vektorraum über einen anderen Körper kein Vektorraum mehr, da er z.\,B.\ nicht mehr abgeschlossen ist.
+\end{remark}
+
+\begin{remark}
+    Die Skalarmultiplikation multipliziert ein Skalar mit einem Vektor (wie der Name schon sagt, also \underline{kein} Skalarprodukt). Wir beachten auch die Reihenfolge der Skalarmultiplikation, d.\,h.\ Skalare werden von \emph{links} multipliziert.
 \end{remark}
 
 Wie bei Körpern gibt es eine Vielzahl an Rechenregeln für Vektorräume, die wir in den Übungen beweisen.
@@ -815,7 +823,7 @@ Dabei ist in den Definitionsgleichungen auf der linken Seite Addition und Skalar
 
 Ein noch wichtigeres Beispiel ist
 
-\begin{definition}[Menge aller Abbildungen]
+\begin{definition}
     Sei $K$~ein Körper und sei $I \neq \varnothing$ eine Menge. Dann ist
     \begin{equation*}
         K^{(I)} \coloneqq \mset{f \in K^I \mid f(x) \neq 0 \text{ für nur endlich viele } x \in I}
@@ -844,7 +852,7 @@ Jede Abbildung $f \in K^{(I)}$ bildet also fast alle~$x \in I$ (bis auf endlich 
 \begin{example}
     Ist $K$~ein Teilkörper von~$L$, so ist $L$~ein $K$"~Vektorraum, wobei die Skalarmultiplikation $\cdot\colon K\times L \to L$ durch Einschränkung der Multiplikation $\dot\colon L\times L \to L$ definiert ist.
 
-    Bspw.\ ist der Körper~$\Q(\sqrt{2})$ ein $\Q$"~Vektorraum, der Körper~$\R$ ein $\Q$"~Vektorraum und $\R$~auch ein $\Q(\sqrt{2})$"~Vektorraum.
+    Bspw.\ ist der Körper~$\Q(\sqrt{2})$ ein $\Q$"~Vektorraum und $\R$~sowohl ein~$\Q$"~ als auch ein $\Q(\sqrt{2})$"~Vektorraum.
 \end{example}
 
 \begin{definition}[externe direkte Summe]
@@ -879,34 +887,51 @@ Noch ein Beispiel aus der Analysis.
 \end{definition}
 
 \begin{lemma}
-    Sei $U$~ein Unterraum von~$V$. Durch Einschränkung der Addition und Skalarmultiplikation von~$V$ erhalten wir Abbildungen $+\colon U\times U \to U$ und $\cdot\colon K\times U \to U$ (was aufgrund \cref{def:subfield:add,def:subfield:mul} möglich ist). Dann ist $U$ zusammen mit beiden Einschränkungen ein $K$"~Vektorraum.
+    Sei $U$~ein Unterraum von~$V$. Durch Einschränkung der Addition und Skalarmultiplikation von~$V$ erhalten wir Abbildungen $+\colon U\times U \to U$ und $\cdot\colon K\times U \to U$ (was aufgrund \cref{def:subfield:add,def:subfield:mul} möglich ist). Dann ist $U$ zusammen mit beiden Einschränkungen wieder ein $K$"~Vektorraum.
 \end{lemma}
 
 \begin{proof}
     Sei~$u \in U$. Aus \cref{def:subfield:mul} folgen $0u = 0 \in U$ und $(-1)u = -u \in U$. Deshalb gelten die Vektorraumaxiome \ref{ax:vecspace:an}~und~\ref{ax:vecspace:ai}. Alle anderen Axiome folgen aus~$V$.
 \end{proof}
 
-\begin{example}\leavevmode
-    \begin{enumerate}
-        \item Die Teilmengen~$V$ und~$\mset{0}$ (statt~$\mset{0}$ schreiben wir oft nur~0) sind Unterräume von~$V$, die sog.\ \emph{trivialen Unterräume}.
-        \item Sei~$v \in V$. Dann ist
-        \begin{equation*}
-            U_v \coloneqq Kv \coloneqq \mset{av \mid a \in K}
-        \end{equation*}
-        der kleinste Unterraum von~$V$, welcher $v$~enthält.
-    \end{enumerate}
+\begin{example}
+    Die Teilmengen~$V$ und~$\mset{0}$ (statt~$\mset{0}$ schreiben wir oft nur~0) sind Unterräume von~$V$, die sog.\ \emph{trivialen Unterräume}.
 \end{example}
 
-\begin{notation}[Gerade]
-    Ist~$v \neq 0$, so nennen wir $U_v$~die durch~$v$ verlaufende \emph{Gerade}.
-\end{notation}
+\begin{example}
+    Sei~$v \in V$. Dann ist
+    \begin{equation*}
+        U_v \coloneqq Kv \coloneqq \mset{av \mid a \in K}
+    \end{equation*}
+    der kleinste Unterraum\footnote{An der Stelle müssten wir definieren, was "`klein"' i.\,S.\,v.\ Unterräumen bedeuten soll. Hier meint der Dozent wahrscheinlich die \emph{Dimension}, die später drankommt.} von~$V$, welcher $v$~enthält.
+\end{example}
 
-\begin{example}\leavevmode
-    \begin{enumerate}
-        \item Für jede Menge~$I$ ist $K^{(I)}$~ein Unterraum von~$K^I$, denn nach Addition und Skalarmultiplikation hat jede Abbildung immer noch nur endlich viele Stellen ungleich~0.
-        \item Sei $I = [a,b]$ ein Intervall in~$\R$. Dann ist $C^0(I)$~ein Unterraum von~$\R^I$, weil sich die Stetigkeit unter Addition und Skalarmultiplikation nicht ändert.
-        \item Die Elemente des $\R$"~Vektorraums~$\R^\N$ sind die in der Analysis behandelten reellen Folgen. Die Teilmenge der konvergenten reellen Folgen ist ein Unterraum von~$\R^\N$, da aufgrund der Grenzwertsätze die Folgen nach Addition und Skalarmultiplikation immer noch konvergieren.
-    \end{enumerate}
+\begin{definition}[Gerade]
+    Ist~$v \neq 0$, so nennen wir
+    \begin{equation*}
+        U_v \coloneqq Kv \coloneqq \mset{av \mid a \in K}
+    \end{equation*}
+    die durch~$v$ verlaufende \emph{Gerade}.
+\end{definition}
+
+\begin{example}
+    Für jede Menge~$I$ ist $K^{(I)}$~ein Unterraum von~$K^I$, denn nach Addition und Skalarmultiplikation hat jede Abbildung immer noch nur endlich viele Stellen ungleich~0.
+\end{example}
+
+\begin{example}
+    Sei $I = [a,b]$ ein Intervall in~$\R$. Dann ist $C^0(I)$~ein Unterraum von~$\R^I$, weil sich die Stetigkeit unter Addition und Skalarmultiplikation nicht ändert.
+\end{example}
+
+\begin{example}
+    Die Elemente des $\R$"~Vektorraums~$\R^\N$ sind die in der Analysis behandelten reellen Folgen. Die Teilmenge der konvergenten reellen Folgen ist ein Unterraum von~$\R^\N$, da aufgrund der Grenzwertsätze die Folgen nach Addition und Skalarmultiplikation immer noch konvergieren.
+\end{example}
+
+\begin{example}
+    Sei~$a \in K$. Wir definieren
+    \begin{equation*}
+        U(a) \coloneqq \mset*{\p{a\\b} \mid b \in K}.
+    \end{equation*}
+    Dann ist $U(a)$ genau dann ein Unterraum von~$K^2$, wenn $a = 0$.
 \end{example}
 
 \begin{definition}[Durchschnitt, Summe]
@@ -914,12 +939,212 @@ Noch ein Beispiel aus der Analysis.
     \begin{equation*}
         U_1+U_2 \coloneqq \mset{u_1+u_2 \mid u_1 \in U_1, u_2 \in U_2}
     \end{equation*}
-    ist die \emph{Summe} von $U_1$~und~$U_2$. $U_1 \cap U_2$ und $U_1+U_2$ sind Unterräume von~$V$.
+    die \emph{Summe} von $U_1$~und~$U_2$.
 \end{definition}
 
+\begin{lemma}
+    $U_1 \cap U_2$ und $U_1+U_2$ sind Unterräume von~$V$.
+\end{lemma}
+
 \begin{definition}[interne direkte Summe]
-    Seien $U_1$~und~$U_2$ Unterräume von~$V$. Ist $U_1 \cap U_2 = 0$, so nennen wir $U_1 \oplus U_2 \coloneqq U_1+U_2$ die \emph{(interne) direkte Summe} von $U_1$~und~$U_2$.
+    Seien $U_1$~und~$U_2$ Unterräume von~$V$. Ist $U_1 \cap U_2 = 0$, so nennen wir
+    \begin{equation*}
+        U_1\oplus U_2 \coloneqq U_1+U_2
+    \end{equation*}
+    die \emph{(interne) direkte Summe} von $U_1$~und~$U_2$.
 \end{definition}
+
+\begin{definition}[Summe, interne direkte Summe von Familien]
+    Sei $I$~eine Indexmenge, und für jedes~$i \in I$ sei $U_i$~ein Unterraum von~$V$ (kurz $(U_i)_{i\in I}$ eine Familie von Unterräumen von~$V$). Die \emph{Summe}
+    \begin{equation*}
+        \sum_{i\in I} U_i
+    \end{equation*}
+    der Unterräume~$U_i$ ist die Menge aller Vektoren~$v \in V$, für die es eine endliche Teilmenge~$J \subseteq I$ gibt, sodass
+    \begin{equation*}
+        v = \sum_{j\in J} u_j \qquad\text{mit } u_j \in U_j \text{ für alle } j \in J.
+    \end{equation*}
+
+    Ist
+    \begin{equation*}
+        U_j \cap \paren*{\sum_{i\in I\setminus{j}} U_i} = 0 \qquad\text{für alle } j \in I,
+    \end{equation*}
+    so nennen wir die Summe \emph{(interne) direkte Summe} und schreiben
+    \begin{equation*}
+        \bigoplus_{i\in I} U_i \coloneqq \sum_{i\in I} U_i.
+    \end{equation*}
+\end{definition}
+
+Jedes $v \in (U_i)_{i\in I}$ ist also eine Summe von endlich vielen Vektoren~$u_j$, wobei jedes~$u_j$ von einem anderen Unterraum kommt.\footnote{Anders formuliert: Jeder Vektor~$v$ der internen Summe ist die Summe $\sum_{i\in I} u_i$ mit $u_i \in U_i$, wobei $u_i \neq 0$ nur für endlich viele~$u_i$ gilt. Vgl.\ mit der Definition von~$K^{(I)}$.}\textsuperscript{,}\footnote{Eine witzige Eigenschaft: Für zwei Untervektorräume $U$~und~$W$ von~$V$ gilt
+\begin{equation*}
+    U\times\mset{0} \oplus \mset{0}\times W = U \oplus W,
+\end{equation*}
+also $(u, 0) + (0,w) = (u,w)$, wobei auf der linken Seite die \emph{interne} direkte Summe und auf der rechten Seite die \emph{externe} direkte Summe gemeint ist. Die Vektorräume auf der linken Seite teilen sich nur den Vektor $(0, 0)$.}
+
+\begin{lemma}
+    $\bigcup_{i\in I} U_i$ und $\sum_{i\in I} U_i$ sind Unterräume von~$V$.
+\end{lemma}
+
+Betrachten wir Standardvektorräume (wie z.\,B.~$\R^2$), dann können wir uns Untervektorräume als z.\,B.\ den Ursprung, Geraden, Ebenen, Räume, etc.\ vorstellen, die den Ursprung enthalten. Insbesondere sind $U_v$~Ursprungsgeraden. Die interne Summe zweier verschiedener Geraden in~$\R^2$ ist~$\R^2$ selbst; die Summe ist auch direkt, da sie nur~0 teilen.
+
+\section{Lineare Abbildungen}
+
+Die "`Theorie der Vektorräume"' wird interessant, wenn wir noch Abbildungen zwischen Vektorräumen betrachten. Dabei sollen sie die Vektorraumstruktur\footnote{Wichtig ist, dass die hier betrachteten Homomorphismen \emph{Vektorraumstrukturen} erhalten. Es gibt noch viele andere Homomorphismen, wie z.\,B.\ Mengenhomomorphismen (das sind die Abbildungen), Gruppenhomomorphismen, Homomorphismen zwischen topologischen Räumen (sog.\ Homöomorphismen), etc.} erhalten, d.\,h.\ mit der Addition und Skalarmultiplikation innerhalb des Start"~ und Zielvektorraums kompatibel sein. Das führt zu \emph{linearen Abbildungen} bzw.\ \emph{Homomorphismen} ("`Gleich-Gestalter"'). Das vorläufige Ziel wird es sein, lineare Abbildungen zu verstehen.
+
+\subsection{Definition}
+
+\begin{definition}[lineare Abbildung]
+    Seien $V$~und~$W$ zwei $K$"~Vektorräume. Eine Abbildung $f\colon V \to W$ heißt \emph{linear} (oder \emph{$K$"~linear}), falls folgende Bedingungen gelten:
+    \begin{enumerate}
+        \item $f(v_1+v_2) = f(v_1)+f(v_2)$ für alle $v_1,v_2 \in V$; und
+        \item $f(av) = af(v)$ für alle~$v \in V$ und~$a \in K$.
+    \end{enumerate}
+\end{definition}
+
+Dabei finden Addition und Skalarmultiplikation zwischen den Argumenten der Abbildung in~$V$ und zwischen den Bildern der Abbildung in~$W$ statt. Anders geschrieben:
+\begin{align*}
+    f(v_1\mathrel{+_V}v_2) &= f(v_1)\mathrel{+_W}f(v_2), \\
+    f(a\mathrel{\cdot_V}v) &= a\mathrel{\cdot_W}f(v)
+\end{align*}
+
+\begin{definition}[Homomorphismus, Endomorphismus]
+    Ist~$f\colon V \to W$ linear, so nennen wir~$f$ einen \emph{Homomorphismus}. Ist zudem $V = W$, so nennen wir~$f$ einen \emph{Endomorphismus} (also $f\colon V \to V$).
+
+    Weiterhin definieren wir
+    \begin{gather*}
+        \hom(V,W) \coloneqq \mset{f \in \map(V,W) \mid f \text{ ist ein Homomorphismus}}
+        \shortintertext{und}
+        \mend(V) \coloneqq \hom(V,V).
+    \end{gather*}
+\end{definition}
+
+\begin{definition}[Monomorphismus, Epimorphismus, Isomorphismus]
+    Sei $f\colon V \to W$ ein Homomorphismus.
+    \begin{itemize}
+        \item $f$~ist ein \emph{Monomorphismus}, falls $f$~injektiv ist.
+        \item $f$~ist ein \emph{Epimorphismus}, falls $f$~surjektiv ist.
+        \item $f$~ist ein \emph{Isomorphismus}, falls $f$~bijektiv ist.
+    \end{itemize}
+\end{definition}
+
+\begin{definition}[isomorph]
+    Zwei $K$~Vektorräume $V$~und~$W$ heißen \emph{isomorph}, falls ein Isomorphismus $f\colon V \to W$ existiert. Wir schreiben dann $V \cong W$.
+\end{definition}
+
+Der Begriff der Isomorphie ist sehr mächtig, da er uns erlaubt, innerhalb der linearen Algebra die beiden Objekte "`gleichzusetzen"', d.\,h.\ die Objekte sind zueinander äquivalent und verhalten sich auch (unter Addition und Skalarmultiplikation) gleich.
+
+\begin{lemma}\label{lem:hom:def}
+    Seien $V$~und~$W$ zwei $K$"~Vektorräume. Eine Abbildung $f\colon V \to w$ ist genau dann linear, wenn
+    \begin{equation*}
+        f(a_1v_1 + a_2v_2) = a_1f(v_1) + a_2f(v_2)
+    \end{equation*}
+    für alle $a_1,a_2 \in K$ und $v_1,v_2 \in V$ gilt.
+\end{lemma}
+
+\begin{proof}
+    Übungsaufgabe.
+\end{proof}
+
+\subsection{Beispiele von linearen Abbildungen}
+
+\begin{definition}[Nullabbildung]
+    Seien $V$~und~$W$ zwei $K$"~Vektorräume. Die \emph{Nullabbildung}
+    \begin{equation*}
+        f\colon V \to W,\quad v \mapsto 0 \quad\text{für alle } v \in V
+    \end{equation*}
+    ist ein Homomorphismus. Wir schreiben $f = 0$.
+\end{definition}
+
+\begin{definition}[Identität]
+    Sei $V$~ein $K$"~Vektorraum. Die \emph{Identität}
+    \begin{equation*}
+        f\colon V \to V,\quad v \mapsto v \quad\text{ für alle } v \in V
+    \end{equation*}
+    ist ein Homomorphismus. Wir schreiben $f = \id_V$.
+\end{definition}
+
+Die Identität ist ein bijektiver Endomorphismus, also ein Isomorphismus und insbesondere ein Homomorphismus.
+
+\begin{example}\leavevmode
+    \begin{enumerate}
+        \item Sei $V$~ein $K$"~Vektorraum und sei~$a \in K$. Die Abbildung $f_a\colon V \to V$, $v \mapsto av$ für alle~$v \in V$ ist ein Homomorphismus. Ist $a \neq 0$, d.\,h.\ $f_a \neq 0$, so ist $f_a$~sogar ein Isomorphismus.
+        \item Für jeden Homomorphismus $f\colon K \to K$ gibt es ein~$a \in K$ mit~$f = f_a$. Für alle~$\lambda \in K$ gilt nämlich $f(\lambda) = f(\lambda1) = \lambda f(1)$. Dann können wir $a \coloneqq f(1)$ setzen.
+        \item Die Graphen der Homomorphismen $f\colon K \to K$ sind genau die Geraden~$U_v \subseteq K^2$, wobei $v = (a,b)$ mit~$a \neq 0$ ist. Die Punkte des Graphen sind nämlich $(\lambda,f(\lambda)) = (\lambda,\lambda f(1)) = \lambda(1,f(1))$ für alle~$\lambda \in K$. Für~$a = 0$ wäre $f$~nur auf~$0$ definiert.
+    \end{enumerate}
+\end{example}
+
+\begin{example}
+    Sei $K$~ein Körper und sei $(a,b,c,d) \in K^4$ gegeben. Die Abbildung
+    \begin{equation*}
+        f\colon K^2 \to K^2,\quad \p{x\\y} \mapsto \p{ax+by\\cx+dy}
+    \end{equation*}
+    ist ein Homomorphismus.
+
+    (Um das nachzuweisen, setzen wir einfach in die Definition linearer Abbildungen ein. Für die Addition gilt
+    \begin{equation*}
+        f\paren*{\p{x_1\\y_1} + \p{x_2\\y_2}} = \p{a(x_1+x_2) + b(y_1+y_2) \\ c(x_1+x_2) + d(y_1+y_2)} = \p{ax_1+by_1\\cx_1+dy_1} + \p{ax_2+by_2\\cx_2+dy_2} = f\paren*{\p{x_1\\y_1}} + f\paren*{\p{x_2\\y_2}}.
+    \end{equation*}
+    Analog können wir zeigen, dass die Abbildung mit der Skalarmultiplikation kompatibel ist.)
+\end{example}
+
+\begin{example}
+    Die Abbildung $f\colon \R \to \R$, $x \mapsto x^2$ ist kein Homomorphismus bzw.\ nicht $\R$"~linear, denn z.\,B.\ gilt $16 = f(2+2) \neq f(2)+f(2) = 8$.
+\end{example}
+
+\emph{Warnung}: In der linearen Algebra gibt es viele verschiedene Nullen. Z.\,B.\ seien $V$~und~$W$ zwei $K$"~Vektorräume. $0$~kann nun die Null~$0_K$ in~$K$, die Null~$0_V$ in~$V$, die Null~$0_W$ in~$W$, die Nullabbildung $0\colon V \to W$ oder der triviale Unterraum~$\mset{0}$ sein.
+
+\subsection{Erste Eigenschaften linearer Abbildungen}
+
+\begin{lemma}
+    Sei $f\colon V \to W$ ein Homomorphismus. Dann gilt $f(0) = 0$.
+\end{lemma}
+
+\begin{proof}
+    Es gibt zwei Möglichkeiten, die Aussage zu beweisen.
+
+    Erster Beweis: Es gilt
+    \begin{equation*}
+        f(0) \overset{\ref{ax:vecspace:an}}{=} f(0+0) \overset{\text{Hom.}}{=} f(0)+f(0).
+    \end{equation*}
+    Daraus folgt
+    \begin{equation*}
+        0 \overset{\ref{ax:vecspace:ai}}{=} f(0)-f(0) = (f(0)+f(0)) - f(0) \overset{\ref{ax:vecspace:aa}}{=} f(0) + (f(0)-f(0)) \overset{\ref{ax:vecspace:ai}}{=} f(0)+0 \overset{\ref{ax:vecspace:an}}{=} f(0).
+    \end{equation*}
+
+    Zweiter Beweis: Für die Nullen $0_K \in K$, $0_V \in V$ und~$0_W \in W$ gilt mit der Rechenregel $0v = 0$
+    \begin{equation*}
+        f(0_V) = f(0_K0_V) \overset{\text{Hom.}}{=} 0_Kf(0_V) = 0_W. \qedhere
+    \end{equation*}
+\end{proof}
+
+Der zweite Beweis ist zwar kürzer, ist aber weniger elementar.
+
+\begin{lemma}
+    Sei $f\colon V \to W$ ein Isomorphismus. Dann ist die Umkehrabbildung $f^{-1}\colon W \to V$ wieder ein Isomorphismus.
+\end{lemma}
+
+\begin{proof}
+    Aus den Eigenschaften von Bijektionen wissen wir, dass~$f^{-1}$ existiert und auch bijektiv ist. Wir müssen noch zeigen, dass $f^{-1}$~linear ist.
+
+    Weil $f$~bijektiv ist, ist jedes~$w \in W$ von der Form~$f(v) = w$ für ein eindeutig bestimmtes~$v \in V$. Dann gelten für alle $v,v_1,v_2 \in V$ und~$a \in K$
+    \begin{gather*}
+        f^{-1}(f(v_1) + f(v_2)) = f^{-1}(f(v_1+v_2)) = v_1+v_2 = f^{-1}(f(v_1)) + f^{-1}(f(v_2))
+        \shortintertext{und}
+        f^{-1}(a(f(v))) = f^{-1}(f(av)) = av = af^{-1}(f(v)).
+    \end{gather*}
+    Folglich ist $f^{-1}$~linear.
+\end{proof}
+
+\begin{lemma}
+    Seien $f\colon U \to V$ und $g\colon V \to W$ Homomorphismen. Dann ist die Komposition $g\circ f\colon U \to W$ auch ein Homomorphismus.
+\end{lemma}
+
+\begin{proof}
+    Wir verwenden \cref{lem:hom:def}. Für alle $a_1,a_2 \in K$ und $v_1,v_2 \in V$ gilt
+    \begin{align*}
+        (g\circ f)(a_1u_2 + a_2u_2) &= g(f(a_1u_1 + a_2u_2)) \overset{\text{Hom.~$f$}}{=} g(a_1f(u_1) + a_2f(u_2)) \\
+        \overset{\text{Hom.~$g$}}&{=} a_1g(f(u_1)) + a_2g(f(u_2)) = a_1(g\circ f)(u_1) + a_2(g\circ f)(u_2). \qedhere
+    \end{align*}
+\end{proof}
 
 \lecturesep{22.~Oktober 2021}
 
