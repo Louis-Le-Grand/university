@@ -211,7 +211,7 @@ Das Beweisprinzip ist, das Gegenteil der Behauptung anzunehmen und das auf einen
 
     \emph{Beweis}: Angenommen $\sqrt{2} \in \Q$, d.\,h.\ Es gibt $a, b \in \Z$, $b \geq 1$ mit~$\sqrt{2} = a/b$. Wir können annehmen, dass $a$~und~$b$ teilerfremd sind (also der Bruch vollständig gekürzt ist).
 
-    Quadrieren liefert $2 = a^2/b^2 \iff 2b^2 = a^2$. Damit sind $a^2$~und~$a$ durch 2~teilbar, insbesondere auch~$a^2$ durch $2\cdot2 = 4$ teilbar. Somit teilt~4 auch~$2b^2$, also sind $b^2$~und~$b$ auch durch 2~teilbar (aufgrund der Eindeutigkeit der Primfaktorzerlegung). Das bedeutet, dass $a$~und~$b$ durch 2~teilbar sind, was im Widerpsruch zur Teilerfremdheit steht.
+    Quadrieren liefert $2 = a^2/b^2 \iff 2b^2 = a^2$. Damit sind $a^2$~und~$a$ durch $2$~teilbar, insbesondere auch~$a^2$ durch $2\cdot2 = 4$ teilbar. Somit teilt~$4$ auch~$2b^2$, also sind $b^2$~und~$b$ auch durch $2$~teilbar (aufgrund der Eindeutigkeit der Primfaktorzerlegung). Das bedeutet, dass $a$~und~$b$ durch $2$~teilbar sind, was im Widerpsruch zur Teilerfremdheit steht.
 \end{example}
 
 \subsubsection{Gleichheit von Mengen}
@@ -274,7 +274,7 @@ Es gilt also
 \begin{definition}[injektiv, surjektiv, bijektiv]
     Sei $f\colon X \to Y$ eine Abbildung. Dann ist
     \begin{itemize}
-        \item $f$~\emph{text}, falls für alle $x_1, x_2 \in \R$ mit~$x_1 \neq x_2$ gilt: $f(x_1) \neq f(x_2)$,
+        \item $f$~\emph{text}, falls für alle $x_1 \neq x_2$ in~$X$ gilt: $f(x_1) \neq f(x_2)$,
         \item $f$~\emph{surjektiv}, falls für jedes~$y \in Y$ ein~$x \in X$ existiert, sodass $f(x) = y$ ist, und
         \item $f$~\emph{bijektiv}, falls $f$~injektiv und surjektiv ist. Dann nennen wir $f$ eine \emph{Bijektion}.
     \end{itemize}
@@ -334,7 +334,7 @@ Auch die Komposition der Abbildung und dessen Umkehrung ergibt Sinn: $f^{-1} \ci
 \emph{Warnung}: Die Schreibweise~$f^{-1}(B)$ impliziert nicht, dass eine Umkehrabbildung existiert.
 
 \begin{remark}
-    Wir beachten, dass das nicht jedes~$y \in B$ ein Urbild~$\in f^{-1}(B)$ haben muss, ähnlich wie eine Abbildung nicht surjektiv sein muss. Genauso kann es mehrere Urbilder~$x_1, x_2 \in f^{-1}(B)$ mit~$x_1 \neq x_2$ zu einem Bild~$y$ mit $f(x_1) = f(x_2) = y$ geben, ähnlich wie eine Abbildung nicht injektiv sein muss.
+    Wir beachten, dass das nicht jedes~$y \in B$ ein Urbild~$\in f^{-1}(B)$ haben muss, ähnlich wie eine Abbildung nicht surjektiv sein muss. Genauso kann es mehrere Urbilder~$x_1,x_2 \in f^{-1}(B)$ mit~$x_1 \neq x_2$ zu einem Bild~$y$ mit $f(x_1) = f(x_2) = y$ geben, ähnlich wie eine Abbildung nicht injektiv sein muss.
 \end{remark}
 
 \begin{definition}[Graph]
@@ -464,24 +464,24 @@ Auch \emph{Rechenbereich} genannt. Körper verallgemeinern und abstrahieren die 
 
 \subsection{Körperaxiome}
 
-\begin{definition}[Körper]
+\begin{axiom}[Körper]
     Ein \emph{Körper} ist eine Menge~$K$ zusammen mit zwei Abbildungen
     \begin{equation*}
         +\colon K \times K \to K,\quad (a, b) \mapsto a+b \quad\qquad\text{und}\qquad\quad \cdot\colon K \times K \to K,\quad (a, b) \mapsto a\cdot b,
     \end{equation*}
     \emph{Addition} bzw.\ \emph{Multiplikation} genannt, sodass folgende Regeln (Axiome) gelten:
-    \begin{enumerate}[leftmargin=*, widest=(M0)]
-        \refitem[(A1)] $a+(b+c) = (a+b)+c$ für alle $a, b, c \in K$ (\emph{Assoziativität der Addition});\label{ax:field:aa}
-        \refitem[(A2)] $a+b = b+a$ für alle $a, b \in K$ (\emph{Kommutativität der Addition});\label{ax:field:ac}
-        \refitem[(A3)] Es existiert ein Element $0 = 0_K \in K$ mit $a+0 = a$ für alle~$a \in K$ (Existenz eines \emph{Nullelements});\label{ax:field:an}
-        \refitem[(A4)] Zu jedem~$a \in K$ gibt es ein~$-a \in K$ mit $a+(-a) = 0$ (Existenz eines \emph{additiven Inversen});\label{ax:field:ai}
-        \refitem[(M1)] $a\cdot(b\cdot c) = (a\cdot b)\cdot c$ für alle $a, b, c \in K$ (\emph{Assoziativität der Multiplikation});\label{ax:field:ma}
-        \refitem[(M2)] $a\cdot b = b\cdot a$ für alle $a, b \in K$ (\emph{Kommutativität der Multiplikation});\label{ax:field:mc}
-        \refitem[(M3)] Es existiert ein Element $1 = 1_K \in K$ mit~$1 \neq 0$ und $1\cdot a = a$ für alle~$a \in K$ (Existenz eines \emph{Einselements});\label{ax:field:mn}
-        \refitem[(M4)] Zu jedem~$a \in K$ mit~$a \neq 0$ gibt es ein~$a^{-1} \in K$ mit~$a\cdot a^{-1} = 1$ (Existenz des \emph{multiplikativen Inversen});\label{ax:field:mi}
-        \refitem[(D)] $(a+b)\cdot c = (a\cdot c)+(b\cdot c)$ für alle $a, b, c \in K$ (\emph{Distributivität}).\label{ax:field:d}
+    \begin{enumerate}[widest=(M0), leftmargin=*]
+        \refitem[(A1)] $a+(b+c) = (a+b)+c$ für alle $a, b, c \in K$ (\emph{Assoziativität der Addition});\label[axiom]{ax:field:aa}
+        \refitem[(A2)] $a+b = b+a$ für alle $a, b \in K$ (\emph{Kommutativität der Addition});\label[axiom]{ax:field:ac}
+        \refitem[(A3)] Es existiert ein Element $0 = 0_K \in K$ mit $a+0 = a$ für alle~$a \in K$ (Existenz eines \emph{Nullelements});\label[axiom]{ax:field:an}
+        \refitem[(A4)] Zu jedem~$a \in K$ gibt es ein~$-a \in K$ mit $a+(-a) = 0$ (Existenz eines \emph{additiven Inversen});\label[axiom]{ax:field:ai}
+        \refitem[(M1)] $a\cdot(b\cdot c) = (a\cdot b)\cdot c$ für alle $a, b, c \in K$ (\emph{Assoziativität der Multiplikation});\label[axiom]{ax:field:ma}
+        \refitem[(M2)] $a\cdot b = b\cdot a$ für alle $a, b \in K$ (\emph{Kommutativität der Multiplikation});\label[axiom]{ax:field:mc}
+        \refitem[(M3)] Es existiert ein Element $1 = 1_K \in K$ mit~$1 \neq 0$ und $1\cdot a = a$ für alle~$a \in K$ (Existenz eines \emph{Einselements});\label[axiom]{ax:field:mn}
+        \refitem[(M4)] Zu jedem~$a \in K$ mit~$a \neq 0$ gibt es ein~$a^{-1} \in K$ mit~$a\cdot a^{-1} = 1$ (Existenz des \emph{multiplikativen Inversen});\label[axiom]{ax:field:mi}
+        \refitem[(D)] $(a+b)\cdot c = (a\cdot c)+(b\cdot c)$ für alle $a, b, c \in K$ (\emph{Distributivität}).\label[axiom]{ax:field:d}
     \end{enumerate}
-\end{definition}
+\end{axiom}
 
 Oftmals lassen wir den Index~$K$ wie in $0_K$~und~$1_K$ weg, wenn der Kontext klar ist. Manchmal schreiben wir ihn aber hinzu, um zu verdeutlichen, dass sie zum Körper~$K$ gehören.
 
@@ -490,11 +490,11 @@ Oftmals lassen wir den Index~$K$ wie in $0_K$~und~$1_K$ weg, wenn der Kontext kl
 \end{remark}
 
 \begin{remark}
-    Dabei steht der Ausdruck~$a+b$ eigentlich für~$+\bigl((a, b)\bigr)$ und~$a\cdot b$ für~$\cdot\bigl((a, b)\bigr)$. Streng genommen müssten wir z.\,B.\ die Assoziativität der Addition~\ref{ax:field:aa} als
+    Dabei steht der Ausdruck~$a+b$ eigentlich für~$+\bigl((a, b)\bigr)$ und~$a\cdot b$ für~$\cdot\bigl((a, b)\bigr)$. Streng genommen müssten wir z.\,B.\ Axiom~\ref{ax:field:aa} als
     \begin{equation*}
         a+(b+c) = (a+c)+b \quad\longrightarrow\quad  +\Bigl(\!\bigl(a, +\bigl((b, c)\bigr)\bigr)\!\Bigr) = +\Bigl(\!\bigl(+\bigl((a, b)\bigr), c\bigr)\!\Bigr)
     \end{equation*}
-    und die Kommutativität der Addition~\ref{ax:field:ac} als
+    und Axiom~\ref{ax:field:ac} als
     \begin{equation*}
         a+b = b+a \quad\longrightarrow\quad +\bigl((a, b)\bigr) = +\bigl((b, a)\bigr)
     \end{equation*}
@@ -536,12 +536,12 @@ Ab sofort meinen wir mit~$K$ immer einen Körper mit den Operationen $+$~und~$\c
 \end{example}
 
 \begin{example}
-    Sei $K \coloneqq \mset{a, b}$ mit~$a \neq b$. Wir definieren die Abbildungen $+\colon K \times K \to K$ und $\cdot\colon K \times K \to K$ durch\footnote{Die Abbildungen ähneln der Addition und Multiplikation modulo~2.}
+    Sei $K \coloneqq \mset{a, b}$ mit~$a \neq b$. Wir definieren die Abbildungen $+\colon K \times K \to K$ und $\cdot\colon K \times K \to K$ durch\footnote{Die Abbildungen ähneln der Addition und Multiplikation modulo~$2$.}
     \begin{align*}
         a + a &= a, & a + b &= b, & b + a &= b, & b + b &= a, \\
         a \cdot a &= a, & a \cdot b &= a, & b \cdot a &= a, & b \cdot b &= b.
     \end{align*}
-    $K$~erfüllt alle Axiome eines Körpers, wobei das Nullelement~$0_K = a$ und das Einselement~$1_K = b$ ist, also $K = \F_2 \coloneqq \mset{0, 1}$. Der Körper ist der kleinstmögliche Körper (jeder Körper muss mindestens 0~und~1 enthalten). Tatsächlich ist der Körper sogar eindeutig, was wir aber nicht beweisen werden.
+    $K$~erfüllt alle Axiome eines Körpers, wobei das Nullelement~$0_K = a$ und das Einselement~$1_K = b$ ist, also $K = \F_2 \coloneqq \mset{0, 1}$. Der Körper ist der kleinstmögliche Körper (jeder Körper muss mindestens $0$~und~$1$ enthalten). Tatsächlich ist der Körper sogar eindeutig, was wir aber nicht beweisen werden.
 \end{example}
 
 \begin{example}
@@ -635,22 +635,22 @@ In den Übungsaufgaben werden wir noch eine Vielzahl weiterer Regeln beweisen.
 
 \subsection{Die Ringe~\texorpdfstring{$\bm{\Z_m}$}{Zm}}
 
-\begin{definition}[Ring]
+\begin{axiom}[Ring]
     Ein \emph{Ring} ist eine Menge~$R$ zusammen mit zwei Abbildungen
     \begin{equation*}
         +\colon R \times R \to R,\quad (a, b) \mapsto a+b \quad\qquad\text{und}\qquad\quad \cdot\colon R \times R \to R,\quad (a, b) \mapsto a \cdot b
     \end{equation*}
     \emph{Addition} bzw.\ \emph{Multiplikation} genannt, sodass folgende Regeln (Axiome) gelten:
     \begin{enumerate}[leftmargin=*, widest=(A1)]
-        \refitem[(A1)] $a+(b+c) = (a+b)+c$ für alle $a, b, c \in R$ (\emph{Assoziativität der Addition});\label{ax:ring:aa}
-        \refitem[(A2)] $a+b = b+a$ für alle $a, b \in R$ (\emph{Kommutativität der Addition});\label{ax:ring:ac}
-        \refitem[(A3)] Es existiert ein Element $0 = 0_R \in R$ mit $a+0 = a$ für alle~$a \in R$ (Existenz eines \emph{Nullelements});\label{ax:ring:an}
-        \refitem[(A4)] Zu jedem~$a \in R$ gibt es ein~$-a \in R$ mit $a+(-a) = 0$ (Existenz eines \emph{additiven Inversen});\label{ax:ring:ai}
-        \refitem[(R1)] $a\cdot(b\cdot c) = (a\cdot b)\cdot c$ für alle $a, b, c \in R$ (\emph{Assoziativität der Multiplikation});\label{ax:ring:ma}
-        \refitem[(R2)] Es existiert ein Element $1 = 1_R \in R$ mit~$1 \neq 0$ und $1\cdot a = a$ für alle~$a \in R$ (Existenz eines \emph{Einselements});\label{ax:ring:mn}
-        \refitem[(D)] $(a+b)\cdot c = (a\cdot c)+(b\cdot c)$ und $a\cdot(b+c) = (a\cdot b)+(a\cdot c)$ für alle $a, b, c \in K$ (\emph{Distributivität}).\label{ax:ring:d}
+        \refitem[(A1)] $a+(b+c) = (a+b)+c$ für alle $a, b, c \in R$ (\emph{Assoziativität der Addition});\label[axiom]{ax:ring:aa}
+        \refitem[(A2)] $a+b = b+a$ für alle $a, b \in R$ (\emph{Kommutativität der Addition});\label[axiom]{ax:ring:ac}
+        \refitem[(A3)] Es existiert ein Element $0 = 0_R \in R$ mit $a+0 = a$ für alle~$a \in R$ (Existenz eines \emph{Nullelements});\label[axiom]{ax:ring:an}
+        \refitem[(A4)] Zu jedem~$a \in R$ gibt es ein~$-a \in R$ mit $a+(-a) = 0$ (Existenz eines \emph{additiven Inversen});\label[axiom]{ax:ring:ai}
+        \refitem[(R1)] $a\cdot(b\cdot c) = (a\cdot b)\cdot c$ für alle $a, b, c \in R$ (\emph{Assoziativität der Multiplikation});\label[axiom]{ax:ring:ma}
+        \refitem[(R2)] Es existiert ein Element $1 = 1_R \in R$ mit~$1 \neq 0$ und $1\cdot a = a$ für alle~$a \in R$ (Existenz eines \emph{Einselements});\label[axiom]{ax:ring:mn}
+        \refitem[(D)] $(a+b)\cdot c = (a\cdot c)+(b\cdot c)$ und $a\cdot(b+c) = (a\cdot b)+(a\cdot c)$ für alle $a, b, c \in K$ (\emph{Distributivität}).\label[axiom]{ax:ring:d}
     \end{enumerate}
-\end{definition}
+\end{axiom}
 
 \begin{definition}[kommutativer Ring]
     Ein Ring~$R$ heißt \emph{kommutativ}, falls zusätzlich $a\cdot b = b\cdot a$ für alle $a, b \in \R$ gilt.
@@ -699,11 +699,11 @@ Manchmal ist es hilfreich, auch die Operatoren aus verschiedenen Mengen durch Su
 \begin{proof}
     Angenommen $\Z_m$~ist ein Körper. Dann folgt $\mchar(\Z_m) = m$ aus der Definition der Addition über die Addition in~$\Z$ (in~$\Z$ ist $m1 = 1+1+\dots+1 = m$). Nach \cref{lem:primechar} ist $m$~eine Primzahl.
 
-    Für die Umkehrung sei nun $m$~eine Primzahl. Zuerst zeigen wir, dass $\Z_m$ nullteilerfrei ist. Seien $a, b \in \Z_m$ mit $a\cdot b = 0 = r_m(a+b)$. Folglich wird $ab$ von~$m$ geteilt (Rest~0). Da $m$~eine Primzahl ist, folgt (aus dem \emph{Lemma von \textsc{Euklid}}): $m$~teilt~$a$ oder $m$~teilt~$b$. Weil nun $0 \leq a, b < m$ ist, muss $a = 0$ oder $b = 0$ sein. Folglich haben wir gezeigt, dass $\Z_m$~nullteilerfrei ist.
+    Für die Umkehrung sei nun $m$~eine Primzahl. Zuerst zeigen wir, dass $\Z_m$ nullteilerfrei ist. Seien $a, b \in \Z_m$ mit $a\cdot b = 0 = r_m(a+b)$. Folglich wird $ab$ von~$m$ geteilt (Rest~$0$). Da $m$~eine Primzahl ist, folgt (aus dem \emph{Lemma von \textsc{Euklid}}): $m$~teilt~$a$ oder $m$~teilt~$b$. Weil nun $0 \leq a, b < m$ ist, muss $a = 0$ oder $b = 0$ sein. Folglich haben wir gezeigt, dass $\Z_m$~nullteilerfrei ist.
 
     Nun zeigen wir, dass jedes~$a \in \Z_m$ mit~$a \neq 0$ ein multiplikatives Inverses besitzt. Für solche~$a$ definieren wir die Abbildung $\rho_a\colon \Z_m \to \Z_m$, $x \mapsto xa$. Dann $\rho_a$~ist injektiv: Aus $xa = \rho_a(x) = \rho_a(y) = ya \iff (x-y)a = 0$ folgt aufgrund Nullteilerfreiheit $x-y = 0 \iff x = y$. Da $\Z_m$~endlich ist, ist $\rho_a$~auch surjektiv.
 
-    Aus der Bijektion folgt, dass $0a, 1a, \dots, (m-1)a$ paarweise verschieden sind (injektiv), und diese Elemente auch jedes Element aus~$\Z_m$ repräsentiert (surjektiv), insbesondere die~1. Es gibt also ein~$x \in \Z_m$ mit~$xa = 1$. Zu jedem~$a \in \Z_m \setminus{0}$ gibt es also ein multiplikatives Inverses~$x \in \Z_m$, sprich $a$~ist invertierbar, was Axiom~\ref{ax:field:mi} erfüllt. Die restlichen Körperaxiome folgen aus dem kommutativen Ring.
+    Aus der Bijektion folgt, dass $0a, 1a, \dots, (m-1)a$ paarweise verschieden sind (injektiv), und diese Elemente auch jedes Element aus~$\Z_m$ repräsentiert (surjektiv), insbesondere die~$1$. Es gibt also ein~$x \in \Z_m$ mit~$xa = 1$. Zu jedem~$a \in \Z_m \setminus{0}$ gibt es also ein multiplikatives Inverses~$x \in \Z_m$, sprich $a$~ist invertierbar, was Axiom~\ref{ax:field:mi} erfüllt. Die restlichen Körperaxiome folgen aus dem kommutativen Ring.
 \end{proof}
 
 Vom kommutativen Ring zum Körper fehlt nur noch die Existenz des multiplikativen Inversen. Hierfür haben wir alle möglichen Kandidaten für das Inverse betrachtet, also $0a, 1a, \dots, (m-1)a$. Wir beobachten, dass diese Menge genau~$\Z_m$ entspricht, es also eine einfache Bijektion~$\rho_a$ geben muss, die wir auch beweisen haben. Der Trick hier war zu zeigen, dass $\Z_m$~nullteilerfrei ist (ein gutes Zeichen, da Nullteilerfreiheit eine Körpereigenschaft ist).
@@ -718,23 +718,23 @@ Vom kommutativen Ring zum Körper fehlt nur noch die Existenz des multiplikative
 
 \subsection{Vektorraumaxiome}
 
-\begin{definition}[Vektorraum]
+\begin{axiom}[Vektorraum]
     Sei $K$~ein Körper.  Ein \emph{Vektorraum über~$K$} oder \emph{$K$"~Vektorraum} ist eine Menge~$V$ zusammen mit zwei Abbildungen
     \begin{equation*}
         +\colon V \times V \to V,\quad (v_1, v_2) \mapsto v_1+v_2 \quad\qquad\text{und}\qquad\quad \cdot\colon K \times V \to V,\quad (a, v) \mapsto a\cdot v,
     \end{equation*}
     \emph{Addition} bzw.\ \emph{Skalarmultiplikation} genannt, sodass folgende Regeln (Axiome) gelten:
     \begin{enumerate}[leftmargin=*, widest=(SM0)]
-        \refitem[(A1)] $v_1+(v_2+v_3) = (v_1+v_2)+v_3$ für alle $v_1, v_2, v_3 \in V$ (\emph{Assoziativität der Addition});\label{ax:vecspace:aa}
-        \refitem[(A2)] $v_1+v_2 = v_2+v_1$ für alle $v_1, v_2 \in V$ (\emph{Kommutativität der Addition});\label{ax:vecspace:ac}
-        \refitem[(A3)] Es existiert ein Element $0 = 0_V \in V$ mit $v + 0_V = v$ für alle~$v \in V$ (Existenz eines \emph{Nullelements});\label{ax:vecspace:an}
-        \refitem[(A4)] Zu jedem~$v \in V$ gibt es ein~$-v \in V$ mit $v+(-v) = 0$ (Existenz eines \emph{additiven Inversen});\label{ax:vecspace:ai}
-        \refitem[(SM1)] $(ab)\cdot v = a\cdot(b\cdot v)$ für alle $a, b \in K$ und~$v \in V$;\label{ax:vecspace:smcomp}
-        \refitem[(SM2)] $1_K \cdot v = v$ für alle~$v \in V$;\label{ax:vecspace:smn}
-        \refitem[(SM3)] $a\cdot(v_1+v_2) = a\cdot v_1 + a\cdot v_2$ für alle~$a \in K$ und $v_1, v_2 \in V$;\label{ax:vecspace:smdv}
-        \refitem[(SM4)] $(a+b)\cdot v = (a\cdot v)+(b\cdot v)$ für alle~$a, b \in K$ und~$v \in V$.\label{ax:vecspace:smdf}
+        \refitem[(A1)] $v_1+(v_2+v_3) = (v_1+v_2)+v_3$ für alle $v_1, v_2, v_3 \in V$ (\emph{Assoziativität der Addition});\label[axiom]{ax:vecspace:aa}
+        \refitem[(A2)] $v_1+v_2 = v_2+v_1$ für alle $v_1, v_2 \in V$ (\emph{Kommutativität der Addition});\label[axiom]{ax:vecspace:ac}
+        \refitem[(A3)] Es existiert ein Element $0 = 0_V \in V$ mit $v + 0_V = v$ für alle~$v \in V$ (Existenz eines \emph{Nullelements});\label[axiom]{ax:vecspace:an}
+        \refitem[(A4)] Zu jedem~$v \in V$ gibt es ein~$-v \in V$ mit $v+(-v) = 0$ (Existenz eines \emph{additiven Inversen});\label[axiom]{ax:vecspace:ai}
+        \refitem[(SM1)] $(ab)\cdot v = a\cdot(b\cdot v)$ für alle $a, b \in K$ und~$v \in V$;\label[axiom]{ax:vecspace:smcomp}
+        \refitem[(SM2)] $1_K \cdot v = v$ für alle~$v \in V$;\label[axiom]{ax:vecspace:smn}
+        \refitem[(SM3)] $a\cdot(v_1+v_2) = a\cdot v_1 + a\cdot v_2$ für alle~$a \in K$ und $v_1, v_2 \in V$;\label[axiom]{ax:vecspace:smdv}
+        \refitem[(SM4)] $(a+b)\cdot v = (a\cdot v)+(b\cdot v)$ für alle~$a, b \in K$ und~$v \in V$.\label[axiom]{ax:vecspace:smdf}
     \end{enumerate}
-\end{definition}
+\end{axiom}
 
 Wir schreiben oft auch einfach~$V$ für den $K$"~Vektorraum $(V,+,\cdot)$.
 
@@ -831,7 +831,7 @@ Ein noch wichtigeres Beispiel ist
     ein $K$"~Vektorraum, wobei wir Addition und Skalarmultiplikation von~$K^I$ benutzen. Wir definieren $K^{(\varnothing)} = 0$ als Nullabbildung.
 \end{definition}
 
-Jede Abbildung $f \in K^{(I)}$ bildet also fast alle~$x \in I$ (bis auf endlich viele) auf~0 ab.
+Jede Abbildung $f \in K^{(I)}$ bildet also fast alle~$x \in I$ (bis auf endlich viele) auf~$0$ ab.
 
 \begin{definition}[Teilkörper]
     Sei $(L,+,\cdot)$ ein Körper und sei $K$~eine Teilmenge von~$L$, sodass die Eigenschaften
@@ -881,8 +881,8 @@ Noch ein Beispiel aus der Analysis.
     Sei $V$~ein $K$"~Vektorraum. Eine Teilmenge~$U$ von~$V$ heißt \emph{Unterraum} von~$V$, falls gilt:
     \begin{enumerate}
         \item $U \neq \varnothing$;
-        \item $u_1+u_2 \in U$ für alle $u_1,u_2 \in U$ und\label{def:subspace:add}
-        \item $au \in U$ für alle~$a \in K$ und~$u \in U$.\label{def:subspace:mul}
+        \item $u_1+u_2 \in U$ für alle $u_1,u_2 \in U$ (\emph{Abgeschlossenheit bzgl.\ Addition}) und\label{def:subspace:add}
+        \item $au \in U$ für alle~$a \in K$ und~$u \in U$ (\emph{Abgeschlossenheit bzgl.\ Skalarmultiplikation}).\label{def:subspace:mul}
     \end{enumerate}
 \end{definition}
 
@@ -891,11 +891,11 @@ Noch ein Beispiel aus der Analysis.
 \end{lemma}
 
 \begin{proof}
-    Sei~$u \in U$. Aus \cref{def:subfield:mul} folgen $0u = 0 \in U$ und $(-1)u = -u \in U$. Deshalb gelten die Vektorraumaxiome \ref{ax:vecspace:an}~und~\ref{ax:vecspace:ai}. Alle anderen Axiome folgen aus~$V$.
+    Sei~$u \in U$. Aus \cref{def:subfield:mul} folgen $0u = 0 \in U$ und $(-1)u = -u \in U$. Deshalb gelten die Axiome \ref{ax:vecspace:an}~und~\ref{ax:vecspace:ai}. Alle anderen Axiome folgen aus~$V$.
 \end{proof}
 
 \begin{example}
-    Die Teilmengen~$V$ und~$\mset{0}$ (statt~$\mset{0}$ schreiben wir oft nur~0) sind Unterräume von~$V$, die sog.\ \emph{trivialen Unterräume}.
+    Die Teilmengen~$V$ und~$\mset{0}$ (statt~$\mset{0}$ schreiben wir oft nur~$0$) sind Unterräume von~$V$, die sog.\ \emph{trivialen Unterräume}.
 \end{example}
 
 \begin{example}
@@ -915,7 +915,7 @@ Noch ein Beispiel aus der Analysis.
 \end{definition}
 
 \begin{example}
-    Für jede Menge~$I$ ist $K^{(I)}$~ein Unterraum von~$K^I$, denn nach Addition und Skalarmultiplikation hat jede Abbildung immer noch nur endlich viele Stellen ungleich~0.
+    Für jede Menge~$I$ ist $K^{(I)}$~ein Unterraum von~$K^I$, denn nach Addition und Skalarmultiplikation hat jede Abbildung immer noch nur endlich viele Stellen ungleich~$0$.
 \end{example}
 
 \begin{example}
@@ -984,11 +984,11 @@ also $(u, 0) + (0,w) = (u,w)$, wobei auf der linken Seite die \emph{interne} dir
     $\bigcup_{i\in I} U_i$ und $\sum_{i\in I} U_i$ sind Unterräume von~$V$.
 \end{lemma}
 
-Betrachten wir Standardvektorräume (wie z.\,B.~$\R^2$), dann können wir uns Untervektorräume als z.\,B.\ den Ursprung, Geraden, Ebenen, Räume, etc.\ vorstellen, die den Ursprung enthalten. Insbesondere sind $U_v$~Ursprungsgeraden. Die interne Summe zweier verschiedener Geraden in~$\R^2$ ist~$\R^2$ selbst; die Summe ist auch direkt, da sie nur~0 teilen.
+Betrachten wir Standardvektorräume (wie z.\,B.~$\R^2$), dann können wir uns Untervektorräume als z.\,B.\ den Ursprung, Geraden, Ebenen, Räume, etc.\ vorstellen, die den Ursprung enthalten. Insbesondere sind $U_v$~Ursprungsgeraden. Die interne Summe zweier verschiedener Geraden in~$\R^2$ ist~$\R^2$ selbst; die Summe ist auch direkt, da sie nur~$0$ teilen.
 
 \section{Lineare Abbildungen}
 
-Die "`Theorie der Vektorräume"' wird interessant, wenn wir noch Abbildungen zwischen Vektorräumen betrachten. Dabei sollen sie die Vektorraumstruktur\footnote{Wichtig ist, dass die hier betrachteten Homomorphismen \emph{Vektorraumstrukturen} erhalten. Es gibt noch viele andere Homomorphismen, wie z.\,B.\ Mengenhomomorphismen (das sind die Abbildungen), Gruppenhomomorphismen, Homomorphismen zwischen topologischen Räumen (sog.\ Homöomorphismen), etc.} erhalten, d.\,h.\ mit der Addition und Skalarmultiplikation innerhalb des Start"~ und Zielvektorraums kompatibel sein. Das führt zu \emph{linearen Abbildungen} bzw.\ \emph{Homomorphismen} ("`Gleich-Gestalter"'). Das vorläufige Ziel wird es sein, lineare Abbildungen zu verstehen.
+Die "`Theorie der Vektorräume"' wird interessant, wenn wir noch Abbildungen zwischen Vektorräumen betrachten. Dabei sollen sie die Vektorraumstruktur\footnote{Wichtig ist, dass die hier betrachteten Homomorphismen \emph{Vektorraumstrukturen erhalten}, d.\,h.\ sie sind mit der Vektorraumstruktur \emph{verträglich}. Es gibt noch viele andere Homomorphismen, wie z.\,B.\ Mengenhomomorphismen (das sind die Abbildungen), Gruppenhomomorphismen, Homomorphismen zwischen topologischen Räumen (sog.\ Homöomorphismen), etc.} erhalten, d.\,h.\ mit der Addition und Skalarmultiplikation innerhalb des Start"~ und Zielvektorraums kompatibel sein. Das führt zu \emph{linearen Abbildungen} bzw.\ \emph{Homomorphismen} ("`Gleich-Gestalter"'). Das vorläufige Ziel wird es sein, lineare Abbildungen zu verstehen.
 
 \subsection{Definition}
 
@@ -1030,7 +1030,7 @@ Dabei finden Addition und Skalarmultiplikation zwischen den Argumenten der Abbil
     Zwei $K$~Vektorräume $V$~und~$W$ heißen \emph{isomorph}, falls ein Isomorphismus $f\colon V \to W$ existiert. Wir schreiben dann $V \cong W$.
 \end{definition}
 
-Der Begriff der Isomorphie ist sehr mächtig, da er uns erlaubt, innerhalb der linearen Algebra die beiden Objekte "`gleichzusetzen"', d.\,h.\ die Objekte sind zueinander äquivalent und verhalten sich auch (unter Addition und Skalarmultiplikation) gleich.
+Der Begriff der Isomorphie ist sehr mächtig, da er uns erlaubt, innerhalb der linearen Algebra die beiden Objekte "`gleichzusetzen"', d.\,h.\ die Objekte sind zueinander äquivalent und verhalten sich auch (unter Addition und Skalarmultiplikation) gleich.\footnote{Zusätzlich definiert man einen \emph{Automorphismus} als einen bijektiven Endomorphismus, also Isomorphismus und Endomorphismus gleichzeitig.}
 
 \begin{lemma}\label{lem:hom:def}
     Seien $V$~und~$W$ zwei $K$"~Vektorräume. Eine Abbildung $f\colon V \to w$ ist genau dann linear, wenn
@@ -1073,7 +1073,7 @@ Die Identität ist ein bijektiver Endomorphismus, also ein Isomorphismus und ins
 \end{example}
 
 \begin{example}
-    Sei $K$~ein Körper und sei $(a,b,c,d) \in K^4$ gegeben. Die Abbildung
+    Sei $K$~ein Körper und sei $(a,b,c,d) \in K^4$ gegeben. Die Abbildung\footnote{Das ist einfach das Matrix-Vektor-Produkt.}
     \begin{equation*}
         f\colon K^2 \to K^2,\quad \p{x\\y} \mapsto \p{ax+by\\cx+dy}
     \end{equation*}
@@ -1093,6 +1093,8 @@ Die Identität ist ein bijektiver Endomorphismus, also ein Isomorphismus und ins
 \emph{Warnung}: In der linearen Algebra gibt es viele verschiedene Nullen. Z.\,B.\ seien $V$~und~$W$ zwei $K$"~Vektorräume. $0$~kann nun die Null~$0_K$ in~$K$, die Null~$0_V$ in~$V$, die Null~$0_W$ in~$W$, die Nullabbildung $0\colon V \to W$ oder der triviale Unterraum~$\mset{0}$ sein.
 
 \subsection{Erste Eigenschaften linearer Abbildungen}
+
+Für das restliche Kapitel seien $V$~und~$W$ zwei $K$"~Vektorräume.
 
 \begin{lemma}
     Sei $f\colon V \to W$ ein Homomorphismus. Dann gilt $f(0) = 0$.
@@ -1147,6 +1149,337 @@ Der zweite Beweis ist zwar kürzer, ist aber weniger elementar.
 \end{proof}
 
 \lecturesep{22.~Oktober 2021}
+
+\begin{lemma}
+    Für alle $f,g \in \hom(V,W)$ und~$a \in K$ definieren wir Abbildungen (Addition und Skalarmultiplikation eines Funktionenraums)
+    \begin{equation*}
+        f+g\colon V \to W,\quad v \mapsto f(v)+g(v) \qquad\text{und}\qquad af\colon V \to W,\quad v \mapsto a(f(v)).
+    \end{equation*}
+    Dann ist $(\hom(V,W),+,\cdot)$ ein $K$"~Vektorraum
+\end{lemma}
+
+\begin{proof}\leavevmode
+    \begin{itemize}
+        \item Zuerst müssen wir zeigen, dass die Addition und Skalarmultiplikation auf $\hom(V,W)$ abgeschlossen ist, d.\,h., dass $f+g$ und~$af$ linear sind. Dafür können wir leicht überprüfen, dass
+        \begin{equation*}
+            (f+g)(\lambda_1v_1+\lambda_2v_2) = \lambda_1(f+g)(v_1)+\lambda_2(f+g)(v_2)
+        \end{equation*}
+        für alle $v_1,v_2 \in V$ und $\lambda_1,\lambda_2 \in K$ gilt.
+        \item Die Axiome \ref{ax:vecspace:aa}~und~\ref{ax:vecspace:ac} in $\hom(V,W)$ folgen aus den Axiomen \ref{ax:vecspace:aa}~und~\ref{ax:vecspace:ac} in~$W$.
+        \item Der Nullvektor in $\hom(V,W)$ (Axiom~\ref{ax:vecspace:an}) ist die Nullabbildung $0\colon V \to W$, ein Homomorphismus.
+        \item Für jedes $f \in \hom(V,W)$ definieren wir $-f\colon V \to W$, $v \mapsto -(f(v))$ als das additive Inverse. Wir sehen leicht, dass $-f \in \hom(V,W)$. Dann gilt
+        \begin{equation*}
+            (f+(-f))(v) = f(v)+(-(f(v))) = 0 \qquad\text{für alle } v \in V.
+        \end{equation*}
+        Also gilt Axiom~\ref{ax:vecspace:ai} in $\hom(V,W)$.
+        \item Für alle $f,g \in \hom(V,W)$, $a \in K$ und~$v \in V$ gilt
+        \begin{align*}
+            (a(f+g))(v) &= a((f+g)(v)) = a(f(v)+g(v)) \underset{\text{in }W}{\overset{\ref{ax:vecspace:smdv}}{=}} a(f(v))+a(g(v)) \\
+            &= (af)(v)+(ag)(v) = (af+ag)(v).
+        \end{align*}
+        Also gilt Axiom~\ref{ax:vecspace:smdv} in $\hom(V,W)$.
+        \item Den Nachweis der Axiome \ref{ax:vecspace:smcomp},~\ref{ax:vecspace:smn} und~\ref{ax:vecspace:smdf} können wir ähnlich führen.\qedhere
+    \end{itemize}
+\end{proof}
+
+\begin{lemma}\label{lem:hom:id}
+    Sei $f\colon V \to W$ ein Homomorphismus.
+    \begin{enumerate}
+        \item Existiert ein Homomorphismus $g\colon W \to V$ mit $g\circ f = \id_V$, so ist $f$~ein Monomorphismus.
+        \item Existiert ein Homomorphismus $g\colon W \to V$ mit $f\circ g = \id_W$, so ist $f$~ein Epimorphismus.
+    \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+    Übungsaufgabe.
+\end{proof}
+
+\begin{remark}
+    Die Umkehrung der beiden Aussagen in \cref{lem:hom:id} gilt auch. Der Beweis dazu erfolgt später.\footnote{Wir werden sehen, dass das mit der Invertierbarkeit von Matrizen zu tun hat, wobei $g$~ein Produkt von Elementarmatrizen ist.}
+\end{remark}
+
+\subsection{Lineare Abbildungen und affine Geraden}
+
+\begin{definition}[Restklasse modulo~$U$]
+    Sei $V$~ein $K$"~Vektorraum und sei $U$~ein Unterraum von~$V$ sowie~$v \in V$. Dann ist die \emph{Restklasse von~$v$ modulo~$U$} definiert als die Menge
+    \begin{equation*}
+        v+U \coloneqq \mset{v+u \mid u \in U}.
+    \end{equation*}
+    Das entspricht dem Unterraum~$U$, aber verschoben um~$v$.\footnote{Die Namensgebung entstammt der Zahlentheorie. Ähnlich sind alle~$w \in U$ in der Restklasse $v+U$ enthalten, und $v$~ist ein Repräsentant dieser Äquivalenzklasse (definiert durch $v\sim w \coloniff (v-w)\in U$).}
+\end{definition}
+
+Zur Erinnerung: Wir definierten $U_v \coloneqq \mset{av \mid a \in K}$ für~$v \in V$.
+
+\begin{definition}[affine Gerade]
+    Für alle $v,w \in V$ sei
+    \begin{equation*}
+        L_{v,w} \coloneqq \mset{u_{v,w}(a) \coloneqq av + (1-a)w \mid a \in K}.
+    \end{equation*}
+
+    Falls $v \neq w$, nennen wir~$L_{v,w}$ die durch $v$~und~$w$ verlaufende \emph{affine Gerade}. Falls $v = w$ ist $L_{v,w} = \mset{v}$.
+\end{definition}
+
+\begin{remark}
+    \begin{enumerate}
+        \item Für~$a = 1$ und~$a = 0$ erhalten wir $v \in L_{v,w}$ bzw.~$w \in L_{v,w}$.
+        \item Im Allgemeinen ist $L_{v,w}$~kein Unterraum von~$V$. Bspw.\ fehlt der Nullvektor.
+    \end{enumerate}
+\end{remark}
+
+\begin{lemma}
+    Seien $v,w \in V$. Es gilt für alle affinen Geraden
+    \begin{equation*}
+        L_{v,w} = w + U_{v-w}.
+    \end{equation*}
+\end{lemma}
+
+\begin{proof}
+    Es gilt für alle~$a \in K$
+    \begin{equation*}
+        u_{v,w}(a) = av + (1-a)w = w + a(v-w).
+    \end{equation*}
+    Folglich bestehen die affine Gerade und die Restklasse aus denselben Elementen.
+\end{proof}
+
+\begin{figure}
+    \begin{tikzpicture}
+        \draw[->] (-2,0) -- (5,0) node[below] {$\R$};
+        \draw[->] (0,-1) -- (0,4) node[left] {$\R$};
+
+        \draw[->] (0,0) -- (1.5,2) node[above right] {$v$};
+        \draw[->] (0,0) -- (3,1) node[above right] {$w$};
+        \draw[->] (0,0) -- (-1.5,1) node[below left] {$v-w$};
+        \draw[dashed] (-1.5,1) -- (1.5,2);
+        \draw (-1.5,4) -- node[very near end, right] {$L_{v,w}$} (4.5,0);
+        \draw (-2,1.3333) -- node[very near end, right] {$U_{v-w}$} (1.5,-1);
+    \end{tikzpicture}
+    \caption{Affine Gerade~$L_{v,w}$ in~$\R^2$. $U_{v-w}$~geht durch~$0$, während $L_{v,w}$ eine \\
+    Verschiebung von~$U_{v-w}$ um~$w$ ist. $L_{v,w}$~und~$U_{v-w}$ sind dementsprechend parallel.}
+\end{figure}
+
+Für einen Homomorphismus $f\colon V \to W$ gilt nun
+\begin{equation*}
+    f(u_{v,w}(a)) = f(av+(1-a)w) = a(f(v)) + (1-a)(f(w)) = u_{f(v),f(w)}(a).
+\end{equation*}
+Damit bildet~$f$ affine Geraden wieder auf affine Geraden ab (falls $f(v) \neq f(w)$). Die Bildgerade unter~$f$ kann aber rotiert oder parallel verschoben worden sein. Durch Einschränkung erhalten wir Abbildungen
+\begin{gather*}
+    f_{v,w}\colon L_{v,w} \to L_{f(v),f(w)},\quad u_{v,w}(a) \mapsto u_{f(v),f(w)}(a)
+    \shortintertext{und}
+    f_{v-w}\colon U_{v-w} \to U_{f(v)-f(w)},\quad a(v-w) \mapsto a(f(v)-f(w))
+\end{gather*}
+mit~$a \in K$.
+
+\begin{remark}\leavevmode
+    \begin{enumerate}
+        \item Für $v \neq w$ mit $f(v) \neq f(w)$ sind $f_{v,w}$~und~$f_{v-w}$ beide bijektiv. In diesem Fall werden die \emph{parallelen} affinen Geraden $U_{v-w}$~und~$L_{v,w}$ wieder auf die \emph{parallelen} affinen Geraden $U_{f(v)-f(w)}$~und~$L_{f(v),f(w)}$ abgebildet.
+        \item Für $v \neq w$, aber $f(v) = f(w)$ ist $L_{f(v),f(w)} = \mset{f(v)}$ und $U_{f(v)-f(w)} = 0$.
+    \end{enumerate}
+\end{remark}
+
+\subsection{Kern und Bild}
+
+\begin{definition}[Kern, Bild]
+    Sei $f\colon V \to W$ ein Homomorphismus. Dann ist
+    \begin{equation*}
+        \ker(f) \coloneqq \mset{v \in V \mid f(v) = 0} \subseteq V
+    \end{equation*}
+    der \emph{Kern} von~$f$, und
+    \begin{equation*}
+        \im(f) \coloneqq \mset{f(v) \mid v \in V} \subseteq W
+    \end{equation*}
+    das \emph{Bild} von~$f$.
+\end{definition}
+
+Der Kern ist im Prinzip die Menge aller "`Nullstellen"' von~$f$. Es gilt nämlich per Definition\footnote{Eine alternative Charakterisierung des Kerns: Sei $f\colon V \to W$ ein Homomorphismus. Für alle $v,w \in V$ ir definieren die Äquivalenzrelation $v \sim w \coloniff f(v) = f(w)$. Dabei folgt aus der Linearität
+\begin{equation*}
+    v \sim w \iff f(v) = f(w) \iff f(v)-f(w) = f(v-w) = 0
+\end{equation*}
+Damit zerfällt~$V$ in Restklassen modulo $\ker(f)$.}
+\begin{equation*}
+    \ker(f) = f^{-1}(0).
+\end{equation*}
+
+\begin{lemma}\label{lem:kerim:properties}
+    Sei $f\colon V \to W$ ein Homomorphismus. Dann gelten:
+    \begin{enumerate}
+        \item $\ker(f)$ ist ein Unterraum von~$V$.
+        \item $\im(f)$ ist ein Unterraum von~$W$.
+        \item $\ker(f) = 0$ genau dann, wenn $f$~ein Monomorphismus ist.
+        \item $\im(f) = W$ genau dann, wenn $f$~ein Epimorphismus ist.
+    \end{enumerate}
+\end{lemma}
+
+\begin{proof}\leavevmode
+    \begin{enumerate}
+        \item Wegen $f(0) = 0$ liegt $0$ in $\ker(f)$. Damit ist $\ker(f) \neq \varnothing$.
+        
+        Für alle~$a \in K$ und $v,v_1,v_2 \in \ker(f)$ gilt aufgrund Linearität
+        \begin{equation*}
+            f(v_1+v_2) = f(v_1)+f(v_2) = 0+0 = 0 \qquad\text{und}\qquad f(av) = af(v) = a0 = 0.
+        \end{equation*}
+        Folglich liegen alle $v_1+v_2$ und~$av$ in $\ker(f)$, also ist $\ker(f)$ unter Addition und Skalarmultiplikation abgeschlossen. $\ker(f)$ ist ein Unterraum von~$V$.
+        \item Wegen $f(0) = 0$ liegt $f(0)$ in $\im(f)$. Damit ist $\im(f) \neq \varnothing$.
+        
+        Seien $w,w_1,w_2 \in \im(f)$, d.\,h.\ es gibt $v,v_1,v_2 \in V$ mit $f(v) = w$, $f(v_1) = w_1$ und $f(v_2) = w_2$. Für alle~$a \in K$ und $w,w_1,w_2 \in \im(f)$ gelten aufgrund Linearität
+        \begin{equation*}
+            w_1+w_2 = f(v_1)+f(v_2) = f(v_1+v_2) \qquad\text{und}\qquad aw = af(v) = f(av).
+        \end{equation*}
+        Folglich gibt es zu jeden $w_1+w_2$ und~$aw$ Urbilder, weshalb $w_1+w_2$ und~$aw$ in $\im(f)$ liegen. Also ist $\im(f)$ unter Addition und Skalarmultiplikation abgeschlossen und $\im(f)$ ein Unterraum von~$W$.
+        \item Sei $f$~injektiv und sei~$v \in \ker(f)$. Dann gilt
+        \begin{equation*}
+            f(v) = 0 = f(0),
+        \end{equation*}
+        und aus der Injektivität folgt $v = 0$. Also ist $\ker(f) = 0$.
+
+        Ist $f$~nicht injektiv, so gibt es $v_1 \neq v_2$ in~$V$ mit $f(v_1) = f(v_2)$. Dann gilt aufgrund Linearität
+        \begin{equation*}
+            f(v_1-v_2) = f(v_1)-f(v_2) = 0.
+        \end{equation*}
+        Somit ist $v_1-v_2 \in \ker(f)$, aber $v_1-v_2 \neq 0$ und damit $\ker(f) \neq 0$.
+        \item Das folgt unmittelbar aus den Definitionen.\qedhere
+    \end{enumerate}
+\end{proof}
+
+\begin{lemma}
+    Sei $f\colon V \to W$ ein Homomorphismus und sei~$b \in \im(f)$. Dann ist $f^{-1}(b)$~genau dann ein Unterraum von~$V$, wenn $b = 0$.
+\end{lemma}
+
+\begin{proof}
+    Zur Rückrichtung: Ist $b = 0$, dann ist $f^{-1}(b) = \ker(f)$, was nach \cref{lem:kerim:properties} ein Unterraum von~$V$ ist.
+
+    Zur Hinrichtung: Ist $b \neq 0$, dann folgt $0 \notin f^{-1}(b)$ aus $f(0) = 0$ (andernfalls wäre $f(0) = b \neq 0$). Damit ist $f^{-1}(b)$ kein Vektorraum und insbesondere kein Unterraum von~$V$, weil der Nullvektor fehlt.
+\end{proof}
+
+\begin{lemma}
+    Sei $f\colon V \to W$ ein Homomorphismus und seien $b \in \im(f)$ und $v \in f^{-1}(b)$. Dann gilt
+    \begin{equation*}
+        f^{-1}(b) = v+f^{-1}(0) = v+\ker(f).
+    \end{equation*}
+\end{lemma}
+
+Das bedeutet, dass ein Urbild~$v \in f^{-1}(b)$ ausreicht, um die gesamte Urbildmenge zu beschreiben. Das wird noch wichtig, wenn wir lineare Gleichungssysteme lösen werden.
+
+\begin{proof}
+    Sei $x \in v+\ker(f)$, also $x = v+u$ mit~$u \in \ker(f)$. Wir haben
+    \begin{equation*}
+        f(x) = f(v+u) = f(v)+f(u) = b+0 = b.
+    \end{equation*}
+    Also gilt $x \in f^{-1}(b)$ für alle~$x$ und daher $v+\ker(f) \subseteq f^{-1}(b)$.
+
+    Sei nun $x \in f^{-1}(b)$. Es gelten
+    \begin{gather*}
+        x = (v-v)+x = v+(x-v)
+        \shortintertext{und}
+        f(-v) = f((-1)v) = -f(v) = -b.
+    \end{gather*}
+    Daraus folgt
+    \begin{equation*}
+        f(x-v) = f(x)+f(-v) = b-b = 0
+    \end{equation*}
+    und daher $x-v \in \ker(f)$, d.\,h.\ $x = v+(x-v) \in v+\ker(f)$ für alle~$x$. Somit gilt $f^{-1}(b) \subseteq v+\ker(f)$ und letztendlich $f^{-1}(b) = v+\ker(f)$.
+\end{proof}
+
+\section{Matrizenrechnung}
+
+\subsection{Definition einer Matrix}
+
+Zur Erinnerung: Sei $K$~ein Körper und $n \geq 1$. Dann ist $K^n$ (das $n$"~fache kartesische Produkt) die Menge aller $n$"~Tupel der Form
+\begin{equation*}
+    \p{a_1\\a_2\\\vdots\\a_n} \qquad\text{mit } a_i \in K \text{ für alle } 1 \leq i \leq n.
+\end{equation*}
+
+Wir werden immer mit der \emph{informellen} Definition von Matrizen arbeiten, die anschaulicher und praktischer ist.
+
+\begin{definition}[Matrix (informell)]
+    Seien $m,n \geq 1$ natürliche Zahlen. Eine \emph{$(m\times n)$"~Matrix} (mit \emph{Einträgen in~$K$}) ist eine Anordnung von Elementen~$a_{ij} \in K$ mit $1 \leq i \leq m$ und $1 \leq j \leq n$ in Form eines Rechtecks\slash einer Tabelle
+    \begin{equation*}
+        A =
+        \begin{pmatrix}
+            a_{11} & a_{12} & \cdots & a_{1n} \\
+            a_{21} & a_{22} & \cdots & a_{2n} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            a_{m1} & a_{m2} & \cdots & a_{mn}
+        \end{pmatrix}.
+    \end{equation*}
+\end{definition}
+
+Auch sehen wir die Indizes mit Kommata getrennt, also~$a_{i,j}$, um z.\,B.\ $a_{1, 37}$~und~$a_{13, 7}$ auseinanderzuhalten.
+
+\begin{notation}[Menge der Matrizen, Zeile, Spalte, Eintrag]
+    Mit~$K^{m,n}$ bezeichnen wir die \emph{Menge aller $(m\times n)$"~Matrizen}. Die $m$"~Tupel
+    \begin{equation*}
+        \p{a_{1j} \\ a_{2j} \\ \vdots \\ a_{mj}}
+    \end{equation*}
+    nennen wir die \emph{$j$"~te Spalte} von~$A$, und die $n$"~Tupel
+    \begin{equation*}
+        (a_{i1}, a_{i2}, \dots, a_{in})
+    \end{equation*}
+    nennen wir die \emph{$i$"~te Zeile} von~$A$. Für alle $1 \leq i \leq m$ und $1 \leq j \leq n$ nennen wir $A_{ij} \coloneqq a_{ij}$ den \emph{$ij$"~ten Eintrag} von~$A$.
+\end{notation}
+
+\begin{remark}
+    Es ist sehr wichtig, dass wir sowohl in der Größe~$m\times n$ als auch in den Indizes von~$a_{ij}$ \emph{zuerst die Zeile, dann die Spalte} schreiben.
+\end{remark}
+
+\begin{example}
+    \begin{equation*}
+        A = \p{1 & \pi & \sqrt{2} \\ 0 & -1 & 0} \in \R^{2, 3}
+    \end{equation*}
+    ist eine $(2\times 3)$"~Matrix mit Einträgen in~$\R$.
+\end{example}
+
+Nun zur \emph{formalen} Definition, die wir nie benutzen werden. Es ist aber recht einfach, alle Beweise und Aussagen in die formale Definition zu überführen.
+
+\begin{definition}[Matrix (formal)]
+    Für~$s \geq 1$ sei $I_s \coloneqq \mset{1, 2,\dots,s}$. Wir setzen
+    \begin{equation*}
+        K^{m,n} \coloneqq K^{I_m\times I_n} = \map(I_m\times I_n,K).
+    \end{equation*}
+    Die Elemente von~$K^{m,n}$ nennen wir \emph{$(m\times n)$"~Matrizen} (mit \emph{Einträgen in~$K$}).
+
+    Eine Matrix~$A$ ist also die Abbildung\footnote{Die Definition erinnert an die Schreibweise von Familien, $A = (a_{ij})_{(i,j)\in I_m\times I_n}$.}
+    \begin{equation*}
+        A\colon I_m\times I_n \to K,\quad (i,j) \mapsto a_{ij}.
+    \end{equation*}
+\end{definition}
+
+\begin{notation}
+    Statt
+    \begin{equation*}
+        A =
+        \begin{pmatrix}
+            a_{11} & a_{12} & \cdots & a_{1n} \\
+            a_{21} & a_{22} & \cdots & a_{2n} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            a_{m1} & a_{m2} & \cdots & a_{mn}
+        \end{pmatrix}
+        \in K^{m,n}
+    \end{equation*}
+    schreiben wir auch
+    \begin{equation*}
+        A = (a_{ij}) \in K^{m,n}.
+    \end{equation*}
+\end{notation}
+
+Manchmal ist es sinnvoll, die Notation~$(a_{ij})$ statt~$A$ zu wählen.
+
+\begin{definition}[Nullmatrix]
+    Sei $A = (a_{ij}) \in K^{m,n}$ eine Matrix mit~$a_{ij} = 0$ für alle~$i,j$. Wir schreiben dann $A = 0_{m,n} = 0$ und nennen sie die \emph{Nullmatrix} in~$K^{m,n}$.
+
+    Für $m = 0$ und/oder $n = 0$ beschreibt $K^{m,n} \coloneqq K^{I_m\times I_n} = K^\varnothing$ mit~$I_0 \coloneqq \varnothing$ die Menge der Matrizen, die keine Zeilen und/oder Spalten haben. In dem Fall enthält~$K^{m,n}$ genau ein Element, die \emph{leere Matrix} oder auch \emph{Nullmatrix}, die wir wieder mit $0$~oder~$0_{m,n}$ bezeichnen.
+\end{definition}
+
+\begin{notation}
+    Für $m,n \geq 0$ definieren wir
+    \begin{equation*}
+        M_{m,n}(K) \coloneqq K^{m,n} \qquad\text{und}\qquad M_n(K) \coloneqq K^{n,n}
+    \end{equation*}
+    für rechteckige bzw.\ quadratische Matrizen.
+\end{notation}
+
+Mit der Schreibweise wollen wir die \emph{Ringstruktur} der Menge der Matrizen betonen (was wir noch zeigen).
+
+\lecturesep{26.~Oktober 2021}
 
 %\printsolutions
 

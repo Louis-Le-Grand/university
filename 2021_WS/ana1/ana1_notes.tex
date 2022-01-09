@@ -790,18 +790,18 @@ Wir definieren die uns geläufigen reellen Zahlen über ihre Eigenschaften ($\R$
     \begin{equation*}
         +\colon \R \times \R \to \R,\quad (x, y) \mapsto x + y, \qquad\qquad \cdot\colon \R \times \R,\quad (x, y) \mapsto x y,
     \end{equation*}
-    d.\,h.\ jedem Paar~$(x, y)$ mit $x, y \in \R$ sind genau ein Element~$x + y \in \R$ (Summe) und genau ein Element $x y \in \R$ (Produkt) zugeordnet (aus Konvention lassen wir den Malpunkt weg, falls es den Sinn nicht verfälscht). Hierfür gelten die \emph{Körperaxiome}:
+    d.\,h.\ jedem Paar~$(x, y)$ mit $x, y \in \R$ sind genau ein Element~$x + y \in \R$ (Summe) und genau ein Element $x y \in \R$ (Produkt) zugeordnet (aus Konvention lassen wir den Malpunkt weg, falls es den Sinn nicht verfälscht). Hierfür gelten die \emph{Körperaxiome}.
 
     \begin{enumerate}[label=\textnormal{(A\arabic*)}, leftmargin=*, widest=(A00), series=axioms]
-        \item $x + (y + z) = (x + y) + z$ für alle~$x, y, z \in \R$ \emph{(Assoziativgesetz)}.\label{ax:aa}
-        \item $x + y = y + x$ ür alle~$x , y \in \R$ \emph{(Kommutativgesetz)}.\label{ax:ac}
-        \item Es gibt eine Zahl~$0 \in \R$, sodass $x+ 0 = x$ für alle~$x \in R$ \emph{(Existenz der Null)}.\label{ax:an}
-        \item Zu jedem~$x \in \R$ existiert eine Zahl~$-x \in \R$, sodass $x + (-x) = 0$ \emph{(Existenz des Negativen)}.\label{ax:ai}
-        \item $x (y z) = (x y) z$ für alle~$x, y, z \in \R$ \emph{(Assoziativgesetz)}.\label{ax:ma}
-        \item $x y = y x$ für alle~$x, y \in \R$ \emph{(Kommutativgesetz)}.\label{ax:mc}
-        \item Es gibt eine Zahl~$1 \in \R \setminus \mset{0}$, sodass $x 1 = x$ für alle~$x \in \R$ \emph{(Existenz der Eins)}.\label{ax:mn}
-        \item Zu jedem~$x \in \R \setminus \mset{0}$ existiert eine Zahl~$x^{-1} \in \R$, sodass $x x^{-1} = 1$ \emph{(Existenz des Inversen)}.\label{ax:mi}
-        \item $x (y + z) = x y + y z$ für alle~$x, y, z \in \R$ \emph{(Distributivgesetz)}.\label{ax:d}
+        \item $x + (y + z) = (x + y) + z$ für alle~$x, y, z \in \R$ \emph{(Assoziativgesetz)}.\label[axiom]{ax:aa}
+        \item $x + y = y + x$ ür alle~$x , y \in \R$ \emph{(Kommutativgesetz)}.\label[axiom]{ax:ac}
+        \item Es gibt eine Zahl~$0 \in \R$, sodass $x+ 0 = x$ für alle~$x \in R$ \emph{(Existenz der Null)}.\label[axiom]{ax:an}
+        \item Zu jedem~$x \in \R$ existiert eine Zahl~$-x \in \R$, sodass $x + (-x) = 0$ \emph{(Existenz des Negativen)}.\label[axiom]{ax:ai}
+        \item $x (y z) = (x y) z$ für alle~$x, y, z \in \R$ \emph{(Assoziativgesetz)}.\label[axiom]{ax:ma}
+        \item $x y = y x$ für alle~$x, y \in \R$ \emph{(Kommutativgesetz)}.\label[axiom]{ax:mc}
+        \item Es gibt eine Zahl~$1 \in \R \setminus \mset{0}$, sodass $x 1 = x$ für alle~$x \in \R$ \emph{(Existenz der Eins)}.\label[axiom]{ax:mn}
+        \item Zu jedem~$x \in \R \setminus \mset{0}$ existiert eine Zahl~$x^{-1} \in \R$, sodass $x x^{-1} = 1$ \emph{(Existenz des Inversen)}.\label[axiom]{ax:mi}
+        \item $x (y + z) = x y + y z$ für alle~$x, y, z \in \R$ \emph{(Distributivgesetz)}.\label[axiom]{ax:d}
     \end{enumerate}
 \end{axiom}
 
@@ -816,18 +816,18 @@ Die \cref{ax:aa,ax:ac,ax:an,ax:ai} besagen, dass $(\R,+)$ eine \emph{Gruppe}\foo
 \begin{enumerate}[label=\textnormal{(\alph*)}, leftmargin=*, widest=(m), series=conclusions]
     \item Die~$0$ ist eindeutig.
           \begin{proof}
-              Wäre $0^*$~ein weiteres neutrales Element, dann $0^* \overset{\text{\ref{ax:an}}}{=} 0^* + 0 \overset{\text{\ref{ax:ac}}}{=} 0 + 0^* \overset{\text{\ref{ax:an}}}{=} 0$.
+              Wäre $0^*$~ein weiteres neutrales Element, dann $0^* \overset{\ref{ax:an}}{=} 0^* + 0 \overset{\ref{ax:ac}}{=} 0 + 0^* \overset{\ref{ax:an}}{=} 0$.
           \end{proof}
     \item Die Negation ist eindeutig.
           \begin{proof}
               Wären $x'$~und~$x''$ Zahlen, die $x + x' = 0 = x + x''$ erfüllen, dann
               \begin{equation*}
-                  x' \overset{\text{\ref{ax:an}}}{=} x' + 0 \overset{\text{Vor.}}{=} x' + (x + x'') \overset{\text{\ref{ax:aa}}}{=} (x' + x) + x'' \overset{\text{\ref{ax:ac}}}{=} (x + x') + x'' \overset{\text{\ref{ax:ai}}}{=} 0 + x'' \overset{\text{\ref{ax:ac}}}{=} x'' + 0 \overset{\text{\ref{ax:an}}}{=} x''.\qedhere
+                  x' \overset{\ref{ax:an}}{=} x' + 0 \overset{\text{Vor.}}{=} x' + (x + x'') \overset{\ref{ax:aa}}{=} (x' + x) + x'' \overset{\ref{ax:ac}}{=} (x + x') + x'' \overset{\ref{ax:ai}}{=} 0 + x'' \overset{\ref{ax:ac}}{=} x'' + 0 \overset{\ref{ax:an}}{=} x''.\qedhere
               \end{equation*}
           \end{proof}
     \item $-0 = 0$.
           \begin{proof}
-              $0 \overset{\text{\ref{ax:ai}}}{=} 0 + (-0) \overset{\text{\ref{ax:ac}}}{=} (-0) + 0 \overset{\text{\ref{ax:an}}}{=} -0$.
+              $0 \overset{\ref{ax:ai}}{=} 0 + (-0) \overset{\ref{ax:ac}}{=} (-0) + 0 \overset{\ref{ax:an}}{=} -0$.
           \end{proof}
     \item $\forall x\colon - (-x) = x$.
           \begin{proof}
@@ -856,7 +856,7 @@ Mit dem Distributivgesetz folgt
           \end{proof}
     \item $\forall x,y\colon xy = 0 \iff (x=0) \vee (y=0)$ (\emph{Nullteilerfreiheit}).
           \begin{proof}
-              Die Rückrichtung folgt aus Axiom \ref{ax:ac} und~\cref{ax:mulzero}.
+              Die Rückrichtung folgt aus \cref{ax:ac} und \cref{ax:mulzero}.
 
               Für die Hinrichtung nehmen wir an, dass $xy = 0$ und $\neg (x = 0)$ ist. Wir zeigen~$y = 0$. Mit den Punkten \ref{ax:mulequiv} und~\ref{ax:mulzero} gilt~$y = 0$. Analoges gilt für $\neg (y = 0)$, wenn wir $x$~und~$y$ vertauschen.
           \end{proof}
@@ -904,7 +904,7 @@ Weitere Folgerungen sind
 \subsubsection{Verallgemeinerte Assoziativität, Kommutativität und Distributivität}
 
 \begin{remark}
-    Für alle~$x, y, z \in \R$ gibt es 12~Möglichkeiten, die Summe der Zahlen zu bilden: $(x + y) + z$, $x + (y + z)$, $(z + x) + y$,~\dots{} ($3! = 6$~Möglichkeiten mit jeweils zwei Möglichkeiten, Klammern zu setzen). Alle Möglichkeiten stellen dieselbe Zahl dar, die wir mit $x + y + z$ bezeichnen.
+    Für alle~$x, y, z \in \R$ gibt es $12$~Möglichkeiten, die Summe der Zahlen zu bilden: $(x + y) + z$, $x + (y + z)$, $(z + x) + y$,~\dots{} ($3! = 6$~Möglichkeiten mit jeweils zwei Möglichkeiten, Klammern zu setzen). Alle Möglichkeiten stellen dieselbe Zahl dar, die wir mit $x + y + z$ bezeichnen.
 
     Das können wir verallgemeinern: Für alle~$x \in \N$ und für alle $x_1, \dots, x_n \in \R$ gilt das \emph{allgemeine Assoziativgesetz}
     \begin{equation*}
@@ -987,7 +987,7 @@ Damit folgt
         \item Für alle $x, y \in \R$ gilt (\emph{Abgeschlossenheit bzgl.\ der Addition und Multiplikation})
               \begin{equation*}
                   x > 0 \wedge y > 0 \implies x + y > 0 \wedge x y > 0.
-              \end{equation*}\label{ax:oc}
+              \end{equation*}\label[axiom]{ax:oc}
     \end{enumerate}
 \end{axiom}
 
@@ -1242,7 +1242,7 @@ Alternativ hätten wir auch $\eps = \abs{a-b}/4$ wählen können, was dann zum W
               \end{proof}
         \item $(1/n)_{n \in \N}$ ist eine Nullfolge.
               \begin{proof}
-                  Für jedes~$\eps > 0$ gibt es ein~$N \in \N$ mit $N > 1/\eps$ (archimedisches Axiom, \cref{arch:inverse}). Daher gilt für alle~$n \geq N$: $\abs{1/n-0} \leq 1/N < \eps$, also ist 0~der Grenzwert.
+                  Für jedes~$\eps > 0$ gibt es ein~$N \in \N$ mit $N > 1/\eps$ (archimedisches Axiom, \cref{arch:inverse}). Daher gilt für alle~$n \geq N$: $\abs{1/n-0} \leq 1/N < \eps$, also ist $0$~der Grenzwert.
               \end{proof}
         \item $\paren*{2^n}_n$ und die Fibonacci-Folge sind divergent, da beide unbeschränkt sind.
         \item Wir betrachten die Folge~$\paren*{x^n}_{n\in\N}$ mit~$x \in \R$. Dann gibt es vier Fälle:
@@ -2055,7 +2055,7 @@ oder mit anderen Worten
 
 \begin{example}\leavevmode
     \begin{enumerate}
-        \item $a_n = (-1)^n$, dann sind 1~und~$-1$ Häufungspunkte, denn $1 = \lim_{k\to\infty} a_{2k}$ und $-1 = \lim_{k\to\infty} a_{2k+1}$ (also $n_k = 2k$ bzw.\ $n_k = 2k+1$).
+        \item $a_n = (-1)^n$, dann sind $1$~und~$-1$ Häufungspunkte, denn $1 = \lim_{k\to\infty} a_{2k}$ und $-1 = \lim_{k\to\infty} a_{2k+1}$ (also $n_k = 2k$ bzw.\ $n_k = 2k+1$).
         \item Teilfolgen der Folge~$(1/n)_{n\in\N}$ sind z.\,B.\ $\paren*{2^{-k}}_{k\in\N}$, $(1/k!)_{k\in\N}$, $(1/p)_{p\text{ prim}}$, etc.
     \end{enumerate}
 \end{example}
