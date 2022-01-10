@@ -158,8 +158,8 @@ Treten in einer zu zeigenden Tautologie noch mehr Aussagen auf, wächst die Wahr
     Weitere Tautologien und Schlussregeln, die oft verwendet werden:\footnote{
         Noch weitere (nicht triviale) hilfreiche Tautologien, die der Dozent leider nicht nannte, sind
         \begin{align*}
-                                &                                     & A \Rightarrow (B \Leftrightarrow C) & \iff (A \Rightarrow B) \Rightarrow (A \Rightarrow C)                                             \\
-                                &                                     & \iff A \Rightarrow (Q \wedge R)     & (A \Rightarrow B) \wedge (A \Rightarrow C)                                                       \\
+                                &                                     & A \Rightarrow (B \Leftrightarrow C) & \iff (A \Rightarrow B) \Rightarrow (A \Rightarrow C),                                            \\
+                                &                                     & A \Rightarrow (B \wedge C)          & \iff (A \Rightarrow B) \wedge (A \Rightarrow C),                                                 \\
                                 &                                     & A                                   & \iff \neg (\neg A)                                   &  & \text{doppelte Negation},              \\
             A \wedge (B \vee C) & \iff (A \wedge B) \vee (A \wedge C) & A \vee (B \wedge C)                 & \iff (A \vee B) \wedge (A \vee C)                    &  & \text{Distributivität},                \\
             A \wedge (A \vee B) & \iff A                              & A \vee (A \wedge B)                 & \iff A                                               &  & \text{Absorption},                     \\
@@ -233,7 +233,7 @@ ausdrücken.
               \begin{equation*}
                   \neg (\exists x\colon \forall y\colon A(x, y)) \iff (\forall x\colon \exists y\colon \neg A(x, y)) \quad\text{und}\quad \neg (\forall x\colon \exists y\colon A(x, y)) \iff (\exists x\colon \forall y\colon \neg A(x, y)).
               \end{equation*}
-        \item Quantoren lassen sich vertauschen. Sei $A(x, y)$ eine Aussage in $x$~und~$y$. Es gilt
+        \item Ein Existenz"~ vor einem Allquantor lässt sich vertauschen. Sei $A(x, y)$ eine Aussage in $x$~und~$y$. Es gilt
               \begin{equation*}
                   (\exists x\colon \forall y\colon A(x, y)) \implies (\forall y\colon \exists x\colon A(x, y)).
               \end{equation*}
@@ -254,7 +254,7 @@ ausdrücken.
         \item Um eine Aussage mit beliebig vielen Quantoren zu verneinen, müssen wir uns von vorne nach hinten durcharbeiten und jeden All"- durch einen Existenzquantor ersetzen und andersherum. Zu allerletzt wird $A(x)$ bzw.~$A(x, y)$ negiert.
 
               Das bedeutet auch insbesondere, dass wenn eine Allaussage falsch sein soll, nur ein \emph{Gegenbeispiel} reicht. Ist hingegen ein Existenzaussage falsch, so müssen wir zeigen, dass \emph{alle} Objekte die gegebene Eigenschaft nicht erfüllen.
-        \item Ein Existenz"~ vor einem Allquantor lässt sich vertauschen. Wenn es ein~$x$ gibt, sodass $A(x, y)$ für alle~$y$ gilt, so gibt es für jedes~$y$ auch ein~$x$~-- nämlich erfüllt stets dasselbe~$x$ die Aussage~$A(x, y)$. Die Umkehrung gilt hingegen im Allgemeinen \emph{nicht}, da wenn es für jedes~$y$ zwar ein~$x$ gibt, es noch lange nicht für jedes~$y$ stets dasselbe~$x$ sein muss. \emph{Beispiel}: Für~$x = 0$ und allen~$y \in \N$ gilt~$A(x ,y)$. Dann gibt es für jedes~$y \in \N$ auch ein~$x$, nämlich stets dasselbe~$x = 0$. Gibt es hingegen für jedes~$y \in \N$ ein~$x$, so gilt die Umkehrung nicht, da für~$y = 1$ z.\,B.~$x = 1$, für~$y = 2$ aber z.\,B.~$x = 2$ die Aussage~$A(x, y)$ erfüllt und wir somit nicht mit Sicherheit sagen können, dass ein~$x$ existiert, für das~$A(x, y)$ für alle~$y$ wahr ist.
+        \item Wenn es ein~$x$ gibt, sodass $A(x, y)$ für alle~$y$ gilt, so gibt es für jedes~$y$ auch ein~$x$~-- nämlich erfüllt stets dasselbe~$x$ die Aussage~$A(x, y)$. Die Umkehrung gilt hingegen im Allgemeinen \emph{nicht}, da wenn es für jedes~$y$ zwar ein~$x$ gibt, muss es noch lange nicht für jedes~$y$ stets dasselbe~$x$ sein. \emph{Beispiel}: Für~$x = 0$ und allen~$y \in \N$ gilt~$A(x ,y)$. Dann gibt es für jedes~$y \in \N$ auch ein~$x$, nämlich stets dasselbe~$x = 0$. Gibt es hingegen für jedes~$y \in \N$ ein~$x$, so gilt die Umkehrung nicht, da für~$y = 1$ z.\,B.~$x = 1$, für~$y = 2$ aber z.\,B.~$x = 2$ die Aussage~$A(x, y)$ erfüllt und wir somit nicht mit Sicherheit sagen können, dass ein~$x$ existiert, für das~$A(x, y)$ für alle~$y$ wahr ist.
         \item Der Existenzquantor kann distributiv auf eine Konjunktion verteilt werden. Wenn ein~$x$ sowohl~$A(x)$ als auch~$B(x)$ erfüllt, so erfüllt selbstverständlich dasselbe~$x$ auch $A(x)$ und~$B(x)$ getrennt voneinander. Die Umkehrung gilt hingegen \emph{nicht}: Denn ein~$x$, dass $A(x)$ erfüllt, und ein~$x$, dass $B(x)$ erfüllt, muss nicht dasselbe sein.
         \item Ein Allquantor impliziert im Allgemeinen nicht den Existenzquantor. \emph{Gegenbeispiel}: Die Menge~$M$ könnte ja leer sein.
     \end{enumerate}
@@ -507,7 +507,7 @@ Das ist bestimmt wahr, denn $1 = 1^2$, $1+3 = 2^2$, $1+3+5 = 3^2$ und $1+3+5+7 =
         \item Induktionsanfang ($n=1$): $1 + x = (1-x^2) / (1-x)$, $A(1)$~ist wahr.
         \item Induktionsschritt (von~$n$ auf~$n + 1$):
               \begin{equation*}
-                  \sum_{k=0}^{n+1} x^k = x^{n+1} + \sum_{k=0}^n \overset{A(n)}{=} \frac{1-x^{n+1}}{1-x} + x^{n+1} = \frac{1-x^{n+2}}{1x}. \qedhere
+                  \sum_{k=0}^{n+1} x^k = x^{n+1} + \sum_{k=0}^n \overset{A(n)}{=} \frac{1-x^{n+1}}{1-x} + x^{n+1} = \frac{1-x^{n+2}}{1-x}. \qedhere
               \end{equation*}
     \end{enumerate}
 \end{proof}
@@ -555,15 +555,15 @@ Das Produktzeichen lässt sich äquivalent dazu auch rekursiv definieren:
 \end{definition}
 
 \begin{definition}[Binomialkoeffizient]
-    Für $k, n \in \N_0$ sei der \emph{Binomialkoeffizient}~$\binom{n}{k}$ (sprich "`$n$~über~$k$"' oder "`$k$~aus~$n$"', engl.\ "`$n$~choose~$k$"') definiert als\footnote{Nach dieser Definition ist es auch möglich, den Binomialkoeffizienten auf reelle Zahlen $k$~und~$n$ zu erweitern.}
+    Für $k,n \in \R$ (meist aber $n,k \in \N_0$) sei der \emph{Binomialkoeffizient} (sprich "`$n$~über~$k$"' oder "`$k$~aus~$n$"', engl.\ "`$n$~choose~$k$"') definiert als
     \begin{equation}
         \binom{n}{k} = \frac{n (n - 1) \cdots (n - k + 1)}{k (k - 1) \cdots 1} = \prod_{j = 1}^k \frac{n - j + 1}{j}. \label{def:binomial}
     \end{equation}
-    Daraus folgt unmittelbar
+    Daraus folgt für $n,k \in \N_0$ unmittelbar
     \begin{align*}
         \binom{n}{k} = \begin{dcases}
-                           \frac{n!}{k! \, (n - k)!}, & \text{falls } 0, \leq k \leq n, \\
-                           0,                         & \text{falls } k > n.
+                           \frac{n!}{k! \, (n - k)!} & \text{falls } 0, \leq k \leq n, \\
+                           0                         & \text{falls } k > n.
                        \end{dcases}
     \end{align*}
 
@@ -794,8 +794,8 @@ Wir definieren die uns geläufigen reellen Zahlen über ihre Eigenschaften ($\R$
 
     \begin{enumerate}[label=\textnormal{(A\arabic*)}, leftmargin=*, widest=(A00), series=axioms]
         \item $x + (y + z) = (x + y) + z$ für alle~$x, y, z \in \R$ \emph{(Assoziativgesetz)}.\label[axiom]{ax:aa}
-        \item $x + y = y + x$ ür alle~$x , y \in \R$ \emph{(Kommutativgesetz)}.\label[axiom]{ax:ac}
-        \item Es gibt eine Zahl~$0 \in \R$, sodass $x+ 0 = x$ für alle~$x \in R$ \emph{(Existenz der Null)}.\label[axiom]{ax:an}
+        \item $x + y = y + x$ für alle~$x , y \in \R$ \emph{(Kommutativgesetz)}.\label[axiom]{ax:ac}
+        \item Es gibt eine Zahl~$0 \in \R$, sodass $x+ 0 = x$ für alle~$x \in \R$ \emph{(Existenz der Null)}.\label[axiom]{ax:an}
         \item Zu jedem~$x \in \R$ existiert eine Zahl~$-x \in \R$, sodass $x + (-x) = 0$ \emph{(Existenz des Negativen)}.\label[axiom]{ax:ai}
         \item $x (y z) = (x y) z$ für alle~$x, y, z \in \R$ \emph{(Assoziativgesetz)}.\label[axiom]{ax:ma}
         \item $x y = y x$ für alle~$x, y \in \R$ \emph{(Kommutativgesetz)}.\label[axiom]{ax:mc}
@@ -856,7 +856,7 @@ Mit dem Distributivgesetz folgt
           \end{proof}
     \item $\forall x,y\colon xy = 0 \iff (x=0) \vee (y=0)$ (\emph{Nullteilerfreiheit}).
           \begin{proof}
-              Die Rückrichtung folgt aus \cref{ax:ac} und \cref{ax:mulzero}.
+              Die Rückrichtung folgt aus \cref{ax:mc} und \cref{ax:mulzero}.
 
               Für die Hinrichtung nehmen wir an, dass $xy = 0$ und $\neg (x = 0)$ ist. Wir zeigen~$y = 0$. Mit den Punkten \ref{ax:mulequiv} und~\ref{ax:mulzero} gilt~$y = 0$. Analoges gilt für $\neg (y = 0)$, wenn wir $x$~und~$y$ vertauschen.
           \end{proof}
@@ -1044,23 +1044,24 @@ Offensichtlich liegt allen folgenden Variablen die Menge~$\R$ zugrunde.
     $x \in \R$~heißt \emph{nichtnegativ}, falls~$x \geq 0$ ist.
 \end{notation}
 
-\subsubsection{\textsc{Archimedisches} Axiom}
+\subsubsection{Archimedisches Axiom}
 
-\begin{axiom}[\textsc{archimedisches} Axiom]\leavevmode
+\begin{axiom}[\textsc{archimedisches} Axiom]
+    Sei $\N$ in~$\R$ eingebettet, d.\,h.\ $\N \subset \R$.
     \begin{enumerate}[resume*=axioms]
-        \item Für alle~$x \in \R$ gibt es ein~$n \in \N$, sodass $n > x$ gilt.\footnote{Traditionell (wie auch in vielen Lehrbüchern) wird das archimedische Axiom wie folgt äquivalent formuliert: Für alle positiven~$x, y \in \R$ gibt es ein~$n \in N$, sodass $nx > y$ gilt.}
+        \item Für alle~$x \in \R$ gibt es ein~$n \in \N$, sodass $n > x$ gilt.\footnote{Traditionell (wie auch in vielen Lehrbüchern) wird das archimedische Axiom wie folgt äquivalent formuliert: Für alle positiven~$x, y \in \R$ gibt es ein~$n \in \N$, sodass $nx > y$ gilt.}
     \end{enumerate}
 \end{axiom}
 
 Wir können daraus folgern:
 \begin{enumerate}[resume*=conclusions]
-    \item $\forall \eps\colon \exists n \in \N\colon \eps > 1/n$. Diese Aussage wird für den Konvergenzbegriff wichtig.\label{arch:inverse}
-    \item $\forall x \in \R, x \geq 0\colon \exists! n \in \N_0\colon n \leq x < n+1$.\footnote{Ein Beweis auch für negative~$x$ und ganzzahlige~$n$: Sei $A = \mset{m \in \Z \mid m \leq x}$. $A$~ist nicht leer, denn es gibt ein~$m > -x$, weshalb $-m \in A$ gilt. Sei nun~$n = \sup A$, woraus $n \leq x$ folgt. Aufgrund der Supremumseigenschaft ist $(n+1) \notin A$, also~$n+1 > x$. Wichtig ist, dass das Supremum von unendlichen Mengen ganzer Zahlen definiert ist. Der Satz, so wie er in der Vorlesung genannt wurde, braucht kein Supremum unendlicher Mengen.} Dabei bedeutet $\exists!$ "`existiert genau ein"'.
+    \item $\forall \eps > 0\colon \exists n \in \N\colon \eps > 1/n$. Diese Aussage wird für den Konvergenzbegriff wichtig.\label{arch:inverse}
+    \item $\forall x \in \R, x \geq 0\colon \exists! n \in \N_0\colon n \leq x < n+1$.\footnote{Ein Beweis auch für~$x < 0$ und~$n \in \Z$: Sei $A = \mset{m \in \Z \mid m \leq x}$. $A$~ist nicht leer, denn es gibt ein~$m > -x$, weshalb $-m \in A$ gilt. Sei nun~$n = \sup A$, woraus $n \leq x$ folgt. Aufgrund der Supremumseigenschaft ist $(n+1) \notin A$, also~$n+1 > x$. Wichtig ist, dass das Supremum von unendlichen Mengen ganzer Zahlen definiert ist. Der Satz, so wie er in der Vorlesung genannt wurde, braucht kein Supremum unendlicher Mengen.} Dabei bedeutet $\exists!$ "`existiert genau ein"'.
 \end{enumerate}
 
-\begin{notation}[\textsc{Gauß}-Klammer]
+\begin{definition}[\textsc{Gauß}-Klammer]
     Für~$n \in \N$ mit $n \leq x < n+1$ schreiben wir $\floor{x} \coloneqq n$ für alle~$x \in \R$.
-\end{notation}
+\end{definition}
 
 \begin{theorem}[\textsc{bernoullische} Ungleichung]\label{thm:bernoulliineq}
     Für alle reellen $x \geq -1$ und für alle~$n \in \N$ gilt
@@ -1093,8 +1094,8 @@ Einige Schlussfolgerungen aus \cref{thm:bernoulliineq}:
     Für~$x \in \R$ definieren wir
     \begin{equation*}
         \abs{x} \coloneqq \begin{cases}
-            x,  & \text{falls } x \geq 0, \\
-            -x, & \text{falls } x < 0,
+            x  & \text{falls } x \geq 0, \\
+            -x & \text{falls } x < 0,
         \end{cases}
     \end{equation*}
     und sagen dafür "`Betrag von~$x$"' oder "`$x$~absolut"'.
@@ -1106,19 +1107,19 @@ Es ist besser, wenn die Fälle der abschnittsweise definierten Funktion sich nic
     Ferner definieren wir für~$x, y \in \R$
     \begin{equation*}
         \max(x, y) = \begin{cases}
-            x, & \text{falls } x \geq y, \\
-            y, & \text{sonst},
+            x & \text{falls } x \geq y, \\
+            y & \text{sonst},
         \end{cases}\qquad
         \min(x, y) = \begin{cases}
-            x, & \text{falls } x \leq y, \\
-            y, & \text{sonst}.
+            x & \text{falls } x \leq y, \\
+            y & \text{sonst}.
         \end{cases}
     \end{equation*}
 \end{definition}
 
 Gelegentlich tauchen auch folgende Schreibweisen auf:
 \begin{equation*}
-    x \vee y \coloneqq \max(x, y) \quad\text{(\emph{Supremum}, $\sup$)}; \qquad x \wedge y \coloneqq \min(x, y) \quad\text{(\emph{Infimum}, $\inf$)}. \footnote{Tatsächlich ist das nicht ganz korrekt: Das \emph{Supremum} einer Menge~$X$ ist die kleinste Zahl~$a = \sup M$, sodass $x \leq a$ für alle~$x \in X$ gilt. Genauso ist das \emph{Infimum} das größte~$b = \inf M$, sodass $b \geq x$ für alle~$x$ ist. Gehört~$a$ zu~$M$, so spricht man dann erst vom \emph{Maximum} $a = \max M$, analog für~$b \in M$ nennen wir $b = \min M$ das \emph{Minimum}.}
+    x \vee y \coloneqq \max(x, y), \qquad x \wedge y \coloneqq \min(x, y).
 \end{equation*}
 
 Offenbar gilt~$\abs{x} = \max(x, -x)$, d.\,h., dass der Betrag immer größer als die Zahl und ihr Negatives ist. Das ist hilfreich für Beweise mit Beträgen.
@@ -1549,8 +1550,8 @@ In diesem Beweis nahmen wir eine Cauchy-Folge~$(a_n)$ und konstruierten darum ei
     Wir betrachten zunächst den Fall~$x > 1$. Hierfür definieren wir eine Intervallschachtelung $I_n = [a_n, b_n]$ rekursiv mit $a_1 = 1$, $b_1 = x$, und $c_n = \frac{1}{2}(a_n + b_n)$. Dann ist $I_{n+1} = [a_{n+1}, b_{n+1}]$ mit
     \begin{equation*}
         \begin{cases}
-            a_{n+1} \coloneqq a_n,\; b_{n+1} \coloneqq c_n, & \text{falls } x \leq c_n^k, \\
-            a_{n+1} \coloneqq c_n,\; b_{n+1} \coloneqq b_n, & \text{falls } x > c_n^k.
+            a_{n+1} \coloneqq a_n,\; b_{n+1} \coloneqq c_n & \text{falls } x \leq c_n^k, \\
+            a_{n+1} \coloneqq c_n,\; b_{n+1} \coloneqq b_n & \text{falls } x > c_n^k.
         \end{cases}
     \end{equation*}
     $(I_n)$~erfüllt alle Bedingungen einer Intervallschachtelung: Die $I_n$ sind abgeschlossen, es gilt~$I_{n+1} \subset I_n$ und $\diam(I_{n+1}) = \frac{1}{2} \diam(I_n) = 2^{-n} (x-1) \to 0$ für alle~$n \in \N$. Deshalb folgt aus dem Intervallschachtelungsprinzip, dass es ein~$y \in \bigcap_{n\in\N} I_n$ gibt.
@@ -1755,8 +1756,8 @@ Die Idee der Gleichmächtigkeit ist, dass eine Reihenfolge gefunden werden kann,
                   \end{matrix}
                   \qquad\text{bzw.}\qquad
                   f(n) = \begin{cases}
-                      \frac{1}{2}n,     & \text{falls $n$~gerade},   \\
-                      \frac{1}{2}(1-n), & \text{falls $n$~ungerade}.
+                      \frac{1}{2}n     & \text{falls $n$~gerade},   \\
+                      \frac{1}{2}(1-n) & \text{falls $n$~ungerade}.
                   \end{cases}
               \end{gather*}
 
@@ -1973,12 +1974,12 @@ oder mit anderen Worten
         \item Für $a_n = (-1)^n (1+1/n)$ sind
               \begin{equation*}
                   b_n = \begin{cases}
-                      1 + \frac{1}{n}   & \text{für gerade }n,   \\
-                      1 + \frac{1}{n+1} & \text{für ungerade }n,
+                      1 + \frac{1}{n}   & \text{für gerade } n,   \\
+                      1 + \frac{1}{n+1} & \text{für ungerade } n,
                   \end{cases}\qquad\text{und}\qquad
                   c_n = \begin{cases}
-                      1 + \frac{1}{n}   & \text{für ungerade }n, \\
-                      1 + \frac{1}{n+1} & \text{für gerade }n.
+                      1 + \frac{1}{n}   & \text{für ungerade } n, \\
+                      1 + \frac{1}{n+1} & \text{für gerade } n.
                   \end{cases}
               \end{equation*}
               Daraus folgen $\limsup_{n\to\infty} a_n = \lim_{n\to\infty} b_n = +1$ und $\liminf_{n\to\infty} = \lim_{n\to\infty} c_n = -1$.
@@ -2777,9 +2778,9 @@ Die Summe ist endlich, falls~$\alpha \in \N$.
 \end{lemma}
 
 \begin{proof}
-    Es gilt für das Cauchy-Produkt (\cref{thm:cauchyprod})\footnote{Der Dozent verwendete hier die \emph{\textsc{chu}-\textsc{vandermondesche} Identität}, die wir noch nicht bewiesen haben. Führen wir das Symbol $\alpha^{[n]} \coloneqq \prod_{i=0}^n (\alpha-i)$ ein, können wir den Binomialkoeffizienten als $\binom{\alpha}{n} = \alpha^{[n]}/n!$ schreiben. Damit wird die Identität
+    Es gilt für das Cauchy-Produkt (\cref{thm:cauchyprod})\footnote{Der Dozent verwendete hier die \emph{\textsc{chu}-\textsc{vandermondesche} Identität}, die wir noch nicht bewiesen haben. Führen wir die \emph{fallende Faktorielle} $\alpha^{\underline{n}} \coloneqq \prod_{i=0}^{n-1} (\alpha-i)$ ein, können wir den Binomialkoeffizienten als $\binom{\alpha}{n} = \alpha^{\underline{n}}/n!$ schreiben. Damit wird die Identität
         \begin{equation*}
-            \frac{(\alpha+\beta)^{[n]}}{n!}= \binom{\alpha+\beta}{n} \overset{!}{=} \sum_{k=0}^n \binom{\alpha}{k}\binom{\beta}{n-k} = \sum_{k=0}^n \frac{\alpha^{[k]} \beta^{[n-k]}}{k!(n-k)!} \iff (\alpha+\beta)^{[n]} = \sum_{k=0}^n \binom{n}{k} \alpha^{[k]} \beta^{[n-k]}.
+            \frac{(\alpha+\beta)^{\underline{n}}}{n!}= \binom{\alpha+\beta}{n} \overset{!}{=} \sum_{k=0}^n \binom{\alpha}{k}\binom{\beta}{n-k} = \sum_{k=0}^n \frac{\alpha^{\underline{k}} \beta^{\underline{n-k}}}{k!(n-k)!} \iff (\alpha+\beta)^{\underline{n}} = \sum_{k=0}^n \binom{n}{k} \alpha^{\underline{k}} \beta^{\underline{n-k}}.
         \end{equation*}
         Das können wir analog zum normalen binomischen Lehrsatz via Induktion über~$n$ beweisen.}
     \begin{equation*}
@@ -4838,8 +4839,8 @@ Falls~$f(x)$ den Ort beschreibt, der zum Zeitpunkt~$x$ eingenommen wird, so ist 
 \begin{proof}
     Es gilt mit dem binomischen Lehrsatz
     \begin{align*}
-        \frac{(x+h)^n-x^n}{h} &= \frac{1}{h} \paren*{\binom{n}{1}x^{n-1}h + \binom{n}{2}x^{n-2}h^2 + \dots + \binom{n}{n}h^n} \\
-        &= nx^{n-1} + \binom{n}{2}x^{n-2}h + \dots + \binom{n}{n}h^{n-1} \xrightarrow{h\to0} nx^{n-1}. \qedhere
+        \frac{(x+h)^n-x^n}{h} & = \frac{1}{h} \paren*{\binom{n}{1}x^{n-1}h + \binom{n}{2}x^{n-2}h^2 + \dots + \binom{n}{n}h^n}         \\
+                              & = nx^{n-1} + \binom{n}{2}x^{n-2}h + \dots + \binom{n}{n}h^{n-1} \xrightarrow{h\to0} nx^{n-1}. \qedhere
     \end{align*}
 \end{proof}
 
@@ -4895,8 +4896,8 @@ Falls~$f(x)$ den Ort beschreibt, der zum Zeitpunkt~$x$ eingenommen wird, so ist 
 
     Damit erhalten wir aus den Additionstheoremen
     \begin{align*}
-        \sin'(x) &= \lim_{h\to0} \frac{\sin(x+h)-\sin x}{h} = \lim_{h\to0} \frac{\sin x\cos h + \cos x\sin h - \sin x}{h} \\
-        &= \sin x \underbrace{\lim_{h\to0} \frac{\cos h-1}{h}}_{\to 0} + \cos x \underbrace{\lim_{h\to0} \frac{\sin h}{h}}_{\to 1} = \cos x.
+        \sin'(x) & = \lim_{h\to0} \frac{\sin(x+h)-\sin x}{h} = \lim_{h\to0} \frac{\sin x\cos h + \cos x\sin h - \sin x}{h}                             \\
+                 & = \sin x \underbrace{\lim_{h\to0} \frac{\cos h-1}{h}}_{\to 0} + \cos x \underbrace{\lim_{h\to0} \frac{\sin h}{h}}_{\to 1} = \cos x.
     \end{align*}
     Analog erhalten wir
     \begin{equation*}
@@ -4911,8 +4912,8 @@ Falls~$f(x)$ den Ort beschreibt, der zum Zeitpunkt~$x$ eingenommen wird, so ist 
 \begin{proof}
     Aus der Definition und der Ableitung der Exponenzialfunktion folgt
     \begin{align*}
-        \sinh'(x) &= \lim_{h\to0} \frac{1}{h} \paren*{\frac{e^{x+h}+e^{-(x+h)}}{2} - \frac{e^x+e^{-x}}{2}} = \frac{1}{2} \lim_{h\to0} \frac{e^{x+h}-e^x}{h} + \frac{1}{2} \lim_{h\to0} \frac{e^{-(x+h)}-e^{-x}}{h} \\
-        &= \frac{e^x}{2} + \frac{-e^{-x}}{2} = \cosh x.
+        \sinh'(x) & = \lim_{h\to0} \frac{1}{h} \paren*{\frac{e^{x+h}+e^{-(x+h)}}{2} - \frac{e^x+e^{-x}}{2}} = \frac{1}{2} \lim_{h\to0} \frac{e^{x+h}-e^x}{h} + \frac{1}{2} \lim_{h\to0} \frac{e^{-(x+h)}-e^{-x}}{h} \\
+                  & = \frac{e^x}{2} + \frac{-e^{-x}}{2} = \cosh x.
     \end{align*}
 
     Analog erhalten wir\footnote{Der Dozent meinte, dass man den Beweis für die hyperbolischen Funktionen wie die trigonometrischen durchführen kann mit den zugehörigen Additionstheoremen. Ich sehe leider nicht, wie das gehen soll, da wir keine einfache Möglichkeit haben, $(\sinh x)/x \to 1$ und $(\cosh x-1)/x \to 0$ zu zeigen.}
@@ -5010,24 +5011,24 @@ Die folgende Zusammenstellung ist (wie es sich für einen aktiv genutzten Werkze
 Die Frage nach der Exponenzialfunktion für allgemeine Basen~$a \in \R$ können wir uns wie folgt stellen:
 
 \begin{problem}[\textsc{Cauchys} exponenzielle Funktionalgleichung]
-    Finde alle Funktionen $f\colon \Q \to \R$, die die Funktionalgleichung
-    \begin{equation*}
-        f(x+y) = f(x)+f(y) \qquad\text{für alle } x,y \in \Q
-    \end{equation*}
-    erfüllen.
+Finde alle Funktionen $f\colon \Q \to \R$, die die Funktionalgleichung
+\begin{equation*}
+    f(x+y) = f(x)+f(y) \qquad\text{für alle } x,y \in \Q
+\end{equation*}
+erfüllen.
 \end{problem}
 
 \begin{solution}
     Allgemein ist $f(x) = f(x/2+x/2) = f(x/2)^2 \geq 0$. Nun können wir zwei Fälle für $a \coloneqq f(1)$ unterscheiden.
     \begin{itemize}
         \item Sei $a > 1$. Dann können wir folgende Schritte betrachten.
-        \begin{itemize}
-            \item $f(0)$: Es gilt $f(1) = f(1+0) = f(1)f(0) > 0$, also $f(0) \neq 0$ und damit $f(0) = f(0)^2 \iff f(0) = 1$.
-            \item $f$~auf~$\N$: Für alle~$n \in \N$ gilt per Induktion $f(nx) = f(x+\dots+x) = f(x)\cdots f(x) = f(x)^n$ mit~$x \in \Q$, also insbesondere $f(n) = a^n$.
-            \item $f$~auf~$\Q_+$: Für $x = m/n \in \Q_+$ erhalten wir aus dem gerade Geizeigtem $f(m/n)^n = f(n(m/n)) = f(m) = a^m \iff f(m/n) = \sqrt[n]{a^m} = a^{m/n}$.
-            \item $f$~auf~$\Q_-$: Allgemein erhalten wir für~$x < 0$: $1 = f(0) = f(x-x) = f(x)f(-x) \iff f(-x) = 1/f(x)$, also $f(-m/n) = 1/f(m/n) = 1/a^{m/n} = a^{-m/n}$ für $x = -m/n \in \Q_-$.
-        \end{itemize}
-        Insgesamt erhalten wir also $f(x) = a^x$ für alle~$x \in \Q$ und~$a > 0$.
+              \begin{itemize}
+                  \item $f(0)$: Es gilt $f(1) = f(1+0) = f(1)f(0) > 0$, also $f(0) \neq 0$ und damit $f(0) = f(0)^2 \iff f(0) = 1$.
+                  \item $f$~auf~$\N$: Für alle~$n \in \N$ gilt per Induktion $f(nx) = f(x+\dots+x) = f(x)\cdots f(x) = f(x)^n$ mit~$x \in \Q$, also insbesondere $f(n) = a^n$.
+                  \item $f$~auf~$\Q_+$: Für $x = m/n \in \Q_+$ erhalten wir aus dem gerade Geizeigtem $f(m/n)^n = f(n(m/n)) = f(m) = a^m \iff f(m/n) = \sqrt[n]{a^m} = a^{m/n}$.
+                  \item $f$~auf~$\Q_-$: Allgemein erhalten wir für~$x < 0$: $1 = f(0) = f(x-x) = f(x)f(-x) \iff f(-x) = 1/f(x)$, also $f(-m/n) = 1/f(m/n) = 1/a^{m/n} = a^{-m/n}$ für $x = -m/n \in \Q_-$.
+              \end{itemize}
+              Insgesamt erhalten wir also $f(x) = a^x$ für alle~$x \in \Q$ und~$a > 0$.
         \item Sei $a = 0$. Dann ist $f(0) = f(1-1) = f(1)f(-1) = 0$ und damit $f(x) = f(x+0) = f(x)f(0) = 0$ für alle~$x \in \Q$.
     \end{itemize}
 \end{solution}

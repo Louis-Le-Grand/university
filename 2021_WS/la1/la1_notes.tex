@@ -7,6 +7,8 @@
     term={WS~2021/2022}
 ]{tienuni}
 
+\usetikzlibrary{cd}
+
 \overfullrule3cm
 
 \begin{document}
@@ -49,7 +51,7 @@ Wir wollen uns mit einer sehr naiven, aber für unsere Zwecke ausreichenden, Men
 
               \begin{itemize}
                   \item[$\mset{\;}$] sind Mengenklammern.
-                  \item[$\mid$]steht oft für "`mit der Eigenschaft"'. In unserem Beispiel heißt das "`alle $x \in \N$ mit der Eigenschaft, dass \dots"'
+                      \item[$\mid$]steht oft für "`mit der Eigenschaft"'. In unserem Beispiel heißt das "`alle $x \in \N$ mit der Eigenschaft, dass \dots"'
                   \item[$,$] steht oft für "`und"', eine logische Verknüpfung der Bedingungen bzw.\ Eigenschaften.
                   \item[$\in$] steht für "`ist Element von"'. Hingegen ist~$\notin$~"`ist kein Element von"'.
                   \item[$=$] steht für "`gleich"', d.\,h.\ links und rechts steht das gleiche und können gegenseitig ausgetauscht werden. Analog ist $\neq$~"`ungleich"'.
@@ -268,7 +270,13 @@ Die Idee hinter Abbildungen ist es, Mengen in Beziehung zu setzen.\footnote{Eige
 
 Es gilt also
 \begin{equation*}
-    X \overset{f}{\longrightarrow} Y \overset{g}{\longrightarrow} Z,\quad x \mapsto f(x) \mapsto g(f(x)).
+    \begin{tikzcd}
+        X \ar[r, "f"] & Y \ar[r, "g"] & Z
+    \end{tikzcd},
+    \quad
+    \begin{tikzcd}
+        x \ar[r, mapsto] & f(x) \ar[r, mapsto] & g(f(x))
+    \end{tikzcd}.
 \end{equation*}
 
 \begin{definition}[injektiv, surjektiv, bijektiv]
@@ -381,21 +389,21 @@ Seien $X$~und~$Y$ Mengen. Beweisen Sie die Äquivalenz folgender Aussagen:
     Eine alternative, sehr mengentheoretische, aber auch prägnante Lösung ist folgende:
     \begin{proof}
         \begin{align*}
-            \text{\ref{prob:sets:1}} & \implies \text{\ref{prob:sets:2}}\colon &  X &= X \cap X \subseteq X \cap Y \subseteq X,                                                        \\
-            \text{\ref{prob:sets:2}} & \implies \text{\ref{prob:sets:4}}\colon &  \varnothing &\subseteq X \setminus Y = (X \cap Y) \setminus Y \subseteq Y \setminus Y = \varnothing, \\
-            \text{\ref{prob:sets:4}} & \implies \text{\ref{prob:sets:3}}\colon &  X \cup Y &= \bigl((X \setminus Y) \cup (X \cap Y)\bigr) \cup Y = (X \setminus Y) \cup \bigl((X \cap Y) \cup Y\bigr) \\
-            &&&= (X \setminus Y) \cup Y = \varnothing \cup Y = Y,                                         \\
-            \text{\ref{prob:sets:3}} & \implies \text{\ref{prob:sets:1}}\colon &  X &= X \cup \varnothing \subseteq X \cup Y = Y. \qedhere
+            \text{\ref{prob:sets:1}} & \implies \text{\ref{prob:sets:2}}\colon & X           & = X \cap X \subseteq X \cap Y \subseteq X,                                                                \\
+            \text{\ref{prob:sets:2}} & \implies \text{\ref{prob:sets:4}}\colon & \varnothing & \subseteq X \setminus Y = (X \cap Y) \setminus Y \subseteq Y \setminus Y = \varnothing,                   \\
+            \text{\ref{prob:sets:4}} & \implies \text{\ref{prob:sets:3}}\colon & X \cup Y    & = \bigl((X \setminus Y) \cup (X \cap Y)\bigr) \cup Y = (X \setminus Y) \cup \bigl((X \cap Y) \cup Y\bigr) \\
+                                     &                                         &             & = (X \setminus Y) \cup Y = \varnothing \cup Y = Y,                                                        \\
+            \text{\ref{prob:sets:3}} & \implies \text{\ref{prob:sets:1}}\colon & X           & = X \cup \varnothing \subseteq X \cup Y = Y. \qedhere
         \end{align*}
     \end{proof}
 \end{solution}
 
 \begin{problem}[B01.A2]
-    Diskutieren Sie den folgenden Induktionsbeweis:
+Diskutieren Sie den folgenden Induktionsbeweis:
 
-    \emph{Behauptung}: Für jedes~$n \geq 1$ gilt: Halten sich $n$~Personen in einem geschlossenen Raum auf, so sind entweder alle geimpft oder alle sind ungeimpft.
+\emph{Behauptung}: Für jedes~$n \geq 1$ gilt: Halten sich $n$~Personen in einem geschlossenen Raum auf, so sind entweder alle geimpft oder alle sind ungeimpft.
 
-    \emph{Beweis mit Induktion}: Der Fall~$n = 1$ ist klar. Die Aussage sei nun wahr für~$n$. Sind dann $n+1$~Personen im Raum, so wähle eine Person aus und schicke sie hinaus. Nach Induktionsannahme haben die verbleibenden Personen denselben Impfstatus. Wir holen die ausgewählte Person wieder herein und senden eine andere Person hinaus. Die im Raum verbliebenen~$n$ haben wiederum denselben Impfstatus. Damit hat die zuerst hinaus gesandte Person denselben Impfstatus wie alle anderen im Raum befindlichen Personen. Da dies nach dem ersten Beweisschritt auch für die als zweites hinaus gesandte Person zutrifft, haben alle $n+1$~Personen denselben Impfstatus.
+\emph{Beweis mit Induktion}: Der Fall~$n = 1$ ist klar. Die Aussage sei nun wahr für~$n$. Sind dann $n+1$~Personen im Raum, so wähle eine Person aus und schicke sie hinaus. Nach Induktionsannahme haben die verbleibenden Personen denselben Impfstatus. Wir holen die ausgewählte Person wieder herein und senden eine andere Person hinaus. Die im Raum verbliebenen~$n$ haben wiederum denselben Impfstatus. Damit hat die zuerst hinaus gesandte Person denselben Impfstatus wie alle anderen im Raum befindlichen Personen. Da dies nach dem ersten Beweisschritt auch für die als zweites hinaus gesandte Person zutrifft, haben alle $n+1$~Personen denselben Impfstatus.
 \end{problem}
 
 \begin{solution}
@@ -426,10 +434,10 @@ Seien $X$~und~$Y$ Mengen. Beweisen Sie die Äquivalenz folgender Aussagen:
 \end{solution}
 
 \begin{problem}
-    Zeigen Sie: Für alle~$n \geq 1$ gilt
-    \begin{equation}
-        \sum_{k=1}^n k^2 = \frac{n (n+1) (2n+1)}{6}.\label{prob:eqn:sumsquare}
-    \end{equation}
+Zeigen Sie: Für alle~$n \geq 1$ gilt
+\begin{equation}
+    \sum_{k=1}^n k^2 = \frac{n (n+1) (2n+1)}{6}.\label{prob:eqn:sumsquare}
+\end{equation}
 \end{problem}
 
 \begin{solution}
@@ -439,11 +447,11 @@ Seien $X$~und~$Y$ Mengen. Beweisen Sie die Äquivalenz folgender Aussagen:
         \begin{itemize}
             \item \emph{Induktionsanfang}: Für~$n = 1$ ist $1^2 = \frac{1}{6} (1 \cdot 2 \cdot 3)$ wahr und folglich ist auch $A(1)$ wahr.
             \item \emph{Induktionsschritt}: Wenn~$A(n)$ gilt, gilt auch
-            \begin{align*}
-                \sum_{k=1}^{n+1} k^2 &= (n+1)^2 + \sum_{k=1}^n k^2 \overset{A(n)}{=} (n+1)^2 + \frac{n(n+1)(2n+1)}{6} = \frac{n+1}{6} \bigl(6(n+1) + n(2n+1)\bigr) \\
-                &= \frac{n+1}{6} \bigl((4n+6) + n(2n+3)\bigr) = \frac{(n+1) (n+2) (2n+3)}{6},
-            \end{align*}
-            also ist auch~$A(n+1)$ wahr.\qedhere
+                  \begin{align*}
+                      \sum_{k=1}^{n+1} k^2 & = (n+1)^2 + \sum_{k=1}^n k^2 \overset{A(n)}{=} (n+1)^2 + \frac{n(n+1)(2n+1)}{6} = \frac{n+1}{6} \bigl(6(n+1) + n(2n+1)\bigr) \\
+                                           & = \frac{n+1}{6} \bigl((4n+6) + n(2n+3)\bigr) = \frac{(n+1) (n+2) (2n+3)}{6},
+                  \end{align*}
+                  also ist auch~$A(n+1)$ wahr.\qedhere
         \end{itemize}
     \end{proof}
 
@@ -454,7 +462,7 @@ Seien $X$~und~$Y$ Mengen. Beweisen Sie die Äquivalenz folgender Aussagen:
         \begin{gather*}
             n^3 = \sum_{k=1}^n \paren*{k^3 - (k-1)^3} = 3\sum_{k=1}^n k^2 - 3\sum_{k=1}^n k + \sum_{k=1}^n 1 = 3\sum_{k=1}^n k^2 - 3\frac{n (n+1)}{2} + n \\
             \iff \sum_{k=1}^n k^2 = \frac{n^3}{3} + \frac{n^2}{2} + \frac{n}{6} = \frac{n (n+1) (2n+1)}{6}. \qedhere
-    \end{gather*}
+        \end{gather*}
     \end{proof}
 \end{solution}
 
@@ -507,9 +515,9 @@ Oftmals lassen wir den Index~$K$ wie in $0_K$~und~$1_K$ weg, wenn der Kontext kl
         \item Um Klammern zu sparen, gilt \emph{Punktrechnung vor Strichrechnung}. Damit können wir z.\,B.\ das Distributivgesetz~\ref{ax:field:d} umschreiben als $a\cdot c + b\cdot c$, ohne dass Verwirrung entsteht.
         \item Wir definieren $a-b \coloneqq a+(-b)$ und $ab \coloneqq a\cdot b$ für $a, b \in K$. Somit können wir Plusklammern und Malpunkte weglassen, wenn der Sinn dabei nicht verfälscht wird (z.\,B.\ nicht $1 \cdot 2 \neq 12$).
         \item Für $a, b \in K$ mit~$b \neq 0$ sei
-        \begin{equation*}
-            \frac{a}{b} \coloneqq a/b \coloneqq a \cdot b^{-1}.
-        \end{equation*}
+              \begin{equation*}
+                  \frac{a}{b} \coloneqq a/b \coloneqq a \cdot b^{-1}.
+              \end{equation*}
     \end{itemize}
 \end{notation}
 
@@ -538,8 +546,8 @@ Ab sofort meinen wir mit~$K$ immer einen Körper mit den Operationen $+$~und~$\c
 \begin{example}
     Sei $K \coloneqq \mset{a, b}$ mit~$a \neq b$. Wir definieren die Abbildungen $+\colon K \times K \to K$ und $\cdot\colon K \times K \to K$ durch\footnote{Die Abbildungen ähneln der Addition und Multiplikation modulo~$2$.}
     \begin{align*}
-        a + a &= a, & a + b &= b, & b + a &= b, & b + b &= a, \\
-        a \cdot a &= a, & a \cdot b &= a, & b \cdot a &= a, & b \cdot b &= b.
+        a + a     & = a, & a + b     & = b, & b + a     & = b, & b + b     & = a, \\
+        a \cdot a & = a, & a \cdot b & = a, & b \cdot a & = a, & b \cdot b & = b.
     \end{align*}
     $K$~erfüllt alle Axiome eines Körpers, wobei das Nullelement~$0_K = a$ und das Einselement~$1_K = b$ ist, also $K = \F_2 \coloneqq \mset{0, 1}$. Der Körper ist der kleinstmögliche Körper (jeder Körper muss mindestens $0$~und~$1$ enthalten). Tatsächlich ist der Körper sogar eindeutig, was wir aber nicht beweisen werden.
 \end{example}
@@ -607,7 +615,7 @@ In den Übungsaufgaben werden wir noch eine Vielzahl weiterer Regeln beweisen.
     Wir definieren $\mchar(K)$ als die \emph{Charakteristik} von~$K$ als
     \begin{equation*}
         \mchar(K) \coloneqq \begin{cases}
-            0 & \text{falls $m \cdot 1_K \neq 0_K$ für alle $m \in \N \setminus \mset{0}$}, \\
+            0                                                             & \text{falls $m \cdot 1_K \neq 0_K$ für alle $m \in \N \setminus \mset{0}$}, \\
             \min\mset{m \in \N \setminus \mset{0} \mid m \cdot 1_K = 0_K} & \text{sonst}.
         \end{cases}
     \end{equation*}
@@ -624,11 +632,11 @@ In den Übungsaufgaben werden wir noch eine Vielzahl weiterer Regeln beweisen.
     \end{equation*}
     Aufgrund der Nullteilerfreiheit in einem Körper (s.~Übungsaufgabe) gilt $p_1 \cdot 1_K = 0_K$ oder $p_2 \cdot 1_K = 0_K$, ein Widerspruch.\footnote{Die Charakteristik hat einige interessante Eigenschaften:
 
-    Aus einer positiven Charakteristik folgt sofort $a + a + \dots a = 0$. Sie hilft und zu bestimmen, wann ein Ausdruck Null wird, was wichtig für das Rechnen im Körper ist (wir denken an $a+0 = 0$, $0a = 0$ und, dass $0^{-1}$ nicht existiert). In diesem Kontext ist $\mchar(K) = 2$ besonders wichtig, denn in dem Fall ist $a + a = 0$ für alle~$a \in K$, d.\,h.\ jedes Element ist sein eigenes additives Inverse. $\mchar(K) \neq 2$ garantiert uns die Existenz der $2 \coloneqq 1+1$.
-                
-    Jeder Teilkörper eines Körpers hat dieselbe Charakteristik wie der Körper, z.\,B.\ $\mchar(\F_2) = \mchar(\F_4) = 2$. Damit haben Körper mit gleicher Charakteristik auch eine ähnliche Struktur.
-                
-    Die Charakteristik ist eigentlich für Ringe (die später folgen) definiert. All diese Eigenschaften gelten auch für Ringe.}
+        Aus einer positiven Charakteristik folgt sofort $a + a + \dots a = 0$. Sie hilft und zu bestimmen, wann ein Ausdruck Null wird, was wichtig für das Rechnen im Körper ist (wir denken an $a+0 = 0$, $0a = 0$ und, dass $0^{-1}$ nicht existiert). In diesem Kontext ist $\mchar(K) = 2$ besonders wichtig, denn in dem Fall ist $a + a = 0$ für alle~$a \in K$, d.\,h.\ jedes Element ist sein eigenes additives Inverse. $\mchar(K) \neq 2$ garantiert uns die Existenz der $2 \coloneqq 1+1$.
+
+        Jeder Teilkörper eines Körpers hat dieselbe Charakteristik wie der Körper, z.\,B.\ $\mchar(\F_2) = \mchar(\F_4) = 2$. Damit haben Körper mit gleicher Charakteristik auch eine ähnliche Struktur.
+
+        Die Charakteristik ist eigentlich für Ringe (die später folgen) definiert. All diese Eigenschaften gelten auch für Ringe.}
 \end{proof}
 
 \lecturesep{15.~Oktober 2021}
@@ -781,7 +789,7 @@ Wie bei Körpern gibt es eine Vielzahl an Rechenregeln für Vektorräume, die wi
         \shortintertext{und}
         \cdot\colon K\times V \to V \quad\text{durch}\quad \paren*{a, \p{b_1\\\vdots\\b_n}} \mapsto \p{ab_1\\\vdots\\ab_n}.
     \end{gather*}
-    
+
     Dann ist $(V,+,\cdot)$ ein $K$"~Vektorraum, der sog.\ \emph{Standardvektorraum}. Wir legen $K^0 \coloneqq 0$ aus~$K$ fest.
 
     Dabei stammt die komponentenweise Addition und Multiplikation aus~$K$.
@@ -816,10 +824,10 @@ Ein sehr wichtiges Beispiel von Vektorräumen:
 \end{definition}
 
 Dabei ist in den Definitionsgleichungen auf der linken Seite Addition und Skalarmultiplikation in~$V$, sowie auf der rechten Seite Addition und Multiplikation in~$K$.\footnote{An dieser Stelle fragt man sich vielleicht, warum der Standardvektorraum~$K^n$ und der Funktionenraum~$K^I$ identisch notiert werden. Das liegt daran, dass sie tatsächlich "`identisch"' (d.\,h.\ \emph{isomorph}) sind, weil es eine Bijektion wie in \cref{ex:map:setisoproduct} gibt.}\textsuperscript{,}\footnote{Für~$I = \N$ lässt sich auch der "`unendlichdimensionale"' \emph{Folgenraum}
-\begin{equation*}
-    K^\N \coloneqq \mset{(a_1,a_2,a_3,\dots) \mid a_i \in K \text{ für alle } i \in \N}
-\end{equation*}
-(wie in der Analysis) definieren.}
+    \begin{equation*}
+        K^\N \coloneqq \mset{(a_1,a_2,a_3,\dots) \mid a_i \in K \text{ für alle } i \in \N}
+    \end{equation*}
+    (wie in der Analysis) definieren.}
 
 Ein noch wichtigeres Beispiel ist
 
@@ -975,10 +983,10 @@ Noch ein Beispiel aus der Analysis.
 \end{definition}
 
 Jedes $v \in (U_i)_{i\in I}$ ist also eine Summe von endlich vielen Vektoren~$u_j$, wobei jedes~$u_j$ von einem anderen Unterraum kommt.\footnote{Anders formuliert: Jeder Vektor~$v$ der internen Summe ist die Summe $\sum_{i\in I} u_i$ mit $u_i \in U_i$, wobei $u_i \neq 0$ nur für endlich viele~$u_i$ gilt. Vgl.\ mit der Definition von~$K^{(I)}$.}\textsuperscript{,}\footnote{Eine witzige Eigenschaft: Für zwei Untervektorräume $U$~und~$W$ von~$V$ gilt
-\begin{equation*}
-    U\times\mset{0} \oplus \mset{0}\times W = U \oplus W,
-\end{equation*}
-also $(u, 0) + (0,w) = (u,w)$, wobei auf der linken Seite die \emph{interne} direkte Summe und auf der rechten Seite die \emph{externe} direkte Summe gemeint ist. Die Vektorräume auf der linken Seite teilen sich nur den Vektor $(0, 0)$.}
+    \begin{equation*}
+        U\times\mset{0} \oplus \mset{0}\times W = U \oplus W,
+    \end{equation*}
+    also $(u, 0) + (0,w) = (u,w)$, wobei auf der linken Seite die \emph{interne} direkte Summe und auf der rechten Seite die \emph{externe} direkte Summe gemeint ist. Die Vektorräume auf der linken Seite teilen sich nur den Vektor $(0, 0)$.}
 
 \begin{lemma}
     $\bigcup_{i\in I} U_i$ und $\sum_{i\in I} U_i$ sind Unterräume von~$V$.
@@ -1002,8 +1010,8 @@ Die "`Theorie der Vektorräume"' wird interessant, wenn wir noch Abbildungen zwi
 
 Dabei finden Addition und Skalarmultiplikation zwischen den Argumenten der Abbildung in~$V$ und zwischen den Bildern der Abbildung in~$W$ statt. Anders geschrieben:
 \begin{align*}
-    f(v_1\mathrel{+_V}v_2) &= f(v_1)\mathrel{+_W}f(v_2), \\
-    f(a\mathrel{\cdot_V}v) &= a\mathrel{\cdot_W}f(v)
+    f(v_1\mathrel{+_V}v_2) & = f(v_1)\mathrel{+_W}f(v_2), \\
+    f(a\mathrel{\cdot_V}v) & = a\mathrel{\cdot_W}f(v)
 \end{align*}
 
 \begin{definition}[Homomorphismus, Endomorphismus]
@@ -1072,8 +1080,8 @@ Die Identität ist ein bijektiver Endomorphismus, also ein Isomorphismus und ins
     \end{enumerate}
 \end{example}
 
-\begin{example}
-    Sei $K$~ein Körper und sei $(a,b,c,d) \in K^4$ gegeben. Die Abbildung\footnote{Das ist einfach das Matrix-Vektor-Produkt.}
+\begin{example}\label{ex:hom:matrixvector}
+    Sei $K$~ein Körper und sei $(a,b,c,d) \in K^4$ gegeben. Die Abbildung\footnote{Das ist das Matrix-Vektor-Produkt.}
     \begin{equation*}
         f\colon K^2 \to K^2,\quad \p{x\\y} \mapsto \p{ax+by\\cx+dy}
     \end{equation*}
@@ -1143,8 +1151,8 @@ Der zweite Beweis ist zwar kürzer, ist aber weniger elementar.
 \begin{proof}
     Wir verwenden \cref{lem:hom:def}. Für alle $a_1,a_2 \in K$ und $v_1,v_2 \in V$ gilt
     \begin{align*}
-        (g\circ f)(a_1u_2 + a_2u_2) &= g(f(a_1u_1 + a_2u_2)) \overset{\text{Hom.~$f$}}{=} g(a_1f(u_1) + a_2f(u_2)) \\
-        \overset{\text{Hom.~$g$}}&{=} a_1g(f(u_1)) + a_2g(f(u_2)) = a_1(g\circ f)(u_1) + a_2(g\circ f)(u_2). \qedhere
+        (g\circ f)(a_1u_2 + a_2u_2) & = g(f(a_1u_1 + a_2u_2)) \overset{\text{Hom.~$f$}}{=} g(a_1f(u_1) + a_2f(u_2))       \\
+        \overset{\text{Hom.~$g$}}   & {=} a_1g(f(u_1)) + a_2g(f(u_2)) = a_1(g\circ f)(u_1) + a_2(g\circ f)(u_2). \qedhere
     \end{align*}
 \end{proof}
 
@@ -1161,23 +1169,23 @@ Der zweite Beweis ist zwar kürzer, ist aber weniger elementar.
 \begin{proof}\leavevmode
     \begin{itemize}
         \item Zuerst müssen wir zeigen, dass die Addition und Skalarmultiplikation auf $\hom(V,W)$ abgeschlossen ist, d.\,h., dass $f+g$ und~$af$ linear sind. Dafür können wir leicht überprüfen, dass
-        \begin{equation*}
-            (f+g)(\lambda_1v_1+\lambda_2v_2) = \lambda_1(f+g)(v_1)+\lambda_2(f+g)(v_2)
-        \end{equation*}
-        für alle $v_1,v_2 \in V$ und $\lambda_1,\lambda_2 \in K$ gilt.
+              \begin{equation*}
+                  (f+g)(\lambda_1v_1+\lambda_2v_2) = \lambda_1(f+g)(v_1)+\lambda_2(f+g)(v_2)
+              \end{equation*}
+              für alle $v_1,v_2 \in V$ und $\lambda_1,\lambda_2 \in K$ gilt.
         \item Die Axiome \ref{ax:vecspace:aa}~und~\ref{ax:vecspace:ac} in $\hom(V,W)$ folgen aus den Axiomen \ref{ax:vecspace:aa}~und~\ref{ax:vecspace:ac} in~$W$.
         \item Der Nullvektor in $\hom(V,W)$ (Axiom~\ref{ax:vecspace:an}) ist die Nullabbildung $0\colon V \to W$, ein Homomorphismus.
         \item Für jedes $f \in \hom(V,W)$ definieren wir $-f\colon V \to W$, $v \mapsto -(f(v))$ als das additive Inverse. Wir sehen leicht, dass $-f \in \hom(V,W)$. Dann gilt
-        \begin{equation*}
-            (f+(-f))(v) = f(v)+(-(f(v))) = 0 \qquad\text{für alle } v \in V.
-        \end{equation*}
-        Also gilt Axiom~\ref{ax:vecspace:ai} in $\hom(V,W)$.
+              \begin{equation*}
+                  (f+(-f))(v) = f(v)+(-(f(v))) = 0 \qquad\text{für alle } v \in V.
+              \end{equation*}
+              Also gilt Axiom~\ref{ax:vecspace:ai} in $\hom(V,W)$.
         \item Für alle $f,g \in \hom(V,W)$, $a \in K$ und~$v \in V$ gilt
-        \begin{align*}
-            (a(f+g))(v) &= a((f+g)(v)) = a(f(v)+g(v)) \underset{\text{in }W}{\overset{\ref{ax:vecspace:smdv}}{=}} a(f(v))+a(g(v)) \\
-            &= (af)(v)+(ag)(v) = (af+ag)(v).
-        \end{align*}
-        Also gilt Axiom~\ref{ax:vecspace:smdv} in $\hom(V,W)$.
+              \begin{align*}
+                  (a(f+g))(v) & = a((f+g)(v)) = a(f(v)+g(v)) \underset{\text{in }W}{\overset{\ref{ax:vecspace:smdv}}{=}} a(f(v))+a(g(v)) \\
+                              & = (af)(v)+(ag)(v) = (af+ag)(v).
+              \end{align*}
+              Also gilt Axiom~\ref{ax:vecspace:smdv} in $\hom(V,W)$.
         \item Den Nachweis der Axiome \ref{ax:vecspace:smcomp},~\ref{ax:vecspace:smn} und~\ref{ax:vecspace:smdf} können wir ähnlich führen.\qedhere
     \end{itemize}
 \end{proof}
@@ -1254,7 +1262,7 @@ Zur Erinnerung: Wir definierten $U_v \coloneqq \mset{av \mid a \in K}$ für~$v \
         \draw (-2,1.3333) -- node[very near end, right] {$U_{v-w}$} (1.5,-1);
     \end{tikzpicture}
     \caption{Affine Gerade~$L_{v,w}$ in~$\R^2$. $U_{v-w}$~geht durch~$0$, während $L_{v,w}$ eine \\
-    Verschiebung von~$U_{v-w}$ um~$w$ ist. $L_{v,w}$~und~$U_{v-w}$ sind dementsprechend parallel.}
+        Verschiebung von~$U_{v-w}$ um~$w$ ist. $L_{v,w}$~und~$U_{v-w}$ sind dementsprechend parallel.}
 \end{figure}
 
 Für einen Homomorphismus $f\colon V \to W$ gilt nun
@@ -1291,10 +1299,10 @@ mit~$a \in K$.
 \end{definition}
 
 Der Kern ist im Prinzip die Menge aller "`Nullstellen"' von~$f$. Es gilt nämlich per Definition\footnote{Eine alternative Charakterisierung des Kerns: Sei $f\colon V \to W$ ein Homomorphismus. Für alle $v,w \in V$ ir definieren die Äquivalenzrelation $v \sim w \coloniff f(v) = f(w)$. Dabei folgt aus der Linearität
-\begin{equation*}
-    v \sim w \iff f(v) = f(w) \iff f(v)-f(w) = f(v-w) = 0
-\end{equation*}
-Damit zerfällt~$V$ in Restklassen modulo $\ker(f)$.}
+    \begin{equation*}
+        v \sim w \iff f(v) = f(w) \iff f(v)-f(w) = f(v-w) = 0
+    \end{equation*}
+    Damit zerfällt~$V$ in Restklassen modulo $\ker(f)$.}
 \begin{equation*}
     \ker(f) = f^{-1}(0).
 \end{equation*}
@@ -1312,30 +1320,30 @@ Damit zerfällt~$V$ in Restklassen modulo $\ker(f)$.}
 \begin{proof}\leavevmode
     \begin{enumerate}
         \item Wegen $f(0) = 0$ liegt $0$ in $\ker(f)$. Damit ist $\ker(f) \neq \varnothing$.
-        
-        Für alle~$a \in K$ und $v,v_1,v_2 \in \ker(f)$ gilt aufgrund Linearität
-        \begin{equation*}
-            f(v_1+v_2) = f(v_1)+f(v_2) = 0+0 = 0 \qquad\text{und}\qquad f(av) = af(v) = a0 = 0.
-        \end{equation*}
-        Folglich liegen alle $v_1+v_2$ und~$av$ in $\ker(f)$, also ist $\ker(f)$ unter Addition und Skalarmultiplikation abgeschlossen. $\ker(f)$ ist ein Unterraum von~$V$.
-        \item Wegen $f(0) = 0$ liegt $f(0)$ in $\im(f)$. Damit ist $\im(f) \neq \varnothing$.
-        
-        Seien $w,w_1,w_2 \in \im(f)$, d.\,h.\ es gibt $v,v_1,v_2 \in V$ mit $f(v) = w$, $f(v_1) = w_1$ und $f(v_2) = w_2$. Für alle~$a \in K$ und $w,w_1,w_2 \in \im(f)$ gelten aufgrund Linearität
-        \begin{equation*}
-            w_1+w_2 = f(v_1)+f(v_2) = f(v_1+v_2) \qquad\text{und}\qquad aw = af(v) = f(av).
-        \end{equation*}
-        Folglich gibt es zu jeden $w_1+w_2$ und~$aw$ Urbilder, weshalb $w_1+w_2$ und~$aw$ in $\im(f)$ liegen. Also ist $\im(f)$ unter Addition und Skalarmultiplikation abgeschlossen und $\im(f)$ ein Unterraum von~$W$.
-        \item Sei $f$~injektiv und sei~$v \in \ker(f)$. Dann gilt
-        \begin{equation*}
-            f(v) = 0 = f(0),
-        \end{equation*}
-        und aus der Injektivität folgt $v = 0$. Also ist $\ker(f) = 0$.
 
-        Ist $f$~nicht injektiv, so gibt es $v_1 \neq v_2$ in~$V$ mit $f(v_1) = f(v_2)$. Dann gilt aufgrund Linearität
-        \begin{equation*}
-            f(v_1-v_2) = f(v_1)-f(v_2) = 0.
-        \end{equation*}
-        Somit ist $v_1-v_2 \in \ker(f)$, aber $v_1-v_2 \neq 0$ und damit $\ker(f) \neq 0$.
+              Für alle~$a \in K$ und $v,v_1,v_2 \in \ker(f)$ gilt aufgrund Linearität
+              \begin{equation*}
+                  f(v_1+v_2) = f(v_1)+f(v_2) = 0+0 = 0 \qquad\text{und}\qquad f(av) = af(v) = a0 = 0.
+              \end{equation*}
+              Folglich liegen alle $v_1+v_2$ und~$av$ in $\ker(f)$, also ist $\ker(f)$ unter Addition und Skalarmultiplikation abgeschlossen. $\ker(f)$ ist ein Unterraum von~$V$.
+        \item Wegen $f(0) = 0$ liegt $f(0)$ in $\im(f)$. Damit ist $\im(f) \neq \varnothing$.
+
+              Seien $w,w_1,w_2 \in \im(f)$, d.\,h.\ es gibt $v,v_1,v_2 \in V$ mit $f(v) = w$, $f(v_1) = w_1$ und $f(v_2) = w_2$. Für alle~$a \in K$ und $w,w_1,w_2 \in \im(f)$ gelten aufgrund Linearität
+              \begin{equation*}
+                  w_1+w_2 = f(v_1)+f(v_2) = f(v_1+v_2) \qquad\text{und}\qquad aw = af(v) = f(av).
+              \end{equation*}
+              Folglich gibt es zu jeden $w_1+w_2$ und~$aw$ Urbilder, weshalb $w_1+w_2$ und~$aw$ in $\im(f)$ liegen. Also ist $\im(f)$ unter Addition und Skalarmultiplikation abgeschlossen und $\im(f)$ ein Unterraum von~$W$.
+        \item Sei $f$~injektiv und sei~$v \in \ker(f)$. Dann gilt
+              \begin{equation*}
+                  f(v) = 0 = f(0),
+              \end{equation*}
+              und aus der Injektivität folgt $v = 0$. Also ist $\ker(f) = 0$.
+
+              Ist $f$~nicht injektiv, so gibt es $v_1 \neq v_2$ in~$V$ mit $f(v_1) = f(v_2)$. Dann gilt aufgrund Linearität
+              \begin{equation*}
+                  f(v_1-v_2) = f(v_1)-f(v_2) = 0.
+              \end{equation*}
+              Somit ist $v_1-v_2 \in \ker(f)$, aber $v_1-v_2 \neq 0$ und damit $\ker(f) \neq 0$.
         \item Das folgt unmittelbar aus den Definitionen.\qedhere
     \end{enumerate}
 \end{proof}
@@ -1388,13 +1396,12 @@ Zur Erinnerung: Sei $K$~ein Körper und $n \geq 1$. Dann ist $K^n$ (das $n$"~fac
     \p{a_1\\a_2\\\vdots\\a_n} \qquad\text{mit } a_i \in K \text{ für alle } 1 \leq i \leq n.
 \end{equation*}
 
-Wir werden immer mit der \emph{informellen} Definition von Matrizen arbeiten, die anschaulicher und praktischer ist.
+Wir werden fast immer mit der \emph{informellen} Definition von Matrizen arbeiten, die anschaulicher und praktischer ist.
 
 \begin{definition}[Matrix (informell)]
     Seien $m,n \geq 1$ natürliche Zahlen. Eine \emph{$(m\times n)$"~Matrix} (mit \emph{Einträgen in~$K$}) ist eine Anordnung von Elementen~$a_{ij} \in K$ mit $1 \leq i \leq m$ und $1 \leq j \leq n$ in Form eines Rechtecks\slash einer Tabelle
     \begin{equation*}
-        A =
-        \begin{pmatrix}
+        A = \begin{pmatrix}
             a_{11} & a_{12} & \cdots & a_{1n} \\
             a_{21} & a_{22} & \cdots & a_{2n} \\
             \vdots & \vdots & \ddots & \vdots \\
@@ -1418,7 +1425,7 @@ Auch sehen wir die Indizes mit Kommata getrennt, also~$a_{i,j}$, um z.\,B.\ $a_{
 \end{notation}
 
 \begin{remark}
-    Es ist sehr wichtig, dass wir sowohl in der Größe~$m\times n$ als auch in den Indizes von~$a_{ij}$ \emph{zuerst die Zeile, dann die Spalte} schreiben.
+    Es ist sehr wichtig, dass wir sowohl in der Größe~$m\times n$ als auch in den Indizes von~$a_{ij}$ \emph{zuerst die Zeile, dann die Spalte} schreiben. Genauso ist die Anordnung der Einträge wichtig; vertauschen wir zwei Einträge, erhalten wir eine andere Matrix.
 \end{remark}
 
 \begin{example}
@@ -1428,7 +1435,7 @@ Auch sehen wir die Indizes mit Kommata getrennt, also~$a_{i,j}$, um z.\,B.\ $a_{
     ist eine $(2\times 3)$"~Matrix mit Einträgen in~$\R$.
 \end{example}
 
-Nun zur \emph{formalen} Definition, die wir nie benutzen werden. Es ist aber recht einfach, alle Beweise und Aussagen in die formale Definition zu überführen.
+Nun zur \emph{formalen} Definition, die wir kaum benutzen werden. Es ist aber recht einfach, alle Beweise und Aussagen in die formale Definition zu überführen.
 
 \begin{definition}[Matrix (formal)]
     Für~$s \geq 1$ sei $I_s \coloneqq \mset{1, 2,\dots,s}$. Wir setzen
@@ -1446,8 +1453,7 @@ Nun zur \emph{formalen} Definition, die wir nie benutzen werden. Es ist aber rec
 \begin{notation}
     Statt
     \begin{equation*}
-        A =
-        \begin{pmatrix}
+        A = \begin{pmatrix}
             a_{11} & a_{12} & \cdots & a_{1n} \\
             a_{21} & a_{22} & \cdots & a_{2n} \\
             \vdots & \vdots & \ddots & \vdots \\
@@ -1466,7 +1472,7 @@ Manchmal ist es sinnvoll, die Notation~$(a_{ij})$ statt~$A$ zu wählen.
 \begin{definition}[Nullmatrix]
     Sei $A = (a_{ij}) \in K^{m,n}$ eine Matrix mit~$a_{ij} = 0$ für alle~$i,j$. Wir schreiben dann $A = 0_{m,n} = 0$ und nennen sie die \emph{Nullmatrix} in~$K^{m,n}$.
 
-    Für $m = 0$ und/oder $n = 0$ beschreibt $K^{m,n} \coloneqq K^{I_m\times I_n} = K^\varnothing$ mit~$I_0 \coloneqq \varnothing$ die Menge der Matrizen, die keine Zeilen und/oder Spalten haben. In dem Fall enthält~$K^{m,n}$ genau ein Element, die \emph{leere Matrix} oder auch \emph{Nullmatrix}, die wir wieder mit $0$~oder~$0_{m,n}$ bezeichnen.
+    Für $m = 0$ oder $n = 0$ beschreibt $K^{m,n} \coloneqq K^{I_m\times I_n} = K^\varnothing$ mit~$I_0 \coloneqq \varnothing$ die Menge der Matrizen, die keine Zeilen oder Spalten haben. In dem Fall enthält~$K^{m,n}$ genau ein Element, die \emph{leere Matrix} oder auch \emph{Nullmatrix}, die wir wieder mit $0$~oder~$0_{m,n}$ bezeichnen.
 \end{definition}
 
 \begin{notation}
@@ -1480,6 +1486,356 @@ Manchmal ist es sinnvoll, die Notation~$(a_{ij})$ statt~$A$ zu wählen.
 Mit der Schreibweise wollen wir die \emph{Ringstruktur} der Menge der Matrizen betonen (was wir noch zeigen).
 
 \lecturesep{26.~Oktober 2021}
+
+\subsection{Operationen auf Matrizen}
+
+\begin{definition}[Addition]
+    Seien $m,n \geq 1$. Seien $A = (a_{ij})$ und $B = (b_{ij})$ Matrizen in~$K^{m,n}$. Die \emph{Summe} von $A$~und~$B$ ist
+    \begin{equation*}
+        A+B \coloneqq (a_{ij}+b_{ij}) =
+        \begin{pmatrix}
+            a_{11}+b_{11} & a_{12}+b_{12} & \cdots & a_{1n}+b_{1n} \\
+            a_{21}+b_{21} & a_{22}+b_{22} & \cdots & a_{2n}+b_{2n} \\
+            \vdots        & \vdots        & \ddots & \vdots        \\
+            a_{m1}+b_{m1} & a_{m2}+b_{m2} & \cdots & a_{mn}+b_{mn} \\
+        \end{pmatrix}
+    \end{equation*}
+    und die Abbildung
+    \begin{equation*}
+        +\colon K^{m,n} \times K^{m,n} \to K^{m,n},\quad (A,B) \mapsto A+B
+    \end{equation*}
+    heißt \emph{Addition von Matrizen}.
+\end{definition}
+
+\begin{definition}[Skalarmultiplikation]
+    Seien $m,n \geq 1$. Seien $a \in K$ und $A = (a_{ij}) \in K^{m,n}$. Die \emph{Skalarmultiplikation} von $a$~und~$B$ ist
+    \begin{equation*}
+        a\cdot A \coloneqq aA \coloneqq (aa_{ij}) =
+        \begin{pmatrix}
+            aa_{11} & aa_{12} & \cdots & aa_{1n} \\
+            aa_{21} & aa_{22} & \cdots & aa_{2n} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            aa_{m1} & aa_{m2} & \cdots & aa_{mn}
+        \end{pmatrix}
+    \end{equation*}
+    und die Abbildung
+    \begin{equation*}
+        \cdot\colon K \times K^{m,n} \to K^{m,n},\quad (a,A) \mapsto aA
+    \end{equation*}
+    heißt \emph{Skalarmultiplikation für Matrizen}.
+\end{definition}
+
+\emph{Merke}: Addition und Skalarmultiplikation erfolgen komponentenweise.
+
+\begin{lemma}
+    $(K^{m,n},+,\cdot)$ ist ein $K$"~Vektorraum.
+\end{lemma}
+
+\begin{proof}
+    Für den Beweis müssten wir die Vektorraumaxiome nachrechnen, die sich aber unmittelbar aus den Körperaxiomen ergeben. Der Nullvektor ist die Nullmatrix~$0_{m,n} \in K^{m,n}$. Für $m = 0$ oder $n = 0$ ist $K^{m,n}$ als~$\mset{0_{m,n}}$ definiert, was der Nullvektorraum ist. 
+\end{proof}
+
+\begin{definition}[Produkt]
+    Seien $m,n,p \geq 1$ und seien $A = (a_{ij}) \in K^{m,n}$ und $B = (b_{jk}) \in K^{n,p}$ Matrizen. Das \emph{Produkt} von $A$~und~$B$ ist
+    \begin{equation*}
+        A\cdot B \coloneqq AB \coloneqq (c_{ik}) \in K^{m,p} \qquad\text{mit}\qquad c_{ik} \coloneqq \sum_{j=1}^n a_{ij}b_{jk}
+    \end{equation*}
+    und die Abbildung
+    \begin{equation*}
+        \cdot\colon K^{m,n} \times K^{n,p} \to K^{m,p},\quad (A,B) \mapsto AB
+    \end{equation*}
+    heißt \emph{Multiplikation von Matrizen}.
+\end{definition}
+
+\begin{remark}\leavevmode
+    \begin{enumerate}
+        \item Bei der Matrixmultiplikation müssen wir auf die richtigen Größen der Matrizen achten: $A$~ist eine $(m\times n)$"~Matrix, $B$~ist eine $(n\times p)$"~Matrix und $AB$~ist eine $(m\times p)$"~Matrix. Der erste "`Faktor"' muss also genauso viele Spalten haben wie der zweite "`Faktor"' Zeilen hat.
+        \item Der $ik$"~te Eintrag des Produkts ist das Matrixprodukt
+        \begin{equation*}
+            c_{ik} = (a_{i1}, \dots, a_{in}) \cdot \p{b_{1k} \\ \vdots \\ b_{nk}}.
+        \end{equation*}
+        \emph{Merke}: \emph{$i$"~te Zeile mal $k$"~te Spalte.}
+    \end{enumerate}
+\end{remark}
+
+\begin{example}\label{ex:matrix:product}\leavevmode
+    \begin{enumerate}
+        \item $\pt{1&1\\1&1} \cdot \pt{1&0\\-1&0} = \pt{0&0\\0&0}$.\label{ex:matrix:product:1}
+        \item $\pt{1&0\\-1&0} \cdot \pt{1&1\\1&1} = \pt{1&1\\-1&-1}$.\label{ex:matrix:product:2}
+        \item Das Produkt einer $(1\times n)$"~Matrix (\emph{Zeilenvektor}) und einer $(n\times1)$"~Matrix (\emph{Spaltenvektor}) ist eine $(1\times1)$"~Matrix (Skalar):
+        \begin{equation*}
+            \underbrace{(a_1,\dots,a_n)}_{\in K^{1,n}} \cdot \underbrace{\p{b_1\\\vdots\\b_n}}_{\in K^{n, 1}} = \paren*{\sum_{j=1}^n a_jb_j} \in K^{1, 1}.
+        \end{equation*}
+        \item Sei $K = \Q$. Dann gilt
+        \begin{equation*}
+            \begin{pmatrix}
+                0 & 1 & 0 \\
+                1 & 0 & 2
+            \end{pmatrix}
+            \cdot \begin{pmatrix}
+                0 & 1 & 1 & 1 \\
+                2 & 0 & 0 & 3 \\
+                0 & 1 & 3 & 0
+            \end{pmatrix}
+            = \begin{pmatrix}
+                2 & 0 & 0 & 3 \\
+                0 & 3 & 7 & 1
+            \end{pmatrix}.
+        \end{equation*}
+    \end{enumerate}
+\end{example}
+
+\begin{remark}
+    Für beliebige Matrizen $A$~und~$B$ kann das Produkt~$AB$ existieren, aber das Produkt~$BA$ hingegen möglicherweise nicht (das hängt von der Größe der Matrizen ab). Für quadratische Matrizen gilt aber im Allgemeinen $AB \neq BA$ (vgl.~\cref{ex:matrix:product:1,ex:matrix:product:2} sehen). Für quadratische Matrizen $A,B \neq 0$ kann $AB = 0$ sein (s.~\cref{ex:matrix:product:1}).
+\end{remark}
+
+\subsection{Rechenregeln für Matrizen}
+
+\begin{lemma}[Assoziativität]\label{lem:matrix:ma}
+    Seien $A = (a_{ij}) \in K^{m,n}$, $B = (b_{jk}) \in K^{n,p}$ und $C = (c_{kl}) \in K^{p,q}$. Dann gilt
+    \begin{equation*}
+        A(BC) = (AB)C.
+    \end{equation*}
+\end{lemma}
+
+\begin{proof}
+    Aus der Definition folgen
+    \begin{align*}
+        A(BC) &= A \cdot \paren*{\paren*{\sum_{k=1}^p b_{jk}c_{kl}}_{jl}} = \paren*{\paren*{\sum_{j=1}^n \sum_{k=1}^p a_{ij}b_{jk}c_{kl}}_{il}}
+        \shortintertext{und}
+        (AB)C &= \paren*{\paren*{\sum_{j=1}^n a_{ij}b_{jk}}_{ik}} \cdot C = \paren*{\paren*{\sum_{k=1}^p \sum_{j=1}^n a_{ij}b_{jk}c_{kl}}_{il}}.
+    \end{align*}
+    Mit der Kommutativität der Addition~\ref{ax:field:ac} in~$K$ folgt die Gleichheit.
+\end{proof}
+
+\begin{lemma}[Linksdistributivität]\label{lem:matrix:dl}
+    Für alle~$A = (a_{ij}) \in K^{m,n}$, $B = (b_{jk})$ und $C = (c_{jk})$ in~$K^{n,p}$ gilt
+    \begin{equation*}
+        A(B+C) = AB+AC.
+    \end{equation*}
+\end{lemma}
+
+\begin{proof}
+    Es gelten
+    \begin{gather*}
+        (A(B+C))_{ik} = (a_{i1},\dots,a_{1n}) \cdot \p{b_{1k}+c_{1k}\\\vdots\\b_{nk}+c_{nk}} = \sum_{j=1}^n a_{ij}(b_{jk}+c_{jk})
+        \shortintertext{und}
+        (AB+AC)_{ik} = (a_{i1},\dots,a_{1n}) \cdot \p{b_{1k}\\\vdots\\b_{nk}} + (a_{i1},\dots,a_{1n}) \cdot \p{c_{1k}\\\vdots\\c_{nk}} = \sum_{j=1}^n a_{ij}b_{jk} + \sum_{j=1}^n a_{ij}c_{jk}.
+    \end{gather*}
+    Wenden wir die Distributivität (Axiom~\ref{ax:field:d}) in~$K$ an, erhalten wir die Gleichheit.
+\end{proof}
+
+\begin{lemma}[Rechtsdistributitvität]\label{lem:matrix:dr}
+    Für alle $A = (a_{ij})$, $B = (b_{ij})$ in~$K^{m,n}$ und $C = (c_{jk}) \in K^{n,p}$ gilt
+    \begin{equation*}
+        (A+B)C = AC+BC.
+    \end{equation*}
+\end{lemma}
+
+\begin{proof}
+    Der Beweis erfolgt analog zur Linksdistributivität.
+\end{proof}
+
+\begin{definition}[Einheitsmatrix]
+    Für~$n \geq 1$ sei
+    \begin{equation*}
+        E_n \coloneqq \begin{pmatrix}
+            1 & 0 & \cdots & 0 \\
+            0 & \ddots & \ddots & \vdots \\
+            \vdots & \ddots & \ddots & 0 \\
+            0 & \cdots & 0 & 1
+        \end{pmatrix}
+        = \p{1&& \\ &\ddots& \\ &&1} \in K^{n,n}
+    \end{equation*}
+    die \emph{Einheitsmatrix} in~$K^{n,n}$, also
+    \begin{equation*}
+        E_n \coloneqq (a_{ij}) \in K^{n,n} \qquad\text{mit}\qquad a_{ij} =
+        \begin{cases}
+            1 & \text{falls } i = j, \\
+            0 & \text{sonst}.
+        \end{cases}
+    \end{equation*}
+    Für~$n = 0$ sei $E_0 = 0_n$.
+\end{definition}
+
+Die Einheitsmatrix ist immer quadratisch.
+
+\begin{lemma}[Einselement]\label{lem:matrix:mn}
+    Für alle~$A \in K^{m,n}$ gilt
+    \begin{equation*}
+        E_mA = A = AE_n.
+    \end{equation*}
+\end{lemma}
+
+\begin{proof}
+    Das können wir durch einfaches Nachrechnen mithilfe der Definition der Matrixmultiplikation überprüfen. Aufgrund der Nullen in einer Zeile bzw.\ Spalte werden alle Einträge bis auf eines mit~$0$ multipliziert; diese Summanden fallen dann raus.
+\end{proof}
+
+Die Einsen in der Einheitsmatrix greifen jeweils genau eine Zeile bzw.\ Spalte "`heraus"'.
+
+\begin{lemma}\label{lem:matrix:multiplication}
+    Für alle~$a \in K$, $A \in K^{m,n}$ und~$B \in K^{n,p}$ gilt
+    \begin{equation*}
+        a(AB) = (aA)B = A(aB).
+    \end{equation*}
+\end{lemma}
+
+\begin{proof}
+    Dies können wir wieder durch einfaches Nachrechnen überprüfen, wobei wir die Definition der Skalarmultiplikation für Matrizen un der Matrixmultiplikation anwenden und die Axiome in~$K$ verwenden müssen.
+\end{proof}
+
+\begin{lemma}[Ring der quadratischen Matrizen]
+    $(M_n(K),+,\cdot)$ ist ein Ring.
+\end{lemma}
+
+\begin{proof}
+    Die Axiome \ref{ax:ring:aa}~bis~\ref{ax:ring:ai} für Ringe folgen aus Axiomen \ref{ax:field:aa}~bis~\ref{ax:field:ai} in~$K$ und $-(a_{ij}) = (-a_{ij})$ für Matrizen~$(a_{ij}) \in M_n(K)$, da die Matrixaddition von komponentenweise definiert wurde. Axiom~\ref{ax:ring:ma} ist \cref{lem:matrix:ma}. Axiom~\ref{ax:ring:mn} ist \cref{lem:matrix:mn}. Axiom~\ref{ax:ring:d} sind \cref{lem:matrix:dl,lem:matrix:dr}.
+\end{proof}
+
+\begin{remark}
+    \cref{ex:matrix:product} zeigt, dass der Ring~$M_2(K)$ (oder allgemein $M_n(K)$ für~$n \geq 2$) \underline{nicht} kommutativ und \underline{nicht} nullteilerfrei ist.
+
+    Spezialfälle: $M_1(K) \cong K$ ist ein Körper. $M_0(K)$~ist der Nullring.
+\end{remark}
+
+\begin{axiom}[Algebra]
+    Sei $K$~ein Körper. Ein Ring $(R,+,\cdot)$ zusammen mit einer Abbildung (\emph{Skalarmultiplikation})
+    \begin{equation*}
+        *\colon K\times R \to R,\quad (a,r) \mapsto a*r
+    \end{equation*}
+    heißt \emph{$K$"~Algebra}, falls folgende Axiome gelten:
+    \begin{enumerate}[widest=(AL0), leftmargin=*]
+        \refitem[(AL1)] $(R,+,*)$ ist ein $K$"~Vektorraum;\label{ax:algebra:vecspace}
+        \refitem[(AL2)] $a*(r\cdot s) = (a*r)\cdot s = r\cdot(a*s)$ für alle~$a \in K$ und $r,s \in R$.\label{ax:algebra:multiplication}\footnote{Eine alternative Definition: Eine \emph{$K$"~Algebra~$A$} ist ein Vektorraum $(A,+,*)$, zusammen mit einer $K$"~bilinearen Verknüpfung $\cdot\colon A\times A \to A$, d.\,h.\ für~$\cdot$ gelten Axiom~\ref{ax:ring:d} für Ringe und Axiom~\ref{ax:algebra:multiplication}.}
+    \end{enumerate}
+\end{axiom}
+
+\begin{notation}
+    Wir schreiben auch $ar \coloneqq a*r$ und $rs \coloneqq r\cdot s$.
+\end{notation}
+
+\emph{Achtung}: Wir haben hier drei Multiplikationen: Die Körpermultiplikation~$\cdot_K$, die Ringmultiplikation~$\cdot_R$ und die Skalarmultiplikation~$*$. Welche Multiplikation gemeint ist, sehen wir anhand der Art der Elemente, die verknüpft werden. Genauso haben wir zwei Additionen: Die Körperaddition~$+_K$ und die Ringaddition~$+_R$.
+
+\begin{lemma}[Algebra der quadratischen Matrizen]
+    $M_n(K)$~ist eine $K$"~Algebra, wobei $+$~die Addition von Matrizen, $\cdot$~die Multiplikation von Matrizen und $*$~die Skalarmultiplikation von Matrizen ist.
+\end{lemma}
+
+\begin{proof}
+    Wir haben gerade gezeigt, dass $M_n(K)$~ein Ring ist.
+    
+    Um Axiom~\ref{ax:algebra:vecspace} zeigen, müssen wir die Vektorraumaxiome zeigen: Axiome \ref{ax:vecspace:aa}~bis~\ref{ax:vecspace:ai} für Vektorräume folgen direkt aus Axiome \ref{ax:ring:aa}~bis~\ref{ax:ring:ai} für Ringe. Axiome \ref{ax:vecspace:smcomp}~bis~\ref{ax:vecspace:smdf} können wir einfaches durch Nachrechnen und Anwenden der Distributivität in~$K$ zeigen.
+
+    Axiom~\ref{ax:algebra:multiplication} ist \cref{lem:matrix:multiplication}.
+\end{proof}
+
+\subsection{Matrizen als lineare Abbildungen}
+
+\begin{definition}[Matrixabbildung]
+    Sei $A = (a_{ij}) \in K^{m,n}$ eine Matrix. Wir definieren eine Abbildung, die wir ebenfalls mit~$A$ bezeichnen, durch
+    \begin{equation*}
+        A\colon K^n \to K^m,\quad v \mapsto A(v) \coloneqq A\cdot v,
+    \end{equation*}
+    wobei $A\cdot v$~das Produkt der $(m\times n)$"~Matrix~$A$ mit der $(n\times 1)$"~Matrix~$v$ ist. (Hier haben wir $K^n = K^{n,1}$ identifiziert.) Die Abbildung $A\colon K^n \to K^m$ heißt \emph{Matrixabbildung}.
+\end{definition}
+
+\begin{lemma}
+    Die Matrixabbildung $A\colon K^n \to K^m$ ist $K$"~linear.
+\end{lemma}
+
+\begin{proof}
+    Seien $A \in K^{m,n}$ und $v_1,v_2 \in K^n$. Dann folgt aus \cref{lem:matrix:dl}
+    \begin{equation*}
+        A(v_1+v_2) = A \cdot (v_1+v_2) = A\cdot v_1 + A\cdot v_2 = A(v_1)+A(v_2).
+    \end{equation*}
+    Für~$a \in K$ und~$v \in V$ folgt aus \cref{lem:matrix:multiplication}
+    \begin{equation*}
+        A(av) = A \cdot (av) = a(A\cdot v) = a(A(v)). \qedhere
+    \end{equation*}
+\end{proof}
+
+Damit liefern Matrixabbildungen viele neue Beispiele für Homomorphismen (auf Standardvektorräumen).
+
+\begin{example}\leavevmode
+    \begin{enumerate}
+        \item Die Einheitsmatrix~$E_n$ liefert die Identität $\id_{K^n}\colon K^n \to K^n$.
+        \item Die Matrix $A = \pt{0&1\\-1&0} \in M_2(K)$ liefert die Abbildung
+        \begin{equation*}
+            A\colon K^2 \to K^2,\quad \p{a\\b} \mapsto \p{b\\-a}.
+        \end{equation*}
+
+        Für~$K = \R$ können wir uns das so vorstellen: $A$~dreht jeden Vektor in~$\R^2$ um einen rechten Winkel im Uhrzeigersinn.\footnote{Eine sog.\ \emph{Rotationsmatrix} $\p{\cos\theta&-\sin\theta\\\sin\theta&\cos\theta}$ für~$\theta = -\frac{1}{2}\pi$.}
+        \item \cref{ex:hom:matrixvector} ist die Matrixabbildung
+        \begin{equation*}
+            A = \p{a&b\\c&d}\colon K^2 \to K^2,\quad \p{x\\y} \mapsto \p{ax+by\\cx+dy}.
+        \end{equation*}
+    \end{enumerate}
+\end{example}
+
+\begin{theorem}
+    Seien $A \in K^{m,n}$ und $B \in K^{n,p}$ sowie $A\colon K^n \to K^m$ bzw.\ $B\colon K^p \to K^n$ die entsprechenden Matrixabbildungen. Dann gilt
+    \begin{equation*}
+        A\cdot B = A\circ B,
+    \end{equation*}
+    wobei $A\cdot B$~das Matrixprodukt und $A\circ B$~die Komposition von Abbildungen ist.
+\end{theorem}
+
+\begin{equation*}
+    \begin{tikzcd}
+        K^p \ar[rr, bend right, "A\circ B"'] \ar[r, "B"] & K^n \ar[r, "A"] & K^m
+    \end{tikzcd}
+\end{equation*}
+
+\begin{proof}
+    Nach \cref{lem:matrix:ma} gilt für alle~$v \in K^p$
+    \begin{equation*}
+        (A\cdot B)(v) = (A\cdot B)\cdot v = A\cdot(B\cdot v) = A(B(v)) = (A\circ B)(v). \qedhere
+    \end{equation*}
+\end{proof}
+
+\subsection{Die Standardbasis von Standardvektorräumen}
+
+\begin{definition}[Standardbasisvektor]
+    Sei~$n \geq 1$. Für alle $1 \leq i \leq n$ sei
+    \begin{equation*}
+        e^{(n)}_i \coloneqq e_i \coloneqq \p{a_1\\\vdots\\a_n} \in K^n \qquad\text{mit } a_j \coloneqq \begin{cases}
+            1 & \text{falls } i = j, \\
+            0 & \text{sonst},
+        \end{cases}
+    \end{equation*}
+    der \emph{$i$"~te Standardbasisvektor} oder auch \emph{$i$"~te Einheitsvektor} von~$K^n$.
+\end{definition}
+
+\begin{lemma}
+    Für jedes~$v \in K^n$ gibt es eindeutig bestimmte $a_1,\dots,a_n \in K$ mit
+    \begin{equation*}
+        v = \sum_{i=1}^n a_ie_i.
+    \end{equation*}
+\end{lemma}
+
+\begin{proof}
+    Zur Existenz: Es gilt
+    \begin{equation*}
+        \sum_{i=1}^n a_ie_i = \p{a_1\\\vdots\\0} + \dots + \p{0\\\vdots\\a_n} = \p{a_1\\\vdots\\a_n} \coloneqq v.
+    \end{equation*}
+
+    Zur Eindeutigkeit: Angenommen, es gibt zwei Darstellungen
+    \begin{equation*}
+        \sum_{i=1}^n a_ie_i = v = \sum_{i=1}^n b_ie_i
+    \end{equation*}
+    von~$v$. Daraus folgt
+    \begin{equation*}
+        \sum_{i=1}^n (a_i-b_i)e_i = \p{a_1-b_1\\\vdots\\a_n-b_n} = 0,
+    \end{equation*}
+    was genau dann möglich ist, wenn $a_i-b_i = 0 \iff a_i = b_i$ für alle~$i$ ist.
+\end{proof}
+
+\begin{definition}[Standardbasis]
+    Wir nennen $\mset{e_1,e_2,\dots,e_n} \subseteq K^n$ die \emph{Standardbasis} von~$K^n$.
+\end{definition}
+
+Die allgemeine Definition einer \emph{Basis} (und wie mächtig dieser Begriff ist) erfahren wir später.
+
+\lecturesep{29.~Oktober 2021}
 
 %\printsolutions
 
