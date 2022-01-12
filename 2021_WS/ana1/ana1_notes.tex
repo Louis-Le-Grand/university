@@ -2339,7 +2339,11 @@ Obwohl wir irrationale Exponenzen noch nicht definiert haben, behaupten wir aber
 \lecturesep{15.~November 2021}
 
 \begin{corollary}
-    Für $b, c \in \R$, $b \neq 0$ konvergiert $\sum_{n=1} n^c/b^n$ genau dann, wenn eine der folgenden Bedingungen erfüllt ist:
+    Für $b, c \in \R$, $b \neq 0$ konvergiert
+    \begin{equation*}
+        \sum_{n=1} \frac{n^c}{b^n}
+    \end{equation*}
+    genau dann, wenn eine der folgenden Bedingungen erfüllt ist:
     \begin{enumerate}
         \item $\abs{b} > 1$,
         \item $b = -1$ und $c < 0$,
@@ -3339,7 +3343,7 @@ Die Umkehrung gilt hingegen (wie in den reellen Zahlen) \underline{nicht}.
         \item \emph{Majorantenkriterium}: Gilt stets $\abs{c_n} \leq a_n \in \R_+$ für hinreichend große~$n$, und konvergiert~$\sum_n a_n$ in~$\R_+$, so ist auch $\sum_n c_n$ absolut konvergent.
         \item \emph{Quotientenkriterium}: Gilt
               \begin{equation*}
-                  \limsup_{n\to\infty} \abs{\frac{c_{n+1}}{c_n}} < 1,
+                  \limsup_{n\to\infty} \abs*{\frac{c_{n+1}}{c_n}} < 1,
               \end{equation*}
               dann konvergiert die Reihe absolut.
         \item \emph{Wurzelkriterium}: Gilt
@@ -3917,9 +3921,8 @@ Später werden wir auch komplexwertige Funktionen betrachten.
               Z.\,B.~$1_\Q$ für~$F = \Q$.
         \item \emph{Treppenfunktion}:
               \begin{equation*}
-                  f = \sum_{k=1}^n c_k 1_{[t_k,t_{k+1}]} \qquad\text{für Intervalle } [t_k,t_{k+1}]
+                  f = \sum_{k=1}^n c_k 1_{(t_k,t_{k+1}]} \qquad\text{für Intervalle } (t_k,t_{k+1}].\footnote{Der Dozent gab hier abgeschlossene Intervalle an, was aber nicht funktioniert.}
               \end{equation*}
-              (oder auch $f = \sum_{k=1}^n c_k 1_{(t_k,t_{k+1}]}$ für halboffene Intervalle).
               \begin{center}
                   \begin{tikzpicture}
                       \draw[->] (-3,0) -- (3,0) node[pos=0.7, fill=white] {$\cdots$};
@@ -4039,7 +4042,7 @@ Eine ähnliche Idee beschreibt das Folgenkriterium. Laufen wir von~$-\infty$ (vo
 
     Nehmen wir zuerst das $\eps$"~$\delta$"~Kriterium an, d.\,h.\ es gibt für jedes~$\eps > 0$ ein~$\delta > 0$, sodass für alle~$x \in \R$ mit $\abs{x-x_0} \leq \delta$ gilt: $\abs{f(x)-f(x_0)} \leq \eps$. Sei nun $(x_n)_n$ eine beliebige Folge in~$D$, die für $n \to \infty$ gegen~$x_0$ konvergiert. Aufgrund der Konvergenz finden wir für jedes gegebene~$\delta$ ein~$N \in \N$, sodass $\abs{x_n-x} \leq \delta$ für alle~$n \geq N$ ist. Insbesondere finden wir also für jedes~$\eps > 0$ ein~$N$, sodass $\abs{f(x_n)-f(x)} \leq \eps$ für alle~$n \geq N$ gilt. Damit erfüllt die Folge $(f(x_n))_n$ die Konvergenzdefinition von Folgen, also $f(x_n) \to f(x_0)$ für $n \to \infty$, was das Folgenkriterium ist.
 
-    Für die Rückrichtung nehmen wir an, dass das Folgenkriterium nicht gelte, d.\,h.\ es gibt ein~$\eps > 0$, sodass für alle~$\delta > 0$ ein~$x$ mit $\abs{x_n-x} \leq \delta$ existiert, wofür aber $\abs{f(x)-f(x_0)} > \eps$ gilt. Wählen wir nun~$\delta = 1/n$, gibt es für jedes~$n \in \N$ ein~$x_n$ mit $\abs{x_n-x} \leq 1/n$, aber $\abs{f(x_n)-f(x)} > \eps$. Damit haben wir eine Folge~$(x_n)_n$ konstruiert, die zwar gegen~$x_0$ konvergiert, wofür aber $f(x_n) \not\to f(x_0)$ gilt. Folglich ist das Folgenkriterium nicht erfüllt.
+    Für die Rückrichtung nehmen wir an, dass das $\eps$"~$\delta$"~Kriterium nicht gelte, d.\,h.\ es gibt ein~$\eps > 0$, sodass für alle~$\delta > 0$ ein~$x$ mit $\abs{x_n-x} \leq \delta$ existiert, wofür aber $\abs{f(x)-f(x_0)} > \eps$ gilt. Wählen wir nun~$\delta = 1/n$, gibt es für jedes~$n \in \N$ ein~$x_n$ mit $\abs{x_n-x} \leq 1/n$, aber $\abs{f(x_n)-f(x)} > \eps$. Damit haben wir eine Folge~$(x_n)_n$ konstruiert, die zwar gegen~$x_0$ konvergiert, wofür aber $f(x_n) \not\to f(x_0)$ gilt. Folglich ist das Folgenkriterium nicht erfüllt.
 \end{proof}
 
 \begin{proposition}
@@ -4069,11 +4072,11 @@ Eine ähnliche Idee beschreibt das Folgenkriterium. Laufen wir von~$-\infty$ (vo
     \end{equation*}
     Setzen wir $y = x^{1/k}$ und $y_0 = y_0^{1/k}$, und nehmen wir o.\,B.\,d.\,A.\ $y \geq y_0$ an, gilt nach dem binomischen Lehrsatz
     \begin{equation*}
-        y^k = (y_0 + (y-y_0))^k = y_0^k + \underbrace{\binom{k}{1}y_0^{k-1}(y-y_0)}_{\geq 0} + \dots + \underbrace{\binom{k}{k-1}y_0(y-y_0)^{k-1}}_{\geq 0} + y^k \geq y_0^k + (y-y_0)^k.
+        y^k = (y_0 + (y-y_0))^k = y_0^k + \underbrace{\binom{k}{1}y_0^{k-1}(y-y_0)}_{\geq 0} + \dots + \underbrace{\binom{k}{k-1}y_0(y-y_0)^{k-1}}_{\geq 0} + (y-y_0)^k \geq y_0^k + (y-y_0)^k.
     \end{equation*}
     Um auch den Fall $y < y_0$ zu beachten, schreiben wir allgemeiner
     \begin{equation*}
-        \abs{x-x_0} = \abs{y^k-y_0^k} \geq \abs{y-y_0}^k = \abs*{x^{1/k}-x_0^{1/k}}^k \implies \abs{x-x_0}^{1/k} \geq \abs*{x^{1/k}-x_0^{1/k}}^k.
+        \abs{x-x_0} = \abs*{y^k-y_0^k} \geq \abs{y-y_0}^k = \abs*{x^{1/k}-x_0^{1/k}}^k \implies \abs{x-x_0}^{1/k} \geq \abs*{x^{1/k}-x_0^{1/k}}.
     \end{equation*}
     Wählen wir nun $\delta = \eps^k > 0$, erhalten wir für alle~$x$ mit $\abs{x-x_0} \leq \delta$
     \begin{equation*}
@@ -4125,11 +4128,11 @@ Eine ähnliche Idee beschreibt das Folgenkriterium. Laufen wir von~$-\infty$ (vo
 \end{theorem}
 
 \begin{remark}
-    Der Definitionsbereich muss ein Intervall sein. Der Satz ist bspw.\ für $D = \Q \cap [a,b]$ oder für $D = [a,b] \setminus (a,b)$ falsch.
+    Der Definitionsbereich muss ein Intervall sein. Der Satz ist bspw.\ für $D = \Q \cap [a,b]$ oder für $D = \mset{a,b}$ falsch.
 \end{remark}
 
 \begin{proof}
-    O.\,B.\,d.\,A.\ können wir annehmen, dass $f$ auf~$[a,b]$ monoton wachsend ist, also $f(a) \leq \gamma \leq f(b)$ (für monoton fallende~$f$ funktionert der Beweis analog).
+    O.\,B.\,d.\,A.\ können wir annehmen, dass $f(a) \leq \gamma \leq f(b)$ gilt (für $f(a) \geq f(b)$ funktionert der Beweis analog).
 
     Wir definieren eine Intervallschachtelung durch Halbierung: Seien am Anfang $a_1 \coloneqq a$ und $b_1 \coloneqq b$. Danach definieren wir
     \begin{equation*}
@@ -4145,7 +4148,7 @@ Eine ähnliche Idee beschreibt das Folgenkriterium. Laufen wir von~$-\infty$ (vo
         \end{dcases}
     \end{equation*}
 
-    Per Induktion können wir $f(a_n) \geq \gamma \geq f(b_n)$ und $\abs{b_n-a_n} = 2^{1-n}\abs{b-a}$ für alle~$n \in \N$ zeigen (was relativ einfach ist). Aus dem Intervallschachtelungsprinzip folgt nun, dass es ein~$c$ gibt mit
+    Per Induktion können wir $f(a_n) \leq \gamma \leq f(b_n)$ und $\abs{b_n-a_n} = 2^{1-n}\abs{b-a}$ für alle~$n \in \N$ zeigen (was relativ einfach ist). Aus dem Intervallschachtelungsprinzip folgt nun, dass es ein~$c$ gibt mit
     \begin{equation*}
         c = \lim_{n\to\infty} a_n = \lim_{n\to\infty} b_n.
     \end{equation*}
@@ -4155,7 +4158,7 @@ Eine ähnliche Idee beschreibt das Folgenkriterium. Laufen wir von~$-\infty$ (vo
     \end{equation*}
 \end{proof}
 
-Der Zwischenwertsatz ist sehr mächtig, da wir mit ihm Aussagen über die Bildmenge einer stetigen Funktion machen können und daraus auch einige Eigenschaften ermitteln können.
+Der Zwischenwertsatz ist sehr mächtig, da wir mit ihm Aussagen über die Bildmenge einer stetigen Funktion machen und daraus auch einige Eigenschaften ermitteln können.
 
 \begin{corollary}
     Jedes Polynom ungeraden Grades, also
@@ -4166,7 +4169,7 @@ Der Zwischenwertsatz ist sehr mächtig, da wir mit ihm Aussagen über die Bildme
 \end{corollary}
 
 \begin{proof}
-    O.\,B.\,d.\,A.\ sei $a_{2n+1} > 0$. Dann konvergieren die Funktionswerte uneigentlich: $\lim_{n\to\infty} f(x) = \infty$ und $\lim_{n\to-\infty} f(x) = -\infty$. Folglich gibt es reelle Zahlen $a,b \in \R$ mit $a < b$ und $f(a) < 0 < f(b)$. Damit existiert eine Nullstelle in~$[a,b]$.
+    O.\,B.\,d.\,A.\ sei $a_{2n+1} > 0$. Dann konvergieren die Funktionswerte uneigentlich: $\lim_{x\to\infty} f(x) = \infty$ und $\lim_{x\to-\infty} f(x) = -\infty$. Folglich gibt es reelle Zahlen $a,b \in \R$ mit $a < b$ und $f(a) < 0 < f(b)$. Damit existiert eine Nullstelle in~$[a,b]$.
 \end{proof}
 
 \begin{corollary}\label{cor:continuity:interval}
@@ -4190,7 +4193,7 @@ Der Grund, wieso wir nochmals $a$~und~$b$ einführen mussten ist, dass $A$~und~$
     \begin{equation*}
         f(p) = \sup f(I) \qquad\text{und}\qquad f(q) = \inf f(I).
     \end{equation*}
-    Oder mit anderen Worten: Es existieren $p,q \in I$, sodass $f(y) \leq f(x) \leq f(p)$ für alle~$x \in I$ gilt und damit $f(I) = [f(q),f(p)]$.
+    Oder mit anderen Worten: Es existieren $p,q \in I$, sodass $f(q) \leq f(x) \leq f(p)$ für alle~$x \in I$ gilt und damit $f(I) = [f(q),f(p)]$.
 \end{theorem}
 
 \begin{remark}
@@ -4435,9 +4438,9 @@ Jedoch ist nicht alles nach~$\C$ übertragbar, da die Ordnung fehlt. Bspw.\ gibt
     \end{equation*}
     Für alle $0 \leq x < x' \leq 2$ gilt nun mit den Doppelwinkelfunktionen
     \begin{equation*}
-        \cos x' - \cos x = -2 \sin\frac{x'+x}{2} \sin\frac{x'-x}{2} = -2 \sin\frac{x+x'}{2} < 0,
+        \cos x' - \cos x = -2 \sin\frac{x'+x}{2} \sin\frac{x'-x}{2} < 0,
     \end{equation*}
-    denn die Argumente der Sinusfaktoren liegen in~$(0, 2]$ damit sind die Sinusfaktoren beide positiv.
+    denn die Argumente der Sinusfaktoren liegen in~$(0, 2]$, weshalb beide Sinusfaktoren positiv sind.
 
     Damit ist $\cos$ auf~$[0, 2]$ bijektiv und die Nullstelle ist eindeutig.\footnote{Der Dozent zeigte in der Vorlesung nur, dass das Infimum aller Nullstellen auch eine Nullstelle ist via Stetigkeit: Es gibt eine Folge~$(y_n)_n$ von Nullstellen, die gegen das Infimum~$y$ konvergiert. Aufgrund der Stetigkeit haben wir $0 = \cos y_n \to \cos y$, also $\cos y = 0$.
 
@@ -4828,6 +4831,8 @@ Der \emph{Differenzialquotient}
 
 Falls~$f(x)$ den Ort beschreibt, der zum Zeitpunkt~$x$ eingenommen wird, so ist $f'(x)$~die \emph{Momentangeschwindigkeit} zum Zeitpunkt~$x$, während $(f(x+h)-f(x))/h$ die \emph{mittlere Geschwindigkeit} im Zeitintervall $(x,x+h)$ angibt.
 
+\subsection{Beispiele}
+
 \begin{proposition}
     Für $f(x) = c \in \R$ auf~$\R$ ist $f'(x) = 0$.
 \end{proposition}
@@ -4923,6 +4928,241 @@ Falls~$f(x)$ den Ort beschreibt, der zum Zeitpunkt~$x$ eingenommen wird, so ist 
 \end{proof}
 
 \lecturesep{22.~Dezember 2021}
+
+\subsection{Sätze zur Differenzierbarkeit und Ableitungsregeln}
+
+\begin{theorem}\label{thm:differentiability:properties}
+    Sei $f\colon D \to \R$ eine Funktion auf~$D \subset \R$ und sei $x_0 \in D$ eine Stelle. Dann sind folgende Aussagen äquivalent:
+    \begin{enumerate}
+        \item $f$~ist in~$x_0$ differenzierbar.\label{thm:differentiability:properties:1}
+        \item Es existiert eine Funktion $\varphi\colon D \to \R$, die in~$x_0$ stetig ist, mit
+        \begin{equation}
+            f(x) = f(x_0) + (x-x_0)\varphi(x) \qquad\text{für alle } x \in D.\label{eqn:continuity:properties:2}
+        \end{equation}\label{thm:differentiability:properties:2}
+        \item Es existiert eine affine lineare Abbildung $L\colon \R \to \R$ (also eine Funktion der Form $L(x) = ax+b$ bzw.\ $L(x) = a_0(x-x_0)+b_0$) mit
+        \begin{equation}
+            L(x_0) = f(x_0) \qquad\text{und}\qquad \lim_{x\to x_0} \frac{f(x)-L(x)}{x-x_0} = 0.\label{eqn:continuity:properties:3}
+        \end{equation}\label{thm:differentiability:properties:3}
+    \end{enumerate}
+    Dabei sind
+    \begin{equation*}
+        \varphi(x) = \frac{f(x)-f(x_0)}{x-x_0} \qquad\text{und}\qquad L(x) = f(x_0) + f'(x_0)(x-x_0)
+    \end{equation*}
+    (wobei $\varphi$ in~$x_0$ stetig fortgesetzt wird).
+\end{theorem}
+
+\begin{proof}\leavevmode
+    \begin{itemize}
+        \item Aus \cref{thm:differentiability:properties:1} folgt \cref{thm:differentiability:properties:2}: Aus der Differenzierbarkeit von~$f$ in~$x_0$ können wir schließen, dass für den Differenzenquotient die Funktion
+        \begin{equation*}
+            x \mapsto \frac{f(x)-f(x_0)}{x-x_0}
+        \end{equation*}
+        eine \emph{stetige Fortsetzung} in~$x_0$ besitzt (für~$x = x_0$ ist nämlich der Bruch nicht definiert). Wir setzen
+        \begin{equation*}
+            \varphi\colon D \to \R,\quad \varphi(x) \coloneqq \begin{dcases}
+                \frac{f(x)-f(x_0)}{x-x_0} & \text{falls } x \neq x_0, \\
+                \lim_{x'\to x_0} \frac{f(x')-f(x_0)}{x'-x_0} & \text{falls } x = x_0.
+            \end{dcases}
+        \end{equation*}
+        Per Festlegung ist $\varphi$ stetig in~$x_0$ und erfüllt \cref{eqn:continuity:properties:2} sowohl für alle~$x \neq x_0$ als auch für~$x = x_0$ (in dem Fall ist $(x-x_0)\varphi(x) = 0$).
+
+        \item Aus \cref{thm:differentiability:properties:2} folgt \cref{thm:differentiability:properties:3}: Sei $L\colon \R \to \R$, $L(x) = f(x_0) + f'(x_0)(x-x_0)$. Tatsächlich gilt $f'(x_0) = \varphi(x_0)$. Nun überprüfen wir \cref{eqn:continuity:properties:3}. Einsetzen liefert
+        \begin{equation*}
+            \frac{f(x)-L(x)}{x-x_0} = \frac{\varphi(x)(x-x_0) - \varphi(x_0)(x-x_0)}{x-x_0} = \varphi(x)-\varphi(x_0) \xrightarrow{x\to x_0} 0.
+        \end{equation*}
+        Die Konvergenz gilt, weil $\varphi$ in~$x_0$ stetig ist und daher $\varphi(x) \to \varphi(x_0)$ für $x \to x_0$.
+
+        \item Aus \cref{thm:differentiability:properties:3} folgt \cref{thm:differentiability:properties:1}: Sei $L\colon \R \to \R$ mit $L(x) = ax+b = a(x-x_0)+b_0$. Aus $L(x_0) = f(x_0)$ folgt $b_0 = L(x_0) = f(x_0)$, also
+        \begin{equation*}
+            0 = \lim_{x\to x_0} \frac{f(x)-L(x)}{x-x_0} = \lim_{x\to x_0} \frac{f(x) - a(x-x_0) - f(x_0)}{x-x_0} = -a + \lim_{x\to x_0} \frac{f(x)-f(x_0)}{x-x_0} \iff f'(x_0) = a.
+        \end{equation*}
+        Folglich ist $f$ in~$x_0$ differenzierbar.\qedhere
+    \end{itemize}
+\end{proof}
+
+Im Allgemeinen hängen $\varphi$~und~$L$ vom gegebenen~$x_0$ ab.
+
+\begin{notation}[lineare Approximation]
+    $L$~heißt \emph{lineare Approximation} von~$f$ in~$x_0$.
+\end{notation}
+
+\begin{figure}
+    \begin{tikzpicture}
+        \draw[->] (0,0) -- (3,0);
+        \draw[->] (0,0) -- (0,3);
+        \draw[domain=0:3, smooth] plot (\x,0.2*\x^2+1) node[right] {$f(x)$};
+        \draw[domain=0:3, smooth] plot (\x,0.6*\x+0.55) node[right] {$L(x)$};
+        \draw[dashed] (1.5,0) node[below] {$x_0$} |- (0,1.45) node[left] {$f(x_0)$};
+    \end{tikzpicture}
+    \caption{Lineare Approximation $L(x) = f(x_0) + (x-x_0) f'(x_0)$ von~$f$ in~$x_0$.\\Die Gerade stimmt mit~$f$ in~$x_0$ überein und hat besitzt Anstieg~$f'(x_0)$.}
+\end{figure}
+
+\begin{corollary}
+    Ist $f$~in~$x_0$ differenzierbar, dann ist $f$~auch stetig.
+\end{corollary}
+
+\begin{proof}
+    Das folgt direkt aus \cref{thm:differentiability:properties}, denn $f$ ist eine Addition und Multiplikation stetiger Funktionen, insbesondere~$\varphi$.
+\end{proof}
+
+\begin{theorem}[Ableitungsregeln Summe, Produkt, Quotient]
+    Seien $f,g\colon D \to \R$ in~$x_0$ differenzierbar. Dann sind $f+g$,~$fg$ und, falls $g(x_0) \neq 0$, auch~$f/g$ in~$x_0$ differenzierbar. Dabei gelten
+    \begin{enumerate}
+        \item $(f+g)'(x_0) = f'(x_0)+g'(x_0)$ \emph{(Linearität)},
+        \item $(fg)'(x_0) = f(x_0)g'(x_0) + f'(x_0)g(x_0)$ \emph{(\textsc{leibnizsche} Produktregel)} und
+        \item $(f/g)'(x_0) = (f'(x_0)g(x_0) - f(x_0)g'(x_0))/g^2(x_0)$ \emph{(Quotientenregel)}.
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    Die Existenz der Ableitungen ist ein Nebenprodukt, wenn wir zeigen, wie sich die Ableitungen berechnen.
+    \begin{enumerate}
+        \item Aus der Linearität des Limes folgt
+        \begin{align*}
+            (f+g)'(x_0) &= \lim_{h\to0} \frac{(f(x_0+h)+g(x_0+h)) - (f(x_0)+g(x_0))}{h} \\
+            &= \lim_{h\to0} \frac{f(x_0+h)-f(x_0)}{h} + \lim_{h\to0} \frac{g(x_0+h)-g(x_0)}{h} \\
+            &= f'(x_0)+g'(x_0).
+        \end{align*}
+        \item Weil aufgrund der Differenzierbarkeit $f$~auch in~$x_0$ stetig ist, erhalten wir durch geschicktes Umformen
+        \begin{align*}
+            (fg)'(x_0) &= \lim_{h\to0} \frac{f(x_0+h)g(x_0+h) - f(x_0)g(x_0)}{h} \\
+            &= \lim_{h\to0} \frac{f(x_0+h)g(x_0+h) - f(x_0
+            +h)g(x_0) + f(x_0+h)g(x_0) - f(x_0)g(x_0)}{h} \\
+            &= \paren*{\lim_{h\to0} f(x_0+h)} \paren*{\lim_{h\to0} \frac{g(x_0+h)-g(x_0)}{h}} + \paren*{\lim_{h\to0} \frac{f(x_0+h)-f(x_0)}{h}} g(x_0) \\
+            &= f(x_0)g'(x_0) + f'(x_0)g(x_0).
+        \end{align*}
+        \item Aus der Differenzierbarkeit in~$x_0$ folgt auch die Stetigkeit von~$g$, also $g(x_0+h) \to g(x_0)$ für $h \to 0$. Außerdem folgt aus der Stetigkeit und $g(x_0) \neq 0$, dass $g(x) \neq 0$ für alle~$x$ in einer hinreichend kleinen Umgebung um~$x_0$ gilt. Darum sind die Brüche in der folgenden Berechnung für kleine~$h$ definiert:
+        \begin{align*}
+            \paren*{\frac{f}{g}}'(x_0) &= \lim_{h\to0} \frac{f(x_0+h)g(x_0) - f(x_0)g(x_0+h)}{g(x_0+h)g(x_0)h} \\
+            &= \lim_{h\to0} \frac{1}{g(x_0+h)g(x_0)} \paren*{\frac{f(x_0+h)-f(x_0)}{h} g(x_0) - \frac{g(x_0+h)-g(x_0)}{h} f(x_0)} \\
+            &= \frac{1}{g^2(x_0)} \paren*{f'(x_0)g(x_0) - g'(x_0)f(x_0)}. \qedhere
+        \end{align*}
+    \end{enumerate}
+\end{proof}
+
+\begin{corollary}
+    Es gelten für alle~$x \in \R$, sodass die Nenner nicht Null werden,
+    \begin{equation*}
+        \tan'x = \frac{1}{\cos^2x} \qquad\text{und}\qquad \cot'x = -\frac{1}{\sin^2x}.
+    \end{equation*}
+\end{corollary}
+
+\begin{proof}
+    Aus der Quotientenregel und $\tan x = (\sin x)/(\cos x)$ folgen
+    \begin{equation*}
+        \tan'x = \frac{\cos x\sin'x - \sin x\cos'x}{\cos^2x} = \frac{\cos^2x+\sin^2x}{\cos^2x} = \frac{1}{\cos^2x}.
+    \end{equation*}
+    $\cot'x$ ergibt sich analog.
+\end{proof}
+
+\begin{theorem}[Kettenregel]
+    Seien $f\colon D \to E$ und $g\colon E \to \R$ Funktionen, und sei $f$~differenzierbar in~$x_0 \in D$ und $g$~differenzierbar in~$y_0 = f(x_0) \in E$. Dann folgt, dass auch $g\circ f\colon D \to \R$ in~$x_0$ differenzierbar ist und es gilt:
+    \begin{equation*}
+        (g\circ f)'(x_0) = g'(f(x_0)) f'(x_0).
+    \end{equation*}
+\end{theorem}
+
+\begin{proof}
+    Aus \cref{thm:differentiability:properties} folgt, dass es zu gegebenen $x_0$~und $y_0 = f(x_0)$ zwei Funktionen $F\colon D \to E$ und $G\colon E \to \R$ existieren, die in $x_0$~bzw.~$y_9$ stetig sind und
+    \begin{gather}
+        f(x)-f(x_0) = (x-x_0)F(x_0) \qquad\text{für alle } x \in D \label{eqn:chainrule:1}
+        \shortintertext{sowie}
+        g(y)-g(y_0) = (y-y_0)G(y_0) \qquad\text{für alle } y \in E \label{eqn:chainrule:2}
+    \end{gather}
+    erfüllen. Dabei sind $F(x_0) = f'(x_0)$ und $G(y_0) = g'(y_0)$. Setzen wir $y = f(x)$ und $y_0 = f(x_0)$ in~\cref{eqn:chainrule:2} ein, erhalten wir
+    \begin{equation*}
+        (g\circ f)(x) - (g\circ f)(x_0) \overset{\cref{eqn:chainrule:2}}{=} (f(x)-f(x_0)) G(f(x)) \overset{\cref{eqn:chainrule:1}}{=} (x-x_0) F(x) G(f(x)).
+    \end{equation*}
+    Nun ist die Abbildung $\varphi(x) \coloneqq F(x)G(f(x))$ stetig in~$x_0$. Daraus und mit der eben gezeigten Gleichung folgt, dass die Abbildung~$g\circ f$ differenzierbar in~$x_0$ ist und es gilt
+    \begin{equation*}
+        (g\circ f)'(x_0) = \varphi(x_0) = F(x_0)G(f(x_0)) = f'(x_0)g'(f(x_0)). \qedhere
+    \end{equation*}
+\end{proof}
+
+\begin{example}
+    Es gilt $(e^f)'(x) = e^{f(x)} f'(x)$.
+\end{example}
+
+\begin{theorem}[Differenzierbarkeit der Umkehrfunktion]
+    Sei $D \subset \R$ ein nichttriviales Interval. Sei $f\colon D \to E$ eine Funktion, die surjektiv auf~$E \subset \R$, streng monoton und differenzierbar in~$x_0 \in D$ ist mit $f'(x_0) \neq 0$. Dann ist die Umkehrfunktion $g \coloneqq f^{-1}\colon E \to D$ in $y_0 = f(x_0)$ differenzierbar mit
+    \begin{equation*}
+        g'(y_0) = \frac{1}{f'(x_0)} = \frac{1}{f'(g(y_0))}.
+    \end{equation*}
+\end{theorem}
+
+\begin{remark}
+    Wir können uns den Satz wie folgt merken: Wenn wir wissen, dass $g$~differenzierbar in~$y_0$ ist, so folgt aus $(f\circ g)(y) = y$ und der Kettenregel $f'(g(y)) \cdot g'(y) = 1$.
+
+    Das ist jedoch kein Beweis, da wir die Differenzierbarkeit voraussetzen, die wir für den Satz noch zeigen müssen.
+\end{remark}
+
+\begin{proof}
+    Weil $f$ differenzierbar in~$x_0$ ist, gibt es gemäß \cref{thm:differentiability:properties} eine Funktion $F\colon D \to E$, die stetig in~$x_0$ ist mit
+    \begin{equation}
+        f(x)-f(x_0) = (x-x_0)F(x) \qquad\text{für alle } x \in D. \label{eqn:differentiability:inverse}
+    \end{equation}
+    Nun ist nach \ref{thm:differentiability:properties}
+    \begin{equation*}
+        F(x) = \begin{dcases}
+            \frac{f(x)-f(x_0)}{x-x_0} & \text{falls } x \neq x_0, \\
+            f'(x_0) & \text{falls } x = x_0.
+        \end{dcases}
+    \end{equation*}
+
+    Es gilt $F(x_0) = f'(x_0) \neq 0$ nach Voraussetzung. Für alle anderen~$x \neq x_0$ gilt auch $F(x) \neq 0$, da $f$~streng monoton ist und der Zähler $f(x)-f(x_0) \neq 0$ im Differenzenquotienten ist.
+
+    Setzen wir $y = f(x)$ und $g(y) = x$ in~\cref{eqn:differentiability:inverse} ein, ergibt sich
+    \begin{equation*}
+        y-y_0 = (g(y)-g(y_0)) F(g(y)) \iff g(y)-g(y_0) = (y-y_0)G(y),
+    \end{equation*}
+    wobei $G(y) \coloneqq 1/F(g(y))$ wohldefiniert und stetig in~$x_0$ ist. Mit \cref{thm:differentiability:properties} folgt daher, dass $g$~differenzierbar in~$y_0$ ist mit
+    \begin{equation*}
+        g'(y_0) = G(y_0) = \frac{1}{F(g(y_0))} = \frac{1}{f'(g(y_0))}. \qedhere
+    \end{equation*}
+\end{proof}
+
+\begin{corollary}
+    Es gilt $\log'(x) = 1/x$ auf~$D = (0,\infty)$.
+\end{corollary}
+
+\begin{proof}
+    Sei $f = \log$. Für $g = \exp$ gilt $f = g^{-1}$ und daher
+    \begin{equation*}
+        f'(x) = \frac{1}{g'(f(x))} = \frac{1}{\exp(\log(x))} = \frac{1}{x}. \qedhere
+    \end{equation*}
+\end{proof}
+
+\begin{proposition}
+    Für~$x \in (-1, 1)$ gilt $\arcsin'(x) = 1/\sqrt{1-x^2}$.
+\end{proposition}
+
+\begin{proof}
+    Aus dem trigonometrischen Pythagoras folgt
+    \begin{gather*}
+        \cos x = \sqrt{1-\sin^2x}
+        \shortintertext{und daher}
+        \arcsin'x = \frac{1}{\sin'(\arcsin x)} = \frac{1}{\cos(\arcsin x)} = \frac{1}{\sqrt{1-x^2}}. \qedhere
+    \end{gather*}
+\end{proof}
+
+\begin{proposition}
+    Es gilt $\arctan'x = 1/(1+x^2)$ für alle~$x \in \R$.
+\end{proposition}
+
+\begin{proof}
+    Es gilt
+    \begin{equation*}
+        \tan'y = \frac{1}{\cos^2y} = \frac{\sin^2y+\cos^2y}{\cos^2y} = 1+\tan^2y.
+    \end{equation*}
+    Daraus folgt
+    \begin{equation*}
+        \arctan'x = \frac{1}{\tan'(\arctan x)} = \frac{1}{1+x^2}. \qedhere
+    \end{equation*}
+\end{proof}
+
+\lecturesep{10.~Januar 2022}
+
+
 
 \newpage\appendix
 

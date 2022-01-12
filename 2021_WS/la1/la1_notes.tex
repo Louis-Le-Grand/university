@@ -632,7 +632,7 @@ In den Übungsaufgaben werden wir noch eine Vielzahl weiterer Regeln beweisen.
     \end{equation*}
     Aufgrund der Nullteilerfreiheit in einem Körper (s.~Übungsaufgabe) gilt $p_1 \cdot 1_K = 0_K$ oder $p_2 \cdot 1_K = 0_K$, ein Widerspruch.\footnote{Die Charakteristik hat einige interessante Eigenschaften:
 
-        Aus einer positiven Charakteristik folgt sofort $a + a + \dots a = 0$. Sie hilft und zu bestimmen, wann ein Ausdruck Null wird, was wichtig für das Rechnen im Körper ist (wir denken an $a+0 = 0$, $0a = 0$ und, dass $0^{-1}$ nicht existiert). In diesem Kontext ist $\mchar(K) = 2$ besonders wichtig, denn in dem Fall ist $a + a = 0$ für alle~$a \in K$, d.\,h.\ jedes Element ist sein eigenes additives Inverse. $\mchar(K) \neq 2$ garantiert uns die Existenz der $2 \coloneqq 1+1$.
+        Aus einer positiven Charakteristik folgt sofort $a + a + \dots a = 0$. Sie hilft und zu bestimmen, wann ein Ausdruck null wird, was wichtig für das Rechnen im Körper ist (wir denken an $a+0 = 0$, $0a = 0$ und, dass $0^{-1}$ nicht existiert). In diesem Kontext ist $\mchar(K) = 2$ besonders wichtig, denn in dem Fall ist $a + a = 0$ für alle~$a \in K$, d.\,h.\ jedes Element ist sein eigenes additives Inverse. $\mchar(K) \neq 2$ garantiert uns die Existenz der $2 \coloneqq 1+1$.
 
         Jeder Teilkörper eines Körpers hat dieselbe Charakteristik wie der Körper, z.\,B.\ $\mchar(\F_2) = \mchar(\F_4) = 2$. Damit haben Körper mit gleicher Charakteristik auch eine ähnliche Struktur.
 
@@ -1660,6 +1660,8 @@ Mit der Schreibweise wollen wir die \emph{Ringstruktur} der Menge der Matrizen b
 
 Die Einheitsmatrix ist immer quadratisch.
 
+Einträge, die null sind, lassen wir einfach weg, um die Matrix übersichtlicher zu gestalten. 
+
 \begin{lemma}[Einselement]\label{lem:matrix:mn}
     Für alle~$A \in K^{m,n}$ gilt
     \begin{equation*}
@@ -1738,7 +1740,7 @@ Die Einsen in der Einheitsmatrix greifen jeweils genau eine Zeile bzw.\ Spalte "
     wobei $A\cdot v$~das Produkt der $(m\times n)$"~Matrix~$A$ mit der $(n\times 1)$"~Matrix~$v$ ist. (Hier haben wir $K^n = K^{n,1}$ identifiziert.) Die Abbildung $A\colon K^n \to K^m$ heißt \emph{Matrixabbildung}.
 \end{definition}
 
-\begin{lemma}
+\begin{lemma}\label{lem:matrixtransformation}
     Die Matrixabbildung $A\colon K^n \to K^m$ ist $K$"~linear.
 \end{lemma}
 
@@ -1805,17 +1807,14 @@ Damit liefern Matrixabbildungen viele neue Beispiele für Homomorphismen (auf St
     der \emph{$i$"~te Standardbasisvektor} oder auch \emph{$i$"~te Einheitsvektor} von~$K^n$.
 \end{definition}
 
-\begin{lemma}
-    Für jedes~$v \in K^n$ gibt es eindeutig bestimmte $a_1,\dots,a_n \in K$ mit
-    \begin{equation*}
-        v = \sum_{i=1}^n a_ie_i.
-    \end{equation*}
+\begin{lemma}\label{lem:canonicalbasis}
+    Für jedes~$v \in K^n$ gibt es eindeutig bestimmte $a_1,\dots,a_n \in K$ mit $v = \sum_{i=1}^n a_ie_i$.
 \end{lemma}
 
 \begin{proof}
     Zur Existenz: Es gilt
     \begin{equation*}
-        \sum_{i=1}^n a_ie_i = \p{a_1\\\vdots\\0} + \dots + \p{0\\\vdots\\a_n} = \p{a_1\\\vdots\\a_n} \coloneqq v.
+        \sum_{i=1}^n a_ie_i = \p{a_1\\0\\\vdots\\0} + \p{0\\a_2\\\vdots\\0}\dots + \p{0\\\vdots\\0\\a_n} = \p{a_1\\a_2\\\vdots\\a_n} \coloneqq v.
     \end{equation*}
 
     Zur Eindeutigkeit: Angenommen, es gibt zwei Darstellungen
@@ -1833,9 +1832,60 @@ Damit liefern Matrixabbildungen viele neue Beispiele für Homomorphismen (auf St
     Wir nennen $\mset{e_1,e_2,\dots,e_n} \subseteq K^n$ die \emph{Standardbasis} von~$K^n$.
 \end{definition}
 
-Die allgemeine Definition einer \emph{Basis} (und wie mächtig dieser Begriff ist) erfahren wir später.
-
 \lecturesep{29.~Oktober 2021}
+
+\begin{lemma}\label{lem:canonincalbasis:transformation}
+    Seien $f,g \in \hom(K^n,K^m)$. Dann gilt $f = g$ genau dann, wenn $f(e_i) = g(e_i)$ für alle $1 \leq i \leq n$.
+\end{lemma}
+
+Zwei Homomorphismen sind demnach genau dann gleich, wenn sie in den Standardbasisvektoren übereinstimmen.
+
+\begin{proof}
+    Gemäß \cref{lem:canonicalbasis} gibt es für jedes~$v \in K^n$ Skalare $a_1,\dots,a_n \in K$ mit $v = \sum_{i=1}^n a_ie_i$.
+
+    Seien $f,g \in \hom(K^n,K^m)$. Gilt $f(e_i) = g(e_i)$ für alle $1 \leq i \leq n$, so folgt aus der Linearität
+    \begin{equation*}
+        f(v) = \sum_{i=1}^n a_if(e_i) = \sum_{i=1}^n a_ig(e_i) = g(v).
+    \end{equation*}
+    Gilt hingegen $f = g$, also $f(v) = g(v)$ für alle~$v \in K^n$, so ist natürlich auch $f(e_i) = g(e_i)$ mit~$e_i \in K^n$.
+\end{proof}
+
+Die allgemeine Definition einer \emph{Basis} eines $K$"~Vektorraums (und wie mächtig dieser Begriff ist) erfahren wir später.
+
+\subsection{\texorpdfstring{$K^{m,n}$}{Kmn} und \texorpdfstring{$\hom(K^n,K^m)$}{Hom(Kn, Km)}}
+
+\begin{theorem}
+    Für $m,n \geq 0$ gilt
+    \begin{equation*}
+        K^{m,n} \cong \hom(K^n,K^m).
+    \end{equation*}
+\end{theorem}
+
+\begin{proof}
+    Wir definieren die Abbildung
+    \begin{gather*}
+        \eta\colon K^{m,n} \to \hom(K^n,K^m),\quad A \mapsto \eta(A),
+        \shortintertext{die definiert ist durch}
+        (\eta(A))(v) \coloneqq A(v) = A\cdot v \qquad\text{für alle } v \in K^n.
+    \end{gather*}
+    $\eta$~ordnet also jeder Matrix~$A$ die Abbildung~$\eta(A)$ zu. Wir wollen zeigen, dass $\eta$~ein Isomorphismus ist.
+
+    \begin{itemize}
+        \item $\eta(A) \in \hom(K^n,K^m)$, also $\eta(A)$~ist $K$"~linear: Nach Definition ist $\eta(A)$~die Matrixabbildung $A\colon K^n \to K^m$ zur Matrix~$A$. \cref{lem:matrixtransformation} sagt, dass Matrixabbildungen $K$"~linear sind.
+        \item $\eta$~ist $K$"~linear: Für alle $A_1,A_2 \in K^{m,n}$, $a_1,a_2 \in K$ und~$v \in K^n$ gilt mittels der Rechenregeln für Matrizen
+        \begin{align*}
+            [\eta(a_1A_1+a_2A_2)](v) &= (a_1A_1+a_2A_2) \cdot v = a_1(A_1\cdot v) + a_2(A_2\cdot v) \\
+            &= a_1[(\eta(A_1))(v)] + a_2[(\eta(A_2))(v))´] = [a_1(\eta(A_1)) + a_2(\eta(A_2))](v).
+        \end{align*}
+        \item $\eta$~ist ein Monomorphismus: Betrachten wir eine Matrix $A = (a_{ij}) \in K^{m,n}$. Für $1 \leq j \leq n$ ist
+        \begin{equation*}
+            Ae_j = A(e_j) = \p{a_{1j}\\\vdots\\a_{mj}}
+        \end{equation*}
+        die $j$"~te Spalte von~$A$. Sind also zwei Matrizen $A \neq B$ in~$K^{m,n}$ verschieden, so muss es eine Spalte~$j$ geben, in der sie nicht übereinstimmen, also $(\eta(A))(e_j) = A(e_j) \neq B(e_j) = (\eta(B))(e_j)$. Ferner folgt aus \cref{lem:canonicalbasis:transformations}, dass dann auch $\eta(A) \neq \eta(B)$ gilt.
+    \end{itemize}
+\end{proof}
+
+\lecturesep{02.~November 2021}
 
 %\printsolutions
 
