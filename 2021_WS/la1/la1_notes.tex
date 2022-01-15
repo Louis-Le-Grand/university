@@ -135,11 +135,9 @@ Weiterhin definieren wir
 \end{remark}
 
 \begin{notation}
-    Die $n$"~Tupel $(a_1, a_2, \dots, a_n)$ schreiben wir oft auch senkrecht auf:
+    Die $n$"~Tupel $(a_1,a_2,\dots,a_n)$ schreiben wir oft auch senkrecht auf:
     \begin{equation*}
-        \begin{pmatrix}
-            a_1 \\ a_2 \\ \vdots \\ a_n
-        \end{pmatrix}
+        \p{a_1\\a_2\\\vdots\\a_n}
     \end{equation*}
 \end{notation}
 
@@ -213,7 +211,7 @@ Das Beweisprinzip ist, das Gegenteil der Behauptung anzunehmen und das auf einen
 
     \emph{Beweis}: Angenommen $\sqrt{2} \in \Q$, d.\,h.\ Es gibt $a, b \in \Z$, $b \geq 1$ mit~$\sqrt{2} = a/b$. Wir können annehmen, dass $a$~und~$b$ teilerfremd sind (also der Bruch vollständig gekürzt ist).
 
-    Quadrieren liefert $2 = a^2/b^2 \iff 2b^2 = a^2$. Damit sind $a^2$~und~$a$ durch $2$~teilbar, insbesondere auch~$a^2$ durch $2\cdot2 = 4$ teilbar. Somit teilt~$4$ auch~$2b^2$, also sind $b^2$~und~$b$ auch durch $2$~teilbar (aufgrund der Eindeutigkeit der Primfaktorzerlegung). Das bedeutet, dass $a$~und~$b$ durch $2$~teilbar sind, was im Widerpsruch zur Teilerfremdheit steht.
+    Quadrieren liefert $2 = a^2/b^2 \iff 2b^2 = a^2$. Damit sind $a^2$~und~$a$ durch $2$~teilbar, insbesondere auch~$a^2$ durch $2\cdot2 = 4$ teilbar. Somit teilt~$4$ auch~$2b^2$, also sind $b^2$~und~$b$ auch durch $2$~teilbar (aufgrund der Eindeutigkeit der Primfaktorzerlegung). Das bedeutet, dass $a$~und~$b$ durch $2$~teilbar sind, was im Widerspruch zur Teilerfremdheit steht.
 \end{example}
 
 \subsubsection{Gleichheit von Mengen}
@@ -937,7 +935,7 @@ Noch ein Beispiel aus der Analysis.
 \begin{example}
     Sei~$a \in K$. Wir definieren
     \begin{equation*}
-        U(a) \coloneqq \mset*{\p{a\\b} \mid b \in K}.
+        U(a) \coloneqq \mset*{\p{a\\b} \mmid b \in K}.
     \end{equation*}
     Dann ist $U(a)$ genau dann ein Unterraum von~$K^2$, wenn $a = 0$.
 \end{example}
@@ -1514,7 +1512,7 @@ Mit der Schreibweise wollen wir die \emph{Ringstruktur} der Menge der Matrizen b
         \begin{pmatrix}
             aa_{11} & aa_{12} & \cdots & aa_{1n} \\
             aa_{21} & aa_{22} & \cdots & aa_{2n} \\
-            \vdots & \vdots & \ddots & \vdots \\
+            \vdots  & \vdots  & \ddots & \vdots  \\
             aa_{m1} & aa_{m2} & \cdots & aa_{mn}
         \end{pmatrix}
     \end{equation*}
@@ -1532,7 +1530,7 @@ Mit der Schreibweise wollen wir die \emph{Ringstruktur} der Menge der Matrizen b
 \end{lemma}
 
 \begin{proof}
-    Für den Beweis müssten wir die Vektorraumaxiome nachrechnen, die sich aber unmittelbar aus den Körperaxiomen ergeben. Der Nullvektor ist die Nullmatrix~$0_{m,n} \in K^{m,n}$. Für $m = 0$ oder $n = 0$ ist $K^{m,n}$ als~$\mset{0_{m,n}}$ definiert, was der Nullvektorraum ist. 
+    Für den Beweis müssten wir die Vektorraumaxiome nachrechnen, die sich aber unmittelbar aus den Körperaxiomen ergeben. Der Nullvektor ist die Nullmatrix~$0_{m,n} \in K^{m,n}$. Für $m = 0$ oder $n = 0$ ist $K^{m,n}$ als~$\mset{0_{m,n}}$ definiert, was der Nullvektorraum ist.
 \end{proof}
 
 \begin{definition}[Produkt]
@@ -1551,10 +1549,10 @@ Mit der Schreibweise wollen wir die \emph{Ringstruktur} der Menge der Matrizen b
     \begin{enumerate}
         \item Bei der Matrixmultiplikation müssen wir auf die richtigen Größen der Matrizen achten: $A$~ist eine $(m\times n)$"~Matrix, $B$~ist eine $(n\times p)$"~Matrix und $AB$~ist eine $(m\times p)$"~Matrix. Der erste "`Faktor"' muss also genauso viele Spalten haben wie der zweite "`Faktor"' Zeilen hat.
         \item Der $ik$"~te Eintrag des Produkts ist das Matrixprodukt
-        \begin{equation*}
-            c_{ik} = (a_{i1}, \dots, a_{in}) \cdot \p{b_{1k} \\ \vdots \\ b_{nk}}.
-        \end{equation*}
-        \emph{Merke}: \emph{$i$"~te Zeile mal $k$"~te Spalte.}
+              \begin{equation*}
+                  c_{ik} = (a_{i1}, \dots, a_{in}) \cdot \p{b_{1k} \\ \vdots \\ b_{nk}}.
+              \end{equation*}
+              \emph{Merke}: \emph{$i$"~te Zeile mal $k$"~te Spalte.}
     \end{enumerate}
 \end{remark}
 
@@ -1563,25 +1561,25 @@ Mit der Schreibweise wollen wir die \emph{Ringstruktur} der Menge der Matrizen b
         \item $\pt{1&1\\1&1} \cdot \pt{1&0\\-1&0} = \pt{0&0\\0&0}$.\label{ex:matrix:product:1}
         \item $\pt{1&0\\-1&0} \cdot \pt{1&1\\1&1} = \pt{1&1\\-1&-1}$.\label{ex:matrix:product:2}
         \item Das Produkt einer $(1\times n)$"~Matrix (\emph{Zeilenvektor}) und einer $(n\times1)$"~Matrix (\emph{Spaltenvektor}) ist eine $(1\times1)$"~Matrix (Skalar):
-        \begin{equation*}
-            \underbrace{(a_1,\dots,a_n)}_{\in K^{1,n}} \cdot \underbrace{\p{b_1\\\vdots\\b_n}}_{\in K^{n, 1}} = \paren*{\sum_{j=1}^n a_jb_j} \in K^{1, 1}.
-        \end{equation*}
+              \begin{equation*}
+                  \underbrace{(a_1,\dots,a_n)}_{\in K^{1,n}} \cdot \underbrace{\p{b_1\\\vdots\\b_n}}_{\in K^{n, 1}} = \paren*{\sum_{j=1}^n a_jb_j} \in K^{1, 1}.
+              \end{equation*}
         \item Sei $K = \Q$. Dann gilt
-        \begin{equation*}
-            \begin{pmatrix}
-                0 & 1 & 0 \\
-                1 & 0 & 2
-            \end{pmatrix}
-            \cdot \begin{pmatrix}
-                0 & 1 & 1 & 1 \\
-                2 & 0 & 0 & 3 \\
-                0 & 1 & 3 & 0
-            \end{pmatrix}
-            = \begin{pmatrix}
-                2 & 0 & 0 & 3 \\
-                0 & 3 & 7 & 1
-            \end{pmatrix}.
-        \end{equation*}
+              \begin{equation*}
+                  \begin{pmatrix}
+                      0 & 1 & 0 \\
+                      1 & 0 & 2
+                  \end{pmatrix}
+                  \cdot \begin{pmatrix}
+                      0 & 1 & 1 & 1 \\
+                      2 & 0 & 0 & 3 \\
+                      0 & 1 & 3 & 0
+                  \end{pmatrix}
+                  = \begin{pmatrix}
+                      2 & 0 & 0 & 3 \\
+                      0 & 3 & 7 & 1
+                  \end{pmatrix}.
+              \end{equation*}
     \end{enumerate}
 \end{example}
 
@@ -1601,9 +1599,9 @@ Mit der Schreibweise wollen wir die \emph{Ringstruktur} der Menge der Matrizen b
 \begin{proof}
     Aus der Definition folgen
     \begin{align*}
-        A(BC) &= A \cdot \paren*{\paren*{\sum_{k=1}^p b_{jk}c_{kl}}_{jl}} = \paren*{\paren*{\sum_{j=1}^n \sum_{k=1}^p a_{ij}b_{jk}c_{kl}}_{il}}
+        A(BC) & = A \cdot \paren*{\paren*{\sum_{k=1}^p b_{jk}c_{kl}}_{jl}} = \paren*{\paren*{\sum_{j=1}^n \sum_{k=1}^p a_{ij}b_{jk}c_{kl}}_{il}}
         \shortintertext{und}
-        (AB)C &= \paren*{\paren*{\sum_{j=1}^n a_{ij}b_{jk}}_{ik}} \cdot C = \paren*{\paren*{\sum_{k=1}^p \sum_{j=1}^n a_{ij}b_{jk}c_{kl}}_{il}}.
+        (AB)C & = \paren*{\paren*{\sum_{j=1}^n a_{ij}b_{jk}}_{ik}} \cdot C = \paren*{\paren*{\sum_{k=1}^p \sum_{j=1}^n a_{ij}b_{jk}c_{kl}}_{il}}.
     \end{align*}
     Mit der Kommutativität der Addition~\ref{ax:field:ac} in~$K$ folgt die Gleichheit.
 \end{proof}
@@ -1640,10 +1638,10 @@ Mit der Schreibweise wollen wir die \emph{Ringstruktur} der Menge der Matrizen b
     Für~$n \geq 1$ sei
     \begin{equation*}
         E_n \coloneqq \begin{pmatrix}
-            1 & 0 & \cdots & 0 \\
-            0 & \ddots & \ddots & \vdots \\
-            \vdots & \ddots & \ddots & 0 \\
-            0 & \cdots & 0 & 1
+            1      & 0      & \cdots & 0      \\
+            0      & \ddots & \ddots & \vdots \\
+            \vdots & \ddots & \ddots & 0      \\
+            0      & \cdots & 0      & 1
         \end{pmatrix}
         = \p{1&& \\ &\ddots& \\ &&1} \in K^{n,n}
     \end{equation*}
@@ -1660,7 +1658,7 @@ Mit der Schreibweise wollen wir die \emph{Ringstruktur} der Menge der Matrizen b
 
 Die Einheitsmatrix ist immer quadratisch.
 
-Einträge, die null sind, lassen wir einfach weg, um die Matrix übersichtlicher zu gestalten. 
+Einträge, die null sind, lassen wir einfach weg, um die Matrix übersichtlicher zu gestalten.
 
 \begin{lemma}[Einselement]\label{lem:matrix:mn}
     Für alle~$A \in K^{m,n}$ gilt
@@ -1675,7 +1673,7 @@ Einträge, die null sind, lassen wir einfach weg, um die Matrix übersichtlicher
 
 Die Einsen in der Einheitsmatrix greifen jeweils genau eine Zeile bzw.\ Spalte "`heraus"'.
 
-\begin{lemma}\label{lem:matrix:multiplication}
+\begin{lemma}\label{lem:matrix:mcomp}
     Für alle~$a \in K$, $A \in K^{m,n}$ und~$B \in K^{n,p}$ gilt
     \begin{equation*}
         a(AB) = (aA)B = A(aB).
@@ -1708,7 +1706,7 @@ Die Einsen in der Einheitsmatrix greifen jeweils genau eine Zeile bzw.\ Spalte "
     heißt \emph{$K$"~Algebra}, falls folgende Axiome gelten:
     \begin{enumerate}[widest=(AL0), leftmargin=*]
         \refitem[(AL1)] $(R,+,*)$ ist ein $K$"~Vektorraum;\label{ax:algebra:vecspace}
-        \refitem[(AL2)] $a*(r\cdot s) = (a*r)\cdot s = r\cdot(a*s)$ für alle~$a \in K$ und $r,s \in R$.\label{ax:algebra:multiplication}\footnote{Eine alternative Definition: Eine \emph{$K$"~Algebra~$A$} ist ein Vektorraum $(A,+,*)$, zusammen mit einer $K$"~bilinearen Verknüpfung $\cdot\colon A\times A \to A$, d.\,h.\ für~$\cdot$ gelten Axiom~\ref{ax:ring:d} für Ringe und Axiom~\ref{ax:algebra:multiplication}.}
+        \refitem[(AL2)] $a*(r\cdot s) = (a*r)\cdot s = r\cdot(a*s)$ für alle~$a \in K$ und $r,s \in R$.\label{ax:algebra:mcomp}\footnote{Eine alternative Definition: Eine \emph{$K$"~Algebra~$A$} ist ein Vektorraum $(A,+,*)$, zusammen mit einer $K$"~bilinearen Verknüpfung $\cdot\colon A\times A \to A$, d.\,h.\ für~$\cdot$ gelten Axiom~\ref{ax:ring:d} für Ringe und Axiom~\ref{ax:algebra:mcomp}.}
     \end{enumerate}
 \end{axiom}
 
@@ -1724,20 +1722,22 @@ Die Einsen in der Einheitsmatrix greifen jeweils genau eine Zeile bzw.\ Spalte "
 
 \begin{proof}
     Wir haben gerade gezeigt, dass $M_n(K)$~ein Ring ist.
-    
+
     Um Axiom~\ref{ax:algebra:vecspace} zeigen, müssen wir die Vektorraumaxiome zeigen: Axiome \ref{ax:vecspace:aa}~bis~\ref{ax:vecspace:ai} für Vektorräume folgen direkt aus Axiome \ref{ax:ring:aa}~bis~\ref{ax:ring:ai} für Ringe. Axiome \ref{ax:vecspace:smcomp}~bis~\ref{ax:vecspace:smdf} können wir einfaches durch Nachrechnen und Anwenden der Distributivität in~$K$ zeigen.
 
-    Axiom~\ref{ax:algebra:multiplication} ist \cref{lem:matrix:multiplication}.
+    Axiom~\ref{ax:algebra:mcomp} ist \cref{lem:matrix:mcomp}.
 \end{proof}
 
 \subsection{Matrizen als lineare Abbildungen}
+
+Nun sehen wir, warum wir den Begriff einer Matrix überhaupt einführten, nämlich um lineare Abbildungen übersichtlich darzustellen.
 
 \begin{definition}[Matrixabbildung]
     Sei $A = (a_{ij}) \in K^{m,n}$ eine Matrix. Wir definieren eine Abbildung, die wir ebenfalls mit~$A$ bezeichnen, durch
     \begin{equation*}
         A\colon K^n \to K^m,\quad v \mapsto A(v) \coloneqq A\cdot v,
     \end{equation*}
-    wobei $A\cdot v$~das Produkt der $(m\times n)$"~Matrix~$A$ mit der $(n\times 1)$"~Matrix~$v$ ist. (Hier haben wir $K^n = K^{n,1}$ identifiziert.) Die Abbildung $A\colon K^n \to K^m$ heißt \emph{Matrixabbildung}.
+    wobei $A\cdot v$~das Produkt der $(m\times n)$"~Matrix~$A$ mit der $(n\times 1)$"~Matrix~$v$ ist. (Hier haben wir $K^n = K^{n,1}$ identifiziert.) Die Abbildung $A\colon K^n \to K^m$ heißt \emph{Matrixabbildung}.\footnote{Auch bekannt als \emph{Matrix-Vektor-Produkt}.}
 \end{definition}
 
 \begin{lemma}\label{lem:matrixtransformation}
@@ -1749,7 +1749,7 @@ Die Einsen in der Einheitsmatrix greifen jeweils genau eine Zeile bzw.\ Spalte "
     \begin{equation*}
         A(v_1+v_2) = A \cdot (v_1+v_2) = A\cdot v_1 + A\cdot v_2 = A(v_1)+A(v_2).
     \end{equation*}
-    Für~$a \in K$ und~$v \in V$ folgt aus \cref{lem:matrix:multiplication}
+    Für~$a \in K$ und~$v \in V$ folgt aus \cref{lem:matrix:mcomp}
     \begin{equation*}
         A(av) = A \cdot (av) = a(A\cdot v) = a(A(v)). \qedhere
     \end{equation*}
@@ -1761,15 +1761,15 @@ Damit liefern Matrixabbildungen viele neue Beispiele für Homomorphismen (auf St
     \begin{enumerate}
         \item Die Einheitsmatrix~$E_n$ liefert die Identität $\id_{K^n}\colon K^n \to K^n$.
         \item Die Matrix $A = \pt{0&1\\-1&0} \in M_2(K)$ liefert die Abbildung
-        \begin{equation*}
-            A\colon K^2 \to K^2,\quad \p{a\\b} \mapsto \p{b\\-a}.
-        \end{equation*}
+              \begin{equation*}
+                  A\colon K^2 \to K^2,\quad \p{a\\b} \mapsto \p{b\\-a}.
+              \end{equation*}
 
-        Für~$K = \R$ können wir uns das so vorstellen: $A$~dreht jeden Vektor in~$\R^2$ um einen rechten Winkel im Uhrzeigersinn.\footnote{Eine sog.\ \emph{Rotationsmatrix} $\p{\cos\theta&-\sin\theta\\\sin\theta&\cos\theta}$ für~$\theta = -\frac{1}{2}\pi$.}
+              Für~$K = \R$ können wir uns das so vorstellen: $A$~dreht jeden Vektor in~$\R^2$ um einen rechten Winkel im Uhrzeigersinn.\footnote{Eine sog.\ \emph{Rotationsmatrix} $\p{\cos\theta&-\sin\theta\\\sin\theta&\cos\theta}$ für~$\theta = -\frac{1}{2}\pi$.}
         \item \cref{ex:hom:matrixvector} ist die Matrixabbildung
-        \begin{equation*}
-            A = \p{a&b\\c&d}\colon K^2 \to K^2,\quad \p{x\\y} \mapsto \p{ax+by\\cx+dy}.
-        \end{equation*}
+              \begin{equation*}
+                  A = \p{a&b\\c&d}\colon K^2 \to K^2,\quad \p{x\\y} \mapsto \p{ax+by\\cx+dy}.
+              \end{equation*}
     \end{enumerate}
 \end{example}
 
@@ -1780,6 +1780,10 @@ Damit liefern Matrixabbildungen viele neue Beispiele für Homomorphismen (auf St
     \end{equation*}
     wobei $A\cdot B$~das Matrixprodukt und $A\circ B$~die Komposition von Abbildungen ist.
 \end{theorem}
+
+\begin{remark}
+    Das ist genau der Grund, warum die Matrixmultiplikation so definiert wurde! Aus dem Satz folgt auch, dass wir für gewöhnlich (der Konvention für Abbildung entsprechend) Matrixprodukte von rechts nach links auswerten. Die tatsächliche Multiplikationsreihenfolge ist aber egal (genauso wie $(g\circ f)(x) = g(f(x))$).
+\end{remark}
 
 \begin{equation*}
     \begin{tikzcd}
@@ -1834,7 +1838,7 @@ Damit liefern Matrixabbildungen viele neue Beispiele für Homomorphismen (auf St
 
 \lecturesep{29.~Oktober 2021}
 
-\begin{lemma}\label{lem:canonincalbasis:transformation}
+\begin{lemma}\label{lem:canonicalbasis:transformation}
     Seien $f,g \in \hom(K^n,K^m)$. Dann gilt $f = g$ genau dann, wenn $f(e_i) = g(e_i)$ für alle $1 \leq i \leq n$.
 \end{lemma}
 
@@ -1854,7 +1858,7 @@ Die allgemeine Definition einer \emph{Basis} eines $K$"~Vektorraums (und wie mä
 
 \subsection{\texorpdfstring{$K^{m,n}$}{Kmn} und \texorpdfstring{$\hom(K^n,K^m)$}{Hom(Kn, Km)}}
 
-\begin{theorem}
+\begin{theorem}\label{thm:hom:canonical:iso}
     Für $m,n \geq 0$ gilt
     \begin{equation*}
         K^{m,n} \cong \hom(K^n,K^m).
@@ -1871,28 +1875,659 @@ Die allgemeine Definition einer \emph{Basis} eines $K$"~Vektorraums (und wie mä
     $\eta$~ordnet also jeder Matrix~$A$ die Abbildung~$\eta(A)$ zu. Wir wollen zeigen, dass $\eta$~ein Isomorphismus ist.
 
     \begin{itemize}
-        \item $\eta(A) \in \hom(K^n,K^m)$, also $\eta(A)$~ist $K$"~linear: Nach Definition ist $\eta(A)$~die Matrixabbildung $A\colon K^n \to K^m$ zur Matrix~$A$. \cref{lem:matrixtransformation} sagt, dass Matrixabbildungen $K$"~linear sind.
+        \item $\eta$~ist wohldefiniert, also $\eta(A) \in \hom(K^n,K^m)$: Nach Definition ist $\eta(A)$~die Matrixabbildung $A\colon K^n \to K^m$ zur Matrix~$A$. \cref{lem:matrixtransformation} sagt, dass Matrixabbildungen $K$"~linear sind.
         \item $\eta$~ist $K$"~linear: Für alle $A_1,A_2 \in K^{m,n}$, $a_1,a_2 \in K$ und~$v \in K^n$ gilt mittels der Rechenregeln für Matrizen
-        \begin{align*}
-            [\eta(a_1A_1+a_2A_2)](v) &= (a_1A_1+a_2A_2) \cdot v = a_1(A_1\cdot v) + a_2(A_2\cdot v) \\
-            &= a_1[(\eta(A_1))(v)] + a_2[(\eta(A_2))(v))´] = [a_1(\eta(A_1)) + a_2(\eta(A_2))](v).
-        \end{align*}
+              \begin{align*}
+                  [\eta(a_1A_1+a_2A_2)](v) & = (a_1A_1+a_2A_2) \cdot v = a_1(A_1\cdot v) + a_2(A_2\cdot v)                        \\
+                                           & = a_1[(\eta(A_1))(v)] + a_2[(\eta(A_2))(v))] = [a_1(\eta(A_1)) + a_2(\eta(A_2))](v).
+              \end{align*}
         \item $\eta$~ist ein Monomorphismus: Betrachten wir eine Matrix $A = (a_{ij}) \in K^{m,n}$. Für $1 \leq j \leq n$ ist
-        \begin{equation*}
-            Ae_j = A(e_j) = \p{a_{1j}\\\vdots\\a_{mj}}
-        \end{equation*}
-        die $j$"~te Spalte von~$A$. Sind also zwei Matrizen $A \neq B$ in~$K^{m,n}$ verschieden, so muss es eine Spalte~$j$ geben, in der sie nicht übereinstimmen, also $(\eta(A))(e_j) = A(e_j) \neq B(e_j) = (\eta(B))(e_j)$. Ferner folgt aus \cref{lem:canonicalbasis:transformations}, dass dann auch $\eta(A) \neq \eta(B)$ gilt.
+              \begin{equation*}
+                  Ae_j = A(e_j) = \p{a_{1j}\\\vdots\\a_{mj}}
+              \end{equation*}
+              die $j$"~te Spalte von~$A$. Sind also zwei Matrizen $A \neq B$ in~$K^{m,n}$ verschieden, so muss es eine Spalte~$j$ geben, in der sie nicht übereinstimmen, also $(\eta(A))(e_j) = A(e_j) \neq B(e_j) = (\eta(B))(e_j)$. Ferner folgt aus \cref{lem:canonicalbasis:transformation}, dass dann auch $\eta(A) \neq \eta(B)$ gilt. Also ist $\eta$~injektiv.
+        \item $\eta$~ist ein Epimorphismus: Sei~$f \in \hom(K^m,K^n)$ ein Homomorphismus. Zu jedem~$f$ definieren wir eine Matrix
+              \begin{equation*}
+                  A_f \coloneqq (a_{ij}) \in K^{m,n} \qquad\text{durch}\qquad A(e_j) = \p{a_{1j}\\\vdots\\a_{mj}} \coloneqq f(e_j) \quad\text{für alle } 1 \leq j \leq n.
+              \end{equation*}
+              Per unserer Definition folgt dann $A(e_j) = f(e_j)$ für alle $1 \leq j \leq n$ und daher nach \cref{lem:canonicalbasis:transformation} auch $A_f = f$. Folglich finden wir zu jedem Homomorphismus $f = A_f$ eine Matrix~$\eta^{-1}(f) = A_f$. Also ist $\eta$~surjektiv.
     \end{itemize}
 \end{proof}
 
+Einer der wichtigsten Aussagen in der linearen Algebra:
+
+\begin{corollary}\label{cor:hommatrixiso}
+    Alle Abbildungen in $\hom(K^n,K^m)$ sind Matrixabbildungen.
+
+    Für~$m = 0$ oder~$n = 0$ gilt $\hom(K^m,K^n) = \mset{0}$, wobei $0\colon K^n \to K^m$ die Nullabbildung ist.
+\end{corollary}
+
+Ab sofort werden wir Homomorphismen in Standardvektorräumen und Matrixabbildungen "`synonym"' verwenden und unterscheiden oft nicht mehr zwischen $K^{n,m}$~und $\hom(K^n,K^m)$. Statt~$\eta(A)$ wie im Beweis von \cref{thm:hom:canonical:iso} schreiben wir nur noch~$A$ und meinen damit sowohl die Matrix~$A \in K^{m,n}$ als auch die Matrixabbildung $A\colon K^n \to K^m$.
+
+\subsection{Elementarmatrizen und Zeilen"~ und Spaltenumformungen}
+
+\begin{definition}[Elementarmatrix Typ~(I)]
+    Für $1 \leq i,j \leq m$ mit~$i \neq j$ und~$a \in K$ definieren wir eine quadratische Matrix
+    \begin{gather*}
+        T_{ij}^{(m)}(a) \coloneqq T_{ij}(a) = (t_{pq}) \in K^{m,m} \qquad\text{durch}\qquad t_{pq} \coloneqq \begin{cases}
+            1 & \text{falls } p = q,         \\
+            a & \text{falls } (p,q) = (i,j), \\
+            0 & \text{sonst}.
+        \end{cases}
+    \end{gather*}
+    Wir nennen diese Art von Matrizen \emph{Elementarmatrizen vom Typ~(I)}.
+\end{definition}
+
+Die Matrizen sind Einheitsmatrizen, wobei genau ein Skalar~$a \in K$ irgendwo in den freien Einträgen liegt (d.\,h.\ nicht auf der Hauptdiagonale).
+
+\begin{example}
+    \begin{equation*}
+        T_{25}^{(6)}(a) = \begin{pmatrix}
+            1 &   &   &   &   &   \\
+              & 1 &   &   & a &   \\
+              &   & 1 &   &   &   \\
+              &   &   & 1 &   &   \\
+              &   &   &   & 1 &   \\
+              &   &   &   &   & 1
+        \end{pmatrix},
+        \qquad T_{52}^{(6)}(a) = \begin{pmatrix}
+            1 &   &   &   &   &   \\
+              & 1 &   &   &   &   \\
+              &   & 1 &   &   &   \\
+              &   &   & 1 &   &   \\
+              & a &   &   & 1 &   \\
+              &   &   &   &   & 1
+        \end{pmatrix}.
+    \end{equation*}
+\end{example}
+
+\begin{definition}[Elementarmatrix Typ~(II)]
+    Für $1 \leq i \leq m$ und~$b \in K^\times$ definieren wir eine quadratische Matrix
+    \begin{equation*}
+        D_i^{(m)}(b) \coloneqq D_i(b) = (d_{pq}) \in K^{m,m} \qquad\text{durch}\qquad d_{pq} \coloneqq \begin{cases}
+            1 & \text{falls } p = q \neq i, \\
+            b & \text{falls } p = q = 1,    \\
+            0 & \text{sonst}.
+        \end{cases}
+    \end{equation*}
+    Wir nennen diese Art von Matrizen \emph{Elementarmatrizen vom Typ~(II)}.
+\end{definition}
+
+Diese Matrizen sind Einheitsmatrizen, wobei genau ein Skalar~$b \in K^\times$ (also $b \neq 0$) eine Eins auf der Hauptdiagonale ersetzt.
+
+\begin{example}
+    \begin{equation*}
+        D_3^{(6)} = \begin{pmatrix}
+            1 &   &   &   &   &   \\
+              & 1 &   &   &   &   \\
+              &   & b &   &   &   \\
+              &   &   & 1 &   &   \\
+              &   &   &   & 1 &   \\
+              &   &   &   &   & 1
+        \end{pmatrix}.
+    \end{equation*}
+\end{example}
+
+\begin{definition}[Elementarmatrix Typ~(III)]
+    Für $1 \leq i \neq j \leq m$ definieren wir eine quadratische Matrix
+    \begin{equation*}
+        E_{ij}^{(m)} \coloneqq E_{ij} = (e_{pq}) \in K^{m,m} \qquad\text{durch}\qquad e_{pq} \coloneqq \begin{cases}
+            1 & \text{falls } i \neq p = q \neq j, \\
+            1 & \text{falls } (p,q) = (i,j),       \\
+            1 & \text{falls } (p,q) = (j,1),       \\
+            0 & \text{sonst}.
+        \end{cases}
+    \end{equation*}
+    Wir nennen diese Art von Matrizen \emph{Elementarmatrizen vom Typ~(III)}.
+\end{definition}
+
+\begin{remark}\leavevmode
+    \begin{enumerate}
+        \item Aufgrund der Symmetrie gilt $E_{ij}^{(m)} = E_{ji}^{(m)}$.
+        \item \emph{Achtung}: Die Elementarmatrix~$E_{ij}^{(m)}$ ist nicht die Einheitsmatrix~$E_m$, denn wir haben zwei Indizes $i$~und~$j$.
+    \end{enumerate}
+\end{remark}
+
+Die Matrizen sind Elementarmatrizen, wobei aber zwei Einträge auf der Hauptdiagonale null sind, dafür aber in einem Quadrat in den beiden anderen Ecken die fehlenden Einsen stehen.
+
+\begin{example}
+    \begin{equation*}
+        E_{14}^{(6)} = E_{41}^{(m)} = \begin{pmatrix}
+            0      & \cdots & \cdots & 1      &   &   \\
+            \vdots & 1      &        & \vdots &   &   \\
+            \vdots &        & 1      & \vdots &   &   \\
+            1      & \cdots & \cdots & 0      &   &   \\
+                   &        &        &        & 1 &   \\
+                   &        &        &        &   & 1
+        \end{pmatrix}.
+    \end{equation*}
+\end{example}
+
+Den Typenbegriff der Elementarmatrizen werden wir aber nicht so häufig benutzen.\footnote{Die Menge aller Elementarmatrizen der Größe~$m$ über~$K$ spannen die \emph{allgemeine lineare Gruppe~$\GL_n(K)$}, die Menge aller invertierbaren Matrizen in~$K^n$, auf. Den Begriff der allgemeinen linearen Gruppe werden wir aber später betrachten.}
+
+\begin{lemma}\label{lem:elementary:iso}
+    Die Matrixabbildungen $T_{ij}^{(m)}(a)$,~$D_i^{(m)}(b)$ und~$E_{ij}^{(m)}$ mit~$a \in K$ und~$b \in K^\times$ sind Isomorphismen.
+\end{lemma}
+
+\begin{proof}
+    Es gilt
+    \begin{align*}
+        T_{ij}^{(m)}(a) \cdot T_{ij}^{(m)}(-a) & = E_m = T_{ij}^{(m)}(-a) \cdot T_{ij}^{(m)}(a), \\
+        D_i^{(m)}(b) \cdot D_i^{(m)}(b^{-1})   & = E_m = D_i^{(m)}(b^{-1}) \cdot D_i^{(m)}(b),   \\
+        E_{ij}^{(m)} \cdot E_{ij}^{(m)}        & = E_m.
+    \end{align*}
+    Mit \cref{lem:hom:id} folgt aus den linken und rechten Seiten der Gleichungen, dass die Elementarmatrizen Epimorphismen bzw.\ Monomorphismen sind.
+
+    (Die Gleichungen können wir durch geschicktes nachrechnen überprüfen: Sei $A \coloneqq T_{ij}^{(m)}(a) - E_m$. Daraus folgt auch $T_{ij}^{(m)}(-a) = E_m-A$. Daher gilt
+    \begin{multline*}
+        T_{ij}(a) \cdot T_{ij}(-a) = (E_m+A) (E_m-A) = E_mE_m - E_mA + AE_m - AA = E_m - AA = E_m \\
+        = E_mE_m + E_mA - AE_m - AA = (E_m-A) (E_m+A) = T_{ij}(-a) \cdot T_{ij}(a),
+    \end{multline*}
+    wobei $AA = 0_m$. Ähnlich können wir $B \coloneqq D_i^{(m)}(b) - E_m$ und $B' \coloneqq D_i^{(m)}(b^{-1}) - E_m$ definieren. Dann gilt
+    \begin{equation*}
+        D_i^{(m)}(b) \cdot D_i^{(m)}(b^{-1}) = (E_m+B) (E_m+B') = E_m + B + B' + BB'.
+    \end{equation*}
+    Schauen wir und den Eintrag in~$(i,i)$ an, sehen wir
+    \begin{equation*}
+        1 + B_{ii} + B_{ii}' + B_{ii}B_{ii}' = 1 + (b-1) + (b^{-1}-1) + (b-1)(b^{-1}-1) = 1.
+    \end{equation*}
+    Also gilt mit $BB' = B'B$ (Kommutativität der Multiplikation in~$K$)
+    \begin{equation*}
+        D_i^{(m)}(b) \cdot D_i^{(m)}(b^{-1}) = E_m = (E_m+B') (E_m+B) = D_i^{(m)}(b^{-1}) \cdot D_i^{(m)}(b).
+    \end{equation*}
+    Zuletzt sei $C \coloneqq E_{ij}-E_m$. Dann gilt
+    \begin{equation*}
+        E_{ij} \cdot E_{ij} = (E_m+C) (E_m+C) = E_m + 2C + CC = E_m,
+    \end{equation*}
+    wobei tatsächlich $2C = -CC$ gilt; das müsste man leider einfach nachrechnen.)
+\end{proof}
+
+\begin{lemma}[Zeilenoperationen]
+    Seien $A \in K^{m,n}$, $a \in K$ und~$b \in K^\times$. Dann bilden die Elementarmatrizen die sog.\ \emph{Zeilenoperationen vom Typ~(I), (II) oder~(III)} oder \emph{elementare Zeilenumformungen}, wenn sie von links multipliziert werden.
+    \begin{enumerate}
+        \item $T_{ij}^{(m)}(a) \cdot A$ entsteht aus~$A$, wenn wir zur $i$"~ten Zeile von~$A$ das $a$"~fache der $j$"~ten Zeile von~$A$ addieren.
+        \item $D_i^{(m)}(b) \cdot A$ entsteht aus~$A$, wenn wir die $i$"~te Zeile von~$A$ mit~$b$ multiplizieren.
+        \item $E_{ij}^{(m)} \cdot A$ entsteht aus~$A$, wenn wir die $i$"~te und $j$"~te Zeile von~$A$ vertauschen.
+    \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+    Das ist pure Rechnung. Wieder hilft die Zerlegung $T_{ij}(a) = E_m + B$, $D_i(b) = E_m + C$ und $E_{ij} = E_m + D$.
+\end{proof}
+
+\begin{lemma}
+    Die Zeilenoperationen vom Typ~(III) können wir durch Verknüpfung von Zeilenoperationen vom Typ~(I) und Typ~(II) erhalten.
+\end{lemma}
+
+\begin{proof}
+    Es gilt z.\,B.\
+    \begin{equation*}
+        E_{ij} = D_j(-1) \cdot T_{ij}(1) \cdot T_{ji}(-1) \cdot T_{ij}(1).
+    \end{equation*}
+    Sei $A \in K^{m,m}$. $E_{ij}$~vertauscht die $i$~te und $j$~te Zeile. Bezeichnen wir die Zeilen mit Zeilenvektoren $z_i$~und~$z_j$, dann gilt
+    \begin{equation*}
+        \begin{cases}
+            z_i \\ z_j
+        \end{cases}
+        \xrightarrow{T_{ij}(1)}
+        \begin{cases}
+            z_i+z_j \\ z_j
+        \end{cases}
+        \xrightarrow{T_{ji}(-1)}
+        \begin{cases}
+            z_i+z_j \\ z_j-z_i-z_j = -z_i
+        \end{cases}
+        \xrightarrow{T_{ij}(1)}
+        \begin{cases}
+            z_i+z_j-z_i = z_j \\ -z_i
+        \end{cases}
+        \xrightarrow{D_j(-1)}
+        \begin{cases}
+            z_j \\ z_i
+        \end{cases}. \qedhere
+    \end{equation*}
+\end{proof}
+
+Analog definieren wir Spaltenoperationen.
+
+\begin{definition}[Spaltenoperationen]
+    Sei $A \in K^{n,m}$. Dann sind
+    \begin{equation*}
+        A \cdot T_{ij}^{(m)}(a),\qquad A \cdot D_j^{(m)}(b) \qquad\text{und}\qquad A \cdot E_{ij}^{(m)}
+    \end{equation*}
+    die \emph{elementaren Spaltenoperationen vom Typ~(I), (II) bzw.~(III)}.
+\end{definition}
+
+\subsection{Gauß-Algorithmus}
+
+Nun kommen wir zu einer der Ursprünge der linearen Algebra: Das Lösen von linearen Gleichungssystemen. Hierfür entwickeln wir die Theorie rund um den \emph{\textsc{Gauß}-Algorithmus}. Der Algorithmus war eigentlich schon vor Gauß bekannt (antikes China). Im Gegensatz zu vielen anderen Vorlesungen zur linearen Algebra machen wir das mit genügend Theorie, und nicht gleich in der ersten Vorlesung.
+
+\subsubsection{Reduzierte Zeilenstufenform}
+
+\begin{definition}[reduzierte Zeilenstufenform]
+    Eine Matrix $B = (b_{ij}) \in K^{m,n}$ ist in \emph{reduzierter Zeilenstufenform}, falls folgendes gilt:
+    \begin{enumerate}
+        \item $B = 0$. Oder:
+        \item Es existieren ein Zeilenindex $1 \leq r \leq \min(m,n)$ und Spaltenindizes $1 \leq j_1 < j_2 < \dots < j_r \leq n$, sodass folgende Bedingungen erfüllt sind:
+              \begin{enumerate}
+                  \item Für alle Zeilen $1 \leq k \leq r$ gilt $b_{kj} = 0$ für alle~$j < j_k$. (In Worten: Für die ersten $r$~Zeilen sind die ersten $j_k-1$ Einträge der $k$~ten Zeile alles null.)
+                  \item Für alle Zeilen $1 \leq k \leq r$ gilt
+                        \begin{equation*}
+                            b_{ij_k} = \begin{cases}
+                                1 & \text{falls } i = k, \\
+                                0 & \text{sonst}.
+                            \end{cases}
+                        \end{equation*}
+                        (In Worten: Für die ersten $r$~Zeilen ist der Eintrag in der $j_k$~ten Spalte Eins, und alle anderen Einträge der $j_k$"~ten Spalte sind null. Die Spalten sind also "`Standardbasisvektoren"'~$e_k$.)
+                  \item Für alle Zeilen $r+1 \leq k \leq m$ gilt $b_{kj} = 0$ für alle $1 \leq j \leq n$. (In Worten: Die restlichen $m-r$ Zeilen sind alles Nullen, also ein großer Nullblock.)
+              \end{enumerate}
+    \end{enumerate}
+\end{definition}
+
+\begin{notation}[Zeilenstufenindizes]
+    Wir nennen die Menge der Indizes
+    \begin{equation*}
+        \mathcal{I}(B) \coloneqq \begin{cases}
+            \mset{j_1,\dots,j_r} & \text{falls } B \neq 0, \\
+            \varnothing          & \text{sonst}.
+        \end{cases}
+    \end{equation*}
+    \emph{Zeilenstufenindizes}. Zudem definieren wir das Komplement
+    \begin{equation*}
+        \mathcal{K}(B) \coloneqq \mset{1,\dots,n} \setminus \mathcal{I}(B).
+    \end{equation*}
+\end{notation}
+
+Eine Matrix in reduzierter Zeilenstufenform ist also von der Form
+\begin{center}
+    \begin{tabular}{|cccccccccccccccccccc|c}
+        \multicolumn{1}{c}{$1$} &          &     & $j_1$                     &         &          &         & $j_2$                     &         &          &         & $j_3$                     &         &          &         &                               & $j_r$                          &          &          & \multicolumn{1}{c}{$n$} &          \\ \cline{1-20}
+        $0$                     & $\cdots$ & $0$ & \multicolumn{1}{|c|}{$1$} & $\star$ & $\cdots$ & $\star$ & \multicolumn{1}{|c|}{$0$} & $\star$ & $\cdots$ & $\star$ & \multicolumn{1}{|c|}{$0$} & $\star$ & $\cdots$ & $\star$ & \multicolumn{1}{|c}{}         & \multicolumn{1}{|c|}{$0$}      & $\star$  & $\cdots$ & $\star$                 & $1$      \\ \cline{1-7}
+                                &          &     &                           &         &          &         & \multicolumn{1}{|c|}{$1$} & $\star$ & $\cdots$ & $\star$ & \multicolumn{1}{|c|}{$0$} & $\star$ & $\cdots$ & $\star$ & \multicolumn{1}{|c}{}         & \multicolumn{1}{|c|}{$0$}      & $\star$  & $\cdots$ & $\star$                 & $2$      \\ \cline{8-11}
+                                &          &     &                           &         &          &         &                           &         &          &         & \multicolumn{1}{|c|}{$1$} & $\star$ & $\cdots$ & $\star$ & \multicolumn{1}{|c}{}         & \multicolumn{1}{|c|}{$0$}      & $\star$  & $\cdots$ & $\star$                 & $3$      \\ \cline{12-15}
+                                &          &     &                           &         &          &         &                           &         &          &         &                           &         &          &         & \multicolumn{1}{|c}{$\cdots$} & \multicolumn{1}{|c|}{$0$}      & $\star$  & $\cdots$ & $\star$                 & $4$      \\
+                                &          &     &                           &         &          &         & $0$                       &         &          &         &                           &         &          &         & \multicolumn{1}{|c}{}         & \multicolumn{1}{|c|}{$\vdots$} & $\vdots$ &          & $\vdots$                & $\vdots$ \\
+                                &          &     &                           &         &          &         &                           &         &          &         &                           &         &          &         & \multicolumn{1}{|c}{}         & \multicolumn{1}{|c|}{$0$}      & $\star$  & $\cdots$ & $\star$                 & $r-1$    \\ \cline{16-16}
+                                &          &     &                           &         &          &         &                           &         &          &         &                           &         &          &         &                               & \multicolumn{1}{|c|}{$1$}      & $\star$  & $\cdots$ & $\star$                 & $r$      \\ \cline{1-20}
+                                &          &     &                           &         &          &         &                           &         &          &         &                           &         &          &         &                               &                                &          &          &                         & $r+1$    \\
+                                &          &     &                           &         &          &         & $0$                       &         &          &         &                           &         &          &         &                               &                                &          &          &                         & $\vdots$ \\
+                                &          &     &                           &         &          &         &                           &         &          &         &                           &         &          &         &                               &                                &          &          &                         & $m$      \\ \cline{1-20}
+    \end{tabular}
+\end{center}
+Dabei stehen die für beliebige Einträge aus~$K$.
+
+\begin{remark}
+    Es gilt $\mathcal{I}(B) = \varnothing$ genau dann, wenn $B = 0$. Es gilt $\mathcal{K}(B) = \varnothing$ genau dann, wenn $B = E_n$ oder wenn
+    \begin{equation*}
+        B = \begin{pmatrix}[ccc]
+            1 &        &   \\
+              & \ddots &   \\
+              &        & 1 \\ \hline
+              &        &   \\
+              & 0      &   \\
+              &        &
+        \end{pmatrix}.
+    \end{equation*}
+\end{remark}
+
+\begin{example}\label{ex:redechelon}
+    Die Matrix
+    \begin{equation*}
+        B = \begin{pmatrix}
+            0 & 1 & b_{13} & b_{14} & 0 & b_{16} & 0 & 0 & b_{19} & b_{1, 10} \\
+            0 & 0 & 0      & 0      & 1 & b_{26} & 0 & 0 & b_{29} & b_{2, 10} \\
+            0 & 0 & 0      & 0      & 0 & 0      & 1 & 0 & b_{39} & b_{3, 10} \\
+            0 & 0 & 0      & 0      & 0 & 0      & 0 & 1 & b_{49} & b_{4, 10} \\
+            0 & 0 & 0      & 0      & 0 & 0      & 0 & 0 & 0      & 0         \\
+            0 & 0 & 0      & 0      & 0 & 0      & 0 & 0 & 0      & 0         \\
+        \end{pmatrix} \in K^{6, 10}
+    \end{equation*}
+    ist in reduzierter Zeilenstufenform, wobei $r = 4$, $\mathcal{I}(B) = \mset{j_1,j_2,j_3,j_4} = \mset{2, 5, 7, 8}$ und $\mathcal{K}(B) = \mset{1, 3, 4, 6, 9, 10}$.
+\end{example}
+
+\subsubsection{Gauß-Algorithmus}
+
+\begin{theorem}
+    Sei $A = (a_{ij}) \in K^{m,n}$. Dann gibt es Elementarmatrizen $T_1,\dots,T_t$, sodass $B \coloneqq T_t\cdots T_2T_1A$ in reduzierter Zeilenstufenform ist.
+\end{theorem}
+
+\begin{definition}
+    Entsteht die Matrix~$B$ durch Anwendung von elementaren Zeilenoperationen aus~$A$, so nennen wir $B$~eine \emph{reduzierte Zeilenstufenform von~$A$}.
+\end{definition}
+
+\begin{proof}
+    Wir beweisen diesen Satz durch die Angabe eines rekursiven Algorithmus bzw.\ beweisen die Aussage induktiv.
+
+    Falls $A = 0$, dann ist $A$ bereits in reduzierter Zeilenstufenform und der Algorithmus stoppt.
+
+    Sei also $a \neq 0$ und wir setzen $A^{(0)} = (a_{ij}^{(0)}) \coloneqq A$. Sei
+    \begin{equation*}
+        j_1 \coloneqq \min\mset{1 \leq s \leq n \mid \text{es gibt ein } 1 \leq p \leq m \text{ mit } a_{ps}^{(0)} \neq 0},
+    \end{equation*}
+    d.\,h.\ wir wählen als ersten Zeilenstufenindex die linkste Spalte von~$A$ ungleich null. Insbesondere sind alle Spalten links von~$j_1$ alles null und unter Zeilenoperationen bleiben sie null. Nun wählen wir ein $1 \leq p \leq m$, sodass eben $a_{pj_1}^{(0)} \neq 0$ ist.
+
+    Weiterhin setzen wir
+    \begin{equation*}
+        C^{(0)} = (c_{ij}^{(0)}) \coloneqq D_1((a_{pj_1}^{(0)})^{-1}) \cdot E_{1p} \cdot A^{(0)}.
+    \end{equation*}
+    Hierbei haben wir die Zeile von~$a_{pj_1}$ in die erste Zeile geholt und den Eintrag normiert, also $c_{1j_1}^{(0)} = 1$. Nun setzen wir
+    \begin{equation*}
+        A^{(1)} = (a_{ij}^{(1)}) \coloneqq T_{m1}(-c_{mj_1}^{(0)}) \cdots T_{21}(-c_{2j_1}^{(0)}) \cdot C^{(0)},
+    \end{equation*}
+    d.\,h.\ für die zweite Zeile nehmen wir den Eintrag~$c_{2j_1}^{(0)}$ der $j_1$"~ten Spalte, und addieren das $-c_{2j_1}^{(0)}$"~fache der ersten Zeile auf die zweite Zeile. Wegen $c_{1j_1}^{(0)} = 1$, ist nun $a_{2j_1}^{(1)} = 0$. Das machen wir für alle restlichen Zeilen genauso. Folglich sind alle Einträge der $j_1$"~ten Spalte ausgelöscht bis auf~$a_{1j_1}^{(1)} = 1$. Die ersten $j_1$~Spalten sind also in der richtigen Form.
+
+    Nun definieren wir induktiv Matrizen $A^{(k)}$~und~$C^{(k)}$ sowie $j_1 < \dots < j_k$ aus~$\N$ wie folgt: Angenommen $A^{(k-1)} = (a_{ij}^{(k-1)})$ und $j_1 < \dots < j_k$ sind für ein~$k \geq 2$ bereits definiert.
+
+    Wir setzen
+    \begin{equation*}
+        j_k \coloneqq \min\mset{j_k < s \leq n \mid \text{es gibt ein } k \leq p \leq m \text{ mit } a_{ps}^{(k-1) \neq 0}}.
+    \end{equation*}
+    Hierbei handelt es sich um den $k$~ten Zeilenstufenindex~$j_k$, sodass, wenn wir die ersten $k-1$~Zeilen ignorieren, die $j_k$"~te Spalte die linkste der Matrix ungleich null ist. Das bedeutet, dass Zwischen Zeilen $k$~und~$m$ und Spalten $1$~und~$j_k-1$ alles null ist.
+
+    Gibt es ein solches~$j_k$ nicht, so ist~$A^{(k-1)}$ bereits in reduzierter Zeilenstufenform (wir sind auf den großen Nullblock gestoßen) und der Algorithmus stoppt.
+
+    Wir nehmen an, dass ein~$j_k$ existiert. Wir wählen ein $k \leq p \leq m$, sodass eben $a_{pj_k}^{(k-1)} \neq 0$ ist.
+
+    Wir setzen
+    \begin{equation*}
+        C^{(k-1)} = (c_{ij}^{(k-1)}) \coloneqq D_k((a_{pj_k}^{(k-1)})^{-1}) \cdot E_{kp} \cdot A^{(k-1)}.
+    \end{equation*}
+    Hier haben wir die Zeile von~$a_{pj_k}^{(k-1)}$ in die $k$"~te Zeile geholt und den Eintrag normiert, also $c_{kj_k}^{(k-1)} = 1$. Weiterhin setzen wir
+    \begin{equation*}
+        A^{(k)} = (a_{ij}^{(k)}) \coloneqq T_{mk}(-c_{mj_k}^{(k-1)}) \cdots T_{k+1,k}(-c_{k+1,j_k}^{(k-1)}) \cdot T_{k-1,k}(-c_{k-1,j_k}^{(k-1)}) \cdots T_{1k}(-c_{1j_k}^{(k-1)}) \cdot C^{(k-1)}.
+    \end{equation*}
+    Hier löschen wir jeden Eintrag der $j_k$"~ten Spalte aus bis auf $a_{kj_k}^{(k)} = 1$. Dabei blieben die ersten $j_k-1$ Spalten unverändert, weil in der $k$"~te Zeile die ersten $j_k-1$ Einträge null sind.
+
+    Wir sehen dass nach jedem Schritt~$k \geq 1$ die $(k\times n)$"~Matrix der ersten $k$~Zeilen von~$A^{(k)}$ und die $(m\times j_k)$"~Matrix der ersten $j_k$~Spalten von~$A^{(k)}$ in reduzierter Zeilenstufenform sind.
+
+    Nach spätestens $k = \min(m,n)$ Schritten stoppt der Algorithmus, denn dann gibt es keine Zeilen und Spalten mehr. Per Induktion ist also $B = A^{(k)}$ in reduzierter Zeilenstufenform.
+\end{proof}
+
+Der Algorithmus im Beweis ist der \emph{\textsc{Gauß}-Algorithmus}.
+
+%Todo: Finish algorithm
+\begin{algorithm}
+    \caption{\textsc{Gauß}-Algorithmus.}
+    \begin{algorithmic}[1]
+        \Require Matrix~$A \in K^{m,n}$.
+        \Ensure Matrix~$B \in K^{m,n}$, die reduzierter Zeilenstufenform von~$A$.
+        \State\If{$A = 0$}
+        \State\Return $A$
+        \EndIf
+    \end{algorithmic}
+\end{algorithm}
+
+\begin{example}
+    Sei
+    \begin{equation*}
+        A = \begin{pmatrix}
+            0 & 2  & -1 & 1 \\
+            1 & 0  & 1  & 1 \\
+            1 & -2 & 2  & 0
+        \end{pmatrix} \in \Q^{3, 4}.
+    \end{equation*}
+
+    Der Gauß-Algorithmus liefert schrittweise folgende Matrizen:
+    \begin{gather*}
+        \xrightarrow{E_{12}}
+        \begin{pmatrix}
+            1 & 0  & 1  & 1 \\
+            0 & 2  & -1 & 1 \\
+            1 & -2 & 2  & 0
+        \end{pmatrix}
+        \xrightarrow{T_{31}(-1)}
+        \begin{pmatrix}
+            1 & 0  & 1  & 1  \\
+            0 & 2  & -1 & 1  \\
+            0 & -2 & 1  & -1
+        \end{pmatrix} \\
+        \xrightarrow{D_2(\frac{1}{2})}
+        \begin{pmatrix}
+            1 & 0  & 1            & 1           \\
+            0 & 1  & -\frac{1}{2} & \frac{1}{2} \\
+            0 & -2 & 1            & -1
+        \end{pmatrix}
+        \xrightarrow{T_{32}(2)}
+        \begin{pmatrix}
+            1 & 0 & 1            & 1           \\
+            0 & 1 & -\frac{1}{2} & \frac{1}{2} \\
+            0 & 0 & 0            & 0
+        \end{pmatrix}
+        \eqqcolon B.
+    \end{gather*}
+\end{example}
+
+Natürlich können wir die reduzierte Zeilenstufenform intelligenter konstruieren, nicht so wie der Gauß-Algorithmus es vorschreibt.
+\begin{itemize}
+    \item Es ist einfacher, wenn wir bei Typ~(III) Operationen eine Zeile auswählen, in der der Eintrag in der $a_{pj_k} = 1$ ist. Dann können wir auf die Matrix~$C$ verzichten.
+    \item Wir müssen nicht notwendigerweise die Typ~(III) Operationen anwenden. Manchmal ist es sinnvoller, sie so zu lassen und Brüche zu vermeiden.
+    \item Um zu große Einträge zu vermeiden, empfiehlt es sich, alle Zeilen (wenn möglich) durch Typ~(II) Operationen zu "`kürzen"', sodass die Einträge noch ganzzahlig bleiben.
+\end{itemize}
+
+Später werden wir noch zeigen, dass die reduzierte Zeilenstufenform einer Matrix sogar eindeutig ist.
+
 \lecturesep{02.~November 2021}
 
-%\printsolutions
+\subsection{Kerne von Matrixabbildungen}
 
-\newpage\appendix
+\begin{definition}[Basisvektoren des Kerns]\label{def:ker:basisvec}
+    Sei $B = (b_{ij}) \in K^{m,n}$ in reduzierter Zeilenstufenform. Für $\mathcal{I}(B) = \mset{j_1 < \dots < j_r}$ und~$j \in \mathcal{K}(B)$ definieren wir
+    \begin{equation*}
+        L_j^B \coloneqq \p{\ell_{1j}\\\vdots\\\ell_{nj}} \in K^n
+        \qquad\text{durch}\qquad
+        \ell_{kj} \coloneqq \begin{cases}
+            1       & \text{falls } k = j,                                                            \\
+            -b_{sj} & \text{falls } k = j_s \text{ mit } j_s \in \mathcal{I}(B) \text{ und } j_s < j, \\
+            0       & \text{sonst}.
+        \end{cases}
+    \end{equation*}
+\end{definition}
 
-\section{Trickkiste}
+Das $L$~steht für Lösung.
+
+\begin{example}
+    Wir betrachten wieder die Matrix
+    \begin{equation*}
+        B = \begin{pmatrix}
+            0 & 1 & b_{13} & b_{14} & 0 & b_{16} & 0 & 0 & b_{19} & b_{1, 10} \\
+            0 & 0 & 0      & 0      & 1 & b_{26} & 0 & 0 & b_{29} & b_{2, 10} \\
+            0 & 0 & 0      & 0      & 0 & 0      & 1 & 0 & b_{39} & b_{3, 10} \\
+            0 & 0 & 0      & 0      & 0 & 0      & 0 & 1 & b_{49} & b_{4, 10} \\
+            0 & 0 & 0      & 0      & 0 & 0      & 0 & 0 & 0      & 0         \\
+            0 & 0 & 0      & 0      & 0 & 0      & 0 & 0 & 0      & 0         \\
+        \end{pmatrix} \in K^{6, 10}
+    \end{equation*}
+    aus \cref{ex:redechelon}, die in reduzierter Zeilenstufenform mit $\mathcal{I}(B) = \mset{2, 5, 7, 8}$ ist. Die Vektoren~$L_j^B \in K^{10}$ mit $j \in \mathcal{K}(B) = \mset{1, 3, 4, 6, 9, 10}$ sind
+    \begin{align*}
+        L_1^B = \p{1 \\0\\0\\0\\0\\0\\0\\0\\0\\0},\quad L_3^B = \p{0\\-b_{13}\\1\\0\\0\\0\\0\\0\\0\\0},\quad L_4^B = \p{0\\-b_{14}\\0\\1\\0\\0\\0\\0\\0\\0},\quad L_6^B = \p{0 \\-b_{16}\\0\\0\\-b_{26}\\1\\0\\0\\0\\0},\quad L_9^B = \p{0\\-b_{19}\\0\\0\\-b_{29}\\0\\-b_{39}\\-b_{49}\\1\\0},\quad L_{10}^B = \p{0\\-b_{1, 10}\\0\\0\\-b_{2, 10}\\0\\-b_{3, 10}\\-b_{4, 10}\\0\\1}.
+    \end{align*}
+\end{example}
 
 
+Die Vektoren~$L_j^B$ haben so viele Einträge wie es Spalten in~$B$ gibt. Dabei ist der $j$"~te Eintrag~$1$ und die Einträge darüber kommen aus der $j$"~ten Spalte von~$B$. Die verteilen wir auf die Zeilenstufenindizes~$\mathcal{I}(B)$.
+
+\begin{remark}
+    Die~$L_j^B$ sind gerade so definiert, dass $BL_j^B = 0$ gilt.
+\end{remark}
+
+Wir wissen aus \cref{cor:hommatrixiso}, dass wir jede Matrix~$B \in K^{m,n}$ als Matrixabbildung $B\colon K^n \to K^m$ auffassen können. Damit können wir sinnvoll den Kern definieren.
+
+\begin{theorem}[Basis des Kerns]\label{thm:ker:basis}
+    Sei $B \in K^{m,n}$ in reduzierter Zeilenstufenform.
+    \begin{enumerate}
+        \item Es gilt
+              \begin{equation*}
+                  \ker(B) = \mset*{\sum_{j\in\mathcal{K}(B)} a_jL_j^B \mmid a_j \in K}.
+              \end{equation*}
+              Falls $\mathcal{K}(B) = \varnothing$, ist $\ker(B) = 0$.
+        \item Aus
+              \begin{equation*}
+                  \sum_{j\in\mathcal{K}(B)} a_jL_j^B = \sum_{j\in\mathcal{K}(B)} b_jL_j^B \qquad\text{mit } a_j,b_j \in K
+              \end{equation*}
+              folgt $a_j = b_j$ für alle~$j \in \mathcal{K}(B)$.
+    \end{enumerate}
+    (In fortgeschrittener Sprache: Die Menge $\mset{L_j^B \mid j \in \mathcal{K}(B)}$ ist eine Basis von $\ker(B)$.)
+\end{theorem}
+
+\begin{proof}
+    Sei $B$ in reduzierter Zeilenstufenform mit $\mathcal{I}(B) = \mset{j_1 < \dots < j_r}$ und $\mathcal{K}(B) = \mset{1,\dots,n} \setminus \mathcal{I}(B)$.
+
+    \begin{enumerate}
+        \item Für ein beliebiges
+              \begin{gather*}
+                  a = \p{a_1\\\vdots\\a_n} \in K^n
+                  \shortintertext{im Kern sei}
+                  \p{c_1\\\vdots\\c_m} \coloneqq B(a).
+              \end{gather*}
+              Wir sehen sofort, dass $c_k = 0$ für alle $r+1 \leq k \leq m$, denn diese Zeilen bilden den Nullblock. Für alle $1 \leq s \leq r$ gilt hingegen
+              \begin{equation*}
+                  c_s = (0,\dots, 0, 1,b_{s,j_s+1},\dots,b_{sn}) \cdot \p{a_1\\\vdots\\a_n} = a_{j_s} + \sum_{j=j_s+1}^n b_{sj}a_j = a_{j_s} + \sum_{\substack{j\in\mathcal{K}(B)\\j>j_s}} b_{sj}a_j.
+              \end{equation*}
+              Für die letzte Gleichheit haben wir den Fakt ausgenutzt, dass in den Spalten der Zeilenstufenindizes nach~$j_s$ nur Nullen stehen. Nun gilt $B(a) = 0$ genau dann, wenn
+              \begin{equation*}
+                  c_s = 0 \iff a_{j_s} = -\sum_{\substack{j\in\mathcal{K}(B)\\j>j_s}} b_{sj}a_j \qquad\text{für alle } 1 \leq s \leq r.
+              \end{equation*}
+
+              Tatsächlich erfüllen alle
+              \begin{equation*}
+                  a = \sum_{j\in\mathcal{K}(B)} a_jL_j^B
+              \end{equation*}
+              diese Bedingung. Begründung: Für~$j \in \mathcal{K}(B)$ ist der $j$"~te Eintrag von $\sum_{j\in\mathcal{K}(B)} a_jL_j^B$ gleich~$a_j$, denn von allen Vektoren ist der $j$"~te Eintrag nur von~$L_j^B$ gleich Eins, sonst Null. Für~$j_s \in \mathcal{I}(B)$ ist der $j_s$"~te Eintrag gleich
+              \begin{equation*}
+                  -\sum_{\substack{j\in\mathcal{K}(B)\\j>j_s}} b_{sj}a_j,
+              \end{equation*}
+              s.~\cref{def:ker:basisvec} der~$L_j^B$.
+
+              Umgekehrt liegt auch jedes~$L_j^B$ und aufgrund Linearität auch jede Summe der Form $\sum_{j\in\mathcal{K}(B)} a_jL_j^B$ mit~$a_j \in K$ in $\ker(B)$. Folglich sind beide Mengen gleich.
+        \item Sei nun
+              \begin{equation*}
+                  \sum_{j\in\mathcal{K}(B)} a_jL_j^B = \sum_{j\in\mathcal{K}(B)} b_jL_j^B
+              \end{equation*}
+              mit $a_j,b_j \in K$. Wie eben gezeigt, ist für~$j \in \mathcal{K}(B)$ der $j$"~te Eintrag der linken Seite gleich~$a_j$, und der rechten Seite gleich~$b_j$, also $a_j = b_j$. Wie eben gezeigt, hängen die anderen Einträge nur von den $a_j$~bzw.~$b_j$ ab, also auch $a_{j_s} = b_{j_s}$ für alle~$j_s \in \mathcal{I}(B)$.\qedhere
+    \end{enumerate}
+\end{proof}
+
+\begin{lemma}
+    Seien $A \in K^{m,n}$ eine Matrix und $T \in K^{m,m}$ eine Elementarmatrix. Dann gilt
+    \begin{equation*}
+        \ker(A) = \ker(TA).
+    \end{equation*}
+\end{lemma}
+
+\begin{proof}
+    Für alle~$v \in \ker(A)$ gilt $A(v) = 0$, also auch $(TA)(v) = 0$ und damit $v \in \ker(AT)$. Umgekehrt sei nun $v \in \ker(TA)$, also $(TA)(v) = T(A(v)) = 0$. Weil $T$~ein Isomorphismus (\cref{lem:elementary:iso}) ist, ist es auch insbesondere injektiv, sodass wegen $T(0) = 0$ auch $A(v) = 0$ gelten muss. Folglich ist $v \in \ker(A)$ und daher $\ker(A) = \ker(TA)$.
+\end{proof}
+
+\begin{corollary}[Bestimmung des Kerns]
+    Sei $A \in K^{m,n}$ und sei $B$~eine reduzierte Zeilenstufenform von~$A$. Dann gilt
+    \begin{equation*}
+        \ker(A) = \ker(B).
+    \end{equation*}
+    Das bedeutet, dass der Gauß-Algorithmus ein explizites Verfahren zur Konstruktion einer \emph{Basis von $\ker(A)$} liefert.
+\end{corollary}
+
+\begin{theorem}
+    Sei $A \in K^{m,n}$ und sei $B$~eine reduzierte Zeilenstufenform von~$A$. Sei zudem $\mathcal{K}(B) = \mset{1,\dots,n} \setminus \mathcal{I}(B) = \mset{i_1 < \dots < i_{n-r}}$. Dann ist die Abbildung
+    \begin{equation*}
+        f\colon K^{n-r} \to \ker(A),\qquad \sum_{k=1}^{n-r} a_ke_k \mapsto \sum_{k=1}^{n-r} a_kL_{i_k}^B
+    \end{equation*}
+    ein Isomorphismus von Vektorräumen.\footnote{Das folgt schon daraus, dass die lineare Hülle der beiden Basen dieselbe Dimension besitzen.}
+\end{theorem}
+
+\begin{proof}
+    Die Linearität von~$f$ können wir aus einer einfachen Rechnung und dem Distributivgesetz folgern.
+
+    Aus \cref{thm:ker:basis} folgt, dass jeder Vektor in $\ker(A)$ in der Form $\sum_{k=1}^{n-r} a_kL_{i_k}^B$ darstellbar ist, sodass wir gemäß \cref{lem:canonicalbasis} ein passendes Urbild $\sum_{k=1}^{n-r} a_ke_k$ finden können. Also ist $f$~surjektiv.
+
+    \cref{thm:ker:basis,lem:canonicalbasis} implizieren auch die Injektivität von~$f$, denn die Summendarstellungen der Vektoren aus~$K^{n-r}$ bzw.\ $\ker(A)$ sind eindeutig.
+\end{proof}
+
+\subsection{Bilder von Matrixabbildungen}
+
+Das Bild einer Matrixabbildung ist oft viel leichter als den Kern zu bestimmen.
+
+\begin{lemma}\label{lem:im:naive}
+    Sei $A \in K^{m,n}$ und sei $\mset{e_1,\dots,e_n}$ die Standardbasis von~$K^n$. Dann gilt
+    \begin{equation*}
+        \im(A) = \mset*{\sum_{j=1}^n a_jA(e_j) \mmid a_j \in K}.
+    \end{equation*}
+\end{lemma}
+
+Die~$A(e_j)$ sind die Spalten von~$A$.
+
+\begin{proof}
+    Sei $w \in \im(A)$ beliebig. Per Definition gibt es ein
+    \begin{equation*}
+        v = \p{a_1\\\vdots\\a_n} \in K^n
+    \end{equation*}
+    mit $A(v) = w$. Gemäß \cref{lem:canonicalbasis} gilt $v = \sum_{j=1}^n a_je_j$. Daraus folgern wir
+    \begin{equation*}
+        w = A(v) = A\paren*{\sum_{j=1}^n a_je_j} = \sum_{j=1}^n a_jA(e_j).
+    \end{equation*}
+
+    Umgekehrt ist $A(e_j) \in \im(A)$ für jedes $1 \leq j \leq n$. Weil $\im(A)$ ein Unterraum ist (\cref{lem:kerim:properties}), ist $\im(A)$ unter Addition und Skalarmultiplikation abgeschlossen und es gilt $\sum_{j=1}^n a_jA(e_j) \in \im(A)$ für alle~$a_j \in K$. Daraus folgt die Gleichheit beider Mengen.
+\end{proof}
+
+\begin{definition}[reduzierte Spaltenstufenform]
+    Eine Matrix~$B \in K^{m,n}$ ist in \emph{reduzierter Spaltenstufenform}, falls die transponierte Matrix~$B^T$ in reduzierter Zeilenstufenform ist.
+\end{definition}
+
+\begin{remark}
+    Für~$A \in K^{m,n}$ gibt es Elementarmatrizen $T_1,\dots,T_t \in K^{n,n}$, sodass $T_t\cdots T_1A^T$ in reduzierter Zeilenstufenform ist. Aus den Gesetzen zur Transposition folgt, dass
+    \begin{equation*}
+        \paren*{T_t \cdots T_1 A^T}^T = A T_1^T \cdots T_t^T
+    \end{equation*}
+    in reduzierter Spaltenstufenform ist. Dabei ist die transponierte Matrix~$T^T$ einer Elementarmatrix~$T$ wieder eine Elementarmatrix. Somit können wir auch jede Matrix~$A$ in reduzierte Spaltenstufenform bringen.
+\end{remark}
+
+\begin{theorem}
+    Sei $B \in K^{m,n}$ in reduzierter Spaltenstufenform und sei~$r = \abs{\mathcal{I}(B^T)}$.
+    \begin{enumerate}
+        \item Es gilt
+        \begin{equation*}
+            \im(B) = \mset*{\sum_{j=1}^r a_jB(e_j) \mmid a_j \in K}.
+        \end{equation*}
+        Falls $B = 0$ die leere Matrix ist, ist $\im(B) = 0$.
+        \item Aus
+        \begin{equation*}
+            \sum_{j=1}^r a_jB(e_j) = \sum_{j=1}^r b_jB(e_j) \qquad\text{mit } a_j,b_j \in K
+        \end{equation*}
+        folgt $a_j = b_j$ für alle $1 \leq j \leq r$.
+    \end{enumerate}
+    (In fortgeschrittener Sprache: Die Menge $\mset{B(e_j) \mid 1 \leq j \leq r}$ ist eine Basis von $\im(B)$.)
+\end{theorem}
+
+\begin{proof}
+    Seien $B$ in reduzierter Spaltenstufenform und $\mathcal{I}(B) = \mset{j_1 < \dots < j_r}$ die Spaltenstufenindizes.
+    \begin{enumerate}
+        \item Für alle $r+1 \leq j \leq m$ ist die $j$"~te Spalte von~$B$ gleich Null, d.\,h.\ $B(e_j) = 0$ und damit
+        \begin{equation*}
+            \sum_{j=1}^r a_jB(e_j) = \sum_{j=1}^n a_jB(e_j) \qquad\text{für alle } a_j \in K.
+        \end{equation*}
+        Der Rest folgt aus \cref{lem:im:naive}.
+        \item Für~$j_s \in \mathcal{I}(B^T)$ ist der $j_s$"~te Eintrag von $\sum_{j=1}^r a_jB(e_j)$ gleich~$a_j$, da in der $j_s$"~ten Zeile von~$B$ genau eine Eins in Spalte~$s$ steht. Daraus folgt sofort die Behauptung.\qedhere
+    \end{enumerate}
+\end{proof}
+
+\begin{lemma}
+    Seien $A \in K^{m,n}$ eine Matrix und $T \in K^{n,n}$ eine Elementarmatrix. Dann gilt
+    \begin{equation*}
+        \im(A) = \im(AT).
+    \end{equation*}
+\end{lemma}
+
+\begin{proof}
+    Weil $T$~ein Isomorphismus ist (\cref{lem:elementary:iso}), ist $T$~auch surjektiv, also $T(K^n) = K^n$ und damit $\im(A) = \im(AT)$.
+\end{proof}
+
+\begin{corollary}[Bestimmmung des Bildes]
+    Sei $A \in K^{m,n}$ und sei $B$~eine reduzierte Spaltenstufenform von~$A$. Dann gilt
+    \begin{equation*}
+        \im(A) = \im(B).
+    \end{equation*}
+    Das bedeutet, dass der Gauß-Algorithmus ein explizites Verfahren zur Konstruktion einer Basis von $\im(A)$ liefert.
+\end{corollary}
+
+\lecturesep{05.~November 2021}
 
 \end{document}

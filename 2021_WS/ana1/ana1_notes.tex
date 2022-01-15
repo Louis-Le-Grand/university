@@ -1392,9 +1392,9 @@ Das Korollar erhalten wir durch Abschätzung einer Folge durch konstante Folgen 
 
 Mit den bisherigen Axiomen können wir aus den natürlichen Zahlen~$\N = \mset{1, 2, 3, \dots}$ nacheinander die uns bekannten Zahlenbereiche konstruieren.
 
-Die Menge der ganzen Zahlen~$\Z = \N \cup \mset{0} \cup -\N$ lässt sich dann als Menge der Äquivalenzklassen~$\Z = \mset{m-n : m, n \in \N} / \sim$ mit der Äquivalenzrelation $m-n \sim m'-n'$, falls $m+n' = m'+n$, definieren.\footnote{Eine kurze (unsaubere) Definition von Äquivalenzrelationen: Eine \emph{Äquivalenzrelation}~$\sim$ über eine Menge~$M$ ist eine Relation, für die noch zusätzlich $a \sim a$ (\emph{Reflexivität}), $a \sim b \iff b \sim a$ (\emph{Symmetrie}) und $(a \sim b \wedge b \sim c) \implies a \sim c$ (\emph{Transitivität}) für alle~$a, b, c \in M$ erfüllt. Intuitiv sind das auch Eigenschaften des Begriffs "`Äquivalenz"'. Eine \emph{Äquivalenzklasse} ist nun die Menge aller Elemente, die zueinander äquivalent sind, also $[a]_\sim \coloneqq \mset{b \in M : a \sim b}$. Die Menge aller \emph{Äquivalenzklassen}~$M/{\sim}$ ist $M/{\sim} = \mset{[a]_\sim : a \in M}$.} Die Äquivalenzrelation sagt, wann zwei Darstellungen $m-n$ und $m'-n'$ dieselbe Zahl repräsentieren, nämlich wenn dieselbe Differenz rauskommt. $\Z$~ist nun die Menge aller dieser Differenzen.
+Die Menge der ganzen Zahlen~$\Z = \N \cup \mset{0} \cup -\N$ lässt sich dann als Menge der Äquivalenzklassen~$\Z = \mset{m-n : m,n \in \N} / \sim$ mit der Äquivalenzrelation $m-n \sim m'-n'$, falls $m+n' = m'+n$, definieren.\footnote{Eine kurze (unsaubere) Definition von Äquivalenzrelationen: Eine \emph{Äquivalenzrelation}~$\sim$ über eine Menge~$M$ ist eine Relation, für die noch zusätzlich $a \sim a$ (\emph{Reflexivität}), $a \sim b \iff b \sim a$ (\emph{Symmetrie}) und $(a \sim b \wedge b \sim c) \implies a \sim c$ (\emph{Transitivität}) für alle~$a, b, c \in M$ erfüllt. Intuitiv sind das auch Eigenschaften des Begriffs "`Äquivalenz"'. Eine \emph{Äquivalenzklasse} ist nun die Menge aller Elemente, die zueinander äquivalent sind, also $[a]_\sim \coloneqq \mset{b \in M : a \sim b}$. Die Menge aller \emph{Äquivalenzklassen}~$M/{\sim}$ ist $M/{\sim} = \mset{[a]_\sim : a \in M}$.} Die Äquivalenzrelation sagt, wann zwei Darstellungen $m-n$ und $m'-n'$ dieselbe Zahl repräsentieren, nämlich wenn dieselbe Differenz rauskommt. $\Z$~ist nun die Menge aller dieser Differenzen.
 
-Ähnlich lässt sich die Menge der rationalen Zahlen~$\Q$ definieren als die Menge der Äquivalenzklassen~$\Q = \mset{m/n : m \in \Z, n \in \Z} / \sim$ mit der Äquivalenzrelation $m/n \sim m'/n'$, falls $mn' = m'n$ gilt (Brüche bleiben nach Kürzen bzw.\ Erweitern dieselben). $\Q$~ist nun die Menge aller dieser Quotienten.
+Ähnlich lässt sich die Menge der rationalen Zahlen~$\Q$ definieren als die Menge der Äquivalenzklassen~$\Q = \mset{m/n : m\in\Z, n\in\Z} / \sim$ mit der Äquivalenzrelation $m/n \sim m'/n'$, falls $mn' = m'n$ gilt (Brüche bleiben nach Kürzen bzw.\ Erweitern dieselben). $\Q$~ist nun die Menge aller dieser Quotienten.
 
 $\Q$~und~$\R$ sind nun beides archimedisch angeordnete Körper. Aber wir wissen, dass $\Q$~nicht "`vollständig"' ist, es weist "`Löcher"'\footnote{"`Löcher"' ist ein irreführendes Wort. Genau wie~$\R$ ist auch~$\Q$ "`unendlich dicht"' (zwischen zwei "`Zahlen"' gibt es stets eine "`dazwischen"'). Der Unterschied zwischen den beiden liegt vielmehr in der \emph{Abzählbarkeit}.} auf. Es gibt nämlich "`Zahlen"', die nicht in~$\Q$ enthalten sind, wie z.\,B\ Wurzeln wie~$\sqrt{2} \notin \Q$. Denn wäre $\sqrt{2} = m/n \in \Q$, dann ist $2m^2 = n^2$. In der Primfaktorzerlegung der linken Seite steht eine Zweierpotenz mit ungeradem Exponenten, während auf der Zerlegung der rechten Seite ein gerader Exponent auftritt, was unmöglich ist.
 
@@ -1408,7 +1408,7 @@ Das Ziel ist, die Löcher von~$\Q$ zu stopfen. Dazu gibt es verschiedene Ansätz
 \subsection{Cauchy-Folgen}
 
 \begin{definition}[\textsc{Cauchy}-Folge]\label{def:cauchysequence}
-    Eine Folge~$(a_n)_{n \in \N}$ reeller Zahlen heißt \emph{\textsc{Cauchy}-Folge}, wenn es für jedes~$\eps > 0$ ein~$N \in \N$ gibt, für das $\abs{a_n - a_n} < \eps$ für alle $m, n \geq N$ gilt.
+    Eine Folge~$(a_n)_{n\in\N}$ reeller Zahlen heißt \emph{\textsc{Cauchy}-Folge}, wenn es für jedes~$\eps > 0$ ein~$N \in \N$ gibt, für das $\abs{a_m-a_n} < \eps$ für alle $m,n \geq N$ gilt.
 \end{definition}
 
 \begin{remark}\leavevmode
@@ -1441,7 +1441,7 @@ Mit \cref{thm:convergencecauchy} haben wir gezeigt, dass jede konvergente Folge 
     Wir betrachten die Dezimalbruchentwicklung einer reellen Zahl~$x \in \R$ mit~$x \geq 0$. Setze dafür~$x_n \coloneqq 10^{-n} \floor*{10^n x}$ als die Zahl, die dadurch entsteht, indem wir nach der $n$"~ten Nachkommastelle alle Ziffern abschneiden. $(x_n)$~liefert eine Cauchy-Folge in~$\Q$, denn $\abs{x_n - x_m} \leq 10^{-N}$ für alle~$n, m \geq N$. Die Folge~$(x_n)$ konvergiert in~$\Q$ genau dann, wenn $x \in \Q$ ist.
 \end{example}
 
-Mit dem obigen Beispiel sehen wir, wie wir aus~$\Q$ mithilfe von rationalen Cauchy-Folgen jede reelle Zahl konstruieren können: Sei~$\hat{\Q} \coloneqq \mset{(a_n) : \text{Cauchy-Folgen in }\Q}$ mit der Äquivalenzrelation $((a_n) \sim (b_n)) \coloniff ((a_n - b_n) \text{ ist Nullfolge})$. Dann ist $\R \coloneqq \hat{\Q}/{\sim}$, wobei $\Q$~in~$\R$ eingebettet wird, indem wir jedes~$q \in \Q$ mit der konstanten Folge $(q, q, q, \dots)$ identifizieren.
+Mit dem obigen Beispiel sehen wir, wie wir aus~$\Q$ mithilfe von rationalen Cauchy-Folgen jede reelle Zahl konstruieren können: Sei~$\hat{\Q} \coloneqq \mset{(a_n) : \text{Cauchy-Folgen in }\Q}$ mit der Äquivalenzrelation $((a_n) \sim (b_n)) \coloniff ((a_n-b_n) \text{ ist Nullfolge})$. Dann ist $\R \coloneqq \hat{\Q}/{\sim}$, wobei $\Q$~in~$\R$ eingebettet wird, indem wir jedes~$q \in \Q$ mit der konstanten Folge $(q,q,q,\dots)$ identifizieren.
 
 \subsection{Intervallschachtelung}
 
@@ -1453,11 +1453,11 @@ Mit dem obigen Beispiel sehen wir, wie wir aus~$\Q$ mithilfe von rationalen Cauc
         \item $[a, b)$~sowie~$(a, b]$ \emph{halboffene Intervalle}.
     \end{itemize}
 
-    $a$~und~$b$ heißen \emph{Randpunkte} der jeweiligen Intervalle. $\abs{b-a}$~heißt \emph{Länge} des Intervalls, kurz $\diam([a, b])$.
+    $a$~und~$b$ heißen \emph{Randpunkte} der jeweiligen Intervalle. $\abs{b-a}$~heißt \emph{Länge} des Intervalls, kurz $\diam([a,b])$.
 \end{definition}
 
 \begin{definition}[Intervallschatelung]
-    Eine \emph{Intervallschachtelung} ist eine Folge~$(I_n)_{n \in \N}$ von \emph{abgeschlossenen} Intervallen~$I_n = \abs{a_n, b_n}$ mit
+    Eine \emph{Intervallschachtelung} ist eine Folge~$(I_n)_{n\in\N}$ von \emph{abgeschlossenen} Intervallen~$I_n = \abs{a_n,b_n}$ mit
     \begin{enumerate}
         \item $I_{n+1} \subset I_n$ für alle~$n \in \N$, und
         \item $\lim_{n\to\infty} \diam(I_n) = 0$.
@@ -1473,12 +1473,12 @@ Die Idee ist, dass wir einen Grenzwert von oben und unten eingrenzen, und diese 
 Die Beweisidee ist, die linken und rechten Randpunkte der Intervalle als zwei monotone Folgen aufzufassen, wobei die linken Randpunkte eine Cauchy-Folge~$a_n \to a$ implizieren. Nun können wir aber~$a$ zwischen beiden Folgen "`schachteln"'.
 
 \begin{proof}
-    Gegeben sei die Intervallschachtelung $(I_n)_n$ mit~$I_n = [a_n, b_n]$, $(a_n)_n$ eine nicht fallende Folge, $(b_n)_n$ eine nicht wachsende Folge und $\diam(I_n) = (b_n - a_n)_n$ eine Nullfolge.
+    Gegeben sei die Intervallschachtelung $(I_n)_n$ mit~$I_n = [a_n,b_n]$, $(a_n)_n$ eine nicht fallende Folge, $(b_n)_n$ eine nicht wachsende Folge und $\diam(I_n) = (b_n-a_n)_n$ eine Nullfolge.
 
-    Dann ist $(a_n)$ eine Cauchy-Folge, denn aufgrund der Nullfolge gibt es für jedes~$\eps > 0$ ein~$N \in \N$ mit $b_N - a_N = \abs{(b_N - a_N) - 0} < \eps$. Wegen der Monotonie gilt~$a_N \leq a_n$ und
-    $a_m \leq b_n \leq b_N$ für alle $m, n \geq N$. Daher ist $\abs{a_n - a_m} \leq b_N - a_N < \eps$, weshalb $(a_n)$~eine Cauchy-Folge ist. Das bedeutet aber auch, dass nach dem Vollständigkeitsaxiom ein Grenzwert $a_n \to a \in \R$ für~$n \to \infty$ existiert.
+    Dann ist $(a_n)$ eine Cauchy-Folge, denn aufgrund der Nullfolge gibt es für jedes~$\eps > 0$ ein~$N \in \N$ mit $b_N-a_N = \abs{(b_N-a_N) - 0} < \eps$. Wegen der Monotonie gilt~$a_N \leq a_n$ und
+    $a_m \leq b_n \leq b_N$ für alle $m,n \geq N$. Daher ist $\abs{a_n-a_m} \leq b_N-a_N < \eps$, weshalb $(a_n)$~eine Cauchy-Folge ist. Das bedeutet aber auch, dass nach dem Vollständigkeitsaxiom ein Grenzwert $a_n \to a \in \R$ für~$n \to \infty$ existiert.
 
-    Da die Ordnungsrelation~$\leq$ unter Konvergenz erhalten bleibt (\cref{cor:sequence:monotony}), gilt $a_N \leq a \leq b_N$ für alle~$N \in \N$, woraus auch $a \in \bigcap_{N \in \N} I_N$ folgt.
+    Da die Ordnungsrelation~$\leq$ unter Konvergenz erhalten bleibt (\cref{cor:sequence:monotony}), gilt $a_N \leq a \leq b_N$ für alle~$N \in \N$, woraus auch $a \in \bigcap_{N\in\N} I_N$ folgt.
 \end{proof}
 
 \begin{remark}\leavevmode
@@ -1497,7 +1497,7 @@ Tatsächlich gilt für alle archimedisch angeordneten Körper
 \begin{proof}
     Die Hinrichtung haben wir mit dem Intervallschachtelungsprinzip schon bewiesen. Es bleibt noch die Rückrichtung zu zeigen.
 
-    Sei $(a_n)$~eine Cauchy-Folge, weshalb für alle~$k \in \N$ ein~$N_k \in \N$ existiert, sodass $\abs{a_n - a_m} < \eps = 2^{-k}$ für alle $m, n \geq N_k$ gilt.
+    Sei $(a_n)$~eine Cauchy-Folge, weshalb für alle~$k \in \N$ ein~$N_k \in \N$ existiert, sodass $\abs{a_n - a_m} < \eps = 2^{-k}$ für alle $m,n \geq N_k$ gilt.
 
     Wir definieren die Intervalle
     \begin{equation*}
