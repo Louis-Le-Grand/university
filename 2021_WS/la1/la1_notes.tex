@@ -1356,7 +1356,7 @@ Der Kern ist im Prinzip die Menge aller "`Nullstellen"' von~$f$. Es gilt nämlic
     Zur Hinrichtung: Ist $b \neq 0$, dann folgt $0 \notin f^{-1}(b)$ aus $f(0) = 0$ (andernfalls wäre $f(0) = b \neq 0$). Damit ist $f^{-1}(b)$ kein Vektorraum und insbesondere kein Unterraum von~$V$, weil der Nullvektor fehlt.
 \end{proof}
 
-\begin{lemma}
+\begin{lemma}\label{lem:preimage}
     Sei $f\colon V \to W$ ein Homomorphismus und seien $b \in \im(f)$ und $v \in f^{-1}(b)$. Dann gilt
     \begin{equation*}
         f^{-1}(b) = v+f^{-1}(0) = v+\ker(f).
@@ -1481,7 +1481,7 @@ Manchmal ist es sinnvoll, die Notation~$(a_{ij})$ statt~$A$ zu wählen.
     für rechteckige bzw.\ quadratische Matrizen.
 \end{notation}
 
-Mit der Schreibweise wollen wir die \emph{Ringstruktur} der Menge der Matrizen betonen (was wir noch zeigen).
+Mit der Schreibweise~$M_{m,n}(K)$ wollen wir die Ringstruktur der Menge der Matrizen betonen (was wir noch zeigen), während wir mit~$K^{m,n}$ die Vektorraumstruktur betonen möchten.
 
 \lecturesep{26.~Oktober 2021}
 
@@ -2055,7 +2055,7 @@ Den Typenbegriff der Elementarmatrizen werden wir aber nicht so häufig benutzen
     Das ist pure Rechnung. Wieder hilft die Zerlegung $T_{ij}(a) = E_m + B$, $D_i(b) = E_m + C$ und $E_{ij} = E_m + D$.
 \end{proof}
 
-\begin{lemma}
+\begin{lemma}\label{lem:elementary:type3}
     Die Zeilenoperationen vom Typ~(III) können wir durch Verknüpfung von Zeilenoperationen vom Typ~(I) und Typ~(II) erhalten.
 \end{lemma}
 
@@ -2118,7 +2118,7 @@ Nun kommen wir zu einer der Ursprünge der linearen Algebra: Das Lösen von line
                                 0 & \text{sonst}.
                             \end{cases}
                         \end{equation*}
-                        (In Worten: Für die ersten $r$~Zeilen ist der Eintrag in der $j_k$~ten Spalte Eins, und alle anderen Einträge der $j_k$"~ten Spalte sind null. Die Spalten sind also "`Standardbasisvektoren"'~$e_k$.)
+                        (In Worten: Für die ersten $r$~Zeilen ist der Eintrag in der $j_k$~ten Spalte Eins, und alle anderen Einträge der $j_k$"~ten Spalte sind null. Die Spalten sind also "`Standardbasisvektoren"'~$e_k$.)\footnote{Sind die Einträge~$b_{ij_k}$ nicht normiert und sind in derselben Spalte über dem Eintrag nicht alles Nullen, so bezeichnet man diese Form als (nicht reduzierte) \emph{Zeilenstufenform}}
                   \item Für alle Zeilen $r+1 \leq k \leq m$ gilt $b_{kj} = 0$ für alle $1 \leq j \leq n$. (In Worten: Die restlichen $m-r$ Zeilen sind alles Nullen, also ein großer Nullblock.)
               \end{enumerate}
     \end{enumerate}
@@ -2159,7 +2159,7 @@ Dabei stehen die für beliebige Einträge aus~$K$.
 \begin{remark}
     Es gilt $\mathcal{I}(B) = \varnothing$ genau dann, wenn $B = 0$. Es gilt $\mathcal{K}(B) = \varnothing$ genau dann, wenn $B = E_n$ oder wenn
     \begin{equation*}
-        B = \begin{pmatrix}[ccc]
+        B = \begin{pmatrix}
             1 &        &   \\
               & \ddots &   \\
               &        & 1 \\ \hline
@@ -2187,7 +2187,7 @@ Dabei stehen die für beliebige Einträge aus~$K$.
 
 \subsubsection{Gauß-Algorithmus}
 
-\begin{theorem}
+\begin{theorem}\label{thm:gauss}
     Sei $A = (a_{ij}) \in K^{m,n}$. Dann gibt es Elementarmatrizen $T_1,\dots,T_t$, sodass $B \coloneqq T_t\cdots T_2T_1A$ in reduzierter Zeilenstufenform ist.
 \end{theorem}
 
@@ -2243,7 +2243,7 @@ Dabei stehen die für beliebige Einträge aus~$K$.
     Nach spätestens $k = \min(m,n)$ Schritten stoppt der Algorithmus, denn dann gibt es keine Zeilen und Spalten mehr. Per Induktion ist also $B = A^{(k)}$ in reduzierter Zeilenstufenform.
 \end{proof}
 
-Der Algorithmus im Beweis ist der \emph{\textsc{Gauß}-Algorithmus}.
+Der Algorithmus im Beweis ist der \emph{\textsc{Gauß}-Algorithmus}.\footnote{Das ist nicht ganz korrekt. Der hier beschriebene Algorithmus ist der sog.\ \emph{\emph{Gauß}-\emph{Jordan}-Algorithmus}, der eine reduzierte Zeilenstufenform liefert. Verzichten wir darauf, die Einträge zu normieren und alle Einträge der $j_k$"~ten Spalte über der $k$"~ten Zeile auszulöschen, erhalten wir das \emph{\textsc{gaußsche} Eliminationsverfahren}, was nur eine (nicht reduzierte) Zeilenstufenform liefert.}
 
 %Todo: Finish algorithm
 \begin{algorithm}
@@ -2268,33 +2268,33 @@ Der Algorithmus im Beweis ist der \emph{\textsc{Gauß}-Algorithmus}.
     \end{equation*}
 
     Der Gauß-Algorithmus liefert schrittweise folgende Matrizen:
-    \begin{gather*}
+    \begin{align*}
         \xrightarrow{E_{12}}
-        \begin{pmatrix}
-            1 & 0  & 1  & 1 \\
-            0 & 2  & -1 & 1 \\
-            1 & -2 & 2  & 0
-        \end{pmatrix}
+         & \begin{pmatrix}
+               1 & 0  & 1  & 1 \\
+               0 & 2  & -1 & 1 \\
+               1 & -2 & 2  & 0
+           \end{pmatrix}                     &
         \xrightarrow{T_{31}(-1)}
-        \begin{pmatrix}
-            1 & 0  & 1  & 1  \\
-            0 & 2  & -1 & 1  \\
-            0 & -2 & 1  & -1
-        \end{pmatrix} \\
+         & \begin{pmatrix}
+               1 & 0  & 1  & 1  \\
+               0 & 2  & -1 & 1  \\
+               0 & -2 & 1  & -1
+           \end{pmatrix}                    \\
         \xrightarrow{D_2(\frac{1}{2})}
-        \begin{pmatrix}
-            1 & 0  & 1            & 1           \\
-            0 & 1  & -\frac{1}{2} & \frac{1}{2} \\
-            0 & -2 & 1            & -1
-        \end{pmatrix}
+         & \begin{pmatrix}
+               1 & 0  & 1            & 1           \\
+               0 & 1  & -\frac{1}{2} & \frac{1}{2} \\
+               0 & -2 & 1            & -1
+           \end{pmatrix} &
         \xrightarrow{T_{32}(2)}
-        \begin{pmatrix}
-            1 & 0 & 1            & 1           \\
-            0 & 1 & -\frac{1}{2} & \frac{1}{2} \\
-            0 & 0 & 0            & 0
-        \end{pmatrix}
+         & \begin{pmatrix}
+               1 & 0 & 1            & 1           \\
+               0 & 1 & -\frac{1}{2} & \frac{1}{2} \\
+               0 & 0 & 0            & 0
+           \end{pmatrix}
         \eqqcolon B.
-    \end{gather*}
+    \end{align*}
 \end{example}
 
 Natürlich können wir die reduzierte Zeilenstufenform intelligenter konstruieren, nicht so wie der Gauß-Algorithmus es vorschreibt.
@@ -2484,15 +2484,15 @@ Die~$A(e_j)$ sind die Spalten von~$A$.
     Sei $B \in K^{m,n}$ in reduzierter Spaltenstufenform und sei~$r = \abs{\mathcal{I}(B^T)}$.
     \begin{enumerate}
         \item Es gilt
-        \begin{equation*}
-            \im(B) = \mset*{\sum_{j=1}^r a_jB(e_j) \mmid a_j \in K}.
-        \end{equation*}
-        Falls $B = 0$ die leere Matrix ist, ist $\im(B) = 0$.
+              \begin{equation*}
+                  \im(B) = \mset*{\sum_{j=1}^r a_jB(e_j) \mmid a_j \in K}.
+              \end{equation*}
+              Falls $B = 0$ die leere Matrix ist, ist $\im(B) = 0$.
         \item Aus
-        \begin{equation*}
-            \sum_{j=1}^r a_jB(e_j) = \sum_{j=1}^r b_jB(e_j) \qquad\text{mit } a_j,b_j \in K
-        \end{equation*}
-        folgt $a_j = b_j$ für alle $1 \leq j \leq r$.
+              \begin{equation*}
+                  \sum_{j=1}^r a_jB(e_j) = \sum_{j=1}^r b_jB(e_j) \qquad\text{mit } a_j,b_j \in K
+              \end{equation*}
+              folgt $a_j = b_j$ für alle $1 \leq j \leq r$.
     \end{enumerate}
     (In fortgeschrittener Sprache: Die Menge $\mset{B(e_j) \mid 1 \leq j \leq r}$ ist eine Basis von $\im(B)$.)
 \end{theorem}
@@ -2501,10 +2501,10 @@ Die~$A(e_j)$ sind die Spalten von~$A$.
     Seien $B$ in reduzierter Spaltenstufenform und $\mathcal{I}(B) = \mset{j_1 < \dots < j_r}$ die Spaltenstufenindizes.
     \begin{enumerate}
         \item Für alle $r+1 \leq j \leq m$ ist die $j$"~te Spalte von~$B$ gleich Null, d.\,h.\ $B(e_j) = 0$ und damit
-        \begin{equation*}
-            \sum_{j=1}^r a_jB(e_j) = \sum_{j=1}^n a_jB(e_j) \qquad\text{für alle } a_j \in K.
-        \end{equation*}
-        Der Rest folgt aus \cref{lem:im:naive}.
+              \begin{equation*}
+                  \sum_{j=1}^r a_jB(e_j) = \sum_{j=1}^n a_jB(e_j) \qquad\text{für alle } a_j \in K.
+              \end{equation*}
+              Der Rest folgt aus \cref{lem:im:naive}.
         \item Für~$j_s \in \mathcal{I}(B^T)$ ist der $j_s$"~te Eintrag von $\sum_{j=1}^r a_jB(e_j)$ gleich~$a_j$, da in der $j_s$"~ten Zeile von~$B$ genau eine Eins in Spalte~$s$ steht. Daraus folgt sofort die Behauptung.\qedhere
     \end{enumerate}
 \end{proof}
@@ -2529,5 +2529,780 @@ Die~$A(e_j)$ sind die Spalten von~$A$.
 \end{corollary}
 
 \lecturesep{05.~November 2021}
+
+\subsection{Invertierbare Matrizen}
+
+\begin{definition}[invertierbar]
+    Sei $R$~ein Ring. Ein Element~$r \in R$ ist
+    \begin{enumerate}
+        \item \emph{linksinvertierbar}, falls es ein~$s \in R$ gibt mit~$sr = 1$,
+        \item \emph{rechtsinvertierbar}, falls es ein~$t \in R$ gibt mit~$rt = 1$, und
+        \item \emph{invertierbar}, falls $r$ sowohl rechts"~ als auch linksinvertierbar ist.
+    \end{enumerate}
+\end{definition}
+
+\begin{lemma}
+    Sei $R$~ein Ring und sei~$r \in R$ invertierbar. Dann gelten:
+    \begin{enumerate}
+        \item Es gibt ein eindeutiges Element~$r^{-1} \in R$ mit $rr^{-1} = r^{-1}r = 1$.\label{lem:ring:inverse:1}
+        \item Falls $rs = 1$ gilt für ein~$s \in R$, so gilt $s = r^{-1}$.
+        \item Falls $rs = 1$ gilt für ein~$s \in R$, so gilt $s = r^{-1}$.
+        \item $r^{-1}$~ist invertierbar mit $(r^{-1})^{-1} = r$.
+    \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+    \begin{enumerate}
+        \item Da $r$~invertierbar ist, existieren $s,t \in R$ mit $rs = 1$ und $tr = 1$. Es gilt dann
+              \begin{equation*}
+                  s = 1s = (tr)s = t(rs) = t1 = t.
+              \end{equation*}
+              Nun setzen wir $r^{-1} \coloneqq s = t$.
+        \item Sei $r^{-1} \in R$ mit $r^{-1}r = 1$ (\cref{lem:ring:inverse:1}). Angenommen es gilt $rp = 1$ für ein~$p \in R$. Dann gilt
+              \begin{equation*}
+                  p = 1p = \paren*{r^{-1}r}p = r^{-1}(rp) = r^{-1}1 = r^{-1}.
+              \end{equation*}
+        \item Sei $r^{-1} \in R$ mit $rr^{-1} = 1$ (\cref{lem:ring:inverse:1}). Angenommen es gilt $qr = 1$ für ein~$a \in R$. Dann gilt
+              \begin{equation*}
+                  q = q1 = q\paren*{rr^{-1}} = (qr)r^{-1} = 1r^{-1} = r^{-1}.
+              \end{equation*}
+        \item Das folgt direkt aus \cref{lem:ring:inverse:1}.\qedhere
+    \end{enumerate}
+\end{proof}
+
+\begin{notation}[Inverse]
+    Wir nennen $r^{-1}$~das \emph{Inverse} von~$r$. (Umgekehrt ist auch $r$~das Inverse von~$r^{-1}$.)
+\end{notation}
+
+\begin{remark}\label{rem:inverseproblems}
+    Es gibt Ringe, in der nicht jedes Element ein Inverses besitzt. \emph{Beispiel}: Wir betrachten den Ring $(\mend_K(K^\N),+,\circ)$ der Endomorphismen auf dem Folgenraum~$K^\N$ unter Addition~$+$ und Komposition~$\circ$. Wir definieren den Links"~ und Rechtsshift
+    \begin{align*}
+        f \in \mend_K(K^\N),\quad & f\colon (x_1,x_2,x_3,\dots) \mapsto (x_2,x_3,x_4,\dots), \\
+        g \in \mend_K(K^\N),\quad & g\colon (x_1,x_2,x_3,\dots) \mapsto (0,x_1,x_2,\dots).
+    \end{align*}
+    Dann gilt zwar $f\circ g = \id_{K^\N}$ (die Null wird wieder vernichtet), aber es gibt kein~$h \in \mend_K^(K^\N)$ mit $h\circ f = \id_{K^\N}$ (denn $(x_2,x_3,x_4,\dots)$ enthält keine Information über~$x_1$). Es gibt sogar mehrere Rechtsinverse zu~$f$, da die~$0$ beliebig gewählt wurde:
+    \begin{equation*}
+        g_a \in \mend_K(K^\N),\qquad g_a\colon (x_1,x_2,x_3,\dots) \mapsto (a,x_1,x_2,\dots) \qquad\text{für alle } a \in K.
+    \end{equation*}
+\end{remark}
+
+\begin{theorem}\label{thm:matrix:inverse:properties}
+    Sei $A \in K^{m,n}$. Dann sind folgende Aussagen äquivalent:
+    \begin{enumerate}
+        \item $A$~ist ein Isomorphismus.\label{thm:matrix:inverse:properties:1}
+        \item $m = n$ und es gibt Elementarmatrizen $T_1,\dots,T_t \in K^m$ mit $T_t\cdots T_1A = E_n$.\label{thm:matrix:inverse:properties:2}
+        \item $m = n$ und es gibt Elementarmatrizen $T_1,\dots,T_t \in K^n$ mit $AT_1\dots T_t = E_m$.\label{thm:matrix:inverse:properties:3}
+        \item $m = n$ und $A$~ist invertierbar.\label{thm:matrix:inverse:properties:4}
+        \item $m = n$ und $E_n$~ist die reduzierter Zeilenstufenform von~$A$.\label{thm:matrix:inverse:properties:5}
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}\leavevmode
+    \begin{itemize}
+        \item Aus \cref{thm:matrix:inverse:properties:1} folgt \cref{thm:matrix:inverse:properties:2}: Sei $A$~ein Isomorphismus. Nach \cref{thm:gauss} gibt es Elementarmatrizen $T_1,\dots,T_t$, sodas $B \coloneqq T_t\cdots T_1A$ in reduzierter Zeilenstufenform ist.
+
+              Sei $r \coloneqq \abs{\mathcal{I}(B)}$. Wäre $r < n$, so ist $\mathcal{K}(B) \neq \varnothing$ und es gibt Vektoren~$L_j^B$, also $\ker(B) = \ker(A) \neq 0$. Aus \cref{lem:kerim:properties} folgt aber, dass $A$~kein Monomorphismus sein kann, was dem Isomorphismus widerspricht. Folglich ist $r = n$. Es kann also nur noch $B = E_n$ oder
+              \begin{equation*}
+                  B = \begin{pmatrix}
+                      1 &        &   \\
+                        & \ddots &   \\
+                        &        & 1 \\ \hline
+                        &        &   \\
+                        & 0      &   \\
+                        &        &
+                  \end{pmatrix}.
+              \end{equation*}
+
+              Weil $A$ und die Elementarmatrizen Isomorphismen sind, ist auch $B$~ein Isomorphismus damit ein Epimorphismus und daher $\im(B) = K^m$. Wäre $m > n$, so ist $B$~von der zweiten Form und wir sehen leicht, dass die Standardbasisvektoren $e_{n+1},\dots,e_m \notin \im(B) = K^m$ liegen, Widerspruch!
+
+              Folglich ist $m = n$ und $B = E_n$. Insbesondere ist $E_n$~die einzige reduzierte Zeilenstufenform von~$A$.
+
+        \item \cref{thm:matrix:inverse:properties:2,thm:matrix:inverse:properties:3} sind äquivalent: Für Elementarmatrizen sind folgende Gleichungen äquivalent:
+              \begin{gather}
+                  T_t\cdots T_1A = E_n, \label{eqn:matrix:inverse:properties:1} \\
+                  A = T_1^{-1}\cdots T_t^{-1}, \label{eqn:matrix:inverse:properties:2} \\
+                  AT_1\cdots T_1 = E_n. \label{eqn:matrix:inverse:properties:3}
+              \end{gather}
+              Wir wissen, dass Elementarmatrizen invertierbar sind (\cref{lem:elementary:iso}). Somit folgt \cref{eqn:matrix:inverse:properties:1} aus~\cref{eqn:matrix:inverse:properties:2} durch Multiplikation mit $T_1^{-1}\cdots T_t^{-1}$ von links, und \cref{eqn:matrix:inverse:properties:2} aus~\cref{eqn:matrix:inverse:properties:1} durch Multiplikation mit $T_t\cdots T_1$ von links. Analog sind \cref{eqn:matrix:inverse:properties:2} und~\cref{eqn:matrix:inverse:properties:3} äquivalent, also auch \cref{eqn:matrix:inverse:properties:1} und~\cref{eqn:matrix:inverse:properties:3}.
+        \item Aus \cref{thm:matrix:inverse:properties:2,thm:matrix:inverse:properties:3} folgt \cref{thm:matrix:inverse:properties:4}: Die Produkte der Elementarmatrizen $B,C \in M_n(K)$ erfüllen $AB = E_n = CA$. Also hat $A$ Links"~ und Rechtsinverse.
+        \item Aus \cref{thm:matrix:inverse:properties:4} folgt \cref{thm:matrix:inverse:properties:5}: Wenn $A$~invertierbar ist, gibt es Matrizen $B,C \in M_n(K)$ mit $AB = E_n = CA$. Aus \cref{lem:hom:id} folgt, dass $A$ sowohl ein Mono"~ als auch ein Epimorphismus ist und deshalb ein Isomorphismus ist.
+        \item \cref{thm:matrix:inverse:properties:2,thm:matrix:inverse:properties:5} sind äquivalent: Zur Hinrichtung: Die Eindeutigkeit folgt aus dem Beweis zu \cref{thm:matrix:inverse:properties:1}. Zur Rückrichtung: Das ist die Definition.\qedhere
+    \end{itemize}
+\end{proof}
+
+Folgende Aussage ist sehr schön und sehr wichtig.\footnote{Wir können das auch später durch lineare Fortsetzung mittels Basisvektoren zeigen.}
+
+\begin{corollary}
+    Sei $K$~ein Körper. Für $m,n \geq 0$ gilt
+    \begin{equation*}
+        K^m \cong K^n \iff m = n.
+    \end{equation*}
+\end{corollary}
+
+\begin{proof}
+    Ist $K^m \cong K^n$, dann gibt es einen Isomorphismus~$A \in K^{m,n}$, woraus $m = n$ folgt. Ist hingegen $m = n$, so ist~$A = E_n = \id_{K^n}$ ein Isomorphismus zwischen $K^m$~und~$K^n$.
+\end{proof}
+
+\begin{corollary}[Praktische Berechnung inverser Matrizen]
+    Sei $A \in M_n(K)$ invertierbar. Der Gauß-Algorithmus liefert Elementarmatrizen $T_1,\dots,T_t$ mit $T_t\cdots T_1A = E_n$. Dann gilt
+    \begin{equation*}
+        A^{-1} = T_t\cdot T_1 \qquad\text{und}\qquad A = T_1^{-1}\cdot T_t^{-1}.
+    \end{equation*}
+\end{corollary}
+
+\begin{remark}
+    Wir haben hier die \emph{invertierbaren} Matrizen charakterisiert. Dennoch gibt es (notwendigerweise) nichtquadratische Matrizen, die nur Links"~, aber keine Rechtsinversen besitzen oder andersherum.
+\end{remark}
+
+\begin{definition}[allgemeine lineare Gruppe]
+    Für~$n \geq 1$ sei
+    \begin{equation*}
+        \GL_n(K) \coloneqq \mset{A \in M_n(K) \mid A \text{ ist invertierbar}}
+    \end{equation*}
+    die \emph{allgemeine lineare Gruppe} vom Grad~$n$ über einem Körper~$K$.
+\end{definition}
+
+\begin{corollary}
+    Jedes~$A \in \GL_n(K)$ ist ein Produkt von Elementarmatrizen vom Typ~(I) und~(II).
+\end{corollary}
+
+\begin{corollary}
+    Für alle~$A \in \GL_n(K)$ gilt $A^{-1} \in \GL_n(K)$ und $(A^{-1})^{-1} = A$.
+\end{corollary}
+
+\begin{theorem}
+    Für~$A \in M_n(K)$ sind äquivalent:
+    \begin{enumerate}
+        \item $A$~ist ein Isomorphismus.\label{thm:matrix:inverse:iso:1}
+        \item $A$~ist ein Monomorphismus.\label{thm:matrix:inverse:iso:2}
+        \item $A$~ist ein Epimorphismus.\label{thm:matrix:inverse:iso:3}
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    Aus \cref{thm:matrix:inverse:iso:1} folgen per Definition \cref{thm:matrix:inverse:iso:2,thm:matrix:inverse:iso:3}.
+    \begin{itemize}
+        \item Aus \cref{thm:matrix:inverse:iso:2} folgt \cref{thm:matrix:inverse:iso:1}: Sei $A$~ein Monomorphismus. Seien $T_1,\dots,T_t$ Elementarmatrizen, sodass $B = T_t\cdot T_1A$ eine reduzierter Zeilenstufenform von~$A$ ist. Da $T_t\cdot T_1$ ein Iso"~ und $A$~ein Monomorphismus ist, ist auch $B$~ein Monomorphismus. Damit ist $\ker(B) = 0$ (\cref{lem:kerim:properties}) und somit $\mathcal{K}(B) = \varnothing$ und $\mathcal{I}(B) = n$. Weil $B$~quadratisch ist, haben wir $B = E_n$. Nach \cref{thm:matrix:inverse:properties} ist $A$~ein Isomorphismus.
+        \item Aus \cref{thm:matrix:inverse:iso:3} folgt \cref{thm:matrix:inverse:iso:1}: Sei $A$~ein Epimorphismus. Wieder seien $T_1,\dots,T_t$ Elementarmatrizen, sodass $B = T_t\cdot T_1A$ eine reduzierter Zeilenstufenform von~$A$ ist. Da $T_t\cdot T_1$ ein Iso"~ und $A$~ein Epimorphismus ist, ist auch $B$~ein Epimorphismus, also $\im(B) = K^n$. Wäre $\abs{\mathcal{I}(B)} < n$, so ist mindestens die letzte Zeile von~$B$ gleich Null, weil $B$~quadratisch ist. Mit \cref{lem:im:naive} schließen wir aber, dass der Standardbasisvektor $e_n \notin \im(B)$, ein Widerspruch zu $\im(B) = K^n$. Daher ist $\mathcal{I}(B) = n$ und, weil $B$~quadratisch ist, $B = E_n$. Nach \ref{thm:matrix:inverse:properties} ist $A$~ein Isomorphismus.\qedhere
+    \end{itemize}
+\end{proof}
+
+\begin{remark}\leavevmode
+    \begin{enumerate}
+        \item Ein alternativer Beweis ergibt sich durch Benutzung der Transposition. Angenommen wir haben gezeigt, dass wenn $A$~ein Monomorphismus ist, dann $A$~ein Isomorphismus ist.
+
+              Sei nun $A$~ein Epimorphismus. Daraus folgt, dass $A^T$~ein Monomorphismus ist. Mit dem gerade Gezeigtem ist $A^T$~ein Isomorphismus, also auch~$A$ selbst, was zu zeigen war.
+        \item Es gibt $K$"~Vektorräume~$V$ und $f,g \in \mend(V)$, sodass
+              \begin{itemize}
+                  \item $f$~ein Monomorphismus, aber kein Isomorphismus, und
+                  \item $g$~ein Epimorphismus, aber kein Isomorphismus ist
+              \end{itemize}
+              (S.~\cref{rem:inverseproblems}).
+    \end{enumerate}
+\end{remark}
+
+\begin{notation}
+    Seien $A = (a_{ij}) \in K^{m,n}$ und $B = (b_{ij}) \in K^{m,l}$ Matrizen. Wir definieren
+    \begin{equation*}
+        [A|B] \coloneqq \begin{pmatrix}[ccc|ccc]
+            a_{11} & \cdots & a_{1n} & b_{11} & \cdots & b_{1l} \\
+            \vdots &        & \vdots & \vdots &        & \vdots \\
+            a_{m1} & \cdots & a_{mn} & b_{m1} & \cdots & b_{ml}
+        \end{pmatrix} \in K^{m,n+l},
+    \end{equation*}
+    wobei dessen linker $(m\times n)$"~Block~$A$ und dessen rechter $(m\times l)$"~Block~$B$ ist.
+\end{notation}
+
+\begin{remark}[Trick zur Berechnung von Inversen]\label{rem:matrix:inverse:trick}
+    Sei~$A \in K^{n,n}$. Dann liefert der Gauß-Algorithmus Elementarmatrizen $T_1,\dots,T_t$ mit $T_t\cdots T_1A = E_n$. Anschließend müssen wir das möglicherweise aufwändige Produkt $T_t\cdots T_1 = A^{-1}$ berechnen, um das Inverse zu bestimmen.
+
+    Um das zu vermeiden, definieren wir
+    \begin{equation*}
+        C \coloneqq [A|E_n] \in K^{n, 2n}.
+    \end{equation*}
+    Wenden wir die Elementarmatrizen auf~$C$ an, gilt
+    \begin{equation*}
+        T_t\cdots T_1C = [E_n|A^{-1}],
+    \end{equation*}
+    weil die Zeilenoperationen keine Spalten miteinander verrechnen. Die Matrix $[E_n|A^{-1}]$ ist die reduzierte Zeilenstufenform von~$C$.
+
+    Statt also den Gauß-Algorithmus auf~$A$ anzuwenden und dann das Produkt $T_t\cdots T_1$ zu berechnen, ist es einfacher, wenn wir den Gauß-Algorithmus gleich auf $C = [A|E_n]$ anwenden und das Inverse dann daraus ablesen.
+\end{remark}
+
+\subsection{Beispiele}
+
+\subsubsection{Berechnung einer inversen Matrix}
+
+Sei
+\begin{equation*}
+    A = \begin{pmatrix}
+        2 & -1 & 0  \\
+        1 & 2  & -2 \\
+        0 & -1 & 1
+    \end{pmatrix} \in \Q^{3, 3}.
+\end{equation*}
+
+Der Gauß-Algorithmus liefert schrittweise die folgenden Matrizen:
+\begin{align*}
+     & \begin{pmatrix}
+           2 & -1 & 0  \\
+           1 & 2  & -2 \\
+           0 & -1 & 1
+       \end{pmatrix}                    &
+    \xrightarrow{D_1(\frac{1}{2})}
+     & \begin{pmatrix}
+           1 & -\frac{1}{2} & 0  \\
+           1 & 2            & -2 \\
+           0 & -1           & 1
+       \end{pmatrix}           &
+    \xrightarrow{T_{21}(-1)}
+     & \begin{pmatrix}
+           1 & -\frac{1}{2} & 0  \\
+           0 & \frac{5}{2}  & -2 \\
+           0 & -1           & 1
+       \end{pmatrix}           &
+    \xrightarrow{D_2(\frac{2}{5})}
+     & \begin{pmatrix}
+           1 & -\frac{1}{2} & 0            \\
+           0 & 1            & -\frac{4}{5} \\
+           0 & -1           & 1
+       \end{pmatrix}    \\
+    \xrightarrow{T_{32}(1)}
+     & \begin{pmatrix}
+           1 & -\frac{1}{2} & 0            \\
+           0 & 1            & -\frac{4}{5} \\
+           0 & 0            & \frac{1}{5}
+       \end{pmatrix} &
+    \xrightarrow{D_3(5)}
+     & \begin{pmatrix}
+           1 & -\frac{1}{2} & 0            \\
+           0 & 1            & -\frac{4}{5} \\
+           0 & 0            & 1
+       \end{pmatrix} &
+    \xrightarrow{T_{23}(\frac{4}{5})}
+     & \begin{pmatrix}
+           1 & -\frac{1}{2} & 0 \\
+           0 & 1            & 0 \\
+           0 & 0            & 1
+       \end{pmatrix}            &
+    \xrightarrow{T_{12}(\frac{1}{2})}
+     & \begin{pmatrix}
+           1 & 0 & 0 \\
+           0 & 1 & 0 \\
+           0 & 0 & 1
+       \end{pmatrix}
+\end{align*}
+
+Weil das Ergebnis~$E_3$ ist, ist $A$~invertierbar. Es folgt, dass
+\begin{equation*}
+    A^{-1} = T_{12}(\tfrac{1}{2}) \cdot T_{23}(\tfrac{4}{5}) \cdot D_3(5) \cdot T_{32}(1) \cdot D_2(\tfrac{2}{5}) \cdot T_{21}(-1) \cdot D_1(\tfrac{1}{2}).
+\end{equation*}
+Um dieses Produkt nicht ausrechnen zu müssen, wenden wir den Trick aus \cref{rem:matrix:inverse:trick} an. Wir bilden eine $(3\times6)$"~Matrix $C \coloneqq [A|E_3]$, deren linker $(3\times3)$"~Block gleich~$A$ und rechter $(3\times3)$"~Block gleich~$B$ ist. Dann ist
+\begin{equation*}
+    T_{12}(\tfrac{1}{2}) \cdot T_{23}(\tfrac{4}{5}) \cdot D_3(5) \cdot T_{32}(1) \cdot D_2(\tfrac{2}{5}) \cdot T_{21}(-1) \cdot D_1(\tfrac{1}{2}) \cdot [A|E_3] = [E_3|A^{-1}].
+\end{equation*}
+
+Sei also
+\begin{equation*}
+    C = [A|E_3] = \begin{pmatrix}[ccc|ccc]
+        2 & -1 & 0  & 1 & 0 & 0 \\
+        1 & 2  & -2 & 0 & 1 & 0 \\
+        0 & -1 & 1  & 0 & 0 & 1
+    \end{pmatrix} \in \Q^{3, 6}.
+\end{equation*}
+Der Gauß-Algorithmus (mit den gleichen Operationen) liefert schrittweise folgende Matrizen
+\begin{align*}
+    C = [A|E_3] & \begin{pmatrix}[ccc|ccc]
+                      2 & -1 & 0  & 1 & 0 & 0 \\
+                      1 & 2  & -2 & 0 & 1 & 0 \\
+                      0 & -1 & 1  & 0 & 0 & 1
+                  \end{pmatrix}                                          &
+    \xrightarrow{D_1(\frac{1}{2})}
+                & \begin{pmatrix}[ccc|ccc]
+                      1 & -\frac{1}{2} & 0  & \frac{1}{2} & 0 & 0 \\
+                      1 & 2            & -2 & 0           & 1 & 0 \\
+                      0 & -1           & 1  & 0           & 0 & 1
+                  \end{pmatrix}                      \\
+    \xrightarrow{T_{21}(-1)}
+                & \begin{pmatrix}[ccc|ccc]
+                      1 & -\frac{1}{2} & 0  & \frac{1}{2}  & 0 & 0 \\
+                      0 & \frac{5}{2}  & -2 & -\frac{1}{2} & 1 & 0 \\
+                      0 & -1           & 1  & 0            & 0 & 1
+                  \end{pmatrix}                     &
+    \xrightarrow{D_2(\frac{2}{5})}
+                & \begin{pmatrix}[ccc|ccc]
+                      1 & -\frac{1}{2} & 0            & \frac{1}{2}  & 0           & 0 \\
+                      0 & 1            & -\frac{4}{5} & -\frac{1}{5} & \frac{2}{5} & 0 \\
+                      0 & -1           & 1            & 0            & 0           & 1
+                  \end{pmatrix} \\
+    \xrightarrow{T_{32}(1)}
+                & \begin{pmatrix}[ccc|ccc]
+                      1 & -\frac{1}{2} & 0            & \frac{1}{2}  & 0           & 0 \\
+                      0 & 1            & -\frac{4}{5} & -\frac{1}{5} & \frac{2}{5} & 0 \\
+                      0 & 0            & \frac{1}{5}  & -\frac{1}{5} & \frac{2}{5} & 1
+                  \end{pmatrix} &
+    \xrightarrow{D_3(5)}
+                & \begin{pmatrix}[ccc|ccc]
+                      1 & -\frac{1}{2} & 0            & \frac{1}{2}  & 0           & 0 \\
+                      0 & 1            & -\frac{4}{5} & -\frac{1}{5} & \frac{2}{5} & 0 \\
+                      0 & 0            & 1            & -1           & 2           & 5
+                  \end{pmatrix} \\
+    \xrightarrow{T_{23}(\frac{4}{5})}
+                & \begin{pmatrix}[ccc|ccc]
+                      1 & -\frac{1}{2} & 0 & \frac{1}{2} & 0 & 0 \\
+                      0 & 1            & 0 & -1          & 2 & 4 \\
+                      0 & 0            & 1 & -1          & 2 & 5
+                  \end{pmatrix}                       &
+    \xrightarrow{T_{12}(\frac{1}{2})}
+                & \begin{pmatrix}[ccc|ccc]
+                      1 & 0 & 0 & 0  & 1 & 2 \\
+                      0 & 1 & 0 & -1 & 2 & 4 \\
+                      0 & 0 & 1 & -1 & 2 & 5
+                  \end{pmatrix} = [E_3|A^{-1}]
+\end{align*}
+Also gilt
+\begin{equation*}
+    A^{-1} = \begin{pmatrix}
+        0  & 1 & 2 \\
+        -1 & 2 & 4 \\
+        -1 & 2 & 5
+    \end{pmatrix}
+\end{equation*}
+
+\subsubsection{Invertierbare \texorpdfstring{$2\times2$}{2x2}"~Matrizen}
+
+\begin{proposition}
+    Sei $A = \pt{a&b\\c&d} \in K^{2, 2}$. Dann ist $A$~invertierbar genau dann, wenn $ad-bc \neq 0$ gilt.\footnote{Das ist die \emph{Determinante}, die wir später noch behandeln werden.} In diesem Fall ist
+    \begin{equation*}
+        A^{-1} = \frac{1}{ad-bc} \p{d&-b\\-c&a} \in K^{2, 2}.
+    \end{equation*}
+\end{proposition}
+
+\begin{proof}\label{prop:2x2inverse}\leavevmode
+    \begin{enumerate}[{Fall}~1, leftmargin=*]
+        \item ($a \neq 0$). Wir wenden den Gauß-Algorithmus an und erhalten
+              \begin{equation*}
+                  D_1(a^{-1}) A = \p{1&a^{-1}b \\ c&d}, \qquad T_{21}(-c) D_1(a^{-1}) A = \p{1&a^{-1}b \\ 0&d-a^{-1}bc} \eqqcolon B.
+              \end{equation*}
+              Wir sehen, dass $d-a^{-1}bc \neq 0 \iff ad-bc \neq 0$.
+              \begin{enumerate}[{Fall~2}a, leftmargin=*]
+                  \item ($a \neq 0$ und $ad-bc = 0$). In diesem Fall erhalten wir
+                        \begin{equation*}
+                            \p{1&a^{-1}b \\ 0&d-a^{-1}bc}^T \p{0\\1} = 0.
+                        \end{equation*}
+                        Gäbe es also ein Inverses~$B^{-1}$, würde
+                        \begin{equation*}
+                            \p{0\\1} = E_n\p{0\\1} = \paren*{\paren*{B^{-1}}^T B^T} \p{0\\1} = \paren*{B^{-1}}^T \paren*{B^T\p{0\\1}} = \paren*{B^{-1}}^T 0 = 0
+                        \end{equation*}
+                        gelten, ein Widerspruch. Folglich sind $B$ und somit auch $A$~nicht invertierbar.
+                  \item ($a \neq 0$ und $ad-bc \neq 0$). In diesem Fall setzen wir den Gauß-Algorithmus fort und erhalten
+                        \begin{equation*}
+                            T_{12}(-a^{-1}b) D_2((d-a^{-1}bc)^{-1}) T_{21}(-c) D_1(a^{-1}) A = E_2.
+                        \end{equation*}
+                        Also ist $A$~invertierbar mit
+                        \begin{equation*}
+                            A^{-1} = T_{12}(-a^{-1}b) D_2((d-a^{-1}bc)^{-1}) T_{21}(-c) D_1(a^{-1}) = \frac{1}{ad-bc} \p{d&-b\\-c&a}.
+                        \end{equation*}
+              \end{enumerate}\label{prop:2x2inverse:1}
+        \item ($a = 0$ und $c = 0$). In diesem Fall erhalten wir
+              \begin{equation*}
+                  \p{a&b\\c&d} \cdot \p{1\\0} = 0.
+              \end{equation*}
+              Gäbe es also ein Inverses~$A^{-1}$, würde
+              \begin{equation*}
+                  \p{1\\0} = E_2\p{1\\0} = \paren*{A^{-1}A} \p{1\\0} = A^{-1} \paren*{A\p{1\\0}} = A^{-1}0 = 0
+              \end{equation*}
+              gelten, ein Widerspruch. Folglich ist $A$~nicht invertierbar.
+        \item ($a = 0$ und $c \neq 0$). Offenbar ist $A$ genau dann invertierbar, wenn
+              \begin{equation*}
+                  E_{12}A = \p{c&d\\a&b}
+              \end{equation*}
+              invertierbar ist. Nach \cref{thm:matrix:inverse:properties} gibt es dann Elementarmatrizen $T_1,\dots,T_t$, sodass $T_t\cdots T_1(E_{12}A) = E_n$. Dann ist aber auch $A^{-1} = T_t\cdots T_1E_{12}$.
+
+              Dieser Fall erfolgt analog zu Fall~\ref{prop:2x2inverse:1}, sodass $E_{12}A$ genau dann invertierbar ist, wenn $cb-da \neq 0 \iff ad-bc \neq 0$ mit
+              \begin{equation*}
+                  (E_{12}A)^{-1} = \frac{1}{cb-da} \p{b&-d\\-a&c} \iff A^{-1} = \frac{1}{cb-da} \p{b&-d\\-a&c} E_{12} = \frac{1}{ad-bc} \p{d&-b\\-c&a}.
+              \end{equation*}
+    \end{enumerate}
+    Nach vollständiger Fallunterscheidung sehen wir, dass $A$~genau dann invertierbar ist, wenn $ad-bc \neq 0$ gilt.
+\end{proof}
+
+\lecturesep{09.~November 2021}
+
+%Todo: Eindeutigkeit der reduzierten Zeilenstufenform
+
+\subsection{Übungsaufgaben}
+
+\begin{definition}[Transponierte]
+    Sei
+    \begin{equation*}
+        A = (a_{ij}) =
+        \begin{pmatrix}
+            a_{11} & a_{12} & \cdots & a_{1n} \\
+            a_{21} & a_{22} & \cdots & a_{2n} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            a_{m1} & a_{m2} & \cdots & a_{mn}
+        \end{pmatrix}
+        \in K^{m,n}.
+    \end{equation*}
+
+    Die \emph{Transponierte~$A^T$} von~$A$ ist definiert durch
+    \begin{equation*}
+        A^T \coloneqq (a_{ji}) =
+        \begin{pmatrix}
+            a_{11} & a_{21} & \cdots & a_{m1} \\
+            a_{12} & a_{22} & \cdots & a_{m2} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            a_{1n} & a_{2n} & \cdots & a_{nm}
+        \end{pmatrix}
+        \in K^{n,m}.
+    \end{equation*}
+    Der Eintrag~$a_{ij}$ in der $i$"~ten Zeile und $j$"~ten Spalte von~$A$ wird also zum Eintrag der $j$"~ten Zeile und $i$"~ten Spalte von~$A^T$.
+\end{definition}
+
+\begin{lemma}
+    Für alle~$A \in K^{l,m}$ und~$B \in K^{m,n}$ gilt
+    \begin{equation*}
+        (AB)^T = B^TA^T.
+    \end{equation*}
+\end{lemma}
+
+\begin{lemma}
+    Sei $A \in K^{m,n}$ eine Matrix und sei $A^T$~die Transponierte von~$A$. Dan gelten:
+    \begin{enumerate}
+        \item $A$~ist genau dann ein Monomorphismus, wenn $A^T$~ein Epimorphismus ist.
+        \item $A$~ist genau dann ein Epimorphismus, wenn $A^T$~ein Monomorphismus ist.
+        \item $A$~ist genau dann ein Isomorphismus, wenn $A^T$~ein Isomorphismus ist.
+    \end{enumerate}
+\end{lemma}
+
+\section{Lineare Gleichungssysteme}
+
+Mit ausreichend formaler Theorie kommen wir nun zur eine der Hauptanwendungsgebiete der linearen Algebra: \emph{lineare Gleichungssysteme}.
+
+\subsection{Definition eines Linearen Gleichungssystems}
+
+\begin{definition}[lineares Gleichungssystem, Variable, Koeffizient]
+    Ein \emph{lineares Gleichungssystem} besteht aus $m$~Gleichungen der Form
+    \begin{equation}
+        \begin{alignedat}{4}
+            a_{11}X_1 &+ a_{12}X_2 &&+ \dots &&+ a_{1n}X_n &&= b_1 \\
+            a_{21}X_1 &+ a_{22}X_2 &&+ \dots &&+ a_{2n}X_n &&= b_2 \\
+            &\vdotswithin{+} &&\vdotswithin{+} &&\vdotswithin{+} &&\vdotswithin{=} \\
+            a_{m1}X_1 &+ a_{m2}X_2 &&+ \dots &&+ a_{mn}X_n &&= b_m \\
+        \end{alignedat}
+        \qquad\text{mit } a_{ij},b_i \in K \label{eqn:sle}
+    \end{equation}
+    wobei $X_1,\dots,X_n$ \emph{Variablen} oder \emph{Unbekannte} und die $a_{ij}$~\emph{Koeffizienten} genannt werden.
+\end{definition}
+
+Die Variablen stehen für Platzhalter, sodass, wenn wir Werte dafür einsetzen, Gleichungen in~$K$ entstehen.
+
+\begin{definition}[Matrixschreibweise, Koeffizientenmatrix]
+    Mittels der Matrixmultiplikation können wir \cref{eqn:sle} kürzer schreiben:
+    \begin{equation*}
+        Ax = b,
+    \end{equation*}
+    wobei
+    \begin{equation*}
+        A \coloneqq \begin{pmatrix}
+            a_{11} & \cdots & a_{1n} \\
+            \vdots & \ddots & \vdots \\
+            a_{m1} & \cdots & a_{mn}
+        \end{pmatrix} \in K^{m,n}
+    \end{equation*}
+    die \emph{Koeffizientenmatrix} von~\cref{eqn:sle} und
+    \begin{equation*}
+        x \coloneqq \p{X_1\\\vdots\\X_m} \in K^m \qquad\text{und}\qquad b \coloneqq \p{b_1\\\vdots\\b_m} \in K^m
+    \end{equation*}
+    ist.
+\end{definition}
+
+\begin{definition}[Lösung, Lösungsmenge]\label{def:sle:solution}
+    Ein Vektor
+    \begin{equation*}
+        v = \p{v_1\\\vdots\\v_n} \in K^n
+    \end{equation*}
+    ist eine \emph{Lösung} von~\cref{eqn:sle}, falls
+    \begin{alignat*}{4}
+        a_{11}v_1 & + a_{12}v_2     &  & + \dots         &  & + a_{1n}v_n     &  & = b_1           \\
+        a_{21}v_1 & + a_{22}v_2     &  & + \dots         &  & + a_{2n}v_n     &  & = b_2           \\
+                  & \vdotswithin{+} &  & \vdotswithin{+} &  & \vdotswithin{+} &  & \vdotswithin{=} \\
+        a_{m1}v_1 & + a_{m2}v_2     &  & + \dots         &  & + a_{mn}v_n     &  & = b_m           \\
+    \end{alignat*}
+    gilt. Die \emph{Lösungsmenge} des linearen Gleichungssystems~\cref{eqn:sle} definieren wir als
+    \begin{equation*}
+        \mathcal{L}(A,b) \coloneqq \mset{v \in K^n \mid v \text{ ist eine Lösunge von~\cref{eqn:sle}}}.
+    \end{equation*}
+\end{definition}
+
+\begin{definition}[(in-)homogen, erweiterte Koeffizientenmatrix]
+    Das lineare Gleichungssystem $Ax = b$ heißt \emph{homogen}, falls $b = 0$, und andernfalls \emph{inhomogen}.
+
+    Die Matrix
+    \begin{equation*}
+        [A|b] \coloneqq \begin{pmatrix}[ccc|c]
+            a_{11} & \cdots & a_{1n} & b_1    \\
+            \vdots & \ddots & \vdots & \vdots \\
+            a_{m1} & \cdots & a_{mn} & b_m
+        \end{pmatrix} \in K^{m,n+1}
+    \end{equation*}
+    ist die \emph{erweiterte Koeffizientenmatrix} von~\cref{eqn:sle}.
+\end{definition}
+
+\begin{lemma}
+    Sei $Ax = b$ ein lineares Gleichungssystem mit~$A \in K^{m,n}$ und~$b \in K^m$. Dann gilt
+    \begin{equation*}
+        \mathcal{L}(A,b) = \mset{v \in K^n \mid A(v) = b} = A^{-1}(b).
+    \end{equation*}
+\end{lemma}
+
+\begin{proof}
+    Das folgt sofort aus \cref{def:sle:solution}.
+\end{proof}
+
+\begin{notation}[Lösbarkeit]
+    Ein Gleichungssystem $Ax = b$ ist
+    \begin{itemize}
+        \item \emph{lösbar}, falls $\mathcal{L}(A,b) \neq \varnothing$,
+        \item \emph{eindeutig lösbar}, falls $\abs{\mathcal{L}(A,b)} = 1$, und
+        \item \emph{unlösbar}, falls $\mathcal{L}(A,b) = \varnothing$.
+    \end{itemize}
+\end{notation}
+
+\subsection{Lösungsverfahren}
+
+\begin{lemma}\label{lem:sle:elementary}
+    Sei~$T \in K^{m,m}$ eine Elementarmatrix und sei $[A|b] \in K^{m,n+1}$ die erweiterte Koeffizientenmatrix. Sei
+    \begin{equation*}
+        [A'|b'] \coloneqq \begin{pmatrix}[ccc|c]
+            a_{11}' & \cdots & a_{1n}' & b_1'   \\
+            \vdots  & \ddots & \vdots  & \vdots \\
+            a_{m1}' & \cdots & a_{mn}' & b_m'
+        \end{pmatrix}
+        \coloneqq T\cdot[A|b].
+    \end{equation*}
+    Dann gilt
+    \begin{equation*}
+        \mathcal{L}(A',b') = \mathcal{L}(A,b).
+    \end{equation*}
+\end{lemma}
+
+\begin{proof}
+    Sei
+    \begin{equation*}
+        v = \p{v_1\\\vdots\\v_n} \in K^n.
+    \end{equation*}
+    Dann gilt die Aussage für Elementarmatrizen~$T = T_{ij}(\lambda)$ vom Typ~(I) mit~$i \neq j$ und~$\lambda \in K^\times$. Für alle $1 \leq i,j \leq m$ mit~$i \neq j$ und~$\lambda \in K$ ist
+    \begin{equation*}
+        \sum_{k=1}^n a_{ik}v_k = b_i \qquad\text{und}\qquad \sum_{k=1}^n a_{jk}v_k = b_j
+    \end{equation*}
+    in $Ax = b$ äquivalent zu
+    \begin{equation*}
+        \sum_{k=1}^n (a_{ik} + \lambda a_{jk}) v_k = b_i \qquad\text{und}\qquad \sum_{k=1}^n a_{jk}v_k = b_j
+    \end{equation*}
+    in $A'x = b'$.
+
+    Für Elementarmatrizen~$T = D_i(\lambda)$ vom Typ~(II) ist
+    \begin{equation*}
+        \sum_{k=1}^n a_{ik}v_k = b_i
+    \end{equation*}
+    in $Ax = b$ äquivalent zu
+    \begin{equation*}
+        \sum_{k=1}^n \lambda a_{ik}v_k = \lambda b_i
+    \end{equation*}
+    in $A'x = b'$ für alle $1 \leq i \leq m$ und~$\lambda \in K^\times$.
+
+    Für Elementarmatrizen vom Typ~(III) ist das auch klar wegen \cref{lem:elementary:type3}. Letztendlich erhalten Elementarmatrizen nur die Lösungsmenge.
+\end{proof}
+
+\begin{remark}
+    Ist~$[A|b]$ die erweiterte Koeffizientenmatrix eines linearen Gleichungssystems, so können wir wegen \ref{thm:gauss} und \cref{lem:sle:elementary} o.\,B.\,d.\,A.\ annehmen, dass $A$~bereits in reduzierter Zeilenstufenform ist.
+\end{remark}
+
+\begin{theorem}[Lösung eines linearen Gleichungssystems]
+    Sei $Ax = b$ ein lineares Gleichungssystem mit~$A$ in reduzierter Zeilenstufenform und $\mathcal{I}(A) = \mset{j_1 < \dots < j_r}$. Dann gelten:
+    \begin{enumerate}
+        \item Falls $b_k \neq 0$ für ein $r+1 \leq k \leq m$ gilt, so ist $Ax = b$ unlösbar, d.\,h.\ $\mathcal{L}(A,b) = \varnothing$.
+        \item Angenommen es gilt $0 = b_{r+1} = \dots = b_m$. Wir definieren
+              \begin{equation*}
+                  v = \p{v_1\\\vdots\\v_n} \in K^n \qquad\text{durch}\qquad v_k \coloneqq \begin{cases}
+                      b_s & \text{falls } k = j_s \text{ für ein } 1 \leq s \leq r, \\
+                      0   & \text{sonst}.
+                  \end{cases}
+              \end{equation*}
+              Dann gilt
+              \begin{equation*}
+                  \mathcal{L}(A,b) = v+\mathcal{L}(A,0) = v+\ker(A).
+              \end{equation*}
+    \end{enumerate}
+\end{theorem}
+
+Wir sehen also, dass $\mathcal{L}(A,b)$ eine Restklasse modulo~$\ker(A)$ ist. Dabei ist $v$ gerade so konstruiert, sodass $Av = b$ bzw.\ $v \in A^{-1}(b)$ gilt.
+
+\begin{proof}\leavevmode
+    \begin{enumerate}
+        \item Seien $w \in K^n$ und
+              \begin{equation*}
+                  \p{w_1'\\\vdots\\w_m'} \coloneqq A(w).
+              \end{equation*}
+              Weil für $r+1 \leq k \leq m$ die $k$"~te Zeile von~$A$ gleich Null ist, ist nach Multiplikation $0 = w_{r+1}' = \dots = w_m'$. Nun gibt es aber ein $b_k \neq 0$ für ein $r+1 \leq k \leq m$. Folglich ist $Aw \neq b$ für alle~$w \in K^n$.
+        \item Seien nun $0 = b_{r+1} = \dots = b_m$ und $v$~wie oben definiert. Weil $v$~nur Einträge bei den Zeilenstufenindizes hat, und weil $A$ in der $k$"~ten Zeile ($1 \leq k \leq r$) von allen Spalten~$\mathcal{I}(A)$ genau bei~$j_k$ eine Eins hat, gilt $A(v) = b$. Der Rest folgt aus \cref{lem:preimage}.\qedhere
+    \end{enumerate}
+\end{proof}
+
+\begin{corollary}[Lösbarkeit]
+    Sei $A \in K^{m,n}$ in reduzierter Zeilenstufenform mit $\abs{\mathcal{I}(A)} = r$, und sei $b \in K^m$. Dann ist das lineare Gleichungssystem $Ax = b$ genau dann lösbar, wenn $0 = b_{r+1} = \dots = b_m$ gilt.
+\end{corollary}
+
+\begin{corollary}[eindeutige Lösbarkeit]
+    Sei $A \in K^{m,n}$ in reduzierter Zeilenstufenform mit $\abs{\mathcal{I}(A)} = r$, und sei $b \in K^m$. Dann ist das lineare Gleichungssystem $Ax = b$ genau dann eindeutig lösbar, wenn $0 = b_{r+1} = \dots = b_m$ und $\ker(A) = 0$ gilt.
+\end{corollary}
+
+\subsection{Beispiele}
+
+\begin{example}
+    Sei $K = \Q$ und sei
+    \begin{equation*}
+        [A|b] \coloneqq \begin{pmatrix}
+            0 & 0 & 2 & 4  & -6 & 1  & -1 & 0  \\
+            2 & 1 & 1 & 0  & -1 & 0  & 1  & 2  \\
+            2 & 1 & 0 & -2 & 2  & 1  & 1  & 6  \\
+            4 & 2 & 0 & -4 & 4  & 1  & 1  & 8  \\
+            2 & 1 & 0 & -2 & 2  & -3 & 1  & -6
+        \end{pmatrix} \in \Q^{5, 8}
+    \end{equation*}
+    Der Gauß-Algorithmus liefert
+    \begin{equation*}
+        [B|c] = \begin{pmatrix}
+            1 & \frac{1}{2} & 0 & -1 & 1  & 0 & 0 & 1  \\
+              &             & 1 & 2  & -3 & 0 & 0 & -1 \\
+              &             &   &    &    & 1 & 0 & 3  \\
+              &             &   &    &    &   & 1 & 1  \\
+              &             &   &    &    &   &   & 0
+        \end{pmatrix},
+    \end{equation*}
+    wobei $B$~in reduzierter Zeilenstufenform ist. An der letzten Spalte~$c$ sehen wir, dass das lineare Gleichungssystem lösbar ist ($c_5 = 0 = b_{5j}$ für alle $1 \leq j \leq 9$). Es gelten $\mathcal{I}(B) = \mset{1, 3, 6, 7}$, $\mathcal{K}(B) = \mset{2, 4, 5}$ und
+    \begin{equation*}
+        L_2^B = \p{-\frac{1}{2}\\1\\0\\0\\0\\0\\0},\qquad
+        L_4^B = \p{1\\0\\-2\\1\\0\\0\\0},\qquad
+        L_5^B = \p{-1\\0\\3\\0\\1\\0\\0} \qquad\in \Q^7.
+    \end{equation*}
+    Zudem ist der Kern von~$B$
+    \begin{equation*}
+        \ker(B) = \ker(A) = \mathcal{L}(A, 0) = \mset{a_2L_2^B + a_4L_4^B + a_5L_5^B \mid a_2,a_4,a_5 \in K}
+    \end{equation*}
+    und eine Lösung von $Bx = c$ ist
+    \begin{equation*}
+        v \coloneqq \p{1\\0\\-1\\0\\0\\3\\1} \in \Q^7,
+    \end{equation*}
+    also $Bv = c$ und damit auch $Av = b$. Demnach ist die Lösungsmenge
+    \begin{equation*}
+        \mathcal{L}(A,b) = v + \mathcal{L}(A, 0).
+    \end{equation*}
+\end{example}
+
+\begin{example}
+    Für $a,b,c \in \Q$ sei
+    \begin{equation*}
+        A = \p{1&a&b \\ c&b&a} \in \Q^{2, 3}.
+    \end{equation*}
+    Wir wollen das homogene lineare Gleichungssystem $Ax = 0$ in Abhängigkeit von $a,b,c$ lösen. Weil unter Zeilenoperationen die Nullspalte in~$[A|0]$ unverändert bleibt, können wir sie weglassen.
+
+    Wir fangen einfach an, den Gauß-Algorithmus anzuwenden:
+    \begin{equation*}
+        \begin{pmatrix}
+            1 & a & b \\
+            c & b & a
+        \end{pmatrix}
+        \xrightarrow{T_{21}(-c)}
+        \begin{pmatrix}
+            1 & a & b \\
+            0 & b-ca & a-cb
+        \end{pmatrix}.
+    \end{equation*}
+    Nun erfolgt eine vollständige Fallunterscheidung.
+
+    \begin{enumerate}[{Fall~}1, leftmargin=*]
+        \item ($b-ca \neq 0$). Wir erhalten
+        \begin{equation*}
+            \xrightarrow{D_2((b-ca)^{-1})}
+            \begin{pmatrix}
+                1 & a & b \\
+                0 & 1 & {\displaystyle \frac{a-cb}{b-ca}}
+            \end{pmatrix}
+            \xrightarrow{T_{12}(-a)}
+            \begin{pmatrix}
+                1 & 0 & {\displaystyle b-a\frac{a-cb}{b-ca}} \\
+                0 & 1 & {\displaystyle \frac{a-cb}{b-ca}}
+            \end{pmatrix}.
+        \end{equation*}
+        Als \emph{Basis} von $\ker(A)$ erhalten wir
+        \begin{equation*}
+            L_3^B = \p{{\displaystyle -b+a\frac{a-cb}{b-ca}} \\ {\displaystyle -\frac{a-cb}{b-ca}} \\ 1}
+        \end{equation*}
+        und daher $\mathcal{L}(A, 0) = \mset{a_3L_3^B \mid a_3 \in \Q}$.
+        \item ($b-ca = 0$ und $a-cb \neq 0$). Dann erhalten wir
+        \begin{equation*}
+            \begin{pmatrix}
+                1 & a & b \\
+                0 & 0 & a-cb
+            \end{pmatrix}
+            \xrightarrow{D_2((a-cb)^{-1})}
+            \begin{pmatrix}
+                1 & a & b \\
+                0 & 0 & 1
+            \end{pmatrix}.
+        \end{equation*}
+        Als \emph{Basis} von $\ker(A)$ erhalten wir
+        \begin{equation*}
+            L_2^B = \p{-a\\1\\0}
+        \end{equation*}
+        und daher $\mathcal{L}(A, 0) = \mset{a_2L_2^B \mid a_2 \in \Q}$.
+        \item ($b-ca = 0$ und $a-cb = 0$). Wir erhalten die reduzierte Zeilenstufenform
+        \begin{equation*}
+            \begin{pmatrix}
+                1 & a & b \\
+                0 & 0 & 0
+            \end{pmatrix}.
+        \end{equation*}
+        Als \emph{Basis} von $\ker(A)$ erhalten wir
+        \begin{equation*}
+            L_2^B = \p{-a\\1\\0},\qquad L_3^B = \p{-b\\0\\1},
+        \end{equation*}
+        und daher $\mathcal{L}(A, 0) = \mset{a_2L_2^B + a_3L_3^B \mid a_2,a_3 \in \Q}$.
+    \end{enumerate}
+\end{example}
+
+%Todo: Finish example
+
+\section{Lineare Unabhängigkeit, Basen und Dimension}
+
+\subsection{Linearkombinationen und lineare Hüllen}
+
+\begin{definition}[Linearkombination]
+    Sei $V$ ein $K$"~Vektorraum. Seien $v_1,\dots,v_m \in V$. Dann ist $v \in V$ eine \emph{Linearkombination von $v_1,\dots,v_m$}, falls es $a_1,\dots,a_m \in K$ gibt mit
+    \begin{equation*}
+        v = a_1v_1 + \dots + a_mv_m.
+    \end{equation*}
+\end{definition}
+
+\begin{example}\leavevmode
+    \begin{enumerate}
+        \item Für alle $v_1,\dots,v_m \in V$ ist $0 \in V$ eine Linearkombination von $v_1,\dots,v_m$, denn $0 = 0v_1+\dots+0v_m$.
+        \item Jeder Vektor~$v \in K^n$ ist eine Linearkombination der Standardbasisvektoren $e_1,\dots,e_n$ von~$K^n$ (\cref{lem:canonicalbasis}).
+        \item Seien $v_1 = \pt{1\\0}$, $v_2 = \pt{0\\1}$ und $v_3 = \pt{-1\\1}$ in~$\Q^2$. Dann gilt
+        \begin{equation*}
+            \p{2\\1} = 2v_1 + 1v_2 + 0v_3 = 3_v1 + 0v_2 + 1v_3.
+        \end{equation*}
+        \emph{Achtung}: Linearkombinationen müssen also nicht immer eindeutig sein.
+        \item Sei $A \in K^{m,n}$ eine Koeffizientenmatrix und~$b \in K^n$. Das Gleichungssystem $Ax = b$ ist genau dann lösbar, wenn $b$ eine Linearkombination der Spalten $A(e_1),\dots,A(e_n)$ von~$A$ ist, also $b \in \im(A)$. Für alle~$v \in K^n$ gilt nämlich
+        \begin{equation*}
+            Ax = v_1A(e_1) + \dots + v_nA(e_n).
+        \end{equation*}
+    \end{enumerate}
+\end{example}
+
+\lecturesep{12.~November 2021}
 
 \end{document}
